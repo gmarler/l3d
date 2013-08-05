@@ -1,6 +1,7 @@
 OLDDIR_OO = ../hello_oo
 
-LD = g++
+CXX = CC
+LD = CC
 LDFLAGS = -L/usr/X11R6/lib -lX11 -lXt -lm
 CPPFLAGS = -g -I$(OLDDIR_OO)
 

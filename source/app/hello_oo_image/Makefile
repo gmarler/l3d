@@ -1,7 +1,8 @@
 OLD_DIR_OO = ../hello_oo
 OLD_DIR_XEVENT = ../hello_oo_event
 
-LD = g++
+CXX = CC
+LD = CC
 LDFLAGS = -L/usr/X11R6/lib -lX11 -lXt -lm
 CPPFLAGS = -g -I$(OLD_DIR_OO) -I$(OLD_DIR_XEVENT)
 
