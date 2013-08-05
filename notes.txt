@@ -1,0 +1,28 @@
+Last update: 2007-01-28
+
+Most important issues with L3D library code:
+
+* Please download the latest code from http://l3d.sourceforge.net
+* The code must be compiled with g++-2.95
+* The "blendat" tool currently does not compile, apparently due to changes
+in the GTKMM library. This issue is being investigated.
+However, current versions of Blender include built-in scripting 
+in the Python language. With Blender's current Python scripting
+system, the solution method of blend_at is outdated (using an external
+program to control Blender). Instead, it is better to write a Python 
+script which can directly manipulate internal Blender data.
+
+Other known issues
+
+* Versions of g++ later than 2.95 may not reliably compile l3d.
+g++-4.03 produces code with subtle errors, such as clipping errors.
+Also some warnings appear during compilation with g++-4.03, that do not
+appear when compiling with g++-2.95 (probably because of stricter checking
+in g++-4.03). The l3d code can probably be updated to comply with later
+g++ versions relatively easily, but the subtle clipping errors mentioned
+above must be investigated.
+
+* There may be math overflow conditions in the software rasterizer
+due to range limitations of the fixed-point math calculations. These 
+conditions will be flagged with an assertion message if the code is 
+compiled in debug mode (compiler flags are set in the file Makefile.vars).

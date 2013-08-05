@@ -1,0 +1,7 @@
+NAME TORCH3
+TYPE ACTOR
+PARENT ROOM1
+MESH spaceship.obj
+TEXTURE spaceship.ppm
+TEXCOORDS spaceship.uv
+PLUGIN ../lib/dynamics/plugins/seeker/seeker.so

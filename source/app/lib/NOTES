@@ -1,0 +1,72 @@
+rasterization:
+   go from segment to next segment
+   for segments with zero height, STILL need to say start=failed point, search
+      for next end. if that fails, again start=failed, search for next end.
+      DON'T LEAVE START THE SAME AS LONG AS END SEARCH FAILS! If you do this
+      you get a big problem when searching for the FIRST non-zero segment;
+      in this case the STARTING point can change:
+
+      1         2
+
+
+
+
+           3
+
+    INIT:  left_x_start is 1, right_x_start is 1. 
+    AFTER SEARCH: left_x_start is 1, right_x_start is 2.
+
+    if right_x_start is fixed at 1 and just for the corresponding right_x_end
+    is searched, then you incorrectly start the right side at 1!
+
+    moral: SEGMENT BASED. if segment is 0, RESET START =FAILED POINT,
+    SEARCH FOR NEXT END.
+     
+
+   - arbitrary polygons: no more checking if planar. morphing of vertices,
+     etc can easily lead to non-planar quads, etc whereas triangles will
+     always remain planar.
+   - arbitrary polygons: texture/lighting gradients not constant
+   - z clipping with near z plane ===> huge polygons. view frustum clipping
+     or 2d clipping needed.
+
+
+clipping:
+   scissoring:
+      + easy
+      - z-clipping with near z plane?
+      - need lots of small polygons, large polygons are bad
+
+      lots of small polygons: THINGS (ships, asteroids, etc). bad for walls.
+
+   2d-analytical:
+      + can handle large polygons (walls)
+      + in rasterizer, no more clipleftedge comparisons with <0, >xsize, etc.
+      + no negative y or x values ==> ceil calculation simpler with fixed point
+
+space simulator: view frustum culling
+indoor, heavy occlusion: portals
+
+portal clipping:
+   2d scanline (scanline precise!)
+   2d analytical (2d polygon - can be imprecise due to roundoff)
+   3d analytical (3d polygon)
+
+   can be object-level culling, too: recursively draw first behind then
+   in front
+
+portal issues:
+   portals clipped by near z-plane?
+
+
+fixed point:
+   macros so precision can be changed on the fly
+   converting results from one precision back to default precision
+      (temporary calc in one precision to avoid overflow;then convert
+       back to normal);
+      NOTE: DOES NOT WORK if already-bound routines (e.g. matrix math)
+      are needed to be done with another precision, since they are inline!
+      intended for short quick calculations.
+
+   ternary operator: must be on one long ugly line
+

@@ -1,0 +1,4 @@
+all:
+	cd ../../../binaries/cygwin/float/app/morph3d; \
+	$(MAKE)
+

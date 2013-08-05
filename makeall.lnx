@@ -1,0 +1,47 @@
+all:
+	cd source/app/lib;$(MAKE) -f makeall.lnx
+	cd source/app/xform;$(MAKE) -f makeall.lnx
+	cd source/app/chkpoly;$(MAKE) -f makeall.lnx
+	cd source/app/polysimp;$(MAKE) -f makeall.lnx
+	cd source/app/morph2d;$(MAKE) -f makeall.lnx
+	cd source/app/drawdot;$(MAKE) -f makeall.lnx
+	cd source/app/fltsim;$(MAKE) -f makeall.lnx
+	cd source/app/backface;$(MAKE) -f makeall.lnx
+	cd source/app/textest;$(MAKE) -f makeall.lnx
+	cd source/app/lightmap;$(MAKE) -f makeall.lnx
+	cd source/app/texzbuf;$(MAKE) -f makeall.lnx
+	cd source/app/portal;$(MAKE) -f makeall.lnx
+	cd source/app/portex;$(MAKE) -f makeall.lnx
+	cd source/app/hello;rm *.o;$(MAKE)
+	cd source/app/hello_oo;rm *.o;$(MAKE)
+	cd source/app/hello_oo_event;rm *.o;$(MAKE)
+	cd source/app/hello_oo_image;rm *.o;$(MAKE)
+	cd source/app/mesaflat;$(MAKE)
+	cd source/app/porltex;$(MAKE) -f makeall.lnx
+	cd source/app/porlotex;$(MAKE) -f makeall.lnx
+	cd source/app/objcopy;$(MAKE) -f makeall.lnx
+	cd source/app/octree;$(MAKE) -f makeall.lnx
+	cd source/app/runway;$(MAKE) -f makeall.lnx
+	cd source/app/fixtest;$(MAKE) -f makeall.lnx
+	cd source/app/runway;$(MAKE) -f makeall.lnx
+	cd source/app/vecmath;$(MAKE) -f makeall.lnx
+	cd source/app/dots;$(MAKE) -f makeall.lnx
+	cd source/app/spikes;$(MAKE) -f makeall.lnx
+	cd source/app/rotspikes;$(MAKE) -f makeall.lnx
+	cd source/app/matmul;$(MAKE) -f makeall.lnx
+	cd source/app/camspikes;$(MAKE) -f makeall.lnx
+	cd source/app/clipz;$(MAKE) -f makeall.lnx
+	cd source/app/morph3d;$(MAKE) -f makeall.lnx
+	cd source/app/vidflat;$(MAKE) -f makeall.lnx
+	cd source/app/vidscape;$(MAKE) -f makeall.lnx
+	cd source/app/vids3d;$(MAKE) -f makeall.lnx
+	cd source/app/ika;$(MAKE) -f makeall.lnx
+	cd source/app/frustum;$(MAKE) -f makeall.lnx
+	cd source/app/bsp;$(MAKE) -f makeall.lnx
+	cd source/app/leafybsp;$(MAKE) -f makeall.lnx
+	cd source/app/collide;$(MAKE) -f makeall.lnx
+#	(cd source/utils/blendat;rm -rf .deps src/.deps config.log config.status stamp-h.in stamp-h;sh configure;$(MAKE) clean; $(MAKE))
+	cd source/utils/vidinfo;$(MAKE)
+	cd source/app/particle;$(MAKE) -f makeall.lnx
+	cd source/app/audio;$(MAKE)
+	cd source/app/network;$(MAKE)

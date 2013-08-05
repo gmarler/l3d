@@ -1,0 +1,38 @@
+// L3D realtime 3D library, explained in book "Linux 3D Graphics Programming"
+// Copyright (C) 2000  Norman Lin
+// Contact: nlin@linux3dgraphicsprogramming.org (alt. nlin@geocities.com)
+//
+// This program is free software; you can redistribute it and/or
+// modify it under the terms of the GNU General Public License
+// as published by the Free Software Foundation; either version 2
+// of the License, or (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License along
+// with this program; if not, write to the Free Software Foundation, Inc.,
+// 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
+
+
+#include "../lib/geom/object/object3d.h"
+#include "geom/vertex/verint.h"
+#include "dynamics/plugins/plugenv.h"
+
+//sbegin pyramid_morph
+class pyramid:public l3d_object {
+    static const int num_keyframes = 2;
+    int keyframe_no;
+    l3d_two_part_list<l3d_coordinate> *keyframes[2];
+    l3d_vertex_interpolator interp;
+    bool currently_interpolating;
+    //send pyramid_morph
+
+  public:
+    pyramid(l3d_two_part_list<l3d_coordinate> *keyframe0,
+            l3d_two_part_list<l3d_coordinate> *keyframe1);
+    virtual ~pyramid(void);
+    int update(void); // virtual
+};

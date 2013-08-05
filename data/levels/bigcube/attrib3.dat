@@ -1,0 +1,8 @@
+TYPE ACTOR
+NAME TORCH1
+PARENT CUBE1
+MESH torch.obj
+TEXCOORDS torch.uv
+TEXTURE torch.ppm
+PLUGIN ../lib/dynamics/plugins/vidmesh/vidmesh.so
+

@@ -1,0 +1,2 @@
+Classes in this subdirectory represent different toolkits for accessing
+2D functionality (X11, Windows, Mesa).

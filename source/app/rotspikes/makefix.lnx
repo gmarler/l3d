@@ -1,0 +1,2 @@
+all:
+	cd ../../../binaries/linux_x/fixed/app/rotspikes;$(MAKE)

@@ -1,0 +1,7 @@
+NAME TORCH3
+TYPE ACTOR
+PARENT ROOM1
+MESH torch.obj
+TEXTURE torch.ppm
+TEXCOORDS torch.uv
+PLUGIN ../lib/dynamics/plugins/vidmesh/vidmesh.so

@@ -1,0 +1,7 @@
+portal engine:
+   don't build polygon list, just do all polygons for each sector visited
+
+   clipping:
+     1. 2d scanline
+     2. 2d analytical
+     3. 3d analytical

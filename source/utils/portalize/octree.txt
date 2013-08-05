@@ -1,0 +1,88 @@
+1. script to generate geometry
+
+   0. define sector size x,y,z: 10,10,10
+   1. keep track of max, min x, y, z
+      (split polys)
+   2. assign each polygon to its appropriate sec(x/xsize,y/ysize,z/zsize)
+
+   after all done, we have divided the geometry into sectors, but no
+   portals between sectors yet.
+
+   compute used x,y,z dimensions across all sectors
+   assign each sector a name
+   for all sectors
+     make 6 portals to neighboring cubes
+     if a cube is on top, no top portal. bottom, etc.
+
+   portals + sectors
+2. 
+add_node(n,l) {
+  l->add(n);
+
+  for(i=0; i<n->portals; i++) {
+    if in_frustum(n->portals[i]) {
+      add_node(n->portals[i]->connected_sector, l);
+    }
+  }
+
+
+=====================
+
+object copy constructor
+object.redefine: redefines geom to be the current xformed, clipped
+
+idea:
+
+1. worldgen script determines bb of geom
+2. worldgen script writes 1st all empty container octree nodes as sectors
+
+CUBELET DIMENSION 10,10,10 (== 1000 cubelets)
+sectors then listed in xfirst, y, z order
+
+SECTOR S1
+PORTALPOLY
+PORTALPOLY
+PORTALPOLY
+PORTALPOLY
+PORTALPOLY
+SECTOR S2
+...
+
+  all these sectors have no geom, only portals to their neighboring
+  cubelets, except on the edges of the world, where for the outermost
+  faces no portal is defined. (prob: running outside of world???)
+
+3. worldgen script then writes the meshes (geom sectors). these should
+   have no portal polys cuz they are just geometry. could also write
+   bounding corner cubelets
+
+SECTOR S175 MINCUBELET 0,0,0 MAXCUBELET 3,2,5 (occupies all space in between)
+GEOMPOLY
+GEOMPOLY
+GEOMPOLY
+SECTOR S176
+GEOMPOLY
+GEOMPOLY
+GEOMPOLY
+
+4. parser:
+   - firstmode is reading_cubelets
+   - as long as sectors have only portals, stay in this mode, or use
+     fixed count based on dimension
+   - create cubelet and stick it into its proper position in
+     the array [x,y,z]
+
+   - then read in sector
+   - for all cubelets in bounding box MINCUBELET to MAXCUBELET for this
+     sector:
+
+     * clip sector to cubelet:
+       for each poly
+         clip to all planes
+         if not existing then remove from nonculled nodes
+     * if not empty, copy clipped geom
+     * in the copy, redefine() to make clip permanent
+     * for all polys <F10>
+
+object.temp_clip_to_plane()
+object.permanent_clip_to_plane()

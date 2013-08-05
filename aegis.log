@@ -1,0 +1,1536 @@
+aegis: project "lib3d": change 50: integration build started 22:29
+aegis: user "aegis", group "users"
+aegis: make -f makeall.lnx project=lib3d change=50 version=1.0.D055
+cd source/app/lib;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/lib'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/lib'
+cd ../../../binaries/linux_x/float/app/lib;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib'
+find . -name '*.o' -exec rm {} ';'
+rm -f lib3d.a
+(cd dynamics/plugins; make clean)
+make[4]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins'
+(cd pyramid; make clean)
+make[5]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/pyramid'
+find . "(" -name '*.o' -o -name '*.so' ")" -exec rm {} ';'
+rm -f pyramid.so
+make[5]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/pyramid'
+(cd pyrtex; make clean)
+make[5]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/pyrtex'
+find . "(" -name '*.o' -o -name '*.so' ")" -exec rm {} ';'
+rm -f pyrtex.so
+make[5]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/pyrtex'
+(cd vidmesh; make clean)
+make[5]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/vidmesh'
+find . "(" -name '*.o' -o -name '*.so' ")" -exec rm {} ';'
+rm -f vidmesh.so
+make[5]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/vidmesh'
+(cd vidflat; make clean)
+make[5]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/vidflat'
+find . "(" -name '*.o' -o -name '*.so' ")" -exec rm {} ';'
+rm -f vidflat.so
+make[5]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/vidflat'
+(cd seeker; make clean)
+make[5]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/seeker'
+find . "(" -name '*.o' -o -name '*.so' ")" -exec rm {} ';'
+rm -f seeker.so
+make[5]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/seeker'
+make[4]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins'
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/math/math_fix.cc -o math/math_fix.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/math/vector.cc -o math/vector.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/point/point.cc -o geom/point/point.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_2d/screen.cc -o tool_2d/screen.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_2d/sc_x11.cc -o tool_2d/sc_x11.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_os/dis_x11.cc -o tool_os/dis_x11.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_2d/si_rgb.cc -o tool_2d/si_rgb.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_2d/si_idx.cc -o tool_2d/si_idx.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_2d/sc_x11sh.cc -o tool_2d/sc_x11sh.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/rasteriz.cc -o raster/rasteriz.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/ras_sw.cc -o raster/ras_sw.o
+../../../../../source/app/lib/raster/ras_sw.cc: In method `void l3d_rasterizer_2d_sw_imp::draw_polygon_flatshaded(const class l3d_polygon_2d_flatshaded *)':
+../../../../../source/app/lib/raster/ras_sw.cc:85: warning: `l3d_real left_x_end' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_sw.cc:85: warning: `l3d_real left_y_end' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_sw.cc:85: warning: `l3d_real left_dx' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_sw.cc:85: warning: `l3d_real left_x' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_sw.cc:86: warning: `l3d_real right_x_end' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_sw.cc:86: warning: `l3d_real right_y_end' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_sw.cc:86: warning: `l3d_real right_dx' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_sw.cc:86: warning: `l3d_real right_x' might be used uninitialized in this function
+g++ -c -frtti -Wall -Wno-unused -DLINUX_GCC_X -O0 -O3 -DNDEBUG ../../../../../source/app/lib/geom/polygon/polygon.cc -o geom/polygon/polygon.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p_flat.cc -o geom/polygon/p_flat.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/system/factorys.cc -o system/factorys.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_2d/sc_mesa.cc -o tool_2d/sc_mesa.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_os/dis_mesa.cc -o tool_os/dis_mesa.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/ras_mesa.cc -o raster/ras_mesa.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/math/matrix.cc -o math/matrix.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/math/sincos.cc -o math/sincos.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/dynamics/moveable.cc -o dynamics/moveable.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/view/camera.cc -o view/camera.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/poly3.cc -o geom/polygon/poly3.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p3_flat.cc -o geom/polygon/p3_flat.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p3_tex.cc -o geom/polygon/p3_tex.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p_portal.cc -o geom/polygon/p_portal.o
+g++ -c -frtti -Wall -Wno-unused -DLINUX_GCC_X -O0 ../../../../../source/app/lib/geom/texture/tl_ppm.cc -o geom/texture/tl_ppm.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/object/object3d.cc -o geom/object/object3d.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/rast3.cc -o raster/rast3.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/ras3_sw.cc -o raster/ras3_sw.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/ras3z_sw.cc -o raster/ras3z_sw.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/ras3_mes.cc -o raster/ras3_mes.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/world/world.cc -o geom/world/world.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/world/w_back.cc -o geom/world/w_back.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/system/fact0_2.cc -o system/fact0_2.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/world/w_portal.cc -o geom/world/w_portal.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/object/sector.cc -o geom/object/sector.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/pipeline/pi_wor.cc -o pipeline/pi_wor.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/world/w_portex.cc -o geom/world/w_portex.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/world/w_porltex.cc -o geom/world/w_porltex.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/plane/plane.cc -o geom/plane/plane.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/object/oclip.cc -o geom/object/oclip.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p3_clip.cc -o geom/polygon/p3_clip.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p3_cflat.cc -o geom/polygon/p3_cflat.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p_cport.cc -o geom/polygon/p_cport.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p3_ltex.cc -o geom/polygon/p3_ltex.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/pipeline/pi_lwor.cc -o pipeline/pi_lwor.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/ras_swl.cc -o raster/ras_swl.o
+../../../../../source/app/lib/raster/ras_swl.cc: In method `void l3d_rasterizer_2d_sw_lighter_imp::draw_polygon_flatshaded(const class l3d_polygon_2d_flatshaded *)':
+../../../../../source/app/lib/raster/ras_swl.cc:102: warning: `l3d_real left_x_end' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_swl.cc:102: warning: `l3d_real left_y_end' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_swl.cc:102: warning: `l3d_real left_dx' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_swl.cc:102: warning: `l3d_real left_x' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_swl.cc:103: warning: `l3d_real right_x_end' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_swl.cc:103: warning: `l3d_real right_y_end' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_swl.cc:103: warning: `l3d_real right_dx' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_swl.cc:103: warning: `l3d_real right_x' might be used uninitialized in this function
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/surface/scache.cc -o geom/surface/scache.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/dynamics/colsph.cc -o dynamics/colsph.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/dynamics/plugins/pl_linux.cc -o dynamics/plugins/pl_linux.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/boundvol/boundsph.cc -o geom/boundvol/boundsph.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/object/obound.cc -o geom/object/obound.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/frustum/vfrust.cc -o geom/frustum/vfrust.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/world/w_vfrust.cc -o geom/world/w_vfrust.o
+g++ -c -frtti -Wall -Wno-unused -DLINUX_GCC_X -O0 ../../../../../source/app/lib/geom/world/w_porlotex.cc -o geom/world/w_porlotex.o
+g++ -c -frtti -Wall -Wno-unused -DLINUX_GCC_X -O0 ../../../../../source/app/lib/geom/world/w_pcoll.cc -o geom/world/w_pcoll.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p3_coll.cc -o geom/polygon/p3_coll.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p3_cltex.cc -o geom/polygon/p3_cltex.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/system/fact0_3.cc -o system/fact0_3.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/bsp/bsptree.cc -o geom/bsp/bsptree.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/world/w_bsp.cc -o geom/world/w_bsp.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_2d/sc_zmesa.cc -o tool_2d/sc_zmesa.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/ras3z_mes.cc -o raster/ras3z_mes.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/object/ocoll.cc -o geom/object/ocoll.o
+g++ -c -frtti -Wall -Wno-unused -DLINUX_GCC_X -O0 -O3 -DNDEBUG ../../../../../source/app/lib/geom/world/w_oct.cc -o geom/world/w_oct.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/system/fact0_4.cc -o system/fact0_4.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/sound/scli_rplay.cc -o sound/scli_rplay.o
+g++  -frtti -Wall -Wno-unused -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_os/memman.cc -o tool_os/memman.o
+ar r lib3d.a math/math_fix.o math/vector.o geom/point/point.o tool_2d/screen.o tool_2d/sc_x11.o tool_os/dis_x11.o tool_2d/si_rgb.o tool_2d/si_idx.o tool_2d/sc_x11sh.o raster/rasteriz.o raster/ras_sw.o geom/polygon/polygon.o geom/polygon/p_flat.o system/factorys.o tool_2d/sc_mesa.o tool_os/dis_mesa.o raster/ras_mesa.o math/matrix.o math/sincos.o dynamics/moveable.o view/camera.o geom/polygon/poly3.o geom/polygon/p3_flat.o geom/polygon/p3_tex.o geom/polygon/p_portal.o geom/texture/tl_ppm.o geom/object/object3d.o raster/rast3.o raster/ras3_sw.o raster/ras3z_sw.o raster/ras3_mes.o geom/world/world.o geom/world/w_back.o system/fact0_2.o geom/world/w_portal.o geom/object/sector.o pipeline/pi_wor.o geom/world/w_portex.o geom/world/w_porltex.o geom/plane/plane.o geom/object/oclip.o geom/polygon/p3_clip.o geom/polygon/p3_cflat.o geom/polygon/p_cport.o geom/polygon/p3_ltex.o pipeline/pi_lwor.o raster/ras_swl.o geom/surface/scache.o dynamics/colsph.o dynamics/plugins/pl_linux.o geom/boundvol/boundsph.o geom/object/obound.o geom/frustum/vfrust.o geom/world/w_vfrust.o geom/world/w_porlotex.o geom/world/w_pcoll.o geom/polygon/p3_coll.o geom/polygon/p3_cltex.o system/fact0_3.o geom/bsp/bsptree.o geom/world/w_bsp.o tool_2d/sc_zmesa.o raster/ras3z_mes.o geom/object/ocoll.o geom/world/w_oct.o system/fact0_4.o sound/scli_rplay.o tool_os/memman.o
+(cd dynamics/plugins; make)
+make[4]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins'
+(cd pyramid; make)	
+make[5]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/pyramid'
+g++    -c ../../../../../../../../source/app/lib/dynamics/plugins/pyramid/pyramid.cc -o pyramid.o
+g++ -shared -frtti -o pyramid.so pyramid.o -L../../../../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+make[5]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/pyramid'
+(cd pyrtex; make)	
+make[5]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/pyrtex'
+g++    -c ../../../../../../../../source/app/lib/dynamics/plugins/pyrtex/pyrtex.cc -o pyrtex.o
+g++ -shared -frtti -o pyrtex.so pyrtex.o -L../../../../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+make[5]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/pyrtex'
+(cd vidflat; make)	
+make[5]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/vidflat'
+g++    -c ../../../../../../../../source/app/lib/dynamics/plugins/vidflat/vidflat.cc -o vidflat.o
+g++ -shared -frtti -o vidflat.so vidflat.o -L../../../../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+make[5]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/vidflat'
+(cd vidmesh; make)	
+make[5]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/vidmesh'
+g++    -c ../../../../../../../../source/app/lib/dynamics/plugins/vidmesh/vidmesh.cc -o vidmesh.o
+g++ -shared -frtti -o vidmesh.so vidmesh.o -L../../../../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+make[5]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/vidmesh'
+(cd seeker; make)	
+make[5]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/seeker'
+g++    -c ../../../../../../../../source/app/lib/dynamics/plugins/seeker/seeker.cc -o seeker.o
+g++ -shared -frtti -o seeker.so seeker.o -L../../../../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+make[5]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins/seeker'
+make[4]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib/dynamics/plugins'
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lib'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/lib'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/lib'
+cd ../../../binaries/linux_x/fixed/app/lib;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/lib'
+find . -name '*.o' -exec rm {} ';'
+rm -f lib3d.a
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/math/math_fix.cc -o math/math_fix.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/math/vector.cc -o math/vector.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/point/point.cc -o geom/point/point.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_2d/screen.cc -o tool_2d/screen.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_2d/sc_x11.cc -o tool_2d/sc_x11.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_os/dis_x11.cc -o tool_os/dis_x11.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_2d/si_rgb.cc -o tool_2d/si_rgb.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_2d/si_idx.cc -o tool_2d/si_idx.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_2d/sc_x11sh.cc -o tool_2d/sc_x11sh.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/rasteriz.cc -o raster/rasteriz.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/ras_sw.cc -o raster/ras_sw.o
+../../../../../source/app/lib/raster/ras_sw.cc: In method `void l3d_rasterizer_2d_sw_imp::draw_polygon_flatshaded(const class l3d_polygon_2d_flatshaded *)':
+../../../../../source/app/lib/raster/ras_sw.cc:85: warning: `l3d_real left_x_end' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_sw.cc:85: warning: `l3d_real left_y_end' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_sw.cc:85: warning: `l3d_real left_dx' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_sw.cc:85: warning: `l3d_real left_x' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_sw.cc:86: warning: `l3d_real right_x_end' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_sw.cc:86: warning: `l3d_real right_y_end' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_sw.cc:86: warning: `l3d_real right_dx' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_sw.cc:86: warning: `l3d_real right_x' might be used uninitialized in this function
+g++ -c -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O0 -O3 -DNDEBUG ../../../../../source/app/lib/geom/polygon/polygon.cc -o geom/polygon/polygon.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p_flat.cc -o geom/polygon/p_flat.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/system/factorys.cc -o system/factorys.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_2d/sc_mesa.cc -o tool_2d/sc_mesa.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_os/dis_mesa.cc -o tool_os/dis_mesa.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/ras_mesa.cc -o raster/ras_mesa.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/math/matrix.cc -o math/matrix.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/math/sincos.cc -o math/sincos.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/dynamics/moveable.cc -o dynamics/moveable.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/view/camera.cc -o view/camera.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/poly3.cc -o geom/polygon/poly3.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p3_flat.cc -o geom/polygon/p3_flat.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p3_tex.cc -o geom/polygon/p3_tex.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p_portal.cc -o geom/polygon/p_portal.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/texture/tl_ppm.cc -o geom/texture/tl_ppm.o
+../../../../../source/app/lib/geom/texture/tl_ppm.cc: In method `void l3d_texture_loader_ppm::load(const char *)':
+../../../../../source/app/lib/geom/texture/tl_ppm.cc:173: warning: `int result' might be used uninitialized in this function
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/object/object3d.cc -o geom/object/object3d.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/rast3.cc -o raster/rast3.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/ras3_sw.cc -o raster/ras3_sw.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/ras3z_sw.cc -o raster/ras3z_sw.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/ras3_mes.cc -o raster/ras3_mes.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/world/world.cc -o geom/world/world.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/world/w_back.cc -o geom/world/w_back.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/system/fact0_2.cc -o system/fact0_2.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/world/w_portal.cc -o geom/world/w_portal.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/object/sector.cc -o geom/object/sector.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/pipeline/pi_wor.cc -o pipeline/pi_wor.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/world/w_portex.cc -o geom/world/w_portex.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/world/w_porltex.cc -o geom/world/w_porltex.o
+../../../../../source/app/lib/geom/world/w_porltex.cc: In method `void l3d_world_portal_textured_lightmapped::place_lamp(class l3d_sector *, class l3d_polygon_3d_clippable *)':
+../../../../../source/app/lib/geom/world/w_porltex.cc:751: warning: double format, different type arg (arg 2)
+../../../../../source/app/lib/geom/world/w_porltex.cc:751: warning: double format, different type arg (arg 3)
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/plane/plane.cc -o geom/plane/plane.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/object/oclip.cc -o geom/object/oclip.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p3_clip.cc -o geom/polygon/p3_clip.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p3_cflat.cc -o geom/polygon/p3_cflat.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p_cport.cc -o geom/polygon/p_cport.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p3_ltex.cc -o geom/polygon/p3_ltex.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/pipeline/pi_lwor.cc -o pipeline/pi_lwor.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/ras_swl.cc -o raster/ras_swl.o
+../../../../../source/app/lib/raster/ras_swl.cc: In method `void l3d_rasterizer_2d_sw_lighter_imp::draw_polygon_flatshaded(const class l3d_polygon_2d_flatshaded *)':
+../../../../../source/app/lib/raster/ras_swl.cc:102: warning: `l3d_real left_x_end' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_swl.cc:102: warning: `l3d_real left_y_end' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_swl.cc:102: warning: `l3d_real left_dx' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_swl.cc:102: warning: `l3d_real left_x' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_swl.cc:103: warning: `l3d_real right_x_end' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_swl.cc:103: warning: `l3d_real right_y_end' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_swl.cc:103: warning: `l3d_real right_dx' might be used uninitialized in this function
+../../../../../source/app/lib/raster/ras_swl.cc:103: warning: `l3d_real right_x' might be used uninitialized in this function
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/surface/scache.cc -o geom/surface/scache.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/dynamics/colsph.cc -o dynamics/colsph.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/dynamics/plugins/pl_linux.cc -o dynamics/plugins/pl_linux.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/boundvol/boundsph.cc -o geom/boundvol/boundsph.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/object/obound.cc -o geom/object/obound.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/frustum/vfrust.cc -o geom/frustum/vfrust.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/world/w_vfrust.cc -o geom/world/w_vfrust.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/world/w_porlotex.cc -o geom/world/w_porlotex.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/world/w_pcoll.cc -o geom/world/w_pcoll.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p3_coll.cc -o geom/polygon/p3_coll.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/polygon/p3_cltex.cc -o geom/polygon/p3_cltex.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/system/fact0_3.cc -o system/fact0_3.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/bsp/bsptree.cc -o geom/bsp/bsptree.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/world/w_bsp.cc -o geom/world/w_bsp.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_2d/sc_zmesa.cc -o tool_2d/sc_zmesa.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/raster/ras3z_mes.cc -o raster/ras3z_mes.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/object/ocoll.cc -o geom/object/ocoll.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/geom/world/w_oct.cc -o geom/world/w_oct.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/system/fact0_4.cc -o system/fact0_4.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/sound/scli_rplay.cc -o sound/scli_rplay.o
+g++  -frtti -Wall -Wno-unused -DFIXED_POINT_MATH -DLINUX_GCC_X -O3 -DNDEBUG  -c ../../../../../source/app/lib/tool_os/memman.cc -o tool_os/memman.o
+ar r lib3d.a math/math_fix.o math/vector.o geom/point/point.o tool_2d/screen.o tool_2d/sc_x11.o tool_os/dis_x11.o tool_2d/si_rgb.o tool_2d/si_idx.o tool_2d/sc_x11sh.o raster/rasteriz.o raster/ras_sw.o geom/polygon/polygon.o geom/polygon/p_flat.o system/factorys.o tool_2d/sc_mesa.o tool_os/dis_mesa.o raster/ras_mesa.o math/matrix.o math/sincos.o dynamics/moveable.o view/camera.o geom/polygon/poly3.o geom/polygon/p3_flat.o geom/polygon/p3_tex.o geom/polygon/p_portal.o geom/texture/tl_ppm.o geom/object/object3d.o raster/rast3.o raster/ras3_sw.o raster/ras3z_sw.o raster/ras3_mes.o geom/world/world.o geom/world/w_back.o system/fact0_2.o geom/world/w_portal.o geom/object/sector.o pipeline/pi_wor.o geom/world/w_portex.o geom/world/w_porltex.o geom/plane/plane.o geom/object/oclip.o geom/polygon/p3_clip.o geom/polygon/p3_cflat.o geom/polygon/p_cport.o geom/polygon/p3_ltex.o pipeline/pi_lwor.o raster/ras_swl.o geom/surface/scache.o dynamics/colsph.o dynamics/plugins/pl_linux.o geom/boundvol/boundsph.o geom/object/obound.o geom/frustum/vfrust.o geom/world/w_vfrust.o geom/world/w_porlotex.o geom/world/w_pcoll.o geom/polygon/p3_coll.o geom/polygon/p3_cltex.o system/fact0_3.o geom/bsp/bsptree.o geom/world/w_bsp.o tool_2d/sc_zmesa.o raster/ras3z_mes.o geom/object/ocoll.o geom/world/w_oct.o system/fact0_4.o sound/scli_rplay.o tool_os/memman.o
+(cd dynamics/plugins; make)
+make[4]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/lib/dynamics/plugins'
+(cd pyramid; make)	
+make[5]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/lib/dynamics/plugins/pyramid'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../../../../source/app/lib/dynamics/plugins/pyramid/pyramid.cc -o pyramid.o
+g++ -shared -frtti -o pyramid.so pyramid.o -L../../../../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+make[5]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/lib/dynamics/plugins/pyramid'
+(cd pyrtex; make)	
+make[5]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/lib/dynamics/plugins/pyrtex'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../../../../source/app/lib/dynamics/plugins/pyrtex/pyrtex.cc -o pyrtex.o
+g++ -shared -frtti -o pyrtex.so pyrtex.o -L../../../../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+make[5]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/lib/dynamics/plugins/pyrtex'
+(cd vidflat; make)	
+make[5]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/lib/dynamics/plugins/vidflat'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../../../../source/app/lib/dynamics/plugins/vidflat/vidflat.cc -o vidflat.o
+../../../../../../../../source/app/lib/dynamics/plugins/vidflat/vidflat.cc: In function `void constructor(class l3d_object *, void *)':
+../../../../../../../../source/app/lib/dynamics/plugins/vidflat/vidflat.cc:150: warning: suggest parentheses around assignment used as truth value
+../../../../../../../../source/app/lib/dynamics/plugins/vidflat/vidflat.cc:152: warning: suggest parentheses around assignment used as truth value
+../../../../../../../../source/app/lib/dynamics/plugins/vidflat/vidflat.cc:147: warning: `long unsigned int col' might be used uninitialized in this function
+g++ -shared -frtti -o vidflat.so vidflat.o -L../../../../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+make[5]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/lib/dynamics/plugins/vidflat'
+(cd vidmesh; make)	
+make[5]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/lib/dynamics/plugins/vidmesh'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../../../../source/app/lib/dynamics/plugins/vidmesh/vidmesh.cc -o vidmesh.o
+g++ -shared -frtti -o vidmesh.so vidmesh.o -L../../../../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+make[5]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/lib/dynamics/plugins/vidmesh'
+(cd seeker; make)	
+make[5]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/lib/dynamics/plugins/seeker'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../../../../source/app/lib/dynamics/plugins/seeker/seeker.cc -o seeker.o
+g++ -shared -frtti -o seeker.so seeker.o -L../../../../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+make[5]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/lib/dynamics/plugins/seeker'
+make[4]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/lib/dynamics/plugins'
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/lib'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/lib'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/lib'
+cd source/app/xform;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/xform'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/xform'
+cd ../../../binaries/linux_x/float/app/xform;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/xform'
+rm -f *.o
+rm -f xform 
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/xform/main.cc -o main.o
+../../../../../source/app/xform/main.cc: In method `void my_pipeline::update_event()':
+../../../../../source/app/xform/main.cc:108: warning: suggest parentheses around assignment used as truth value
+../../../../../source/app/xform/main.cc:110: warning: suggest parentheses around assignment used as truth value
+../../../../../source/app/xform/main.cc:105: warning: `long unsigned int col' might be used uninitialized in this function
+g++ -frtti main.o -o xform -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/xform'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/xform'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/xform'
+cd ../../../binaries/linux_x/fixed/app/xform;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/xform'
+rm -f *.o
+rm -f xform 
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/xform/main.cc -o main.o
+../../../../../source/app/xform/main.cc: In method `void my_pipeline::update_event()':
+../../../../../source/app/xform/main.cc:108: warning: suggest parentheses around assignment used as truth value
+../../../../../source/app/xform/main.cc:110: warning: suggest parentheses around assignment used as truth value
+../../../../../source/app/xform/main.cc:105: warning: `long unsigned int col' might be used uninitialized in this function
+g++ -frtti main.o -o xform -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/xform'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/xform'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/xform'
+cd source/app/chkpoly;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/chkpoly'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/chkpoly'
+cd ../../../binaries/linux_x/float/app/chkpoly;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/chkpoly'
+rm -f *.o
+rm -f chkpoly
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/chkpoly/chkpoly.cc -o chkpoly.o
+../../../../../source/app/chkpoly/chkpoly.cc:110: warning: `class my_pipeline' has virtual functions but non-virtual destructor
+g++ -frtti -L../lib chkpoly.o -o chkpoly -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/chkpoly'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/chkpoly'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/chkpoly'
+cd ../../../binaries/linux_x/fixed/app/chkpoly;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/chkpoly'
+rm -f *.o
+rm -f chkpoly
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/chkpoly/chkpoly.cc -o chkpoly.o
+../../../../../source/app/chkpoly/chkpoly.cc:110: warning: `class my_pipeline' has virtual functions but non-virtual destructor
+g++ -frtti chkpoly.o -o chkpoly -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/chkpoly'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/chkpoly'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/chkpoly'
+cd source/app/polysimp;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/polysimp'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/polysimp'
+cd ../../../binaries/linux_x/float/app/polysimp;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/polysimp'
+rm -f *.o
+rm -f polysimp
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/polysimp/polysimp.cc -o polysimp.o
+g++ -frtti -L../lib polysimp.o -o polysimp -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/polysimp'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/polysimp'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/polysimp'
+cd ../../../binaries/linux_x/fixed/app/polysimp;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/polysimp'
+rm -f *.o
+rm -f polysimp
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/polysimp/polysimp.cc -o polysimp.o
+g++ -frtti polysimp.o -o polysimp -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/polysimp'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/polysimp'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/polysimp'
+cd source/app/morph2d;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/morph2d'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/morph2d'
+cd ../../../binaries/linux_x/float/app/morph2d;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/morph2d'
+rm -f *.o
+rm -f morph2d 
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/morph2d/morph2d.cc -o morph2d.o
+g++ -frtti -L../lib morph2d.o -o morph2d -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/morph2d'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/morph2d'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/morph2d'
+cd ../../../binaries/linux_x/fixed/app/morph2d;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/morph2d'
+rm -f *.o
+rm -f morph2d
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/morph2d/morph2d.cc -o morph2d.o
+g++ -frtti morph2d.o -o morph2d -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/morph2d'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/morph2d'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/morph2d'
+cd source/app/drawdot;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/drawdot'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/drawdot'
+cd ../../../binaries/linux_x/float/app/drawdot;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/drawdot'
+rm -f *.o
+rm -f drawdot
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/drawdot/drawdot.cc -o drawdot.o
+g++ -frtti -L../lib drawdot.o -o drawdot -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/drawdot'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/drawdot'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/drawdot'
+cd ../../../binaries/linux_x/fixed/app/drawdot;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/drawdot'
+rm -f *.o
+rm -f drawdot
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/drawdot/drawdot.cc -o drawdot.o
+g++ -frtti drawdot.o -o drawdot -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/drawdot'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/drawdot'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/drawdot'
+cd source/app/fltsim;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/fltsim'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/fltsim'
+cd ../../../binaries/linux_x/float/app/fltsim;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/fltsim'
+rm -f *.o
+rm -f fltsim
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/fltsim/shapes.cc -o shapes.o
+../../../../../source/app/fltsim/shapes.cc: In method `int pyramid::update()':
+../../../../../source/app/fltsim/shapes.cc:107: warning: control reaches end of non-void function `pyramid::update()'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/fltsim/main.cc -o main.o
+g++ -frtti shapes.o main.o -o fltsim -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/fltsim'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/fltsim'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/fltsim'
+cd ../../../binaries/linux_x/fixed/app/fltsim;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/fltsim'
+rm -f *.o
+rm -f fltsim
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/fltsim/shapes.cc -o shapes.o
+../../../../../source/app/fltsim/shapes.cc: In method `int pyramid::update()':
+../../../../../source/app/fltsim/shapes.cc:107: warning: control reaches end of non-void function `pyramid::update()'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/fltsim/main.cc -o main.o
+g++ -frtti shapes.o main.o -o fltsim -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/fltsim'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/fltsim'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/fltsim'
+cd source/app/backface;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/backface'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/backface'
+cd ../../../binaries/linux_x/float/app/backface;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/backface'
+rm -f *.o
+rm -f backface
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/backface/shapes.cc -o shapes.o
+../../../../../source/app/backface/shapes.cc: In method `int pyramid::update()':
+../../../../../source/app/backface/shapes.cc:107: warning: control reaches end of non-void function `pyramid::update()'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/backface/main.cc -o main.o
+g++ -frtti shapes.o main.o -o backface -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/backface'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/backface'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/backface'
+cd ../../../binaries/linux_x/fixed/app/backface;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/backface'
+rm -f *.o
+rm -f backface
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/backface/shapes.cc -o shapes.o
+../../../../../source/app/backface/shapes.cc: In method `int pyramid::update()':
+../../../../../source/app/backface/shapes.cc:107: warning: control reaches end of non-void function `pyramid::update()'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/backface/main.cc -o main.o
+g++ -frtti shapes.o main.o -o backface -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/backface'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/backface'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/backface'
+cd source/app/textest;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/textest'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/textest'
+cd ../../../binaries/linux_x/float/app/textest;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/textest'
+rm -f *.o
+rm -f textest
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/textest/main.cc -o main.o
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/textest/textest.cc -o textest.o
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/textest/shapes.cc -o shapes.o
+../../../../../source/app/textest/shapes.cc: In method `int pyramid::update()':
+../../../../../source/app/textest/shapes.cc:145: warning: control reaches end of non-void function `pyramid::update()'
+g++ -frtti main.o textest.o shapes.o -o textest -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/textest'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/textest'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/textest'
+cd ../../../binaries/linux_x/fixed/app/textest;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/textest'
+rm -f *.o
+rm -f textest
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/textest/textest.cc -o textest.o
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/textest/shapes.cc -o shapes.o
+../../../../../source/app/textest/shapes.cc: In method `int pyramid::update()':
+../../../../../source/app/textest/shapes.cc:145: warning: control reaches end of non-void function `pyramid::update()'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/textest/main.cc -o main.o
+g++ -frtti textest.o shapes.o main.o -o textest -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/textest'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/textest'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/textest'
+cd source/app/lightmap;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/lightmap'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/lightmap'
+cd ../../../binaries/linux_x/float/app/lightmap;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lightmap'
+rm -f *.o
+rm -f lightmap
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/lightmap/main.cc -o main.o
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/lightmap/shapes.cc -o shapes.o
+g++ -frtti main.o shapes.o -o lightmap -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/lightmap'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/lightmap'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/lightmap'
+cd ../../../binaries/linux_x/fixed/app/lightmap;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/lightmap'
+rm -f *.o
+rm -f lightmap
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/lightmap/main.cc -o main.o
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/lightmap/shapes.cc -o shapes.o
+g++ -frtti main.o shapes.o -o lightmap -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/lightmap'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/lightmap'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/lightmap'
+cd source/app/texzbuf;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/texzbuf'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/texzbuf'
+cd ../../../binaries/linux_x/float/app/texzbuf;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/texzbuf'
+rm -f *.o
+rm -f texzbuf
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/texzbuf/main.cc -o main.o
+g++ -frtti main.o ../textest/textest.o ../textest/shapes.o -o texzbuf -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(fact0_3.o): In function `l3d_factory_manager_v_0_3::choose_factories(void)':
+fact0_3.o(.text+0x57): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/texzbuf'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/texzbuf'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/texzbuf'
+cd ../../../binaries/linux_x/fixed/app/texzbuf;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/texzbuf'
+rm -f *.o
+rm -f texzbuf
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/texzbuf/main.cc -o main.o
+g++ -frtti ../textest/textest.o ../textest/shapes.o main.o -o texzbuf -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(fact0_3.o): In function `l3d_factory_manager_v_0_3::choose_factories(void)':
+fact0_3.o(.text+0x57): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/texzbuf'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/texzbuf'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/texzbuf'
+cd source/app/portal;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/portal'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/portal'
+cd ../../../binaries/linux_x/float/app/portal;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/portal'
+rm -f *.o
+rm -f portal
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/portal/main.cc -o main.o
+g++ -frtti main.o -o portal -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/portal'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/portal'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/portal'
+cd ../../../binaries/linux_x/fixed/app/portal;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/portal'
+rm -f *.o
+rm -f portal
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/portal/main.cc -o main.o
+g++ -frtti main.o -o portal -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/portal'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/portal'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/portal'
+cd source/app/portex;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/portex'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/portex'
+cd ../../../binaries/linux_x/float/app/portex;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/portex'
+rm -f *.o
+rm -f portex
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/portex/main.cc -o main.o
+g++ -frtti main.o -o portex -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/portex'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/portex'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/portex'
+cd ../../../binaries/linux_x/fixed/app/portex;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/portex'
+rm -f *.o
+rm -f portex
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/portex/main.cc -o main.o
+g++ -frtti main.o -o portex -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/portex'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/portex'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/portex'
+cd source/app/hello;rm *.o;make
+rm: cannot remove `*.o': No such file or directory
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/hello'
+g++  -O3  -c hello.cc -o hello.o
+g++ -L/usr/X11R6/lib -lX11 -lXt -lm hello.o -o hello
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/hello'
+cd source/app/hello_oo;rm *.o;make
+rm: cannot remove `*.o': No such file or directory
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/hello_oo'
+g++  -g  -c ch2_hello.cc -o ch2_hello.o
+g++  -g  -c ch2_app.cc -o ch2_app.o
+g++  -g  -c ch2_app_x.cc -o ch2_app_x.o
+g++  -g  -c ch2_appfactory_x.cc -o ch2_appfactory_x.o
+g++  -g  -c ch2_factorymanager.cc -o ch2_factorymanager.o
+gcc -L/usr/X11R6/lib -lX11 -lXt -lm ch2_hello.o ch2_app.o ch2_app_x.o ch2_appfactory_x.o ch2_factorymanager.o -o ch2_hello_oo
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/hello_oo'
+cd source/app/hello_oo_event;rm *.o;make
+rm: cannot remove `*.o': No such file or directory
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/hello_oo_event'
+g++  -g -I../hello_oo  -c ch2_factorymanager.cc -o ch2_factorymanager.o
+g++  -g -I../hello_oo  -c ch2_app_xevent.cc -o ch2_app_xevent.o
+g++  -g -I../hello_oo  -c ch2_appfactory_xevent.cc -o ch2_appfactory_xevent.o
+gcc -L/usr/X11R6/lib -lX11 -lXt -lm ../hello_oo/ch2_hello.o ../hello_oo/ch2_app.o ../hello_oo/ch2_app_x.o ../hello_oo/ch2_appfactory_x.o ch2_factorymanager.o ch2_app_xevent.o ch2_appfactory_xevent.o -o ch2_hello_oo_event
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/hello_oo_event'
+cd source/app/hello_oo_image;rm *.o;make
+rm: cannot remove `*.o': No such file or directory
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/hello_oo_image'
+g++  -g -I../hello_oo -I../hello_oo_event  -c ch2_factorymanager.cc -o ch2_factorymanager.o
+g++  -g -I../hello_oo -I../hello_oo_event  -c ch2_app_ximage.cc -o ch2_app_ximage.o
+g++  -g -I../hello_oo -I../hello_oo_event  -c ch2_appfactory_ximage.cc -o ch2_appfactory_ximage.o
+gcc -L/usr/X11R6/lib -lX11 -lXt -lm ../hello_oo/ch2_hello.o ../hello_oo/ch2_app.o ../hello_oo/ch2_app_x.o ../hello_oo/ch2_appfactory_x.o ../hello_oo_event/ch2_app_xevent.o ../hello_oo_event/ch2_appfactory_xevent.o ch2_factorymanager.o ch2_app_ximage.o ch2_appfactory_ximage.o -o ch2_hello_oo_image
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/hello_oo_image'
+cd source/app/mesaflat;make
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/mesaflat'
+g++ -c -g -fomit-frame-pointer -m486 -Wall -pipe -I/include -DFX -DXMESA mesaflat.cc -o mesaflat.o
+g++  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg mesaflat.o -o mesaflat
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/mesaflat'
+cd source/app/porltex;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/porltex'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/porltex'
+cd ../../../binaries/linux_x/float/app/porltex;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/porltex'
+rm -f *.o
+rm -f porltex
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/porltex/main.cc -o main.o
+g++ -frtti main.o -o porltex -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/porltex'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/porltex'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/porltex'
+cd ../../../binaries/linux_x/fixed/app/porltex;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/porltex'
+rm -f *.o
+rm -f porltex
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/porltex/main.cc -o main.o
+g++ -frtti main.o -o porltex -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/porltex'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/porltex'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/porltex'
+cd source/app/porlotex;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/porlotex'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/porlotex'
+cd ../../../binaries/linux_x/float/app/porlotex;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/porlotex'
+rm -f *.o
+rm -f porlotex
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/porlotex/main.cc -o main.o
+g++ -frtti main.o -o porlotex -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/porlotex'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/porlotex'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/porlotex'
+cd ../../../binaries/linux_x/fixed/app/porlotex;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/porlotex'
+rm -f *.o
+rm -f porlotex
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/porlotex/main.cc -o main.o
+g++ -frtti main.o -o porlotex -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/porlotex'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/porlotex'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/porlotex'
+cd source/app/objcopy;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/objcopy'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/objcopy'
+cd ../../../binaries/linux_x/float/app/objcopy;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/objcopy'
+rm -f *.o
+rm -f objcopy
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/objcopy/shapes.cc -o shapes.o
+../../../../../source/app/objcopy/shapes.cc: In method `int pyramid::update()':
+../../../../../source/app/objcopy/shapes.cc:96: warning: control reaches end of non-void function `pyramid::update()'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/objcopy/main.cc -o main.o
+g++ -frtti shapes.o main.o -o objcopy -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/objcopy'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/objcopy'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/objcopy'
+cd ../../../binaries/linux_x/fixed/app/objcopy;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/objcopy'
+rm -f *.o
+rm -f objcopy
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/objcopy/shapes.cc -o shapes.o
+../../../../../source/app/objcopy/shapes.cc: In method `int pyramid::update()':
+../../../../../source/app/objcopy/shapes.cc:96: warning: control reaches end of non-void function `pyramid::update()'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/objcopy/main.cc -o main.o
+g++ -frtti shapes.o main.o -o objcopy -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/objcopy'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/objcopy'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/objcopy'
+cd source/app/octree;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/octree'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/octree'
+cd ../../../binaries/linux_x/float/app/octree;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/octree'
+rm -f *.o
+rm -f octree
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/octree/main.cc -o main.o
+g++ -frtti main.o -o octree -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/octree'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/octree'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/octree'
+cd ../../../binaries/linux_x/fixed/app/octree;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/octree'
+rm -f *.o
+rm -f octree
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/octree/main.cc -o main.o
+g++ -frtti main.o -o octree -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/octree'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/octree'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/octree'
+cd source/app/runway;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/runway'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/runway'
+cd ../../../binaries/linux_x/float/app/runway;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/runway'
+rm -f *.o
+rm -f runway
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/runway/runway.cc -o runway.o
+g++ -frtti -L../lib runway.o -o runway -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/runway'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/runway'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/runway'
+cd ../../../binaries/linux_x/fixed/app/runway;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/runway'
+rm -f *.o
+rm -f runway
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/runway/runway.cc -o runway.o
+g++ -frtti -L../lib runway.o -o runway -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/runway'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/runway'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/runway'
+cd source/app/fixtest;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/fixtest'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/fixtest'
+cd ../../../binaries/linux_x/float/app/fixtest;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/fixtest'
+rm -f *.o
+rm -f fixtest
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/fixtest/fixtest.cc -o fixtest.o
+g++ -frtti -L../lib fixtest.o -o fixtest -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/fixtest'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/fixtest'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/fixtest'
+cd ../../../binaries/linux_x/fixed/app/fixtest;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/fixtest'
+rm -f *.o
+rm -f fixtest
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/fixtest/fixtest.cc -o fixtest.o
+g++ -frtti fixtest.o -o fixtest -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/fixtest'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/fixtest'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/fixtest'
+cd source/app/runway;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/runway'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/runway'
+cd ../../../binaries/linux_x/float/app/runway;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/runway'
+rm -f *.o
+rm -f runway
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/runway/runway.cc -o runway.o
+g++ -frtti -L../lib runway.o -o runway -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/runway'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/runway'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/runway'
+cd ../../../binaries/linux_x/fixed/app/runway;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/runway'
+rm -f *.o
+rm -f runway
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/runway/runway.cc -o runway.o
+g++ -frtti -L../lib runway.o -o runway -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/runway'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/runway'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/runway'
+cd source/app/vecmath;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vecmath'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vecmath'
+cd ../../../binaries/linux_x/float/app/vecmath;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/vecmath'
+rm -f *.o
+rm -f vecmath
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/vecmath/vecmath.cc -o vecmath.o
+g++ -frtti -L../lib vecmath.o -o vecmath -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/vecmath'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vecmath'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vecmath'
+cd ../../../binaries/linux_x/fixed/app/vecmath;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/vecmath'
+rm -f *.o
+rm -f vecmath
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/vecmath/vecmath.cc -o vecmath.o
+../../../../../source/app/vecmath/vecmath.cc: In function `int main(int, char **)':
+../../../../../source/app/vecmath/vecmath.cc:143: warning: double format, different type arg (arg 10)
+g++ -frtti vecmath.o -o vecmath -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/vecmath'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vecmath'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vecmath'
+cd source/app/dots;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/dots'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/dots'
+cd ../../../binaries/linux_x/float/app/dots;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/dots'
+rm -f *.o
+rm -f dots
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/dots/dots.cc -o dots.o
+../../../../../source/app/dots/dots.cc: In function `int main(int, char **)':
+../../../../../source/app/dots/dots.cc:381: warning: int format, progtypes arg (arg 3)
+../../../../../source/app/dots/dots.cc:390: warning: `class my_pipeline * p' might be used uninitialized in this function
+g++ -frtti -L../lib dots.o -o dots -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/dots'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/dots'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/dots'
+cd ../../../binaries/linux_x/fixed/app/dots;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/dots'
+rm -f *.o
+rm -f dots
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/dots/dots.cc -o dots.o
+../../../../../source/app/dots/dots.cc: In function `int main(int, char **)':
+../../../../../source/app/dots/dots.cc:381: warning: int format, progtypes arg (arg 3)
+../../../../../source/app/dots/dots.cc:390: warning: `class my_pipeline * p' might be used uninitialized in this function
+g++ -frtti dots.o -o dots -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/dots'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/dots'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/dots'
+cd source/app/spikes;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/spikes'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/spikes'
+cd ../../../binaries/linux_x/float/app/spikes;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/spikes'
+rm -f *.o
+rm -f spikes
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/spikes/spikes.cc -o spikes.o
+g++ -frtti -L../lib spikes.o -o spikes -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/spikes'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/spikes'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/spikes'
+cd ../../../binaries/linux_x/fixed/app/spikes;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/spikes'
+rm -f *.o
+rm -f spikes
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/spikes/spikes.cc -o spikes.o
+g++ -frtti spikes.o -o spikes -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/spikes'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/spikes'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/spikes'
+cd source/app/rotspikes;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/rotspikes'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/rotspikes'
+cd ../../../binaries/linux_x/float/app/rotspikes;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/rotspikes'
+rm -f *.o
+rm -f rotspikes
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/rotspikes/rotspikes.cc -o rotspikes.o
+g++ -frtti -L../lib rotspikes.o -o rotspikes -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/rotspikes'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/rotspikes'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/rotspikes'
+cd ../../../binaries/linux_x/fixed/app/rotspikes;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/rotspikes'
+rm -f *.o
+rm -f rotspikes
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/rotspikes/rotspikes.cc -o rotspikes.o
+g++ -frtti rotspikes.o -o rotspikes -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/rotspikes'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/rotspikes'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/rotspikes'
+cd source/app/matmul;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/matmul'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/matmul'
+cd ../../../binaries/linux_x/float/app/matmul;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/matmul'
+rm -f *.o
+rm -f matmul 
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/matmul/matmul.cc -o matmul.o
+g++ -frtti -L../lib matmul.o -o matmul -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/matmul'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/matmul'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/matmul'
+cd ../../../binaries/linux_x/fixed/app/matmul;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/matmul'
+rm -f *.o
+rm -f matmul
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/matmul/matmul.cc -o matmul.o
+g++ -frtti matmul.o -o matmul -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/matmul'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/matmul'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/matmul'
+cd source/app/camspikes;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/camspikes'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/camspikes'
+cd ../../../binaries/linux_x/float/app/camspikes;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/camspikes'
+rm -f *.o
+rm -f camspikes
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/camspikes/camspikes.cc -o camspikes.o
+g++ -frtti -L../lib camspikes.o -o camspikes -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/camspikes'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/camspikes'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/camspikes'
+cd ../../../binaries/linux_x/fixed/app/camspikes;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/camspikes'
+rm -f *.o
+rm -f camspikes
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/camspikes/camspikes.cc -o camspikes.o
+../../../../../source/app/camspikes/camspikes.cc: In method `my_pipeline::my_pipeline()':
+../../../../../source/app/camspikes/camspikes.cc:237: warning: assignment to `l3d_real' from `double'
+../../../../../source/app/camspikes/camspikes.cc:238: warning: assignment to `l3d_real' from `double'
+g++ -frtti camspikes.o -o camspikes -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/camspikes'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/camspikes'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/camspikes'
+cd source/app/clipz;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/clipz'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/clipz'
+cd ../../../binaries/linux_x/float/app/clipz;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/clipz'
+rm -f *.o
+rm -f clipz
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/clipz/clipz.cc -o clipz.o
+g++ -frtti -L../lib clipz.o -o clipz -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/clipz'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/clipz'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/clipz'
+cd ../../../binaries/linux_x/fixed/app/clipz;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/clipz'
+rm -f *.o
+rm -f clipz
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/clipz/clipz.cc -o clipz.o
+../../../../../source/app/clipz/clipz.cc: In method `my_pipeline::my_pipeline()':
+../../../../../source/app/clipz/clipz.cc:319: warning: assignment to `l3d_real' from `double'
+../../../../../source/app/clipz/clipz.cc:320: warning: assignment to `l3d_real' from `double'
+g++ -frtti clipz.o -o clipz -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/clipz'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/clipz'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/clipz'
+cd source/app/morph3d;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/morph3d'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/morph3d'
+cd ../../../binaries/linux_x/float/app/morph3d;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/morph3d'
+rm -f *.o
+rm -f morph3d
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/morph3d/shapes.cc -o shapes.o
+../../../../../source/app/morph3d/shapes.cc: In method `int pyramid::update()':
+../../../../../source/app/morph3d/shapes.cc:153: warning: control reaches end of non-void function `pyramid::update()'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/morph3d/main.cc -o main.o
+g++ -frtti shapes.o main.o -o morph3d -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/morph3d'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/morph3d'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/morph3d'
+cd ../../../binaries/linux_x/fixed/app/morph3d;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/morph3d'
+rm -f *.o
+rm -f morph3d
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/morph3d/shapes.cc -o shapes.o
+../../../../../source/app/morph3d/shapes.cc: In method `int pyramid::update()':
+../../../../../source/app/morph3d/shapes.cc:153: warning: control reaches end of non-void function `pyramid::update()'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/morph3d/main.cc -o main.o
+g++ -frtti shapes.o main.o -o morph3d -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/morph3d'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/morph3d'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/morph3d'
+cd source/app/vidflat;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vidflat'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vidflat'
+cd ../../../binaries/linux_x/float/app/vidflat;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/vidflat'
+rm -f *.o
+rm -f vidflat
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/vidflat/main.cc -o main.o
+g++ -frtti main.o -o vidflat -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/vidflat'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vidflat'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vidflat'
+cd ../../../binaries/linux_x/fixed/app/vidflat;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/vidflat'
+rm -f *.o
+rm -f vidflat
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/vidflat/main.cc -o main.o
+g++ -frtti main.o -o vidflat -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/vidflat'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vidflat'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vidflat'
+cd source/app/vidscape;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vidscape'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vidscape'
+cd ../../../binaries/linux_x/float/app/vidscape;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/vidscape'
+rm -f *.o
+rm -f vidscape
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/vidscape/main.cc -o main.o
+g++ -frtti main.o -o vidscape -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/vidscape'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vidscape'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vidscape'
+cd ../../../binaries/linux_x/fixed/app/vidscape;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/vidscape'
+rm -f *.o
+rm -f vidscape
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/vidscape/main.cc -o main.o
+g++ -frtti main.o -o vidscape -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/vidscape'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vidscape'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vidscape'
+cd source/app/vids3d;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vids3d'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vids3d'
+cd ../../../binaries/linux_x/float/app/vids3d;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/vids3d'
+rm -f *.o
+rm -f vids3d
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/vids3d/shapes.cc -o shapes.o
+../../../../../source/app/vids3d/shapes.cc: In method `int pyramid::update()':
+../../../../../source/app/vids3d/shapes.cc:75: warning: control reaches end of non-void function `pyramid::update()'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/vids3d/main.cc -o main.o
+g++ -frtti shapes.o main.o -o vids3d -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/vids3d'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vids3d'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vids3d'
+cd ../../../binaries/linux_x/fixed/app/vids3d;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/vids3d'
+rm -f *.o
+rm -f vids3d
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/vids3d/shapes.cc -o shapes.o
+../../../../../source/app/vids3d/shapes.cc: In method `int pyramid::update()':
+../../../../../source/app/vids3d/shapes.cc:75: warning: control reaches end of non-void function `pyramid::update()'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/vids3d/main.cc -o main.o
+g++ -frtti shapes.o main.o -o vids3d -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/vids3d'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vids3d'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/vids3d'
+cd source/app/ika;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/ika'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/ika'
+cd ../../../binaries/linux_x/float/app/ika;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/ika'
+rm -f *.o
+rm -f ika
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/ika/shapes.cc -o shapes.o
+../../../../../source/app/ika/shapes.cc: In method `int pyramid::update()':
+../../../../../source/app/ika/shapes.cc:74: warning: control reaches end of non-void function `pyramid::update()'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/ika/main.cc -o main.o
+g++ -frtti shapes.o main.o -o ika -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/ika'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/ika'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/ika'
+cd ../../../binaries/linux_x/fixed/app/ika;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/ika'
+rm -f *.o
+rm -f ika
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/ika/shapes.cc -o shapes.o
+../../../../../source/app/ika/shapes.cc: In method `int pyramid::update()':
+../../../../../source/app/ika/shapes.cc:74: warning: control reaches end of non-void function `pyramid::update()'
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/ika/main.cc -o main.o
+g++ -frtti shapes.o main.o -o ika -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/ika'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/ika'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/ika'
+cd source/app/frustum;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/frustum'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/frustum'
+cd ../../../binaries/linux_x/float/app/frustum;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/frustum'
+rm -f *.o
+rm -f frustum
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/frustum/main.cc -o main.o
+g++ -frtti main.o -o frustum -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/frustum'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/frustum'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/frustum'
+cd ../../../binaries/linux_x/fixed/app/frustum;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/frustum'
+rm -f *.o
+rm -f frustum
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/frustum/main.cc -o main.o
+g++ -frtti main.o -o frustum -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/frustum'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/frustum'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/frustum'
+cd source/app/bsp;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/bsp'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/bsp'
+cd ../../../binaries/linux_x/float/app/bsp;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/bsp'
+rm -f *.o
+rm -f bsp
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/bsp/main.cc -o main.o
+g++ -frtti main.o -o bsp -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/bsp'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/bsp'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/bsp'
+cd ../../../binaries/linux_x/fixed/app/bsp;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/bsp'
+rm -f *.o
+rm -f bsp
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/bsp/main.cc -o main.o
+g++ -frtti main.o -o bsp -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/bsp'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/bsp'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/bsp'
+cd source/app/leafybsp;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/leafybsp'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/leafybsp'
+cd ../../../binaries/linux_x/float/app/leafybsp;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/leafybsp'
+rm -f *.o
+rm -f leafybsp
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/leafybsp/main.cc -o main.o
+g++ -frtti main.o -o leafybsp -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/leafybsp'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/leafybsp'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/leafybsp'
+cd ../../../binaries/linux_x/fixed/app/leafybsp;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/leafybsp'
+rm -f *.o
+rm -f leafybsp
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/leafybsp/main.cc -o main.o
+g++ -frtti main.o -o leafybsp -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(factorys.o): In function `l3d_factory_manager_v_0_1::choose_factories(void)':
+factorys.o(.text+0x38): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/leafybsp'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/leafybsp'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/leafybsp'
+cd source/app/collide;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/collide'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/collide'
+cd ../../../binaries/linux_x/float/app/collide;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/collide'
+rm -f *.o
+rm -f collide
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/collide/main.cc -o main.o
+g++ -frtti main.o -o collide -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(fact0_3.o): In function `l3d_factory_manager_v_0_3::choose_factories(void)':
+fact0_3.o(.text+0x57): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/collide'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/collide'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/collide'
+cd ../../../binaries/linux_x/fixed/app/collide;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/collide'
+rm -f *.o
+rm -f collide
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/collide/main.cc -o main.o
+g++ -frtti main.o -o collide -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(fact0_3.o): In function `l3d_factory_manager_v_0_3::choose_factories(void)':
+fact0_3.o(.text+0x57): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/collide'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/collide'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/collide'
+(cd source/utils/blendat;rm -rf .deps src/.deps config.log config.status stamp-h.in stamp-h;sh configure;make clean; make)
+loading cache ./config.cache
+checking for a BSD compatible install... (cached) /usr/bin/ginstall -c
+checking whether build environment is sane... yes
+checking whether make sets ${MAKE}... (cached) yes
+checking for working aclocal... found
+checking for working autoconf... found
+checking for working automake... found
+checking for working autoheader... found
+checking for working makeinfo... found
+checking for gcc... (cached) gcc
+checking whether the C compiler (gcc  ) works... yes
+checking whether the C compiler (gcc  ) is a cross-compiler... no
+checking whether we are using GNU C... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for POSIXized ISC... no
+checking for gcc... (cached) gcc
+checking whether the C compiler (gcc -g -O2 ) works... yes
+checking whether the C compiler (gcc -g -O2 ) is a cross-compiler... no
+checking whether we are using GNU C... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ANSI C... (cached) none needed
+checking how to run the C preprocessor... (cached) gcc -E
+checking for ANSI C header files... (cached) yes
+checking how to run the C preprocessor... gcc -E
+checking for c++... (cached) c++
+checking whether the C++ compiler (c++  ) works... yes
+checking whether the C++ compiler (c++  ) is a cross-compiler... no
+checking whether we are using GNU C++... (cached) yes
+checking whether c++ accepts -g... (cached) yes
+checking how to run the C++ preprocessor... (cached) c++ -E
+checking host system type... i686-pc-linux-gnu
+checking build system type... i686-pc-linux-gnu
+checking for ranlib... (cached) ranlib
+checking for ld used by GCC... (cached) /usr/i486-linux/bin/ld
+checking if the linker (/usr/i486-linux/bin/ld) is GNU ld... (cached) yes
+checking for BSD-compatible nm... (cached) /usr/bin/nm -B
+checking whether ln -s works... (cached) yes
+loading cache ./config.cache within ltconfig
+checking for object suffix... o
+checking for executable suffix... (cached) no
+checking for gcc option to produce PIC... -fPIC
+checking if gcc PIC flag -fPIC works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.lo... yes
+checking if gcc supports -fno-rtti -fno-exceptions ... yes
+checking if gcc static flag -static works... -static
+checking if the linker (/usr/i486-linux/bin/ld) is GNU ld... yes
+checking whether the linker (/usr/i486-linux/bin/ld) supports shared libraries... yes
+checking command to parse /usr/bin/nm -B output... ok
+checking how to hardcode library paths into programs... immediate
+checking for /usr/i486-linux/bin/ld option to reload object files... -r
+checking dynamic linker characteristics... Linux ld.so
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for objdir... .libs
+creating libtool
+loading cache ./config.cache
+checking for gtkmm-config... (cached) /usr/local/bin/gtkmm-config
+checking for GTK-- - version >= 1.2.1... yes
+creating ./config.status
+creating Makefile
+creating src/Makefile
+creating config.h
+config.h is unchanged
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/utils/blendat'
+Making clean in .
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/utils/blendat'
+make[2]: Nothing to be done for `clean-am'.
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/utils/blendat'
+Making clean in src
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/utils/blendat/src'
+test -z "blend_at" || rm -f blend_at
+rm -rf .libs _libs
+rm -f *.o core *.core
+rm -f *.lo
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/utils/blendat/src'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/utils/blendat'
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/utils/blendat'
+cd . && autoheader
+make  all-recursive
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/utils/blendat'
+Making all in src
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/utils/blendat/src'
+c++ -DHAVE_CONFIG_H -I. -I. -I..     -I/usr/local/lib/gtkmm/include -I/usr/local/include -I/usr/local/lib/glib/include -I/usr/X11R6/include -I/usr/local/lib/sigc++/include -c blend_at.cc
+c++ -DHAVE_CONFIG_H -I. -I. -I..     -I/usr/local/lib/gtkmm/include -I/usr/local/include -I/usr/local/lib/glib/include -I/usr/X11R6/include -I/usr/local/lib/sigc++/include -c win_main_glade.cc
+c++ -DHAVE_CONFIG_H -I. -I. -I..     -I/usr/local/lib/gtkmm/include -I/usr/local/include -I/usr/local/lib/glib/include -I/usr/X11R6/include -I/usr/local/lib/sigc++/include -c win_main.cc
+c++ -DHAVE_CONFIG_H -I. -I. -I..     -I/usr/local/lib/gtkmm/include -I/usr/local/include -I/usr/local/lib/glib/include -I/usr/X11R6/include -I/usr/local/lib/sigc++/include -c dlg_preferences_glade.cc
+c++ -DHAVE_CONFIG_H -I. -I. -I..     -I/usr/local/lib/gtkmm/include -I/usr/local/include -I/usr/local/lib/glib/include -I/usr/X11R6/include -I/usr/local/lib/sigc++/include -c dlg_preferences.cc
+c++ -DHAVE_CONFIG_H -I. -I. -I..     -I/usr/local/lib/gtkmm/include -I/usr/local/include -I/usr/local/lib/glib/include -I/usr/X11R6/include -I/usr/local/lib/sigc++/include -c glademm_support.cc
+c++ -DHAVE_CONFIG_H -I. -I. -I..     -I/usr/local/lib/gtkmm/include -I/usr/local/include -I/usr/local/lib/glib/include -I/usr/X11R6/include -I/usr/local/lib/sigc++/include -c nl_blender_config.cc
+c++ -DHAVE_CONFIG_H -I. -I. -I..     -I/usr/local/lib/gtkmm/include -I/usr/local/include -I/usr/local/lib/glib/include -I/usr/X11R6/include -I/usr/local/lib/sigc++/include -c nl_blender_xcontroller.cc
+/bin/sh ../libtool --mode=link c++  -I/usr/local/lib/gtkmm/include -I/usr/local/include -I/usr/local/lib/glib/include -I/usr/X11R6/include -I/usr/local/lib/sigc++/include  -o blend_at  blend_at.o win_main_glade.o win_main.o dlg_preferences_glade.o dlg_preferences.o glademm_support.o nl_blender_config.o nl_blender_xcontroller.o -rdynamic -L/usr/local/lib -L/usr/X11R6/lib -lgtkmm -lgdkmm -lgtk -lgdk -lgmodule -lglib -ldl -lXext -lX11 -lm -lsigc -lpthread 
+mkdir .libs
+c++ -I/usr/local/lib/gtkmm/include -I/usr/local/include -I/usr/local/lib/glib/include -I/usr/X11R6/include -I/usr/local/lib/sigc++/include -o blend_at blend_at.o win_main_glade.o win_main.o dlg_preferences_glade.o dlg_preferences.o glademm_support.o nl_blender_config.o nl_blender_xcontroller.o -rdynamic -L/usr/local/lib -L/usr/X11R6/lib -lgtkmm -lgdkmm -lgtk -lgdk -lgmodule -lglib -ldl -lXext -lX11 -lm -lsigc -lpthread
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/utils/blendat/src'
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/utils/blendat'
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/utils/blendat'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/utils/blendat'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/utils/blendat'
+cd source/utils/vidinfo;make
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/utils/vidinfo'
+g++    -c vidinfo.cc -o vidinfo.o
+gcc vidinfo.o -lm -lstdc++ -o vidinfo
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/utils/vidinfo'
+cd source/app/particle;make -f makeall.lnx
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/particle'
+make -f makeflot.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/particle'
+cd ../../../binaries/linux_x/float/app/particle;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/particle'
+rm -f *.o
+rm -f particle
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/particle/particle.cc -o particle.o
+g++ -frtti -L../lib particle.o -o particle -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(fact0_3.o): In function `l3d_factory_manager_v_0_3::choose_factories(void)':
+fact0_3.o(.text+0x57): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/float/app/particle'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/particle'
+make -f makefix.lnx
+make[2]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/particle'
+cd ../../../binaries/linux_x/fixed/app/particle;make
+make[3]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/particle'
+rm -f *.o
+rm -f particle
+g++  -frtti -m486 -Wall -Wno-unused -pipe -I/usr/include/GL -DFX -DXMESA -DLINUX_GCC_X -DFIXED_POINT_MATH -I../../../../../source/app/lib -O3 -DNDEBUG  -c ../../../../../source/app/particle/particle.cc -o particle.o
+g++ -frtti particle.o -o particle -L../lib -l3d -ldl -lm  -L/usr/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lXt -lXi -lXmu -lXext -lX11 -pg
+../lib/lib3d.a(fact0_3.o): In function `l3d_factory_manager_v_0_3::choose_factories(void)':
+fact0_3.o(.text+0x57): the `gets' function is dangerous and should not be used.
+make[3]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/binaries/linux_x/fixed/app/particle'
+make[2]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/particle'
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/particle'
+cd source/app/audio;make
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/audio'
+g++    -c sound.cc -o sound.o
+cc sound.o -o sound
+g++    -c square.cc -o square.o
+cc square.o -o square
+g++    -c playtest.cc -o playtest.o
+cc playtest.o -o playtest
+playtest.o: In function `main':
+playtest.o(.text+0x88): the `gets' function is dangerous and should not be used.
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/audio'
+cd source/app/network;make
+make[1]: Entering directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/network'
+g++    -c client.cc -o client.o
+cc client.o -o client
+client.o: In function `main':
+client.o(.text+0xfe): the `gets' function is dangerous and should not be used.
+g++    -c server.cc -o server.o
+cc server.o -o server
+make[1]: Leaving directory `/home/aegis/aegis_data/lib3d/delta21921.055/source/app/network'
+aegis: project "lib3d": change 50: integration build complete 22:43
+aegis: ci -f -u -d -M -m50 -t/dev/null /home/aegis/aegis_data/lib3d/delta21921.
+	055/makecyg.bat /home/aegis/aegis_data/lib3d/history/makecyg.bat,v; rcs
+	-U /home/aegis/aegis_data/lib3d/history/makecyg.bat,v
+/home/aegis/aegis_data/lib3d/history/makecyg.bat,v  <--  /home/aegis/aegis_data/lib3d/delta21921.055/makecyg.bat
+initial revision: 1.1
+done
+RCS file: /home/aegis/aegis_data/lib3d/history/makecyg.bat,v
+done
+aegis: ( rlog -r /home/aegis/aegis_data/lib3d/history/makecyg.bat,v | awk
+	'/^head:/ {print $2}' ) > /tmp/aegis-24748-1
+aegis: ci -f -u -d -M -m50 -t/dev/null /home/aegis/aegis_data/lib3d/delta21921.
+	055/text/texturemap.txt /home/aegis/aegis_data/lib3d/history/text/
+	texturemap.txt,v; rcs -U /home/aegis/aegis_data/lib3d/history/text/
+	texturemap.txt,v
+/home/aegis/aegis_data/lib3d/history/text/texturemap.txt,v  <--  /home/aegis/aegis_data/lib3d/delta21921.055/text/texturemap.txt
+initial revision: 1.1
+done
+RCS file: /home/aegis/aegis_data/lib3d/history/text/texturemap.txt,v
+done
+aegis: ( rlog -r /home/aegis/aegis_data/lib3d/history/text/texturemap.txt,v |
+	awk '/^head:/ {print $2}' ) > /tmp/aegis-24748-2
+aegis: ci -f -u -d -M -m50 -t/dev/null /home/aegis/aegis_data/lib3d/delta21921.
+	055/vol1/make_vol1.sh /home/aegis/aegis_data/lib3d/history/vol1/make_
+	vol1.sh,v; rcs -U /home/aegis/aegis_data/lib3d/history/vol1/make_vol1.
+	sh,v
+/home/aegis/aegis_data/lib3d/history/vol1/make_vol1.sh,v  <--  /home/aegis/aegis_data/lib3d/delta21921.055/vol1/make_vol1.sh
+initial revision: 1.1
+done
+RCS file: /home/aegis/aegis_data/lib3d/history/vol1/make_vol1.sh,v
+done
+aegis: ( rlog -r /home/aegis/aegis_data/lib3d/history/vol1/make_vol1.sh,v | awk
+	'/^head:/ {print $2}' ) > /tmp/aegis-24748-3
+aegis: ci -f -u -d -M -m50 -t/dev/null /home/aegis/aegis_data/lib3d/delta21921.
+	055/vol1/makeall.lnx /home/aegis/aegis_data/lib3d/history/vol1/makeall.
+	lnx,v; rcs -U /home/aegis/aegis_data/lib3d/history/vol1/makeall.lnx,v
+/home/aegis/aegis_data/lib3d/history/vol1/makeall.lnx,v  <--  /home/aegis/aegis_data/lib3d/delta21921.055/vol1/makeall.lnx
+initial revision: 1.1
+done
+RCS file: /home/aegis/aegis_data/lib3d/history/vol1/makeall.lnx,v
+done
+aegis: ( rlog -r /home/aegis/aegis_data/lib3d/history/vol1/makeall.lnx,v | awk
+	'/^head:/ {print $2}' ) > /tmp/aegis-24748-4
+aegis: ci -f -u -d -M -m50 -t/dev/null /home/aegis/aegis_data/lib3d/delta21921.
+	055/vol1/makecyg.bat /home/aegis/aegis_data/lib3d/history/vol1/makecyg.
+	bat,v; rcs -U /home/aegis/aegis_data/lib3d/history/vol1/makecyg.bat,v
+/home/aegis/aegis_data/lib3d/history/vol1/makecyg.bat,v  <--  /home/aegis/aegis_data/lib3d/delta21921.055/vol1/makecyg.bat
+initial revision: 1.1
+done
+RCS file: /home/aegis/aegis_data/lib3d/history/vol1/makecyg.bat,v
+done
+aegis: ( rlog -r /home/aegis/aegis_data/lib3d/history/vol1/makecyg.bat,v | awk
+	'/^head:/ {print $2}' ) > /tmp/aegis-24748-5
+aegis: warning: file modification times extend 293 seconds into the future

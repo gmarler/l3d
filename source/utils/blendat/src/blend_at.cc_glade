@@ -1,0 +1,25 @@
+// generated 2000/8/4 17:28:52 CEST by nlingfx@geri.
+// using glademm V0.5.9
+//
+// newer (non customized) versions of this file go to blend_at.cc_glade
+
+// This file is for your program, I won't touch it again!
+
+#include <gtk--/main.h>
+
+#include "win_main.hh"
+#include "dlg_preferences.hh"
+
+int main(int argc, char **argv)
+{   
+   
+   Gtk::Main m(&argc, &argv);
+
+Win_main *win_main = new Win_main();
+
+Dlg_preferences *dlg_preferences = new Dlg_preferences();
+   m.run();
+delete win_main;
+delete dlg_preferences;
+   return 0;
+}

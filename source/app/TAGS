@@ -1,0 +1,2578 @@
+
+./fltsim/main.cc,115
+class my_world:public l3d_world {my_world26,601
+my_world::my_world(void) my_world33,785
+main() {main111,3426
+
+./fltsim/shapes.cc,124
+pyramid::pyramid(void) :pyramid7,87
+pyramid::~pyramid(void) {~pyramid80,3195
+int pyramid::update(void) {update84,3303
+
+./fltsim/shapes.h,74
+class pyramid:public l3d_object {pyramid4,46
+   int xtheta;xtheta5,81
+
+./lib/geom/object/sector.h,178
+#define __SECTOR_H__SECTOR_H2,19
+class l3d_sector :l3d_sector9,131
+  l3d_sector(int num_fixed_vertices) :l3d_sector14,219
+  l3d_list<l3d_object *> *objects;objects23,491
+
+./lib/geom/object/sector.cc,284
+l3d_sector & l3d_sector::operator= (const l3d_sector &r) {operator =3,21
+l3d_sector::~l3d_sector(void) {~l3d_sector70,2239
+void l3d_sector::render(l3d_polygon_2d *clipwin,render78,2366
+#define BACKFACE_EPS BACKFACE_EPS350,10879
+int l3d_sector::update(void) {update526,15958
+
+./lib/geom/object/object3d.cc,430
+l3d_object::l3d_object(int num_fixed_vertices) {l3d_object10,220
+l3d_object & l3d_object::operator= (const l3d_object &r) {operator =70,3657
+void l3d_object::init_nonculled_list(void) {init_nonculled_list161,6709
+l3d_object::~l3d_object() {~l3d_object196,7743
+int l3d_object::update(void) {update215,8131
+void l3d_object::transform(const l3d_matrix &m) {transform223,8232
+void l3d_object::reset(void) {reset243,8672
+
+./lib/geom/object/object3d.h,1594
+#define __OBJECT3D_H__OBJECT3D_H2,21
+#define MAX_XFORMS MAX_XFORMS17,439
+class l3d_object :l3d_object19,461
+   char name[80];name27,588
+   l3d_object *parent; // if this object is contained in anotherparent31,688
+   l3d_matrix modeling_xform;                 // composite modelint xformmodeling_xform37,864
+   l3d_matrix modeling_xforms[MAX_XFORMS];    // all modeling xform matricesmodeling_xforms38,938
+   int num_xforms;num_xforms39,1015
+   l3d_two_part_list<l3d_coordinate> *vertices;vertices41,1035
+   l3d_list<l3d_polygon_3d *> polygons;polygons43,1084
+   l3d_list<l3d_polygon_3d_node> polygon_node_pool;polygon_node_pool44,1124
+   l3d_polygon_3d_node *nonculled_polygon_nodes; // points to 1st object undernonculled_polygon_nodes45,1176
+   int transform_stage;transform_stage50,1333
+   void after_camera_transform(void)after_camera_transform54,1435
+   void camera_transform(l3d_matrix const &m) {camera_transform115,3956
+   char plugin_name[1024];plugin_name130,4396
+   l3d_plugin_loader *plugin_loader;plugin_loader131,4423
+   void (*plugin_constructor)(l3d_object *target, void *data);plugin_constructor133,4484
+   void (*plugin_update)(l3d_object *target);plugin_update134,4547
+   void (*plugin_destructor)(l3d_object *target);plugin_destructor135,4593
+   void (*plugin_copy_data)(l3d_object *target, l3d_object *copy_target);plugin_copy_data136,4643
+   void *plugin_data;plugin_data137,4717
+inline void l3d_object::apply_perspective_projection(const l3d_camera &aCamera,apply_perspective_projection143,4840
+#define COORD COORD160,5416
+
+./lib/geom/object/oclip.cc,269
+l3d_object_clippable::~l3d_object_clippable() {}~l3d_object_clippable5,59
+int l3d_object_clippable::clip_to_plane(const l3d_plane& clip_plane)clip_to_plane7,109
+void l3d_object_clippable::make_current_geometry_permanent(void)make_current_geometry_permanent38,958
+
+./lib/geom/object/oclip.h,167
+#define __OCLIP_H__OCLIP_H2,18
+class l3d_object_clippable :l3d_object_clippable7,92
+   l3d_object_clippable(int num_fixed_vertices) : l3d_object_clippable14,188
+
+./lib/geom/object/obound.cc,251
+l3d_object_clippable_boundable::l3d_object_clippable_boundablel3d_object_clippable_boundable4,55
+void l3d_object_clippable_boundable::transform(const l3d_matrix &m) {transform11,230
+void l3d_object_clippable_boundable::reset(void) {reset28,1154
+
+./lib/geom/object/obound.h,172
+#define __OBOUND_H__OBOUND_H2,19
+class l3d_object_clippable_boundable:l3d_object_clippable_boundable8,124
+  l3d_bounding_sphere bounding_sphere;bounding_sphere14,268
+
+./lib/geom/polygon/p_gour.h,106
+#define __P_GOUR_H__P_GOUR_H2,19
+class l3_polygon_gouraud : public l3_polygon {l3_polygon_gouraud6,61
+
+./lib/geom/polygon/p_gtex.h,132
+#define __P_GTEX_H__P_GTEX_H2,19
+class l3_polygon_gouraud_textured : public l3_polygon_textured,l3_polygon_gouraud_textured7,79
+
+./lib/geom/polygon/p_tex.cc,345
+l3d_polygon_ivertex * l3d_polygon_3d_textured::create_ivertices(int count) {create_ivertices3,20
+size_t l3d_polygon_3d_textured::sizeof_ivertex(void) {sizeof_ivertex7,150
+void l3d_polygon_3d_textured::init_transformed(void) {init_transformed11,255
+void l3d_polygon_3d_textured::transform(const l3d_matrix &m, int count) {transform19,496
+
+./lib/geom/polygon/p_tex.h,532
+#define __P_TEX_H__P_TEX_H2,18
+class l3d_polygon_ivertex_textured : public l3d_polygon_ivertex {l3d_polygon_ivertex_textured8,121
+  l3d_vector tex_coord;tex_coord10,196
+  virtual ~l3d_polygon_ivertex_textured(void) {printf("iv_tex dest\n");}~l3d_polygon_ivertex_textured11,220
+class l3d_polygon_3d_textured : public l3d_polygon_3d {l3d_polygon_3d_textured14,297
+  l3d_polygon_3d_textured(int num_pts) :l3d_polygon_3d_textured16,362
+  l3d_texture *texture;texture23,607
+  void draw(l3d_rasterizer_3d *r ) {draw27,713
+
+./lib/geom/polygon/p3_cflat.cc,193
+l3d_polygon_2d* l3d_polygon_3d_flatshaded_clippable::clone(void) {clone3,23
+l3d_polygon_3d_flatshaded_clippable::l3d_polygon_3d_flatshaded_clippablel3d_polygon_3d_flatshaded_clippable7,150
+
+./lib/geom/polygon/p3_cflat.h,222
+#define __P3_CFLAT_H__P3_CFLAT_H2,21
+class l3d_polygon_3d_flatshaded_clippable :l3d_polygon_3d_flatshaded_clippable7,86
+  l3d_polygon_3d_flatshaded_clippable(int num_faces) :l3d_polygon_3d_flatshaded_clippable12,227
+
+./lib/geom/polygon/p_flat.cc,153
+l3d_polygon_2d* l3d_polygon_2d_flatshaded::clone(void) {clone4,52
+l3d_polygon_2d_flatshaded::l3d_polygon_2d_flatshadedl3d_polygon_2d_flatshaded8,159
+
+./lib/geom/polygon/p_flat.h,382
+#define __P_FLAT_H__P_FLAT_H2,19
+class l3d_polygon_2d_flatshaded :l3d_polygon_2d_flatshaded6,61
+  unsigned long final_color;final_color10,136
+  l3d_polygon_2d_flatshaded(void) {}; // to get an empty polygon for derivedl3d_polygon_2d_flatshaded12,166
+  l3d_polygon_2d_flatshaded(int num_pts) :l3d_polygon_2d_flatshaded15,257
+  void draw(l3d_rasterizer_2d *r) {draw18,366
+
+./lib/geom/polygon/p3_clip.cc,422
+int l3d_polygon_3d_clippable::clip_to_plane(l3d_plane& clip_plane) {clip_to_plane3,22
+void l3d_polygon_3d_clippable::init_transformed(void) {init_transformed222,9733
+void l3d_polygon_3d_clippable::transform(const l3d_matrix &m, int count) {transform229,9942
+l3d_polygon_2d* l3d_polygon_3d_clippable::clone(void) {clone331,14092
+l3d_polygon_3d_clippable::l3d_polygon_3d_clippablel3d_polygon_3d_clippable335,14197
+
+./lib/geom/polygon/p3_clip.h,484
+#define __P3_CLIP_H__P3_CLIP_H2,20
+#define __ACTIVE__P3_CLIP_H__ACTIVE__P3_CLIP_H4,41
+class l3d_polygon_3d_clippable : l3d_polygon_3d_clippable10,154
+  l3d_polygon_3d_clippable(void) : l3d_polygon_3d() {};l3d_polygon_3d_clippable14,229
+  l3d_polygon_3d_clippable(int num_pts) :l3d_polygon_3d_clippable19,470
+  virtual ~l3d_polygon_3d_clippable(void) {};~l3d_polygon_3d_clippable26,686
+  l3d_plane plane;plane28,733
+#undef __ACTIVE__P3_CLIP_H__ACTIVE__P3_CLIP_H38,1034
+
+./lib/geom/polygon/p3_cltex.cc,445
+#define EPSILON_VECTOR EPSILON_VECTOR5,58
+l3d_polygon_3d_textured_lightmapped_collidablel3d_polygon_3d_textured_lightmapped_collidable8,137
+~l3d_polygon_3d_textured_lightmapped_collidable(void)~l3d_polygon_3d_textured_lightmapped_collidable20,472
+l3d_polygon_2d* l3d_polygon_3d_textured_lightmapped_collidable::clone(void) {clone24,531
+l3d_polygon_3d_textured_lightmapped_collidablel3d_polygon_3d_textured_lightmapped_collidable29,729
+
+./lib/geom/polygon/p3_cltex.h,146
+#define __P3_CLTEX_H__P3_CLTEX_H2,21
+class l3d_polygon_3d_textured_lightmapped_collidable :l3d_polygon_3d_textured_lightmapped_collidable7,86
+
+./lib/geom/polygon/p3_coll.cc,251
+int l3d_polygon_3d_collidable::contains_point(const l3d_point& point) {contains_point3,22
+l3d_polygon_2d* l3d_polygon_3d_collidable::clone(void) {clone99,3623
+l3d_polygon_3d_collidable::l3d_polygon_3d_collidablel3d_polygon_3d_collidable103,3730
+
+./lib/geom/polygon/p3_coll.h,388
+#define __P3_COLL_H__P3_COLL_H2,20
+#define __ACTIVE__P3_COLL_H__ACTIVE__P3_COLL_H4,41
+class l3d_polygon_3d_collidable : l3d_polygon_3d_collidable10,156
+  l3d_polygon_3d_collidable(void) : l3d_polygon_3d_clippable() {};l3d_polygon_3d_collidable15,273
+  l3d_polygon_3d_collidable(int num_pts) :l3d_polygon_3d_collidable20,525
+#undef __ACTIVE__P3_COLL_H__ACTIVE__P3_COLL_H34,928
+
+./lib/geom/polygon/p3_flat.cc,227
+void l3d_polygon_3d_flatshaded::draw(l3d_rasterizer_3d *r ) {draw4,53
+l3d_polygon_2d* l3d_polygon_3d_flatshaded::clone(void) {clone8,154
+l3d_polygon_3d_flatshaded::l3d_polygon_3d_flatshadedl3d_polygon_3d_flatshaded12,261
+
+./lib/geom/polygon/p3_flat.h,355
+#define __P3_FLAT_H__P3_FLAT_H5,60
+class l3d_polygon_3d_flatshaded :l3d_polygon_3d_flatshaded9,107
+  l3d_polygon_3d_flatshaded(int num_faces) :l3d_polygon_3d_flatshaded15,225
+  unsigned long color;// original color of polygon (either idx or rgb)color21,379
+  int light_intensity; // intensity of light striking the surface light_intensity22,450
+
+./lib/geom/polygon/p3_ltex.cc,710
+#define EPSILON_VECTOR EPSILON_VECTOR5,57
+l3d_polygon_3d_textured_lightmapped::l3d_polygon_3d_textured_lightmappedl3d_polygon_3d_textured_lightmapped7,87
+void l3d_polygon_3d_textured_lightmapped::compute_surface_orientation_and_sizecompute_surface_orientation_and_size74,4629
+#define VTX(VTX113,5822
+void l3d_polygon_3d_textured_lightmapped::init_transformed(void) {init_transformed430,17966
+void l3d_polygon_3d_textured_lightmapped::transform(const l3d_matrix &m, int count) {transform440,18296
+l3d_polygon_2d* l3d_polygon_3d_textured_lightmapped::clone(void) {clone449,18665
+l3d_polygon_3d_textured_lightmapped::l3d_polygon_3d_textured_lightmappedl3d_polygon_3d_textured_lightmapped453,18792
+
+./lib/geom/polygon/p3_ltex.h,740
+#define __P3_LTEX_H__P3_LTEX_H2,20
+class l3d_polygon_3d_textured_lightmapped :l3d_polygon_3d_textured_lightmapped7,93
+  l3d_surface_cache *scache;scache12,268
+  mutable l3d_texture *surface;surface14,306
+  l3d_surface_cache *get_scache(void) const { return scache; }get_scache21,681
+  l3d_texture_space surface_orientation;surface_orientation23,745
+  int surface_xsize, surface_ysize;// total surface size, rounded-up-to pow2surface_xsize24,786
+  int surface_xsize, surface_ysize;// total surface size, rounded-up-to pow2surface_ysize24,786
+  ~l3d_polygon_3d_textured_lightmapped(void) {~l3d_polygon_3d_textured_lightmapped28,944
+  l3d_texture *lightmap;lightmap41,1486
+  void draw(l3d_rasterizer_3d *r ) {draw49,1709
+
+./lib/geom/polygon/p3_tex.cc,2135
+l3d_polygon_ivertex_textured_items_factory::clone(void) {clone4,57
+void l3d_polygon_3d_textured::init_transformed(void) {init_transformed8,175
+void l3d_polygon_3d_textured::transform(const l3d_matrix &m, int count) {transform21,458
+l3d_polygon_3d_textured::l3d_polygon_3d_textured(int num_pts) :l3d_polygon_3d_textured36,978
+l3d_polygon_2d* l3d_polygon_3d_textured::clone(void) {clone45,1264
+l3d_polygon_3d_textured::l3d_polygon_3d_texturedl3d_polygon_3d_textured49,1367
+void l3d_polygon_3d_textured::clip_segment_to_edge_2dclip_segment_to_edge_2d98,3656
+#undef FX_PRECISFX_PRECIS108,3938
+#undef FX_PRECIS_QUOTFX_PRECIS_QUOT109,3955
+#undef FX_SIGN_MASKFX_SIGN_MASK110,3977
+#undef FX_ALLBITS_MASKFX_ALLBITS_MASK111,3997
+#undef FX_PRECIS_MASKFX_PRECIS_MASK112,4020
+#undef FX_PRECIS_MAXFX_PRECIS_MAX113,4042
+#undef l3d_fix_new_precl3d_fix_new_prec114,4063
+#undef l3d_fix_norm_precl3d_fix_norm_prec115,4087
+#define FX_PRECIS FX_PRECIS117,4113
+#define FX_PRECIS_QUOT FX_PRECIS_QUOT118,4133
+#define FX_SIGN_MASK FX_SIGN_MASK120,4159
+#define FX_ALLBITS_MASK FX_ALLBITS_MASK121,4195
+#define FX_PRECIS_MASK FX_PRECIS_MASK124,4301
+#define FX_PRECIS_MAX FX_PRECIS_MAX125,4336
+#define l3d_fix_new_prec(l3d_fix_new_prec127,4365
+#define l3d_fix_norm_prec(l3d_fix_norm_prec128,4432
+#define l3d_fix_new_prec(l3d_fix_new_prec132,4508
+#define l3d_fix_norm_prec(l3d_fix_norm_prec133,4540
+#define Z_ADD_FACTOR Z_ADD_FACTOR219,7177
+int l3d_polygon_3d_textured::clip_to_edge_2dclip_to_edge_2d326,11168
+void l3d_polygon_3d_textured::after_camera_transform(void) {after_camera_transform465,15975
+void l3d_polygon_3d_textured::clip_segment_to_near_zclip_segment_to_near_z491,16686
+int l3d_polygon_3d_textured::clip_near_z(l3d_real zclip) {clip_near_z566,19695
+#define FIRST_CROSS_FRONT_TO_BACK FIRST_CROSS_FRONT_TO_BACK611,21011
+#define FIRST_CROSS_BACK_TO_FRONT FIRST_CROSS_BACK_TO_FRONT612,21047
+void l3d_polygon_3d_textured::assign_tex_coords_from_tex_spaceassign_tex_coords_from_tex_space805,27664
+int l3d_polygon_3d_textured::clip_to_plane(l3d_plane& clip_plane) {clip_to_plane847,29033
+
+./lib/geom/polygon/p3_tex.h,918
+#define __P3_TEX_H__P3_TEX_H2,19
+#define __ACTIVE__P3_TEX_H__ACTIVE__P3_TEX_H4,39
+class l3d_polygon_ivertex_textured : public l3d_polygon_ivertex {l3d_polygon_ivertex_textured10,140
+  l3d_point tex_coord;tex_coord12,215
+  virtual ~l3d_polygon_ivertex_textured(void) {~l3d_polygon_ivertex_textured13,238
+  virtual l3d_polygon_ivertex& operator= (const l3d_polygon_ivertex &r) {operator =17,323
+class l3d_polygon_ivertex_textured_items_factory :l3d_polygon_ivertex_textured_items_factory43,1519
+  l3d_polygon_ivertex *create(void) {create46,1613
+class l3d_polygon_3d_textured :l3d_polygon_3d_textured54,1768
+  l3d_polygon_3d_textured(void) :l3d_polygon_3d_textured60,1919
+ mutable l3d_texture *texture;texture68,2044
+  void draw(l3d_rasterizer_3d *r ) {draw73,2234
+  virtual ~l3d_polygon_3d_textured(void) {};~l3d_polygon_3d_textured78,2373
+#undef __ACTIVE__P3_TEX_H__ACTIVE__P3_TEX_H98,3136
+
+./lib/geom/polygon/p_cport.cc,181
+l3d_polygon_2d* l3d_polygon_3d_portal_collidable::clone(void) {clone3,22
+l3d_polygon_3d_portal_collidable::l3d_polygon_3d_portal_collidablel3d_polygon_3d_portal_collidable7,143
+
+./lib/geom/polygon/p_cport.h,205
+#define __P_CPORT_H__P_CPORT_H2,20
+class l3d_polygon_3d_portal_collidable :l3d_polygon_3d_portal_collidable7,85
+  l3d_polygon_3d_portal_collidable(int num_pts):l3d_polygon_3d_portal_collidable12,220
+
+./lib/geom/polygon/p_portal.cc,169
+l3d_polygon_2d* l3d_polygon_3d_portal::clone(void) {clone3,23
+l3d_polygon_3d_portal::l3d_polygon_3d_portal(const l3d_polygon_3d_portal &r)l3d_polygon_3d_portal7,122
+
+./lib/geom/polygon/p_portal.h,282
+#define __P_PORTAL_H__P_PORTAL_H2,21
+class l3d_polygon_3d_portal :l3d_polygon_3d_portal6,80
+  l3d_polygon_3d_portal(int num_pts):l3d_polygon_3d_portal10,161
+  l3d_sector *connected_sector;connected_sector15,302
+  char connected_sector_name[80];connected_sector_name16,334
+
+./lib/geom/polygon/poly3.cc,885
+void l3d_polygon_3d::init_transformed(void) {init_transformed6,74
+void l3d_polygon_3d::compute_sfcnormal() {compute_sfcnormal31,687
+void l3d_polygon_3d::compute_center() {compute_center92,3086
+void l3d_polygon_3d::clip_segment_to_near_zclip_segment_to_near_z121,3929
+int l3d_polygon_3d::clip_near_z(l3d_real zclip) {clip_near_z170,5741
+#define FIRST_CROSS_FRONT_TO_BACK FIRST_CROSS_FRONT_TO_BACK176,5946
+#define FIRST_CROSS_BACK_TO_FRONT FIRST_CROSS_BACK_TO_FRONT177,5982
+void l3d_polygon_3d::transform(const l3d_matrix &m, int count) {transform332,11445
+void l3d_polygon_3d::set_transform_stage(int count) {set_transform_stage351,12034
+l3d_polygon_2d* l3d_polygon_3d::clone(void) {clone366,12415
+l3d_polygon_3d::l3d_polygon_3d(const l3d_polygon_3d &r) {l3d_polygon_3d370,12500
+void l3d_polygon_3d::after_camera_transform(void) {after_camera_transform395,13301
+
+./lib/geom/polygon/poly3.h,858
+#define __POLY3_H__POLY3_H2,18
+class l3d_polygon_3d :l3d_polygon_3d8,86
+  l3d_polygon_3d(void) : l3d_polygon_2d() {};l3d_polygon_3d12,150
+  l3d_polygon_3d(int num_pts) : l3d_polygon_2d(num_pts) {} ;l3d_polygon_3d17,381
+  virtual ~l3d_polygon_3d(void) {};~l3d_polygon_3d21,550
+  l3d_coordinate sfcnormal;  // normal vector to the facetsfcnormal23,587
+  l3d_coordinate center;  // center point of the facetcenter24,646
+  l3d_real zvisible; // average z value after viewing transformation (forzvisible27,754
+  void camera_transform(const l3d_matrix &m, int count) {camera_transform34,1173
+  virtual void draw(l3d_rasterizer_3d *r) {}draw42,1448
+struct l3d_polygon_3d_node {l3d_polygon_3d_node50,1781
+  l3d_polygon_3d *polygon;polygon51,1810
+  l3d_polygon_3d_node *prev,*next;prev52,1837
+  l3d_polygon_3d_node *prev,*next;next52,1837
+
+./lib/geom/polygon/polygon.cc,1653
+l3d_polygon_ivertex_items_factory::clone(void) {clone6,92
+l3d_polygon_2d::l3d_polygon_2d(int num_pts) {l3d_polygon_2d12,220
+void l3d_polygon_2d::init(int num_pts) {init19,404
+l3d_polygon_2d::~l3d_polygon_2d(void) {~l3d_polygon_2d29,740
+inline void l3d_polygon_2d::init_clip_ivertices(void) {init_clip_ivertices40,1210
+inline void l3d_polygon_2d::swap_temp_and_main_clip_lists(void) {swap_temp_and_main_clip_lists63,2137
+void l3d_polygon_2d::clip_segment_to_edge_2dclip_segment_to_edge_2d74,2484
+#undef FX_PRECISFX_PRECIS84,2757
+#undef FX_PRECIS_QUOTFX_PRECIS_QUOT85,2774
+#undef FX_SIGN_MASKFX_SIGN_MASK86,2796
+#undef FX_ALLBITS_MASKFX_ALLBITS_MASK87,2816
+#undef FX_PRECIS_MASKFX_PRECIS_MASK88,2839
+#undef FX_PRECIS_MAXFX_PRECIS_MAX89,2861
+#undef l3d_fix_new_precl3d_fix_new_prec90,2882
+#undef l3d_fix_norm_precl3d_fix_norm_prec91,2906
+#define FX_PRECIS FX_PRECIS93,2932
+#define FX_PRECIS_QUOT FX_PRECIS_QUOT94,2952
+#define FX_SIGN_MASK FX_SIGN_MASK96,2978
+#define FX_ALLBITS_MASK FX_ALLBITS_MASK97,3014
+#define FX_PRECIS_MASK FX_PRECIS_MASK100,3120
+#define FX_PRECIS_MAX FX_PRECIS_MAX101,3155
+#define l3d_fix_new_prec(l3d_fix_new_prec103,3184
+#define l3d_fix_norm_prec(l3d_fix_norm_prec104,3251
+#define l3d_fix_new_prec(l3d_fix_new_prec108,3327
+#define l3d_fix_norm_prec(l3d_fix_norm_prec109,3359
+int l3d_polygon_2d::clip_to_edge_2dclip_to_edge_2d192,5879
+int l3d_polygon_2d::clip_to_polygon_2d(const l3d_polygon_2d *pClipPoly)clip_to_polygon_2d311,9669
+l3d_polygon_2d::l3d_polygon_2d(const l3d_polygon_2d &r) {l3d_polygon_2d350,10688
+l3d_polygon_2d* l3d_polygon_2d::clone(void) {clone369,11335
+
+./lib/geom/polygon/polygon.h,1913
+#define __POLYGON_H__POLYGON_H2,20
+#define MAX_VERTICES MAX_VERTICES9,168
+#define MAX_CLIP_VERTICES MAX_CLIP_VERTICES10,193
+#define MAX_FACETS MAX_FACETS11,222
+#define MAX_XFORMS MAX_XFORMS12,245
+#define PTS_PER_FACET PTS_PER_FACET13,266
+#define TEX_WIDTH TEX_WIDTH14,291
+#define TEX_HEIGHT TEX_HEIGHT15,312
+#define DEFAULT_IVERTICES_PER_POLY DEFAULT_IVERTICES_PER_POLY17,335
+class l3d_polygon_ivertex {l3d_polygon_ivertex22,422
+  int ivertex;ivertex24,459
+  virtual l3d_polygon_ivertex& operator= (const l3d_polygon_ivertex &r) {operator =26,475
+  virtual ~l3d_polygon_ivertex(void) {~l3d_polygon_ivertex32,650
+class l3d_polygon_ivertex_items_factory :l3d_polygon_ivertex_items_factory43,1039
+class l3d_polygon_2d {l3d_polygon_2d52,1225
+  l3d_polygon_ivertex_items_factory *iv_items_factory;iv_items_factory56,1270
+  l3d_polygon_2d(void) { iv_items_factory = NULL; };l3d_polygon_2d57,1325
+  l3d_two_part_list<l3d_coordinate> **vlist;vlist78,2177
+    *ivertices,ivertices84,2348
+    *clip_ivertices,clip_ivertices85,2364
+    *temp_clip_ivertices;temp_clip_ivertices86,2385
+  virtual void draw(l3d_rasterizer_2d *r) {}draw107,3116
+inline int l3d_polygon_2d::next_clipidx_left(int idx, int count) const {next_clipidx_left111,3204
+inline int l3d_polygon_2d::next_clipidx_right(int idx, int count) const {next_clipidx_right117,3341
+inline int l3d_polygon_2d::side_of_point(const l3d_point *p,side_of_point123,3478
+#define FX_PRECIS FX_PRECIS131,3676
+#define FX_PRECIS_QUOT FX_PRECIS_QUOT132,3696
+#define FX_SIGN_MASK FX_SIGN_MASK134,3722
+#define FX_ALLBITS_MASK FX_ALLBITS_MASK135,3758
+#define FX_PRECIS_MASK FX_PRECIS_MASK138,3865
+#define FX_PRECIS_MAX FX_PRECIS_MAX139,3900
+#define FX_CONVERT FX_CONVERT141,3929
+#define FX_CONVERT_BACK FX_CONVERT_BACK142,3979
+#define FX_CONVERT FX_CONVERT146,4042
+#define FX_CONVERT_BACKFX_CONVERT_BACK147,4062
+
+./lib/geom/texture/texconv.h,94
+#define __TEXCONV_H__TEXCONV_H2,20
+class l3d_texture_converter {l3d_texture_converter4,41
+
+./lib/geom/texture/texload.cc,0
+
+./lib/geom/texture/texload.h,361
+#define __TEXLOAD_H__TEXLOAD_H2,20
+class l3d_texture_loader {l3d_texture_loader7,96
+  l3d_screen_info *si;si9,135
+  l3d_texture_loader(l3d_screen_info *si) {l3d_texture_loader11,167
+  virtual ~l3d_texture_loader(void) {};~l3d_texture_loader15,251
+  unsigned char *data;data20,467
+  int width, height;width21,490
+  int width, height;height21,490
+
+./lib/geom/texture/texture.cc,523
+int Ttexture::find_or_make_pal_idx(int r, int g, int b) {find_or_make_pal_idx7,82
+int Ttexture::process_tok(char *tok) {process_tok36,936
+void Ttexture::read_from_ppm(char *fname) {read_from_ppm186,4383
+Ttexture::Ttexture(void) {Ttexture226,5164
+Ttexture::Ttexture(int width, int height) {Ttexture229,5194
+Ttexture::~Ttexture(void) {~Ttexture232,5241
+int Ttexture::find_nearest_pal_entry(Tpalette *src_pal,find_nearest_pal_entry237,5354
+void Ttexture::map_to_palette(Tpalette *pPal) {map_to_palette260,5916
+
+./lib/geom/texture/tl_ppm.h,390
+#define __TL_PPM_H__TL_PPM_H2,19
+class l3d_texture_loader_ppm : public l3d_texture_loader {l3d_texture_loader_ppm6,61
+  unsigned char *cur_pdata;cur_pdata9,162
+  int state;state10,190
+  int cur_r, cur_g, cur_b;cur_r11,203
+  int cur_r, cur_g, cur_b;cur_g11,203
+  int cur_r, cur_g, cur_b;cur_b11,203
+  l3d_texture_loader_ppm(l3d_screen_info *si) :l3d_texture_loader_ppm14,242
+
+./lib/geom/texture/tl_ppm.cc,140
+int l3d_texture_loader_ppm::process_tok(char *tok) {process_tok8,115
+void l3d_texture_loader_ppm::load(const char *fname) {load150,2986
+
+./lib/geom/texture/texture.h,1660
+#define __TEXTURE_H__TEXTURE_H2,20
+class l3d_texture_data {l3d_texture_data8,110
+  int id;id10,144
+  l3d_texture_data(void) { id=0; data = NULL; }l3d_texture_data11,154
+  virtual ~l3d_texture_data(void) { if(data) delete [] data; }~l3d_texture_data12,202
+  int width, height; // must be powers of two!width13,265
+  int width, height; // must be powers of two!height13,265
+  unsigned char *data;data14,312
+class l3d_texture_space {l3d_texture_space18,340
+  l3d_coordinate O, U, V;O20,375
+  l3d_coordinate O, U, V;U20,375
+  l3d_coordinate O, U, V;V20,375
+class l3d_texture : public l3d_texture_spacel3d_texture23,405
+  bool owns_tex_data;owns_tex_data26,461
+  l3d_texture_data *tex_data;tex_data27,483
+  l3d_texture(void) { owns_tex_data = false; }l3d_texture28,513
+  ~l3d_texture(void) { if (owns_tex_data) delete tex_data; }~l3d_texture29,560
+class l3d_texture_computer {l3d_texture_computer32,625
+  l3d_matrix _world_to_tex_matrix;_world_to_tex_matrix38,874
+  static const l3d_real EPSILON_VECTOR = float_to_l3d_real(0.0001);EPSILON_VECTOR40,918
+  l3d_point O; l3d_vector U, V;O41,986
+  l3d_point O; l3d_vector U, V;U41,986
+  l3d_point O; l3d_vector U, V;V41,986
+  l3d_real *fovx,*fovy; // externally controlled horiz and vert fov terms,fovx42,1018
+  l3d_real *fovx,*fovy; // externally controlled horiz and vert fov terms,fovy42,1018
+  int *screen_xsize, *screen_ysize;screen_xsize46,1246
+  int *screen_xsize, *screen_ysize;screen_ysize46,1246
+  l3d_real u, v;u48,1283
+  l3d_real u, v;v48,1283
+  const l3d_matrix& world_to_tex_matrix(const l3d_texture_space &tex_space) {world_to_tex_matrix50,1301
+
+./lib/geom/vertex/coord.cc,0
+
+./lib/geom/vertex/coord.h,605
+#define _COORD_H_COORD_H2,17
+const int max_transformed_intermediates = 2;max_transformed_intermediates5,71
+class l3d_coordinate {l3d_coordinate6,116
+  l3d_coordinate(void) { transform_stage = 0; }l3d_coordinate8,148
+  l3d_point original;original10,197
+  l3d_point transformed;transformed11,219
+  char transform_stage;transform_stage12,244
+  l3d_point transformed_intermediates[max_transformed_intermediates];transformed_intermediates14,269
+  void reset(void) { transform_stage = 0; transformed = original; }reset16,340
+  void transform(const l3d_matrix &m, int count) {transform17,408
+
+./lib/geom/vertex/verint.h,481
+class l3d_vertex_interpolator {l3d_vertex_interpolator5,86
+  int steps;steps7,126
+  int pos;pos8,139
+  int dimension;dimension9,150
+  l3d_two_part_list<l3d_coordinate> *list;list11,168
+  l3d_list<l3d_vector> *deltas;deltas13,214
+  l3d_vertex_interpolator(void) {l3d_vertex_interpolator15,247
+  ~l3d_vertex_interpolator(void) {~l3d_vertex_interpolator20,387
+  void start(const l3d_two_part_list<l3d_coordinate> & source,start25,463
+  bool step(void) {step49,970
+
+./lib/geom/world/w_portex.h,244
+#define __W_PORTEX_H__W_PORTEX_H2,21
+class l3d_world_portal_textured : public l3d_world_portal {l3d_world_portal_textured7,97
+  l3d_texture_loader *texture_loader;texture_loader9,169
+  l3d_list<l3d_texture_data> tex_data;tex_data10,207
+
+./lib/geom/world/w_portal.h,218
+#define __W_PORTAL_H__W_PORTAL_H2,21
+class l3d_world_portal:public l3d_world {l3d_world_portal7,93
+  l3d_sector *current_sector;current_sector11,193
+  virtual ~l3d_world_portal(void) {};~l3d_world_portal17,380
+
+./lib/geom/world/w_oct.h,80
+#define __W_OCT_H__W_OCT_H2,18
+class l3d_world_octree :l3d_world_octree7,81
+
+./lib/geom/world/w_back.h,177
+#define __W_BACK_H__W_BACK_H2,19
+class l3d_world_backface : public l3d_worldl3d_world_backface10,192
+   l3d_world_backface(int xsize, int ysize) :l3d_world_backface14,248
+
+./lib/geom/world/w_portal.cc,374
+void l3d_world_portal::update_all(void) {update_all22,469
+l3d_world_portal::l3d_world_portal(int xsize, int ysize) l3d_world_portal146,3782
+void l3d_world_portal::draw_all(void) {draw_all162,4075
+l3d_sector *l3d_world_portal::sector_by_name(const char *name) {sector_by_name172,4344
+void l3d_world_portal::load_from_file(const char *fname) {load_from_file189,4706
+
+./lib/geom/world/w_back.cc,172
+l3d_world_backface::~l3d_world_backface() {~l3d_world_backface13,312
+void l3d_world_backface::draw_all(void) {draw_all16,362
+#define BACKFACE_EPS BACKFACE_EPS68,2189
+
+./lib/geom/world/w_portex.cc,295
+l3d_world_portal_textured::l3d_world_portal_textured(int xsize, int ysize)l3d_world_portal_textured6,108
+void l3d_world_portal_textured::load_from_file(const char *fname) {load_from_file20,595
+l3d_world_portal_textured::~l3d_world_portal_textured(void) {~l3d_world_portal_textured272,7944
+
+./lib/geom/world/w_oct.cc,282
+void l3d_world_octree::draw_all(void) {draw_all14,303
+l3d_world_octree::l3d_world_octreel3d_world_octree46,1428
+~l3d_world_octree(void)~l3d_world_octree53,1570
+void l3d_world_octree::load_from_file(const char *fname) {load_from_file56,1598
+#undef DEF_LTEXDEF_LTEX136,3751
+
+./lib/geom/world/w_pcoll.cc,379
+void l3d_world_portal_textured_lightmapped_obj_colldet::update_all(void) {update_all13,348
+l3d_world_portal_textured_lightmapped_obj_colldetl3d_world_portal_textured_lightmapped_obj_colldet238,8184
+~l3d_world_portal_textured_lightmapped_obj_colldet(void)~l3d_world_portal_textured_lightmapped_obj_colldet260,8859
+load_from_file(const char *fname) {load_from_file264,8977
+
+./lib/geom/world/w_pcoll.h,150
+#define __W_PCOLL_H__W_PCOLL_H2,20
+class l3d_world_portal_textured_lightmapped_obj_colldet :l3d_world_portal_textured_lightmapped_obj_colldet6,66
+
+./lib/geom/world/w_porlotex.cc,423
+void l3d_world_portal_textured_lightmapped_obj::draw_all(void) {draw_all13,350
+l3d_world_portal_textured_lightmapped_obj::l3d_world_portal_textured_lightmapped_objl3d_world_portal_textured_lightmapped_obj47,1692
+~l3d_world_portal_textured_lightmapped_obj(void)~l3d_world_portal_textured_lightmapped_obj63,2282
+void l3d_world_portal_textured_lightmapped_obj::load_from_file(const char *fname) {load_from_file66,2335
+
+./lib/geom/world/w_porlotex.h,140
+#define __W_PORLOTEX_H__W_PORLOTEX_H2,23
+class l3d_world_portal_textured_lightmapped_obj :l3d_world_portal_textured_lightmapped_obj6,71
+
+./lib/geom/world/w_porltex.cc,599
+int l3d_world_portal_textured_lightmapped::compute_light_levelcompute_light_level11,271
+l3d_world_portal_textured_lightmapped::l3d_world_portal_textured_lightmappedl3d_world_portal_textured_lightmapped73,2837
+~l3d_world_portal_textured_lightmapped(void)~l3d_world_portal_textured_lightmapped82,3077
+void l3d_world_portal_textured_lightmapped::load_from_file(const char *fname) {load_from_file87,3144
+void l3d_world_portal_textured_lightmapped::place_lampplace_lamp386,12611
+    n = sector->nonculled_polygon_nodes;n574,18236
+    while(n) {while575,18277
+    while(n) {while719,22942
+
+./lib/geom/world/w_porltex.h,236
+#define __W_PORLTEX_H__W_PORLTEX_H2,22
+class l3d_world_portal_textured_lightmapped :l3d_world_portal_textured_lightmapped8,131
+  l3d_surface_cache *scache;scache13,253
+  void reset_surface_cache(void) {reset_surface_cache23,581
+
+./lib/geom/world/world.cc,339
+l3d_world::l3d_world(int xsize, int ysize) {l3d_world14,313
+   #define PI PI30,864
+l3d_world::~l3d_world() {~l3d_world49,1213
+int l3d_world::compare_facet_zdepth(const void *key, const void *elem) {compare_facet_zdepth58,1363
+void l3d_world::draw_all(void) {draw_all68,1633
+void l3d_world::update_all(void) {update_all169,4778
+
+./lib/geom/world/world.h,838
+#define __WORLD_H__WORLD_H3,19
+#define MAX_VISIBLE_FACETS MAX_VISIBLE_FACETS10,172
+#define MAX_OBJECTS MAX_OBJECTS11,204
+class l3d_world {l3d_world13,231
+   l3d_screen *screen;screen19,325
+   l3d_rasterizer_3d *rasterizer;rasterizer20,348
+   l3d_rasterizer_2d_imp *rasterizer_2d_imp;rasterizer_2d_imp21,382
+   l3d_rasterizer_3d_imp *rasterizer_3d_imp;rasterizer_3d_imp22,427
+   l3d_camera *camera;   // camera to specify a view location and orientationcamera23,472
+   l3d_list<l3d_object *> objects;objects26,574
+   int should_display_status;should_display_status36,900
+   unsigned int framecount, first_tickcount, last_tickcount;framecount38,943
+   unsigned int framecount, first_tickcount, last_tickcount;first_tickcount38,943
+   unsigned int framecount, first_tickcount, last_tickcount;last_tickcount38,943
+
+./lib/geom/world/w_vfrust.cc,169
+l3d_world_frustum::~l3d_world_frustum() {~l3d_world_frustum14,344
+void l3d_world_frustum::draw_all(void) {draw_all17,392
+#define BACKFACE_EPS BACKFACE_EPS209,7696
+
+./lib/geom/world/w_vfrust.h,177
+#define __W_VFRUST_H__W_VFRUST_H2,21
+class l3d_world_frustum : public l3d_worldl3d_world_frustum10,196
+   l3d_world_frustum(int xsize, int ysize) :l3d_world_frustum14,251
+
+./lib/geom/world/w_bsp.h,255
+#define __W_BSP_H__W_BSP_H2,18
+class l3d_world_bsptree : public l3d_worldl3d_world_bsptree13,261
+  int visited_nodes;visited_nodes16,318
+   l3d_world_bsptree(int xsize, int ysize) :l3d_world_bsptree19,349
+   l3d_bsptree *the_tree;the_tree26,655
+
+./lib/geom/world/w_bsp.cc,190
+l3d_world_bsptree::~l3d_world_bsptree() {~l3d_world_bsptree17,421
+void l3d_world_bsptree::render_bsp_treerender_bsp_tree21,502
+void l3d_world_bsptree::draw_all(void) {draw_all253,9793
+
+./lib/geom/plane/plane.cc,262
+void l3d_plane::align_with_point_normal(const l3d_point& point,align_with_point_normal3,20
+void l3d_plane::align_with_points(const l3d_point& p0,align_with_points19,390
+int l3d_plane::intersect_with_segment(const l3d_point& p0,intersect_with_segment26,568
+
+./lib/geom/plane/plane.h,510
+#define __PLANE_H__PLANE_H2,18
+#define EPSILON_PLANE EPSILON_PLANE9,167
+#define CROSS_FRONT_TO_BACK CROSS_FRONT_TO_BACK11,273
+#define CROSS_BACK_TO_FRONT CROSS_BACK_TO_FRONT12,303
+class l3d_plane l3d_plane15,336
+  l3d_real a,b,c,d;a18,364
+  l3d_real a,b,c,d;b18,364
+  l3d_real a,b,c,d;c18,364
+  l3d_real a,b,c,d;d18,364
+  l3d_real side_of_point(const l3d_point& p) const {side_of_point33,1057
+  l3d_real intersection_t;intersection_t40,1209
+  l3d_point intersection;intersection41,1236
+
+./lib/geom/surface/scache.h,514
+#define __SCACHE_H__SCACHE_H2,19
+class l3d_surface {l3d_surface14,197
+  const l3d_polygon_3d_textured_lightmapped *polygon;polygon23,496
+  l3d_texture *surface;surface24,550
+  int age;age26,575
+class l3d_surface_cache {l3d_surface_cache31,621
+  l3d_screen_info *sinfo;sinfo33,659
+  l3d_list<l3d_surface> *surfaces;surfaces34,685
+  l3d_surface_cache(l3d_screen_info *sinfo) {l3d_surface_cache37,730
+  virtual ~l3d_surface_cache(void) {~l3d_surface_cache42,853
+  void reset(void) {reset51,1063
+
+./lib/geom/surface/scache.cc,187
+l3d_surface::~l3d_surface(void)~l3d_surface6,120
+combine_lightmap_and_texmap(int width,combine_lightmap_and_texmap19,480
+find_texdata(l3d_texture_data *texdata)find_texdata129,4132
+
+./lib/geom/point/point.cc,127
+const int l3d_max_point_temp = 15;l3d_max_point_temp24,1185
+l3d_point &l3d_get_point_temp(void) {l3d_get_point_temp25,1220
+
+./lib/geom/point/point.h,929
+#define __POINT_H__POINT_H2,18
+class l3d_point  {l3d_point13,201
+   void print(void)print27,676
+   l3d_real a[4]; // the 4 components (x,y,z,w) of the pointa37,897
+#define X_ X_44,1068
+#define Y_ Y_45,1084
+#define Z_ Z_46,1100
+#define W_ W_47,1116
+inline l3d_point::l3d_point(void) {l3d_point57,1431
+inline l3d_point::l3d_point(l3d_real a0, l3d_real a1, l3d_real a2, l3d_real a3) {l3d_point63,1574
+inline l3d_point::l3d_point(int a0, int a1, int a2, int a3) {l3d_point71,1779
+inline l3d_point::l3d_point(const l3d_point &right) {l3d_point79,1998
+inline const l3d_point &l3d_point::operator = (const l3d_point &right) {operator =87,2176
+inline const l3d_point &l3d_point::set(l3d_real a0, l3d_real a1, l3d_real a2, l3d_real a3) {set97,2414
+inline const l3d_point &l3d_point::set(int a0, int a1, int a2, int a3) {set107,2638
+inline const l3d_point &operator * (const l3d_point& l,operator *118,2892
+
+./lib/geom/boundvol/boundsph.cc,340
+void l3d_bounding_sphere::reset(void) {reset5,83
+void l3d_bounding_sphere::transform(const l3d_matrix &xform) {transform10,167
+l3d_real l3d_bounding_sphere::distance_to_plane(const l3d_plane & plane) constdistance_to_plane15,298
+void l3d_bounding_sphere::compute_around_object(const l3d_object *object) {compute_around_object24,779
+
+./lib/geom/boundvol/boundsph.h,212
+#define __BOUNDSPH_H__BOUNDSPH_H2,21
+class l3d_bounding_sphere {l3d_bounding_sphere10,184
+  int transform_stage;transform_stage12,221
+  l3d_real radius;radius16,324
+  l3d_coordinate center;center17,343
+
+./lib/geom/frustum/vfrust.cc,174
+void l3d_viewing_frustum::create_from_pointscreate_from_points3,21
+int l3d_viewing_frustum::intersects_sphere(const l3d_bounding_sphere & sphere)intersects_sphere32,1176
+
+./lib/geom/frustum/vfrust.h,450
+#define __VFRUST_H__VFRUST_H2,19
+class l3d_viewing_frustum {l3d_viewing_frustum7,129
+  l3d_plane top, bottom, left, right, near, far;top9,166
+  l3d_plane top, bottom, left, right, near, far;bottom9,166
+  l3d_plane top, bottom, left, right, near, far;left9,166
+  l3d_plane top, bottom, left, right, near, far;right9,166
+  l3d_plane top, bottom, left, right, near, far;near9,166
+  l3d_plane top, bottom, left, right, near, far;far9,166
+
+./lib/geom/bsp/bsptree.h,110
+#define __BSPTREE_H__BSPTREE_H2,20
+class l3d_bsptree {l3d_bsptree7,118
+  l3d_halfspace *root;root13,282
+
+./lib/geom/bsp/halfspace.h,314
+#define __HALFSPACE_H__HALFSPACE_H2,22
+class l3d_halfspace {l3d_halfspace8,140
+  l3d_plane plane;plane10,171
+  l3d_bounding_sphere bounding_sphere;bounding_sphere11,190
+  l3d_object_clippable_boundable *object; // poly list for this nodeobject12,229
+  l3d_list<l3d_halfspace *> children;children13,298
+
+./lib/geom/bsp/bsptree.cc,631
+l3d_bsptree::l3d_bsptree(void) {l3d_bsptree6,127
+void l3d_bsptree::_recursive_delete_tree(l3d_halfspace *root) {_recursive_delete_tree10,178
+l3d_bsptree::~l3d_bsptree(void) {~l3d_bsptree21,455
+void l3d_bsptree::print_stats(l3d_halfspace *tree) {print_stats25,524
+void l3d_bsptree::compute_for_object(l3d_halfspace *root, compute_for_object43,1054
+void permanently_merge_objects(l3d_object *dest, l3d_object *src) {permanently_merge_objects237,7070
+void l3d_bsptree::push_polys_to_childrenpush_polys_to_children325,11758
+void l3d_bsptree::make_videoscape_meshes(l3d_halfspace *tree) {make_videoscape_meshes442,16276
+
+./lib/math/fix_lowp.h,556
+#undef FX_PRECISFX_PRECIS36,1646
+#undef FX_PRECIS_QUOTFX_PRECIS_QUOT37,1663
+#undef FX_PRECIS_MASKFX_PRECIS_MASK38,1685
+#undef FX_PRECIS_MAXFX_PRECIS_MAX39,1707
+#undef FX_CVTFX_CVT40,1728
+#undef FX_CVT_BACKFX_CVT_BACK41,1742
+#define FX_PRECIS FX_PRECIS43,1762
+#define FX_PRECIS_QUOT FX_PRECIS_QUOT44,1782
+#define FX_PRECIS_MASK FX_PRECIS_MASK47,1878
+#define FX_PRECIS_MAX FX_PRECIS_MAX48,1913
+#define FX_CVT(FX_CVT51,2019
+#define FX_CVT_BACK(FX_CVT_BACK52,2119
+#define FX_CVT(FX_CVT58,2255
+#define FX_CVT_BACK(FX_CVT_BACK59,2277
+
+./lib/math/gen_grig.cc,21
+main() {main13,601
+
+./lib/math/sincos.cc,165
+l3d_real cos_lu[360] = {cos_lu18,704
+l3d_real sin_lu[360] = {sin_lu380,12430
+   l3d_real cos_lu[360];cos_lu747,24241
+   l3d_real sin_lu[360];sin_lu748,24266
+
+./lib/math/sincos.h,36
+#define __SINCOS_H__SINCOS_H7,310
+
+./lib/math/vector.cc,132
+const int l3d_max_vector_temp = 15;l3d_max_vector_temp24,1196
+l3d_vector &l3d_get_vector_temp(void) {l3d_get_vector_temp25,1232
+
+./lib/math/math_fix.cc,102
+int   fm_whole;fm_whole12,644
+long  fm_localdata;fm_localdata13,661
+float fm_sign;fm_sign14,682
+
+./lib/math/math_fix.h,730
+#define __MATH_FIX_H__MATH_FIX_H7,312
+typedef long l3d_fixed;  /* this must be 32 bits, and MUST BE SIGNED */l3d_fixed40,1531
+#define FX_PRECISION_ALREADY_DEFINEDFX_PRECISION_ALREADY_DEFINED67,2710
+inline Tfixed float2fix(float aFloat) {float2fix82,2946
+#define float2fix(float2fix112,3903
+#define int2fix(int2fix116,3971
+inline float fix2float(Tfixed aFixed) {fix2float119,4034
+#define fix2float(fix2float141,4811
+#define fix2int(fix2int145,4883
+#define fixintmul(fixintmul178,5851
+#define FIX_ASMFIX_ASM188,6172
+#define fixfixmul(fixfixmul191,6204
+#define fixfixmul(fixfixmul286,10146
+#define fixfixdiv(fixfixdiv339,13142
+#define fixfixdiv(fixfixdiv392,14947
+#define fixintdiv(fixintdiv408,15630
+
+./lib/math/vector.h,1667
+#define __VECTOR_H__VECTOR_H2,19
+class l3d_vector {l3d_vector17,336
+   void print(void)print40,1257
+   l3d_real a[4]; // the 4 components (x,y,z,w) of the vector a48,1465
+#define X_ X_55,1639
+#define Y_ Y_56,1655
+#define Z_ Z_57,1671
+#define W_ W_58,1687
+#define U_ U_60,1704
+#define V_ V_61,1720
+#define N_ N_62,1736
+inline l3d_vector::l3d_vector(void) {l3d_vector72,2054
+inline l3d_vector::l3d_vector(l3d_real a0, l3d_real a1, l3d_real a2, l3d_real a3) {l3d_vector78,2200
+inline l3d_vector::l3d_vector(int a0, int a1, int a2, int a3) {l3d_vector86,2408
+inline const l3d_vector &l3d_vector::set(l3d_real a0, l3d_real a1, l3d_real a2, l3d_real a3) {set116,3066
+inline const l3d_vector &l3d_vector::set(int a0, int a1, int a2, int a3) {set126,3293
+inline const l3d_vector &operator * (const l3d_vector& l,operator *137,3550
+inline const l3d_vector& cross(const l3d_vector &l, const l3d_vector &r) {cross151,3966
+   #define V(V154,4085
+   #define W(W155,4112
+   #undef VV167,4608
+   #undef WW168,4620
+inline const l3d_real dot(const l3d_vector &l, const l3d_vector &r) {dot174,4706
+inline const l3d_vector& normalized(const l3d_vector &l) {normalized187,5157
+inline const l3d_vector& operator + (const l3d_vector &l,operator +228,6562
+inline const l3d_vector& operator - (const l3d_vector &l,operator -241,6889
+inline const l3d_point& operator + (const l3d_point &l,operator +255,7221
+inline const l3d_point& operator + (const l3d_vector &l,operator +268,7514
+inline const l3d_vector& operator - (const l3d_point &l,operator -281,7807
+inline const l3d_point& operator - (const l3d_point &l,operator -296,8233
+
+./lib/math/fix_hip.h,636
+#undef FX_PRECISFX_PRECIS36,1646
+#undef FX_PRECIS_QUOTFX_PRECIS_QUOT37,1663
+#undef FX_PRECIS_MASKFX_PRECIS_MASK38,1685
+#undef FX_PRECIS_MAXFX_PRECIS_MAX39,1707
+#undef FX_CVTFX_CVT40,1728
+#undef FX_CVT_BACKFX_CVT_BACK41,1742
+#define FX_PRECIS FX_PRECIS43,1762
+#define FX_PRECIS_QUOT FX_PRECIS_QUOT44,1783
+#define FX_PRECIS_MASK FX_PRECIS_MASK47,1880
+#define FX_PRECIS_MAX FX_PRECIS_MAX48,1915
+#define FX_CVT(FX_CVT51,2028
+#define FX_CVT_BACK(FX_CVT_BACK52,2128
+#define EPSILON_CEIL EPSILON_CEIL54,2187
+#define iceil_fix(iceil_fix55,2239
+#define FX_CVT(FX_CVT61,2391
+#define FX_CVT_BACK(FX_CVT_BACK62,2413
+
+./lib/math/fix_prec.h,675
+#define FX_PRECIS_DEFAULT FX_PRECIS_DEFAULT22,1049
+#undef FX_PRECISFX_PRECIS25,1089
+#undef FX_PRECIS_QUOTFX_PRECIS_QUOT26,1107
+#undef FX_PRECIS_MASKFX_PRECIS_MASK27,1130
+#undef FX_PRECIS_MAXFX_PRECIS_MAX28,1153
+#define FX_PRECIS FX_PRECIS30,1177
+#define FX_PRECIS_QUOT FX_PRECIS_QUOT31,1199
+#define FX_SIGN_MASK FX_SIGN_MASK33,1227
+#define FX_ALLBITS_MASK FX_ALLBITS_MASK34,1264
+#define FX_PRECIS_MASK FX_PRECIS_MASK37,1374
+#define FX_PRECIS_MAX FX_PRECIS_MAX38,1410
+#define EPSILON_CEIL EPSILON_CEIL40,1443
+#define iceil_fix(iceil_fix41,1496
+#undef l3d_fix_new_precl3d_fix_new_prec43,1573
+#undef l3d_fix_norm_precl3d_fix_norm_prec44,1598
+
+./lib/math/matrix.cc,126
+const int l3d_max_matrix_temp = 15;l3d_max_matrix_temp3,21
+l3d_matrix &l3d_get_matrix_temp(void) {l3d_get_matrix_temp4,57
+
+./lib/math/matrix.h,1775
+#define __MATRIX_H__MATRIX_H2,19
+class l3d_matrix {l3d_matrix25,541
+  void print(void)print55,2042
+  l3d_real a[4][4];  // actual matrix values a66,2217
+#define X_ X_75,2417
+#define Y_ Y_76,2433
+#define Z_ Z_77,2449
+#define W_ W_78,2465
+#define U_ U_80,2482
+#define V_ V_81,2498
+#define N_ N_82,2514
+inline l3d_matrix::l3d_matrix() {l3d_matrix87,2736
+inline l3d_matrix::l3d_matrix(l3d_real a00,l3d_real a01,l3d_real a02,l3d_real a03,l3d_matrix101,3431
+inline l3d_matrix::l3d_matrix(int a00,int a01,int a02,int a03,l3d_matrix116,4156
+inline l3d_matrix::l3d_matrix(const l3d_matrix &right) {l3d_matrix131,5041
+inline l3d_matrix &l3d_matrix::operator = (const l3d_matrix &right) {operator =142,5684
+inline const l3d_matrix &l3d_matrix::set(l3d_real a00,l3d_real a01,l3d_real a02,l3d_real a03,set155,6394
+inline const l3d_matrix &l3d_matrix::set(int a00,int a01,int a02,int a03,set171,7141
+inline l3d_matrix& operator |(const l3d_matrix &l, const l3d_matrix &r) {operator |185,7843
+inline l3d_vector &operator |(const l3d_matrix &l, const  l3d_vector &r) {operator |258,10454
+inline l3d_matrix& operator * (const l3d_matrix &l,operator *289,11548
+inline  l3d_matrix &l3d_mat_translate(l3d_real x, l3d_real y, l3d_real z) {l3d_mat_translate333,13140
+inline  l3d_matrix &l3d_mat_scale(l3d_real x, l3d_real y, l3d_real z) {l3d_mat_scale346,13865
+inline  l3d_matrix &l3d_mat_rotx(int theta) {l3d_mat_rotx359,14622
+inline l3d_matrix &l3d_mat_roty(int theta) {l3d_mat_roty372,15312
+inline  l3d_matrix &l3d_mat_rotz(int theta) {l3d_mat_rotz385,15997
+inline  l3d_matrix &l3d_mat_rotu(const l3d_vector &u, int theta) {l3d_mat_rotu398,16695
+inline l3d_point &operator |(const l3d_matrix &l, const  l3d_point &r) {operator |428,18150
+
+./lib/pipeline/pi_lwor.cc,72
+void l3d_pipeline_world_lightmapped::key_event(int c) {key_event9,123
+
+./lib/pipeline/pi_lwor.h,226
+#define __PI_LWOR_H__PI_LWOR_H2,20
+class l3d_pipeline_world_lightmapped : public l3d_pipeline_world {l3d_pipeline_world_lightmapped7,95
+  l3d_pipeline_world_lightmapped(l3d_world *w) :l3d_pipeline_world_lightmapped9,171
+
+./lib/pipeline/pipeline.h,239
+#define __PIPELINE_H__PIPELINE_H2,21
+class l3d_pipeline {l3d_pipeline4,43
+  virtual void draw_event(void) {};draw_event6,73
+  virtual void update_event(void) {};update_event7,109
+  virtual void key_event(int c) {};key_event8,147
+
+./lib/pipeline/pi_wor.cc,185
+void l3d_pipeline_world::key_event(int c) {key_event7,84
+void l3d_pipeline_world::update_event() {update_event51,2804
+void l3d_pipeline_world::draw_event(void) {draw_event55,2872
+
+./lib/pipeline/pi_wor.h,283
+#define __PI_WOR_H__PI_WOR_H2,19
+class l3d_pipeline_world : public l3d_pipeline {l3d_pipeline_world7,95
+  l3d_world *world;world9,156
+  l3d_pipeline_world(l3d_world *w) { world = w; }l3d_pipeline_world12,186
+  virtual ~l3d_pipeline_world(void) {};~l3d_pipeline_world13,236
+
+./lib/raster/rasteriz.cc,354
+l3d_rasterizer_2d_imp::l3d_rasterizer_2d_impl3d_rasterizer_2d_imp3,23
+void l3d_rasterizer_2d_imp::clear_buffer(void)clear_buffer9,143
+void l3d_rasterizer_2d_imp::draw_point( int x ,draw_point12,194
+void l3d_rasterizer_2d_imp::draw_line( int x0 ,  draw_line17,286
+void l3d_rasterizer_2d_imp::draw_polygon_flatshadeddraw_polygon_flatshaded24,408
+
+./lib/raster/ras_mesa.cc,519
+l3d_rasterizer_2d_imp * l3d_rasterizer_2d_mesa_imp_factory::createcreate4,41
+l3d_rasterizer_2d_mesa_imp::l3d_rasterizer_2d_mesa_impl3d_rasterizer_2d_mesa_imp10,203
+void l3d_rasterizer_2d_mesa_imp::clear_buffer(void) {clear_buffer15,336
+void l3d_rasterizer_2d_mesa_imp::draw_point(int x, int y, unsigned long col) {draw_point19,425
+void l3d_rasterizer_2d_mesa_imp::draw_line(int x0, int y0, int x1, int y1,draw_line26,584
+void l3d_rasterizer_2d_mesa_imp::draw_polygon_flatshadeddraw_polygon_flatshaded36,784
+
+./lib/raster/rast3.cc,253
+l3d_rasterizer_3d_imp::l3d_rasterizer_3d_impl3d_rasterizer_3d_imp3,20
+void l3d_rasterizer_3d_imp::draw_polygon_textureddraw_polygon_textured8,143
+void l3d_rasterizer_3d_imp::draw_polygon_textured_lightmappeddraw_polygon_textured_lightmapped12,237
+
+./lib/raster/ras_mesa.h,191
+#define __RAS_MESA_H__RAS_MESA_H2,21
+class l3d_rasterizer_2d_mesa_imp :l3d_rasterizer_2d_mesa_imp7,87
+class l3d_rasterizer_2d_mesa_imp_factory :l3d_rasterizer_2d_mesa_imp_factory19,464
+
+./lib/raster/ras_sw.h,442
+#define __RAS_SW_H__RAS_SW_H2,19
+class l3d_rasterizer_2d_sw_imp :l3d_rasterizer_2d_sw_imp8,111
+class l3d_rasterizer_2d_sw_imp_factory :l3d_rasterizer_2d_sw_imp_factory24,614
+inline unsigned char *l3d_rasterizer_2d_sw_imp::address_of_point(int x, int y)address_of_point33,806
+inline void l3d_rasterizer_2d_sw_imp::draw_point_at_paddressdraw_point_at_paddress38,961
+inline void l3d_rasterizer_2d_sw_imp::draw_pointdraw_point55,1383
+
+./lib/raster/ras_swl.h,231
+#define __RAS_SWL_H__RAS_SWL_H2,20
+class l3d_rasterizer_2d_sw_lighter_imp :l3d_rasterizer_2d_sw_lighter_imp9,148
+  l3d_rasterizer_2d_sw_lighter_imp(int xs, int ys, l3d_screen_info *si) :l3d_rasterizer_2d_sw_lighter_imp17,351
+
+./lib/raster/rasteriz.h,855
+#define __RASTERIZ_H__RASTERIZ_H2,21
+class l3d_rasterizer_2d_imp {l3d_rasterizer_2d_imp15,417
+  int xsize, ysize;xsize17,459
+  int xsize, ysize;ysize17,459
+  l3d_screen_info *sinfo;sinfo18,479
+  virtual ~l3d_rasterizer_2d_imp(void) {};~l3d_rasterizer_2d_imp21,576
+class l3d_rasterizer_2d {l3d_rasterizer_2d36,931
+  l3d_rasterizer_2d_imp *imp2d;imp2d38,969
+  l3d_rasterizer_2d(l3d_rasterizer_2d_imp *i) {l3d_rasterizer_2d41,1011
+  virtual ~l3d_rasterizer_2d(void) {}~l3d_rasterizer_2d44,1078
+  virtual void clear_buffer(void)clear_buffer48,1144
+  virtual void draw_point( int x ,draw_point51,1210
+  virtual void draw_line( int x0 ,  draw_line56,1320
+  virtual void draw_polygon_flatshaded( const l3d_polygon_2d_flatshadeddraw_polygon_flatshaded63,1464
+class l3d_rasterizer_2d_imp_factory {l3d_rasterizer_2d_imp_factory68,1602
+
+./lib/raster/ras_sw.cc,444
+l3d_rasterizer_2d_imp * l3d_rasterizer_2d_sw_imp_factory::createcreate6,97
+l3d_rasterizer_2d_sw_imp::l3d_rasterizer_2d_sw_impl3d_rasterizer_2d_sw_imp12,260
+void l3d_rasterizer_2d_sw_imp::clear_buffer(void) {clear_buffer18,396
+void l3d_rasterizer_2d_sw_imp::draw_line(int x0, int y0,draw_line22,536
+void l3d_rasterizer_2d_sw_imp::draw_polygon_flatshadeddraw_polygon_flatshaded60,1827
+#define VTX(VTX81,2703
+#undef VTX(VTX299,12528
+
+./lib/raster/ras_swl.cc,255
+int l3d_rasterizer_2d_sw_lighter_imp::compute_light_level(int lumel_x, int lumel_y)compute_light_level6,93
+void l3d_rasterizer_2d_sw_lighter_imp::draw_polygon_flatshadeddraw_polygon_flatshaded73,2797
+#define VTX(VTX94,3660
+#undef VTX(VTX316,13236
+
+./lib/raster/ras3_sw.h,230
+#define __RAS3_SW_H__RAS3_SW_H2,20
+class l3d_rasterizer_3d_sw_imp :l3d_rasterizer_3d_sw_imp11,208
+  unsigned char *text_color;text_color17,384
+class l3d_rasterizer_3d_sw_imp_factory :l3d_rasterizer_3d_sw_imp_factory31,903
+
+./lib/raster/ras3z_sw.h,275
+#define __RAS3Z_SW_H__RAS3Z_SW_H2,21
+class l3d_rasterizer_3d_zbuf_sw_imp :l3d_rasterizer_3d_zbuf_sw_imp10,192
+  l3d_fixed *zbuf;zbuf14,282
+  long int zbuf_size;zbuf_size15,301
+class l3d_rasterizer_3d_zbuf_sw_imp_factory :l3d_rasterizer_3d_zbuf_sw_imp_factory32,716
+
+./lib/raster/ras3_mes.cc,1619
+static const GLubyte period[] = period4,41
+static const GLubyte space[] = space7,155
+static const GLubyte digits[][13] = {digits10,268
+static const GLubyte letters[][13] = {letters24,973
+l3d_rasterizer_3d_imp * l3d_rasterizer_3d_mesa_imp_factory::createcreate55,3193
+l3d_rasterizer_3d_mesa_imp(int xs, int ys, l3d_screen_info *si):l3d_rasterizer_3d_mesa_imp62,3383
+void l3d_rasterizer_3d_mesa_imp::clear_buffer(void)clear_buffer95,4299
+void l3d_rasterizer_3d_mesa_imp::draw_point(int x, int y, unsigned long col) {draw_point101,4403
+void l3d_rasterizer_3d_mesa_imp::draw_line(int x0, int y0, int x1, int y1,draw_line108,4584
+void l3d_rasterizer_3d_mesa_imp::draw_polygon_flatshadeddraw_polygon_flatshaded118,4869
+void l3d_rasterizer_3d_mesa_imp::texture_setuptexture_setup138,5363
+void l3d_rasterizer_3d_mesa_imp::draw_polygon_textureddraw_polygon_textured206,7393
+void l3d_rasterizer_3d_mesa_imp::ogl_texturing_between_glbegin_endogl_texturing_between_glbegin_end218,7600
+  #define SCREEN_X SCREEN_X238,8190
+  #define SCREEN_Y SCREEN_Y239,8287
+#define SCREEN_X SCREEN_X260,9037
+#define SCREEN_Y SCREEN_Y261,9132
+void l3d_rasterizer_3d_mesa_imp::make_raster_font(void)make_raster_font302,10401
+void l3d_rasterizer_3d_mesa_imp::draw_text(int x, int y, const char *string) {draw_text342,11308
+void l3d_rasterizer_3d_mesa_imp::set_text_color(int red, int green, int blue) {set_text_color354,11730
+void l3d_rasterizer_3d_mesa_imp::draw_polygon_textured_lightmappeddraw_polygon_textured_lightmapped358,11868
+#define SCREEN_X SCREEN_X598,21583
+#define SCREEN_Y SCREEN_Y599,21678
+
+./lib/raster/ras3_mes.h,1140
+#define __RAS3_MES_H__RAS3_MES_H2,21
+class l3d_rasterizer_3d_mesa_imp :l3d_rasterizer_3d_mesa_imp65,3284
+  GLuint fontOffset;// for textfontOffset71,3412
+  l3d_real ui_xs, ui_ys, ui_c, vi_xs, vi_ys, vi_c, zi_xs, zi_ys, zi_c,ui_xs79,3634
+  l3d_real ui_xs, ui_ys, ui_c, vi_xs, vi_ys, vi_c, zi_xs, zi_ys, zi_c,ui_ys79,3634
+  l3d_real ui_xs, ui_ys, ui_c, vi_xs, vi_ys, vi_c, zi_xs, zi_ys, zi_c,ui_c79,3634
+  l3d_real ui_xs, ui_ys, ui_c, vi_xs, vi_ys, vi_c, zi_xs, zi_ys, zi_c,vi_xs79,3634
+  l3d_real ui_xs, ui_ys, ui_c, vi_xs, vi_ys, vi_c, zi_xs, zi_ys, zi_c,vi_ys79,3634
+  l3d_real ui_xs, ui_ys, ui_c, vi_xs, vi_ys, vi_c, zi_xs, zi_ys, zi_c,vi_c79,3634
+  l3d_real ui_xs, ui_ys, ui_c, vi_xs, vi_ys, vi_c, zi_xs, zi_ys, zi_c,zi_xs79,3634
+  l3d_real ui_xs, ui_ys, ui_c, vi_xs, vi_ys, vi_c, zi_xs, zi_ys, zi_c,zi_ys79,3634
+  l3d_real ui_xs, ui_ys, ui_c, vi_xs, vi_ys, vi_c, zi_xs, zi_ys, zi_c,zi_c79,3634
+     ui, vi, zi;ui80,3705
+     ui, vi, zi;vi80,3705
+     ui, vi, zi;zi80,3705
+  unsigned long text_color;text_color82,3725
+class l3d_rasterizer_3d_mesa_imp_factory :l3d_rasterizer_3d_mesa_imp_factory112,4832
+
+./lib/raster/ras3_sw.cc,1803
+static const unsigned char period[] = period9,171
+static const unsigned char space[] = space12,291
+static const unsigned char digits[][13] = {digits15,410
+static const unsigned char letters[][13] = {letters29,1121
+unsigned char font_bitmaps[256][13];font_bitmaps58,3274
+l3d_rasterizer_3d_imp * l3d_rasterizer_3d_sw_imp_factory::createcreate60,3312
+l3d_rasterizer_3d_sw_imp::l3d_rasterizer_3d_sw_impl3d_rasterizer_3d_sw_imp66,3469
+l3d_rasterizer_3d_sw_imp::~l3d_rasterizer_3d_sw_imp(void) {~l3d_rasterizer_3d_sw_imp103,4242
+void l3d_rasterizer_3d_sw_imp::clear_buffer(void)clear_buffer107,4329
+#define Z_MULT_FACTOR Z_MULT_FACTOR117,4662
+#define Z_ADD_FACTOR Z_ADD_FACTOR118,4688
+#define VTX(VTX144,5747
+#define l3d_fixed l3d_fixed148,5875
+#define l3d_real_to_fixed(l3d_real_to_fixed149,5899
+#define fixfixdiv(fixfixdiv150,5932
+#define fixfixmul(fixfixmul151,5965
+#define int2fix(int2fix152,5998
+#define fix2int(fix2int153,6031
+#define fix2float(fix2float154,6062
+#define float2fix(float2fix155,6087
+#define iceil_fix(iceil_fix156,6112
+void l3d_rasterizer_3d_sw_imp::draw_polygon_textureddraw_polygon_textured160,6169
+#define MIN_EDGE_HEIGHT MIN_EDGE_HEIGHT302,10859
+#define MIN_EDGE_WIDTH MIN_EDGE_WIDTH303,10900
+#define LINEAR_RUN_SHIFT LINEAR_RUN_SHIFT585,23559
+#define LINEAR_RUN_SIZE LINEAR_RUN_SIZE586,23586
+void l3d_rasterizer_3d_sw_imp::draw_polygon_textured_lightmappeddraw_polygon_textured_lightmapped781,30954
+void l3d_rasterizer_3d_sw_imp::set_text_color(int red, int green, int blue) {set_text_color836,32715
+void l3d_rasterizer_3d_sw_imp::draw_text(int x, int y, const char *text) {draw_text856,33223
+#define FONT_Y_SIZE FONT_Y_SIZE858,33299
+#define FONT_X_SIZE FONT_X_SIZE859,33322
+#define FONT_SPACING FONT_SPACING860,33344
+
+./lib/raster/ras3z_sw.cc,1224
+l3d_rasterizer_3d_imp * l3d_rasterizer_3d_zbuf_sw_imp_factory::createcreate9,191
+l3d_rasterizer_3d_zbuf_sw_imp::l3d_rasterizer_3d_zbuf_sw_impl3d_rasterizer_3d_zbuf_sw_imp15,358
+l3d_rasterizer_3d_zbuf_sw_imp::~l3d_rasterizer_3d_zbuf_sw_imp(void) {~l3d_rasterizer_3d_zbuf_sw_imp31,746
+void l3d_rasterizer_3d_zbuf_sw_imp::clear_buffer(void) {clear_buffer35,837
+#define Z_MULT_FACTOR Z_MULT_FACTOR49,1268
+#define Z_ADD_FACTOR Z_ADD_FACTOR50,1294
+#define VTX(VTX76,2353
+#define l3d_fixed l3d_fixed80,2481
+#define l3d_real_to_fixed(l3d_real_to_fixed81,2505
+#define fixfixdiv(fixfixdiv82,2538
+#define fixfixmul(fixfixmul83,2571
+#define int2fix(int2fix84,2604
+#define fix2int(fix2int85,2637
+#define fix2float(fix2float86,2668
+#define float2fix(float2fix87,2693
+#define iceil_fix(iceil_fix88,2718
+void l3d_rasterizer_3d_zbuf_sw_imp::draw_polygon_textureddraw_polygon_textured92,2775
+#define MIN_EDGE_HEIGHT MIN_EDGE_HEIGHT240,7719
+#define MIN_EDGE_WIDTH MIN_EDGE_WIDTH241,7760
+#define LINEAR_RUN_SHIFT LINEAR_RUN_SHIFT515,20224
+#define LINEAR_RUN_SIZE LINEAR_RUN_SIZE516,20251
+void l3d_rasterizer_3d_zbuf_sw_imp::draw_polygon_textured_lightmappeddraw_polygon_textured_lightmapped662,26190
+
+./lib/raster/rast3.h,1284
+#define __RAST3_H__RAST3_H2,18
+class l3d_rasterizer_3d_imp :l3d_rasterizer_3d_imp19,376
+  /* virtual */ void clear_buffer(void) {};clear_buffer26,554
+  virtual void draw_text(int x, int y, const char *string) {};draw_text31,782
+  virtual void set_text_color(int red, int green, int blue) {};set_text_color32,845
+class l3d_rasterizer_3d : public l3d_rasterizer_2d {l3d_rasterizer_3d36,914
+  l3d_rasterizer_3d_imp *imp3d;imp3d38,979
+  l3d_rasterizer_3d(l3d_rasterizer_2d_imp *i2,l3d_rasterizer_3d41,1021
+  virtual ~l3d_rasterizer_3d(void) {}~l3d_rasterizer_3d47,1159
+  void draw_point( int x , int y ,  unsigned long col ) {draw_point54,1496
+  /* virtual */ void draw_line( int x0 , int y0 , int x1 ,  int y1 , unsigned long col ) {draw_line63,1889
+  /* virtual */ void clear_buffer(void) {clear_buffer67,2024
+  /* virtual */ void draw_polygon_flatshaded( const l3d_polygon_3d_flatshadeddraw_polygon_flatshaded71,2098
+  virtual void draw_polygon_textured(const l3d_polygon_3d_textured *p_poly)draw_polygon_textured75,2240
+  virtual void draw_polygon_textured_lightmappeddraw_polygon_textured_lightmapped78,2364
+  void draw_text(int x, int y, const char *string)draw_text82,2528
+class l3d_rasterizer_3d_imp_factory {l3d_rasterizer_3d_imp_factory88,2627
+
+./lib/raster/ras3z_mes.h,213
+#define __RAS3Z_MES_H__RAS3Z_MES_H2,22
+class l3d_rasterizer_3d_zbuf_mesa_imp :l3d_rasterizer_3d_zbuf_mesa_imp6,68
+class l3d_rasterizer_3d_zbuf_mesa_imp_factory :l3d_rasterizer_3d_zbuf_mesa_imp_factory16,318
+
+./lib/raster/ras3z_mes.cc,350
+l3d_rasterizer_3d_imp * l3d_rasterizer_3d_zbuf_mesa_imp_factory::createcreate7,156
+l3d_rasterizer_3d_zbuf_mesa_imp(int xs, int ys, l3d_screen_info *si):l3d_rasterizer_3d_zbuf_mesa_imp14,361
+~l3d_rasterizer_3d_zbuf_mesa_imp(void)~l3d_rasterizer_3d_zbuf_mesa_imp32,938
+void l3d_rasterizer_3d_zbuf_mesa_imp::clear_buffer(void)clear_buffer36,982
+
+./lib/system/fwin.cc,347
+l3d_factory_manager_v_0_1 factory_manager_v_0_1;factory_manager_v_0_18,135
+l3d_factory_manager_v_0_1::l3d_factory_manager_v_0_1(void) {l3d_factory_manager_v_0_110,185
+l3d_factory_manager_v_0_1::~l3d_factory_manager_v_0_1(void) {~l3d_factory_manager_v_0_116,332
+int l3d_factory_manager_v_0_1::choose_factories(void) {choose_factories22,545
+
+./lib/system/fwin.h,308
+#define __FWIN_H__FWIN_H2,17
+class l3d_factory_manager_v_0_1 {l3d_factory_manager_v_0_19,158
+  l3d_screen_factory *screen_factory;screen_factory13,280
+  l3d_rasterizer_2d_imp_factory *ras_2d_imp_factory;ras_2d_imp_factory14,318
+  l3d_dispatcher_factory *dispatcher_factory;dispatcher_factory15,371
+
+./lib/system/fwin0_2.cc,345
+l3d_factory_manager_v_0_2 factory_manager_v_0_2;factory_manager_v_0_28,140
+l3d_factory_manager_v_0_2::l3d_factory_manager_v_0_2(void) :l3d_factory_manager_v_0_210,190
+l3d_factory_manager_v_0_2::~l3d_factory_manager_v_0_2(void)~l3d_factory_manager_v_0_216,315
+int l3d_factory_manager_v_0_2::choose_factories(void) {choose_factories21,433
+
+./lib/system/fwin0_2.h,216
+#define __FWIN0_2_H__FWIN0_2_H2,20
+class l3d_factory_manager_v_0_2 : public l3d_factory_manager_v_0_1 {l3d_factory_manager_v_0_27,89
+  l3d_rasterizer_3d_imp_factory *ras_3d_imp_factory;ras_3d_imp_factory11,245
+
+./lib/system/sys_dep.h,3471
+#define __SYSDEP_H__SYSDEP_H3,20
+#define DOS_OSDOS_OS24,522
+#undef WINDOWS_OSWINDOWS_OS25,537
+#undef X11_OSX11_OS26,555
+#define FARPTR FARPTR27,569
+#define FARmalloc FARmalloc28,588
+#define FARfree FARfree29,616
+#define ABS_CAST ABS_CAST30,640
+#define DGROUP64KDGROUP64K31,666
+#undef INT32INT3232,684
+#define SCREEN_XSIZE SCREEN_XSIZE33,697
+#define SCREEN_YSIZE SCREEN_YSIZE34,722
+#define DOS_OSDOS_OS43,867
+#undef WINDOWS_OSWINDOWS_OS44,882
+#undef X11_OSX11_OS45,900
+#define FARPTRFARPTR46,914
+#define FARmalloc FARmalloc47,929
+#define FARfree FARfree48,954
+#define ABS_CASTABS_CAST49,975
+#undef DGROUP64KDGROUP64K50,992
+#define INT32INT3251,1009
+#define SCREEN_XSIZE SCREEN_XSIZE52,1023
+#define SCREEN_YSIZE SCREEN_YSIZE53,1048
+#undef DOS_OSDOS_OS63,1208
+#define WINDOWS_OSWINDOWS_OS64,1222
+#undef X11_OSX11_OS65,1241
+#define FARPTR FARPTR68,1298
+#define FARmalloc FARmalloc69,1317
+#define FARfree FARfree70,1345
+#define ABS_CAST ABS_CAST71,1369
+#define DGROUP64KDGROUP64K72,1395
+#undef INT32INT3273,1413
+#define SCREEN_XSIZE SCREEN_XSIZE74,1426
+#define SCREEN_YSIZE SCREEN_YSIZE75,1451
+#define MAIN_FUNCTION_NAME MAIN_FUNCTION_NAME81,1542
+#define SW_RAST_Y_REVERSAL(SW_RAST_Y_REVERSAL82,1667
+#undef DOS_OSDOS_OS85,1721
+#define WINDOWS_OSWINDOWS_OS86,1735
+#undef X11_OSX11_OS87,1754
+#define FARPTRFARPTR92,1826
+#define FARmalloc FARmalloc93,1841
+#define FARfree FARfree94,1866
+#define ABS_CAST ABS_CAST95,1887
+#undef DGROUP64KDGROUP64K96,1905
+#define INT32INT3297,1922
+#define BITS_PER_BYTE BITS_PER_BYTE98,1936
+#undef DOS_OSDOS_OS102,1988
+#undef WINDOWS_OSWINDOWS_OS103,2002
+#define SW_RAST_Y_REVERSAL(SW_RAST_Y_REVERSAL104,2020
+#define X11_OSX11_OS105,2060
+#define FARPTRFARPTR106,2075
+#define FARmalloc FARmalloc107,2090
+#define FARfree FARfree108,2115
+#define ABS_CAST ABS_CAST109,2136
+#undef DGROUP64KDGROUP64K110,2154
+#define INT32INT32111,2171
+#define SCREEN_XSIZE SCREEN_XSIZE112,2185
+#define SCREEN_YSIZE SCREEN_YSIZE113,2210
+#define BITS_PER_BYTE BITS_PER_BYTE114,2235
+#define l3d_abs(l3d_abs119,2269
+#define MAX_BYTE MAX_BYTE125,2344
+#define EPSILON_CEIL EPSILON_CEIL128,2396
+#define iceil_fix(iceil_fix129,2448
+typedef l3d_fixed l3d_real;l3d_real134,2549
+#define l3d_real_to_float(l3d_real_to_float135,2577
+#define float_to_l3d_real(float_to_l3d_real136,2619
+#define l3d_real_to_int(l3d_real_to_int137,2661
+#define int_to_l3d_real(int_to_l3d_real138,2701
+#define l3d_mulrr(l3d_mulrr139,2741
+#define l3d_mulri(l3d_mulri140,2779
+#define l3d_divrr(l3d_divrr141,2817
+#define l3d_divri(l3d_divri142,2855
+#define iceil(iceil144,2971
+#define ifloor(ifloor146,3146
+#define l3d_sqrt(l3d_sqrt147,3233
+#define l3d_real_to_fixed(l3d_real_to_fixed148,3304
+#define fixed_to_l3d_real(fixed_to_l3d_real149,3337
+typedef float l3d_real;l3d_real154,3396
+#define l3d_real_to_float(l3d_real_to_float155,3420
+#define float_to_l3d_real(float_to_l3d_real156,3453
+#define l3d_real_to_int(l3d_real_to_int157,3495
+#define int_to_l3d_real(int_to_l3d_real158,3535
+#define l3d_mulrr(l3d_mulrr159,3577
+#define l3d_mulri(l3d_mulri160,3608
+#define l3d_divrr(l3d_divrr161,3639
+#define l3d_divri(l3d_divri162,3670
+#define iceil(iceil163,3701
+#define ifloor(ifloor164,3745
+#define l3d_sqrt(l3d_sqrt165,3791
+#define l3d_real_to_fixed(l3d_real_to_fixed166,3862
+#define fixed_to_l3d_real(fixed_to_l3d_real167,3904
+
+./lib/system/fact0_4.cc,343
+l3d_factory_manager_v_0_4 factory_manager_v_0_4;factory_manager_v_0_46,74
+l3d_factory_manager_v_0_4::l3d_factory_manager_v_0_4(void) :l3d_factory_manager_v_0_48,124
+l3d_factory_manager_v_0_4::~l3d_factory_manager_v_0_4(void)~l3d_factory_manager_v_0_413,220
+int l3d_factory_manager_v_0_4::choose_factories(void) {choose_factories17,285
+
+./lib/system/fact0_4.h,137
+#define __FACT0_4_H__FACT0_4_H2,20
+class l3d_factory_manager_v_0_4 : public l3d_factory_manager_v_0_3 {l3d_factory_manager_v_0_46,63
+
+./lib/system/factorys.cc,348
+l3d_factory_manager_v_0_1 factory_manager_v_0_1;factory_manager_v_0_112,266
+l3d_factory_manager_v_0_1::l3d_factory_manager_v_0_1(void) {l3d_factory_manager_v_0_114,316
+l3d_factory_manager_v_0_1::~l3d_factory_manager_v_0_1(void) {~l3d_factory_manager_v_0_121,492
+int l3d_factory_manager_v_0_1::choose_factories(void) {choose_factories38,884
+
+./lib/system/factorys.h,378
+#define __FACTORYS_H__FACTORYS_H2,21
+class l3d_factory_manager_v_0_1 {l3d_factory_manager_v_0_18,140
+  int should_delete_factories;should_delete_factories12,262
+  l3d_screen_factory *screen_factory;screen_factory13,293
+  l3d_rasterizer_2d_imp_factory *ras_2d_imp_factory;ras_2d_imp_factory14,331
+  l3d_dispatcher_factory *dispatcher_factory;dispatcher_factory15,384
+
+./lib/system/fact0_2.cc,346
+l3d_factory_manager_v_0_2 factory_manager_v_0_2;factory_manager_v_0_214,309
+l3d_factory_manager_v_0_2::l3d_factory_manager_v_0_2(void) :l3d_factory_manager_v_0_216,359
+l3d_factory_manager_v_0_2::~l3d_factory_manager_v_0_2(void)~l3d_factory_manager_v_0_223,516
+int l3d_factory_manager_v_0_2::choose_factories(void) {choose_factories37,830
+
+./lib/system/fact0_2.h,298
+#define __FACT0_2_H__FACT0_2_H2,20
+class l3d_factory_manager_v_0_2 : public l3d_factory_manager_v_0_1 {l3d_factory_manager_v_0_28,135
+  l3d_rasterizer_3d_imp_factory *ras_3d_imp_factory;ras_3d_imp_factory12,292
+  l3d_plugin_loader_factory *plugin_loader_factory;plugin_loader_factory13,345
+
+./lib/system/fact0_3.cc,346
+l3d_factory_manager_v_0_3 factory_manager_v_0_3;factory_manager_v_0_317,407
+l3d_factory_manager_v_0_3::l3d_factory_manager_v_0_3(void) :l3d_factory_manager_v_0_319,457
+l3d_factory_manager_v_0_3::~l3d_factory_manager_v_0_3(void)~l3d_factory_manager_v_0_324,553
+int l3d_factory_manager_v_0_3::choose_factories(void) {choose_factories28,618
+
+./lib/system/fact0_3.h,137
+#define __FACT0_3_H__FACT0_3_H2,20
+class l3d_factory_manager_v_0_3 : public l3d_factory_manager_v_0_2 {l3d_factory_manager_v_0_36,63
+
+./lib/tool_2d/sc_dos.h,3032
+#define __SCREEN_H__SCREEN_H7,316
+   #define PORT_IPALIDX PORT_IPALIDX39,1215
+   #define PORT_OPALIDX PORT_OPALIDX40,1246
+   #define PORT_PALRGB PORT_PALRGB41,1277
+   #define PORT_VTRACE PORT_VTRACE48,1472
+   #define TIMER_ENGINE_ID TIMER_ENGINE_ID57,1658
+class Tscreen {Tscreen82,2462
+      Trasterizer *fpRasterizer; /* rasterizer object containing rasterizing */fpRasterizer84,2492
+         char FARPTR *screen;    /* DOS: pointer to physical display memory */screen87,2645
+         HANDLE hBitmapInfo;     /* Windows: handle to bitmap to be Blt'd */hBitmapInfo89,2757
+         LPBITMAPINFO FARPTR pBitmapInfo;/*: ptr to bitmap info struct  */pBitmapInfo90,2835
+         unsigned char *screen;           /* X11: pointer to data buffer for XImage */screen92,2939
+         Visual *vis;            /* X11: Visual (visual info about X server) */vis93,3027
+         Colormap cmap;          /* X11: colormap (palette) */cmap94,3108
+         XImage *ximg;           /* X11: XImage which will be actually shown */ximg95,3172
+         GC gc;                  /* X11: graphics context */gc96,3253
+         int depth, bytespp, scanline_pad; /* X11: info about X server */depth97,3315
+         int depth, bytespp, scanline_pad; /* X11: info about X server */bytespp97,3315
+         int depth, bytespp, scanline_pad; /* X11: info about X server */scanline_pad97,3315
+         unsigned long col_cells[256]; /* X11: cells for colormap entries */col_cells98,3390
+      T3dobject view_win_obj;view_win_obj108,3849
+      HWND hDisplaywnd;          /* Windows: ptr to client (target) window */hDisplaywnd111,3917
+      HPALETTE hpal;             /*        : handle to logical palette */hpal112,3996
+      int winsize_x, winsize_y;  /*        : size of client window */winsize_x113,4071
+      int winsize_x, winsize_y;  /*        : size of client window */winsize_y113,4071
+         Display *dpy;           /* X11: Display (connection to X server) */dpy115,4170
+         Window w;               /* X11: Window */w116,4248
+      int xsize, ysize;              /* size of offscr.buf in Trasterizer */xsize123,4555
+      int xsize, ysize;              /* size of offscr.buf in Trasterizer */ysize123,4555
+      T3dfacet view_win;view_win124,4633
+inline Trasterizer *Tscreen::get_rasterizer() {get_rasterizer146,5847
+inline void Tscreen::putpixel(int x, int y, int col) {putpixel153,6151
+inline void Tscreen::drawline(int x0, int y0, int x1, int y1, int col) {drawline160,6506
+inline void Tscreen::clear_screenbuf(void) {clear_screenbuf167,6878
+inline void Tscreen::blit_screen(void) {blit_screen174,7194
+inline void Tscreen::blit_screen(char FARPTR *buf) {blit_screen253,10258
+inline void Tscreen::pointcloud(const T3dfacet *aFacet) {pointcloud308,12309
+inline void Tscreen::texpoly(const T3dfacet *aFacet) {texpoly315,12650
+inline void Tscreen::fillpoly(const T3dfacet *aFacet) {fillpoly322,12978
+inline void Tscreen::linepoly(const T3dfacet *aFacet) {linepoly329,13310
+
+./lib/tool_2d/sc_x11sh.cc,277
+l3d_screen_x11_shm::~l3d_screen_x11_shm(void) {~l3d_screen_x11_shm3,23
+XImage *l3d_screen_x11_shm::create_ximage(void) {create_ximage9,152
+void l3d_screen_x11_shm::blit_screen(void) {blit_screen42,1072
+void l3d_screen_x11_shm::create_buffer(void) {create_buffer47,1195
+
+./lib/tool_2d/sc_x11sh.h,384
+#define __SC_X11SH_H__SC_X11SH_H7,313
+class l3d_screen_x11_shm : public l3d_screen_x11 {l3d_screen_x11_shm14,431
+  XShmSegmentInfo shminfo;shminfo16,494
+  l3d_screen_x11_shm(int xsize, int ysize)l3d_screen_x11_shm19,531
+class l3d_screen_factory_x11_shm : public l3d_screen_factory {l3d_screen_factory_x11_shm27,737
+  l3d_screen *create(int xsize, int ysize) {create29,809
+
+./lib/tool_2d/si_imes.h,297
+#define _SI_IMES_H_SI_IMES_H2,19
+class l3d_screen_info_indexed_mesa : public l3d_screen_info_indexed {l3d_screen_info_indexed_mesa9,109
+  l3d_screen_info_indexed_mesa(int palette_size,l3d_screen_info_indexed_mesa11,189
+  void set_color(unsigned long col) { glIndexi(col); }set_color15,371
+
+./lib/tool_2d/sc_x11.cc,540
+l3d_screen_x11::l3d_screen_x11(int xsize, int ysize) :l3d_screen_x114,41
+l3d_screen_x11::~l3d_screen_x11(void) {~l3d_screen_x11123,4239
+inline void l3d_screen_x11::blit_screen(void) {blit_screen130,4443
+void l3d_screen_x11::open_screen(void) {open_screen136,4607
+void l3d_screen_x11::close_screen(void) {close_screen139,4651
+void l3d_screen_x11::refresh_palette(void) {refresh_palette144,4731
+XImage *l3d_screen_x11::create_ximage(void) {create_ximage180,5796
+void l3d_screen_x11::create_buffer(void) {create_buffer193,6442
+
+./lib/tool_2d/screen.cc,146
+l3d_screen::l3d_screen(int xsize, int ysize) {l3d_screen9,333
+#define BORDER BORDER17,541
+l3d_screen::~l3d_screen(void) {~l3d_screen44,1546
+
+./lib/tool_2d/sc_mesa.h,254
+#define __SC_MESA_H__SC_MESA_H2,20
+class l3d_screen_mesa : public l3d_screen {l3d_screen_mesa11,174
+class l3d_screen_factory_mesa : public l3d_screen_factory {l3d_screen_factory_mesa18,324
+  l3d_screen *create(int xsize, int ysize) {create20,393
+
+./lib/tool_2d/sc_mswin.cc,507
+static HDC hdcMem;hdcMem4,43
+#define DIB_24DIB_246,63
+#define DIBS DIBS7,78
+l3d_screen_mswin::l3d_screen_mswin(int xsize, int ysize) :l3d_screen_mswin8,92
+l3d_screen_mswin::~l3d_screen_mswin(void) {~l3d_screen_mswin105,3335
+inline void l3d_screen_mswin::blit_screen(void) {blit_screen122,3655
+void l3d_screen_mswin::open_screen(void) {open_screen209,6471
+void l3d_screen_mswin::close_screen(void) {close_screen243,7427
+void l3d_screen_mswin::refresh_palette(void) {refresh_palette248,7509
+
+./lib/tool_2d/sc_mswin.h,956
+#define __SC_MSWIN_H__SC_MSWIN_H2,22
+class l3d_screen_mswin : public l3d_screen {l3d_screen_mswin8,118
+  unsigned char *buffer;           // offscreen buffer data for DIBbuffer10,178
+  const int TIMER_ENGINE_ID= 1;TIMER_ENGINE_ID11,247
+  HANDLE hBitmapInfo;     /* Windows: handle to bitmap to be Blt'd */hBitmapInfo12,280
+  LPBITMAPINFO FARPTR pBitmapInfo;/*: ptr to bitmap info struct  */pBitmapInfo13,351
+  HBITMAP hBitmap;hBitmap14,420
+    HWND hDisplaywnd;          /* Windows: ptr to client (target) window */hDisplaywnd18,483
+    HPALETTE hpal;             /*        : handle to logical palette */hpal19,560
+    int winsize_x, winsize_y;  /*        : size of client window */winsize_x20,633
+    int winsize_x, winsize_y;  /*        : size of client window */winsize_y20,633
+class l3d_screen_factory_mswin : public l3d_screen_factory {l3d_screen_factory_mswin29,884
+  l3d_screen *create(int xsize, int ysize) {create31,956
+
+./lib/tool_2d/sc_x11.h,1078
+#define __SC_X11_H__SC_X11_H2,19
+class l3d_screen_x11 : public l3d_screen {l3d_screen_x118,109
+  Visual *vis;            // X11: Visual (visual info about X server)vis10,165
+  Colormap cmap;          // X11: colormap (palette)cmap11,235
+  unsigned char *buffer;           // offscreen buffer data for ximagebuffer12,288
+  GC gc;                  // X11: graphics contextgc13,359
+  int depth, bytespp, scanline_pad; // X11: info about X serverdepth14,410
+  int depth, bytespp, scanline_pad; // X11: info about X serverbytespp14,410
+  int depth, bytespp, scanline_pad; // X11: info about X serverscanline_pad14,410
+  unsigned long* col_cells; // X11: cells for colormap entriescol_cells15,474
+    XImage *ximg;           // X11: XImage which will be actually shownximg19,577
+    Display *dpy;           // X11: Display (connection to X server)dpy23,729
+    Window w;               // X11: Window w24,798
+class l3d_screen_factory_x11 : public l3d_screen_factory {l3d_screen_factory_x1132,1011
+  l3d_screen *create(int xsize, int ysize) {create34,1079
+
+./lib/tool_2d/screen.h,596
+#define __SCREEN_H__SCREEN_H7,311
+class l3d_screen : public l3d_event_source {l3d_screen14,440
+    virtual void wait_vtrace(void) {} ;wait_vtrace16,498
+    virtual void close_screen(void) {};close_screen17,538
+    l3d_two_part_list<l3d_coordinate> *vwin_vlist;vwin_vlist18,578
+    int bufsize;bufsize19,629
+    int xsize, ysize;xsize23,725
+    int xsize, ysize;ysize23,725
+    l3d_polygon_2d *view_win;view_win24,747
+    l3d_screen_info *sinfo;sinfo25,777
+    virtual void refresh_palette(void) { };refresh_palette27,806
+class l3d_screen_factory {l3d_screen_factory32,930
+
+./lib/tool_2d/si_idx.cc,634
+l3d_screen_info_indexed::l3d_screen_info_indexed(int palette_size,l3d_screen_info_indexed6,61
+l3d_screen_info_indexed::~l3d_screen_info_indexed() {~l3d_screen_info_indexed37,1121
+unsigned long l3d_screen_info_indexed::ext_to_native(int red,ext_to_native43,1247
+void l3d_screen_info_indexed::compute_light_table(void)compute_light_table81,2213
+void l3d_screen_info_indexed::compute_fog_table(void)compute_fog_table144,4122
+void l3d_screen_info_indexed::light_native(unsigned char *pcolor, int intensity)light_native197,5735
+void l3d_screen_info_indexed::fog_native(unsigned char *pcolor, int intensity)fog_native203,5947
+
+./lib/tool_2d/si_idx.h,786
+#define _SI_IDX_H_SI_IDX_H2,18
+struct l3d_rgb {l3d_rgb6,59
+  int red, green, blue;red7,76
+  int red, green, blue;green7,76
+  int red, green, blue;blue7,76
+class l3d_screen_info_indexed : public l3d_screen_info {l3d_screen_info_indexed10,105
+  int *light_table;light_table11,162
+  int *fog_table;fog_table12,182
+  int palette_size;palette_size18,341
+  l3d_rgb *palette;palette19,361
+  int get_palette_size(void) { return palette_size; }get_palette_size20,381
+  int palette_num_used;palette_num_used21,435
+  int palette_max_red, palette_max_green, palette_max_blue;  palette_max_red22,459
+  int palette_max_red, palette_max_green, palette_max_blue;  palette_max_green22,459
+  int palette_max_red, palette_max_green, palette_max_blue;  palette_max_blue22,459
+
+./lib/tool_2d/si_rgb.cc,671
+l3d_screen_info_rgb::l3d_screen_info_rgb(unsigned long red_mask, unsignedl3d_screen_info_rgb4,52
+l3d_screen_info_rgb::~l3d_screen_info_rgb(void) {~l3d_screen_info_rgb35,1072
+void l3d_screen_info_rgb::compute_color_resolution(void) {compute_color_resolution44,1300
+unsigned long l3d_screen_info_rgb::ext_to_native(int red,ext_to_native80,2262
+void l3d_screen_info_rgb::compute_light_table(void)compute_light_table95,2674
+void l3d_screen_info_rgb::compute_fog_table(void)compute_fog_table122,3384
+void l3d_screen_info_rgb::light_native(unsigned char *pcolor,light_native150,4248
+void l3d_screen_info_rgb::fog_native(unsigned char *pcolor,fog_native193,5534
+
+./lib/tool_2d/si_rgb.h,1174
+#define _SI_RGB_H_SI_RGB_H2,18
+class l3d_screen_info_rgb : public l3d_screen_info {l3d_screen_info_rgb6,60
+  int *red_light_table, *green_light_table, *blue_light_table,red_light_table8,123
+  int *red_light_table, *green_light_table, *blue_light_table,green_light_table8,123
+  int *red_light_table, *green_light_table, *blue_light_table,blue_light_table8,123
+    *red_fog_table, *green_fog_table, *blue_fog_table;red_fog_table9,186
+    *red_fog_table, *green_fog_table, *blue_fog_table;green_fog_table9,186
+    *red_fog_table, *green_fog_table, *blue_fog_table;blue_fog_table9,186
+  char bytes_per_rgb;bytes_per_rgb15,454
+  unsigned long red_mask, green_mask, blue_mask;red_mask16,476
+  unsigned long red_mask, green_mask, blue_mask;green_mask16,476
+  unsigned long red_mask, green_mask, blue_mask;blue_mask16,476
+  int red_shift, green_shift, blue_shift,red_shift17,525
+  int red_shift, green_shift, blue_shift,green_shift17,525
+  int red_shift, green_shift, blue_shift,blue_shift17,525
+      red_max, green_max, blue_max;red_max18,567
+      red_max, green_max, blue_max;green_max18,567
+      red_max, green_max, blue_max;blue_max18,567
+
+./lib/tool_2d/sc_mesa.cc,209
+l3d_screen_mesa::l3d_screen_mesa(int xsize, int ysize) :l3d_screen_mesa5,43
+inline void l3d_screen_mesa::blit_screen(void) {blit_screen94,3051
+void l3d_screen_mesa::open_screen(void) {open_screen99,3137
+
+./lib/tool_2d/scrinfo.h,618
+#define _SCRINFO_H_SCRINFO_H2,19
+#define MAX_LIGHT_LEVELS MAX_LIGHT_LEVELS26,1264
+#define NUM_LIGHT_LEVELS NUM_LIGHT_LEVELS27,1293
+class l3d_screen_info {l3d_screen_info33,1508
+  int ext_max_red, ext_max_green, ext_max_blue;ext_max_red35,1542
+  int ext_max_red, ext_max_green, ext_max_blue;ext_max_green35,1542
+  int ext_max_red, ext_max_green, ext_max_blue;ext_max_blue35,1542
+  char bytes_per_pixel;bytes_per_pixel36,1590
+  virtual ~l3d_screen_info(void){};~l3d_screen_info38,1685
+  virtual void set_color(unsigned long col ) {};set_color48,2125
+  unsigned char *p_screenbuf;p_screenbuf53,2373
+
+./lib/tool_2d/si_rmes.h,582
+#define _SI_RMES_H_SI_RMES_H2,19
+class l3d_screen_info_rgb_mesa : public l3d_screen_info_rgb {l3d_screen_info_rgb_mesa9,106
+  l3d_screen_info_rgb_mesa(unsigned long red_mask, unsigned long green_mask,l3d_screen_info_rgb_mesa11,178
+  void set_color(unsigned long col) { set_color28,727
+  void compute_light_table(void) {};compute_light_table36,955
+  void compute_fog_table(void) {} ;compute_fog_table37,992
+  void light_native(unsigned char *pcolor, int intensity) {} ;light_native38,1028
+  void fog_native(unsigned char *pcolor, int intensity)  {};fog_native39,1091
+
+./lib/tool_2d/sc_zmesa.cc,317
+l3d_screen_zbuf_mesa::l3d_screen_zbuf_mesa(int xsize, int ysize) :l3d_screen_zbuf_mesa4,24
+l3d_screen_zbuf_mesa::~l3d_screen_zbuf_mesa(void) {~l3d_screen_zbuf_mesa93,3064
+inline void l3d_screen_zbuf_mesa::blit_screen(void) {blit_screen96,3119
+void l3d_screen_zbuf_mesa::open_screen(void) {open_screen101,3210
+
+./lib/tool_2d/sc_zmesa.h,274
+#define __SC_ZMESA_H__SC_ZMESA_H2,21
+class l3d_screen_zbuf_mesa : public l3d_screen {l3d_screen_zbuf_mesa6,65
+class l3d_screen_factory_zbuf_mesa : public l3d_screen_factory {l3d_screen_factory_zbuf_mesa14,264
+  l3d_screen *create(int xsize, int ysize) {create16,338
+
+./lib/tool_os/ev_src.h,82
+#define __EV_SRC_H__EV_SRC_H2,19
+class l3d_event_source {l3d_event_source4,39
+
+./lib/tool_os/dis_mesa.cc,455
+l3d_dispatcher *l3d_dispatcher_mesa::last_dispatcher;last_dispatcher3,23
+l3d_dispatcher_mesa::l3d_dispatcher_mesa(void) {l3d_dispatcher_mesa5,78
+void l3d_dispatcher_mesa::glut_display_func(void) {glut_display_func9,177
+void l3d_dispatcher_mesa::glut_idle_func(void) {glut_idle_func14,319
+void l3d_dispatcher_mesa::glut_keyboard_func(unsigned char key, int x, int y) {glut_keyboard_func18,437
+void l3d_dispatcher_mesa::start(void) {start22,586
+
+./lib/tool_os/dis_x11.cc,50
+void l3d_dispatcher_x11::start(void) {start3,22
+
+./lib/tool_os/dis_mesa.h,328
+#define _DIS_MESA_H_DIS_MESA_H2,20
+class l3d_dispatcher_mesa : public l3d_dispatcher {l3d_dispatcher_mesa7,85
+  static l3d_dispatcher *last_dispatcher;last_dispatcher9,148
+class l3d_dispatcher_factory_mesa : public l3d_dispatcher_factory {l3d_dispatcher_factory_mesa19,396
+  l3d_dispatcher *create(void) {create21,473
+
+./lib/tool_os/dis_mswn.cc,380
+l3d_pipeline *l3d_dispatcher_mswin::last_pipeline;last_pipeline9,120
+l3d_event_source *l3d_dispatcher_mswin::last_event_source;last_event_source10,171
+void l3d_dispatcher_mswin::set_pipeline(l3d_pipeline *p) {set_pipeline30,468
+void l3d_dispatcher_mswin::start(void) {start35,589
+LRESULT CALLBACK l3d_dispatcher_mswin::winproc(HWND hWindow, UINT Message,winproc125,3070
+
+./lib/tool_os/dis_mswn.h,399
+#define _DIS_MSWN_H_DIS_MSWN_H2,20
+class l3d_dispatcher_mswin : public l3d_dispatcher {l3d_dispatcher_mswin8,123
+  static l3d_pipeline *last_pipeline;last_pipeline13,281
+  static l3d_event_source *last_event_source;last_event_source14,319
+class l3d_dispatcher_factory_mswin : public l3d_dispatcher_factory {l3d_dispatcher_factory_mswin21,437
+  l3d_dispatcher *create(void) {create23,515
+
+./lib/tool_os/dis_x11.h,259
+#define _DIS_X11_H_DIS_X11_H2,19
+class l3d_dispatcher_x11 : public l3d_dispatcher {l3d_dispatcher_x119,142
+class l3d_dispatcher_factory_x11 : public l3d_dispatcher_factory {l3d_dispatcher_factory_x1114,226
+  l3d_dispatcher *create(void) {create16,302
+
+./lib/tool_os/dispatch.h,238
+#define _DISPATCH_H_DISPATCH_H2,20
+class l3d_dispatcher {l3d_dispatcher8,127
+  l3d_pipeline *pipeline;pipeline10,159
+  l3d_event_source *event_source;event_source11,185
+class l3d_dispatcher_factory {l3d_dispatcher_factory16,256
+
+./lib/view/camera.cc,64
+l3d_camera::l3d_camera(void) : l3d_moveable()l3d_camera10,349
+
+./lib/view/camera.h,477
+#define __CAMERA_H__CAMERA_H7,310
+class l3d_camera : virtual public l3d_moveable {l3d_camera28,764
+   virtual ~l3d_camera(void) {};~l3d_camera32,863
+   l3d_real fovx, fovy;  /* cot of horizontal and vertical field of view angles */fovx34,897
+   l3d_real fovx, fovy;  /* cot of horizontal and vertical field of view angles */fovy34,897
+   l3d_real near_z;      /* far Z clipping plane */near_z35,980
+   l3d_real far_z;       /* far Z clipping plane */far_z36,1032
+
+./lib/view/camcol.h,339
+#define __CAMCOL_H__CAMCOL_H2,19
+class l3d_camera_collidable :l3d_camera_collidable7,92
+ int old_position_already_saved;old_position_already_saved12,196
+   l3d_camera_collidable(void) :l3d_camera_collidable17,449
+   virtual ~l3d_camera_collidable(void) {};~l3d_camera_collidable21,592
+   virtual int update(void) {update22,636
+
+./lib/datastr/list.h,1787
+#define __LIST_H__LIST_H2,17
+template<class Item> class l3d_list_item_factory {l3d_list_item_factory8,107
+  virtual Item *create(void) { return new Item ; }create10,167
+  virtual ~l3d_list_item_factory() {}~l3d_list_item_factory17,405
+template<class Item> class l3d_list l3d_list29,792
+  bool is_my_factory;is_my_factory32,843
+  int max_items;max_items34,874
+  l3d_list_item_factory<Item> *factory; // must be public to call clone on itfactory35,891
+  Item **items;items37,970
+  int num_items;num_items38,986
+  l3d_list(int initial_size) {l3d_list40,1004
+  l3d_list(void) {l3d_list52,1308
+  l3d_list(int initial_size, l3d_list_item_factory<Item> *factory) {l3d_list65,1628
+  ~l3d_list(void) {~l3d_list77,1980
+  int next_index(void) {next_index85,2196
+  Item & operator [] (int idx) const { return *items[idx]; }operator []111,2875
+   l3d_list<Item> & operator = ( const l3d_list<Item> &r ) {operator =124,3227
+template<class Item> class l3d_two_part_list {l3d_two_part_list164,4742
+  l3d_list_item_factory<Item> *factory;factory166,4801
+  l3d_list<Item> *list;list168,4850
+  int num_fixed_items;num_fixed_items169,4874
+  int num_varying_items;num_varying_items170,4897
+  int max_varying_items; //normally should not be touched from outsidersmax_varying_items171,4922
+  l3d_two_part_list<Item> & operator= (const l3d_two_part_list<Item> &r) {operator =173,4996
+  l3d_two_part_list(int fixed_size) {l3d_two_part_list182,5271
+  l3d_two_part_list(int fixed_size, l3d_list_item_factory<Item> *factory) {l3d_two_part_list193,5697
+  ~l3d_two_part_list(void) {~l3d_two_part_list205,6168
+  int next_varying_index(void) {next_varying_index209,6220
+  Item & operator[] (int index) const { return *(list->items[index]); }operator []219,6485
+
+./lib/dynamics/colsph.h,159
+#define __COLSPH_H__COLSPH_H2,19
+class l3d_collidable_sphere :l3d_collidable_sphere6,61
+  l3d_real collision_sphere_radius;collision_sphere_radius10,135
+
+./lib/dynamics/collide.h,428
+#define __COLLIDE_H__COLLIDE_H2,20
+class l3d_collidable {l3d_collidable7,103
+  l3d_point old_position, new_position;old_position9,135
+  l3d_point old_position, new_position;new_position9,135
+  l3d_point collision;collision10,175
+  l3d_vector bounce;bounce11,198
+  int prevent_collision;prevent_collision12,219
+  virtual int detect_collision_with(l3d_collidable *target) { return 0; };detect_collision_with14,245
+
+./lib/dynamics/plugins/pl_linux.cc,446
+l3d_plugin_loader *l3d_plugin_loader_linux_factory::create(void) {create8,121
+l3d_plugin_loader_linux::l3d_plugin_loader_linux(void) {l3d_plugin_loader_linux12,229
+void l3d_plugin_loader_linux::load(const char *filename) {load17,325
+void *l3d_plugin_loader_linux::find_symbol(char *symbol) {find_symbol26,588
+void l3d_plugin_loader_linux::close(void) {close31,700
+l3d_plugin_loader * l3d_plugin_loader_linux::clone(void) {clone41,913
+
+./lib/dynamics/plugins/pl_linux.h,308
+#define __PL_LINUX_H__PL_LINUX_H2,21
+class l3d_plugin_loader_linux : public l3d_plugin_loader {l3d_plugin_loader_linux6,66
+  void *handle;handle8,137
+  char filename[256];filename10,162
+class l3d_plugin_loader_linux_factory : public l3d_plugin_loader_factory {l3d_plugin_loader_linux_factory18,345
+
+./lib/dynamics/plugins/pl_mswin.h,0
+
+./lib/dynamics/plugins/plugload.h,155
+#define __PLUGLOAD_H__PLUGLOAD_H2,21
+class l3d_plugin_loader {l3d_plugin_loader4,43
+class l3d_plugin_loader_factory {l3d_plugin_loader_factory12,246
+
+./lib/dynamics/plugins/pyramid/pyramid.cc,561
+class l3d_plugin_pyramid {l3d_plugin_pyramid7,191
+  l3d_plugin_environment *env;env9,226
+  int xtheta;xtheta11,258
+  l3d_plugin_pyramid::l3d_plugin_pyramid(l3d_plugin_environment *e) {l3d_plugin_pyramid13,273
+  l3d_plugin_pyramid::~l3d_plugin_pyramid(void) {~l3d_plugin_pyramid16,360
+  void constructor(l3d_object *target, void *data) {constructor25,633
+  void update(l3d_object *target) {update113,4777
+  void destructor(l3d_object *target) {destructor123,5168
+  void copy_data(l3d_object *target, l3d_object *copy_target) {copy_data127,5268
+
+./lib/dynamics/plugins/plugenv.h,419
+#define __PLUGENV_H__PLUGENV_H2,20
+class l3d_plugin_environment {l3d_plugin_environment12,304
+  l3d_texture_loader *texloader;texloader14,343
+  l3d_screen_info *sinfo;sinfo15,376
+  l3d_surface_cache *scache;scache16,402
+  void *data;data17,431
+  l3d_plugin_environment::l3d_plugin_environment(l3d_texture_loader *l,l3d_plugin_environment18,445
+  virtual l3d_plugin_environment *clone(void) {clone29,830
+
+./lib/dynamics/plugins/vidmesh/vidmesh.cc,458
+l3d_plugin_videoscape_mesh::l3d_plugin_videoscape_meshl3d_plugin_videoscape_mesh10,275
+l3d_plugin_videoscape_mesh::~l3d_plugin_videoscape_mesh(void) {~l3d_plugin_videoscape_mesh17,404
+  void constructor(l3d_object *target, void *data) {constructor24,538
+  void update(l3d_object *target) {update330,12773
+  void destructor(l3d_object *target) {destructor339,13021
+  void copy_data(l3d_object *target, l3d_object *copy_target) {copy_data343,13129
+
+./lib/dynamics/plugins/vidmesh/vidmesh.h,432
+class l3d_plugin_videoscape_mesh {l3d_plugin_videoscape_mesh5,73
+  l3d_plugin_environment *plugin_env;plugin_env7,116
+  l3d_texture_data *tex_data;tex_data8,154
+  char mesh_fname[1024], texcoord_fname[1024], texture_fname[1024];mesh_fname12,289
+  char mesh_fname[1024], texcoord_fname[1024], texture_fname[1024];texcoord_fname12,289
+  char mesh_fname[1024], texcoord_fname[1024], texture_fname[1024];texture_fname12,289
+
+./lib/dynamics/plugins/pyrtex/pyrtex.cc,647
+class l3d_plugin_pyramid_textured_lightmapped {l3d_plugin_pyramid_textured_lightmapped7,191
+  l3d_plugin_environment *env;env9,247
+  int xtheta;xtheta11,279
+  l3d_plugin_pyramid_textured_lightmapped(l3d_plugin_environment *e) {l3d_plugin_pyramid_textured_lightmapped13,337
+  ~l3d_plugin_pyramid_textured_lightmapped(void) {~l3d_plugin_pyramid_textured_lightmapped17,469
+  void constructor(l3d_object *target, void *data) {constructor26,743
+  void update(l3d_object *target) {update160,8084
+  void destructor(l3d_object *target) {destructor170,8518
+  void copy_data(l3d_object *target, l3d_object *copy_target) {copy_data174,8639
+
+./lib/dynamics/colsph.cc,208
+int l3d_collidable_sphere::detect_collision_with(l3d_collidable *target) detect_collision_with5,91
+#define EPSILON_COLLISION EPSILON_COLLISION51,1858
+#define EPSILON_COLLISION EPSILON_COLLISION184,6757
+
+./lib/dynamics/moveable.cc,587
+l3d_moveable::l3d_moveable(void) {l3d_moveable5,60
+void l3d_moveable::translateVFW() {translateVFW50,1733
+void l3d_moveable::translateVRI() {translateVRI76,3006
+void l3d_moveable::translateVUP() {translateVUP101,4275
+void l3d_moveable::rotateVUP() {rotateVUP126,5531
+void l3d_moveable::rotateVRI() {rotateVRI146,6428
+void l3d_moveable::rotateVFW() {rotateVFW165,7309
+int l3d_moveable::update(void) {update183,8179
+void l3d_moveable::calculate_viewing_xform(void) {calculate_viewing_xform240,10502
+void l3d_moveable::transform(const l3d_matrix &m) {transform311,13079
+
+./lib/dynamics/moveable.h,1178
+#define __MOVEABLE_H__MOVEABLE_H2,21
+class l3d_moveable {l3d_moveable8,136
+  l3d_point VRP, VFW_tip, VUP_tip, VRI_tip;VRP25,989
+  l3d_point VRP, VFW_tip, VUP_tip, VRI_tip;VFW_tip25,989
+  l3d_point VRP, VFW_tip, VUP_tip, VRI_tip;VUP_tip25,989
+  l3d_point VRP, VFW_tip, VUP_tip, VRI_tip;VRI_tip25,989
+  l3d_vector VFW, VUP, VRI;VFW26,1033
+  l3d_vector VFW, VUP, VRI;VUP26,1033
+  l3d_vector VFW, VUP, VRI;VRI26,1033
+  l3d_matrix viewing_xform;viewing_xform30,1219
+  l3d_matrix inverse_viewing_xform;inverse_viewing_xform31,1247
+  rot_VUP_velocity, // rotational velocity around VUP axis rot_VUP_velocity39,1504
+    rot_VRI_velocity, // rotational velocity around VRI axis rot_VRI_velocity40,1564
+    rot_VFW_velocity, // rotational velocity around VFW axis rot_VFW_velocity41,1626
+    VUP_velocity,     // translational velocity along +ve VUP axis VUP_velocity42,1688
+    VRI_velocity,     // translational velocity along +ve VRI axis VRI_velocity43,1756
+    VFW_velocity,     // translational velocity along +ve VFW axis VFW_velocity44,1824
+    VUP_thrust,VUP_thrust45,1892
+    VRI_thrust,VRI_thrust46,1908
+    VFW_thrust;VFW_thrust47,1924
+
+./chkpoly/chkpoly.cc,1384
+class l3d_vertex_interpolator {l3d_vertex_interpolator15,339
+  int steps;steps17,379
+  int pos;pos18,392
+  int dimension;dimension19,403
+  l3d_two_part_list<l3d_coordinate> *list;list21,421
+  l3d_list<l3d_vector> *deltas;deltas23,467
+  l3d_vertex_interpolator(void) {l3d_vertex_interpolator25,500
+  ~l3d_vertex_interpolator(void) {~l3d_vertex_interpolator30,640
+  void start(const l3d_two_part_list<l3d_coordinate> & source,start35,716
+  bool step(void) {step59,1223
+class my_pipeline : public l3d_pipeline {my_pipeline73,1445
+  static const int num_frames = 4;num_frames75,1498
+  l3d_rasterizer_2d_imp *ri;ri76,1533
+  l3d_rasterizer_2d *r;r77,1562
+  l3d_vertex_interpolator interp;interp78,1586
+  l3d_two_part_list<l3d_coordinate> *vlist, *vlist_frames[num_frames];vlist79,1620
+  l3d_two_part_list<l3d_coordinate> *vlist, *vlist_frames[num_frames];vlist_frames79,1620
+  l3d_polygon_2d_flatshaded *facet;facet80,1691
+  int frame_no;frame_no82,1728
+  bool currently_interpolating;currently_interpolating83,1744
+  l3d_screen *s;s86,1785
+my_pipeline::my_pipeline(void) {my_pipeline94,1929
+my_pipeline::~my_pipeline(void) {~my_pipeline174,5197
+void my_pipeline::update_event(void) {update_event186,5413
+void my_pipeline::draw_event(void) {draw_event208,5947
+void my_pipeline::key_event(int ch) {key_event221,6369
+main() {main228,6455
+
+./chkzclip/shapes.h,1475
+class Tpyramid:public T3dobject {Tpyramid3,25
+   int xtheta;xtheta4,60
+class Tcube:public T3dobject {Tcube12,178
+   int xtheta,ytheta,ztheta;xtheta13,210
+   int xtheta,ytheta,ztheta;ytheta13,210
+   int xtheta,ytheta,ztheta;ztheta13,210
+   int xgoal, ygoal, zgoal;xgoal14,240
+   int xgoal, ygoal, zgoal;ygoal14,240
+   int xgoal, ygoal, zgoal;zgoal14,240
+   int xrotating,yrotating,zrotating;xrotating15,269
+   int xrotating,yrotating,zrotating;yrotating15,269
+   int xrotating,yrotating,zrotating;zrotating15,269
+   int xthetainc, ythetainc, zthetainc;xthetainc16,308
+   int xthetainc, ythetainc, zthetainc;ythetainc16,308
+   int xthetainc, ythetainc, zthetainc;zthetainc16,308
+class Torbitcube: public Tcube {Torbitcube23,443
+   int xorbit, yorbit, zorbit;xorbit24,477
+   int xorbit, yorbit, zorbit;yorbit24,477
+   int xorbit, yorbit, zorbit;zorbit24,477
+   int xogoal, yogoal, zogoal;xogoal25,509
+   int xogoal, yogoal, zogoal;yogoal25,509
+   int xogoal, yogoal, zogoal;zogoal25,509
+   int xorbiting, yorbiting, zorbiting;xorbiting26,541
+   int xorbiting, yorbiting, zorbiting;yorbiting26,541
+   int xorbiting, yorbiting, zorbiting;zorbiting26,541
+class Tmountains: public T3dobject {Tmountains33,686
+#define TRIANGLES_PER_STRIP TRIANGLES_PER_STRIP34,724
+#define NUM_STRIPS NUM_STRIPS35,756
+   Mtype deltay [ (TRIANGLES_PER_STRIP/2 + 1) * (NUM_STRIPS+1) ];deltay36,778
+class Ttorus: public T3dobject {Ttorus42,918
+
+./chkzclip/shapes.cc,790
+unsigned char tex_quilt[TEX_HEIGHT][TEX_WIDTH];tex_quilt5,65
+Tpyramid::Tpyramid(void) {Tpyramid7,116
+Tpyramid::~Tpyramid(void) { }~Tpyramid47,1864
+int Tpyramid::update(void) {update49,1897
+void Ttorus::load(char *fname) {load54,2018
+Ttorus::Ttorus(void) {Ttorus107,3650
+int Ttorus::update(void) { update119,4034
+Ttorus::~Ttorus(void) {~Ttorus123,4082
+Tcube::Tcube(void) {Tcube126,4112
+Tcube::~Tcube(void) {~Tcube239,8349
+int Tcube::update(void) { update242,8377
+Torbitcube::Torbitcube(void) {Torbitcube291,9477
+Torbitcube::~Torbitcube(void) { }~Torbitcube309,10177
+int Torbitcube::update(void) {update311,10214
+Tmountains::Tmountains(void) {Tmountains361,11396
+int Tmountains::update(void) {update430,13865
+void init_textures(void) {init_textures459,14472
+
+./chkzclip/main.cc,277
+class Tmyworld:public Tworld {Tmyworld10,128
+/* virtual */ void Tmyworld::updateall(void) {updateall18,366
+Tmyworld::Tmyworld(void) {Tmyworld23,468
+int main(int argc, char *argv[])main47,1111
+int WINAPI WinMain (HINSTANCE hInst, WinMain67,1620
+main() {main138,3299
+
+./chk2dclip/chk2dclip.cc,134
+class Tdummy_obj : public T3dobject {Tdummy_obj4,43
+   /* virtual */ int update(void) { return 0; }update5,81
+main() {main8,133
+
+./portal/main.cc,21
+main() {main25,618
+
+./mesaflat/mesaflat.cc,194
+void display(void) {display5,61
+void init(void) {init25,368
+void update(void) {update36,617
+void key(unsigned char c, int x, int y) {key40,663
+main(int argc, char *argv[]) {main46,749
+
+./xform/main.cc,652
+class my_pipeline : public l3d_pipeline {my_pipeline15,354
+  l3d_screen *screen;screen17,404
+  l3d_rasterizer_2d *rasterizer;rasterizer18,426
+  l3d_rasterizer_2d_imp *ras_imp;ras_imp19,459
+  l3d_two_part_list<l3d_coordinate> *vlist;vlist21,494
+  int c;  // colorc23,539
+  virtual void pixel(char **p,int a,int b,int c, int d){};pixel32,767
+my_pipeline::my_pipeline(void) {my_pipeline35,830
+my_pipeline::~my_pipeline(void) {~my_pipeline45,1126
+void my_pipeline::key_event(int c) {key_event52,1235
+void my_pipeline::update_event() {update_event58,1314
+void my_pipeline::draw_event(void) {draw_event125,3268
+main() {main129,3333
+
+./audio/ramp.cc,19
+main() {main5,60
+
+./audio/sound.cc,19
+main() {main4,40
+
+./drawdot/drawdot.cc,665
+void choose_factories(void) {choose_factories16,413
+class my_pipeline : public l3d_pipeline {my_pipeline28,731
+  l3d_rasterizer_2d_imp *ri;ri30,785
+  l3d_rasterizer_2d *r;r31,814
+  int x, y, dx, dy;x33,839
+  int x, y, dx, dy;y33,839
+  int x, y, dx, dy;dx33,839
+  int x, y, dx, dy;dy33,839
+  unsigned long color;color34,859
+  l3d_screen *s;s37,892
+my_pipeline::my_pipeline(void) {my_pipeline48,1144
+my_pipeline::~my_pipeline(void) {~my_pipeline64,1622
+void my_pipeline::key_event(int ch) {key_event70,1696
+void my_pipeline::update_event() {update_event83,1959
+void my_pipeline::draw_event(void) {draw_event93,2132
+main() {main98,2221
+
+./list/list.cc,465
+class l3d_polygon_ivertex {l3d_polygon_ivertex7,91
+  int ivertex;ivertex9,128
+  virtual l3d_polygon_ivertex& operator= (const l3d_polygon_ivertex &r) {operator =11,144
+  virtual ~l3d_polygon_ivertex(void) {printf("iv dest\n");}// destructor MUST be virtual here since~l3d_polygon_ivertex18,311
+class my_factory : public l3d_list_item_factory<l3d_polygon_ivertex> {my_factory25,644
+  l3d_polygon_ivertex *create(void) {create26,715
+main()  {main32,817
+
+./portex/main.cc,21
+main() {main26,655
+
+./textest/main.cc,21
+main() {main10,156
+
+./textest/shapes.cc,143
+pyramid::pyramid(l3d_texture_loader *l) :pyramid6,62
+pyramid::~pyramid(void) {~pyramid115,5366
+int pyramid::update(void) {update119,5470
+
+./textest/shapes.h,109
+class pyramid:public l3d_object {pyramid7,165
+   int xtheta;xtheta8,199
+   int dx_theta;dx_theta10,222
+
+./textest/textest.cc,94
+void my_world::update_all(void) {update_all20,445
+my_world::my_world(void) my_world24,509
+
+./textest/textest.h,216
+#define __TEXTEST_H__TEXTEST_H2,20
+class my_world:public l3d_world {my_world9,196
+  virtual ~my_world(void) { delete texture_loader; }~my_world14,282
+  l3d_texture_loader *texture_loader;texture_loader17,448
+
+./hello/hello.cc,105
+#define SCREEN_XSIZE SCREEN_XSIZE10,136
+#define SCREEN_YSIZE SCREEN_YSIZE11,161
+main() {main14,202
+
+./hello_oo/ch2_app.cc,43
+void ch2_app::execute(void) {execute4,39
+
+./hello_oo/ch2_app.h,111
+#define __CH2_APP_H__CH2_APP_H2,20
+class ch2_app {ch2_app6,61
+  virtual ~ch2_app(void) {};~ch2_app13,243
+
+./hello_oo/ch2_app_x.cc,223
+void ch2_app_x::create_window(void) {create_window4,43
+void ch2_app_x::ask_to_be_notified_of_interesting_events(void) {ask_to_be_notified_of_interesting_events26,870
+void ch2_app_x::event_loop(void) {event_loop30,976
+
+./hello_oo/ch2_app_x.h,453
+#define __CH2_APP_X_H__CH2_APP_X_H2,22
+class ch2_app_x : public ch2_app {ch2_app_x7,115
+  const int screen_xsize = 320;screen_xsize9,162
+  const int screen_ysize = 200;screen_ysize10,194
+  Visual *vis;            // X11: Visual (visual info about X server)vis11,226
+  Display *dpy;           // X11: Display (connection to X server)dpy12,296
+  Window w;               // X11: Windoww13,363
+  virtual ~ch2_app_x(void) {};~ch2_app_x20,556
+
+./hello_oo/ch2_appfactory.h,95
+#define __CH2_APPFACTORY_H__CH2_APPFACTORY_H2,27
+class ch2_appfactory {ch2_appfactory7,102
+
+./hello_oo/ch2_appfactory_x.cc,54
+ch2_app *ch2_appfactory_x::create(void) {create5,72
+
+./hello_oo/ch2_appfactory_x.h,126
+#define __CH2_APPFACTORY_X_H__CH2_APPFACTORY_X_H2,29
+class ch2_appfactory_x : public ch2_appfactory {ch2_appfactory_x6,88
+
+./hello_oo/ch2_factorymanager.cc,142
+ch2_appfactory *ch2_factorymanager::appfactory = 0;appfactory7,101
+void ch2_factorymanager::choose_factories(void) {choose_factories9,154
+
+./hello_oo/ch2_factorymanager.h,164
+#define __CH2_FACTORYMANAGER_H__CH2_FACTORYMANAGER_H2,31
+class ch2_factorymanager {ch2_factorymanager5,91
+  static ch2_appfactory *appfactory;appfactory7,127
+
+./hello_oo/ch2_hello.cc,19
+main() {main4,53
+
+./hello_oo_event/ch2_app_xevent.h,325
+#define __CH2_APP_XEVENT_H__CH2_APP_XEVENT_H2,27
+class ch2_app_xevent : public ch2_app_x {ch2_app_xevent6,79
+  char *screen;screen8,133
+  XImage *ximg;ximg9,149
+  int depth, bytespp, scanline_pad;depth10,165
+  int depth, bytespp, scanline_pad;bytespp10,165
+  int depth, bytespp, scanline_pad;scanline_pad10,165
+
+./hello_oo_event/ch2_appfactory_xevent.cc,59
+ch2_app *ch2_appfactory_xevent::create(void) {create4,64
+
+./hello_oo_event/ch2_appfactory_xevent.h,146
+#define __CH2_APPFACTORY_XEVENT_H__CH2_APPFACTORY_XEVENT_H2,34
+class ch2_appfactory_xevent : public ch2_appfactory {ch2_appfactory_xevent6,98
+
+./hello_oo_event/ch2_factorymanager.cc,143
+ch2_appfactory *ch2_factorymanager::appfactory = 0;appfactory8,136
+void ch2_factorymanager::choose_factories(void) {choose_factories10,189
+
+./hello_oo_event/ch2_app_xevent.cc,384
+const char *ch2_app_xevent::event_name(int e_type) const {event_name4,48
+ch2_app_xevent::~ch2_app_xevent(void) {~ch2_app_xevent50,2324
+void ch2_app_xevent::create_window(void) {create_window54,2402
+void ch2_app_xevent::ask_to_be_notified_of_interesting_events(void) {ask_to_be_notified_of_interesting_events125,4639
+void ch2_app_xevent::event_loop(void) {event_loop129,4772
+
+./hello_oo_image/ch2_app_ximage.cc,173
+void ch2_app_ximage::ask_to_be_notified_of_interesting_events(void) {ask_to_be_notified_of_interesting_events5,68
+void ch2_app_ximage::event_loop(void) {event_loop9,179
+
+./hello_oo_image/ch2_app_ximage.h,178
+#define __CH2_APP_XIMAGE_H__CH2_APP_XIMAGE_H2,27
+class ch2_app_ximage : public ch2_app_xevent {ch2_app_ximage6,84
+  virtual ~ch2_app_ximage(void) { };~ch2_app_ximage12,255
+
+./hello_oo_image/ch2_appfactory_ximage.cc,59
+ch2_app *ch2_appfactory_ximage::create(void) {create4,64
+
+./hello_oo_image/ch2_appfactory_ximage.h,146
+#define __CH2_APPFACTORY_XIMAGE_H__CH2_APPFACTORY_XIMAGE_H2,34
+class ch2_appfactory_ximage : public ch2_appfactory {ch2_appfactory_ximage6,98
+
+./hello_oo_image/ch2_factorymanager.cc,143
+ch2_appfactory *ch2_factorymanager::appfactory = 0;appfactory9,171
+void ch2_factorymanager::choose_factories(void) {choose_factories11,224
+
+./morph2d/morph2d.cc,885
+class my_pipeline : public l3d_pipeline {my_pipeline16,371
+  static const int num_frames = 4;num_frames18,424
+  l3d_rasterizer_2d_imp *ri;ri19,459
+  l3d_rasterizer_2d *r;r20,488
+  l3d_vertex_interpolator interp;interp21,512
+  l3d_two_part_list<l3d_coordinate> *vlist, *vlist_frames[num_frames];vlist22,546
+  l3d_two_part_list<l3d_coordinate> *vlist, *vlist_frames[num_frames];vlist_frames22,546
+  l3d_polygon_2d_flatshaded *facet;facet23,617
+  int frame_no;frame_no25,654
+  bool currently_interpolating;currently_interpolating26,670
+  l3d_screen *s;s29,711
+my_pipeline::my_pipeline(void) {my_pipeline37,855
+my_pipeline::~my_pipeline(void) {~my_pipeline119,4217
+void my_pipeline::update_event(void) {update_event131,4433
+void my_pipeline::draw_event(void) {draw_event153,4967
+void my_pipeline::key_event(int ch) {key_event166,5389
+main() {main173,5475
+
+./polysimp/polysimp.cc,506
+class my_pipeline : public l3d_pipeline {my_pipeline15,339
+  l3d_rasterizer_2d_imp *ri;ri17,392
+  l3d_rasterizer_2d *r;r18,421
+  l3d_two_part_list<l3d_coordinate> *vlist;vlist19,445
+  l3d_polygon_2d_flatshaded *facet;facet20,489
+  l3d_screen *s;s23,534
+my_pipeline::my_pipeline(void) {my_pipeline30,659
+my_pipeline::~my_pipeline(void) {~my_pipeline71,2149
+void my_pipeline::draw_event(void) {draw_event80,2275
+void my_pipeline::key_event(int ch) {key_event92,2655
+main() {main98,2738
+
+./unsorted/cmapper/cmapidx.cc,271
+l3d_colormapper_indexed::l3d_colormapper_indexed(int palette_size,l3d_colormapper_indexed7,82
+l3d_colormapper_indexed::~l3d_colormapper_indexed() {~l3d_colormapper_indexed19,422
+unsigned long l3d_colormapper_indexed::extern_to_native(int red,extern_to_native23,500
+
+./unsorted/cmapper/cmapidx.h,522
+#define _CMAPIDX_H_CMAPIDX_H2,19
+struct l3d_rgb {l3d_rgb6,61
+  int red, green, blue;red7,78
+  int red, green, blue;green7,78
+  int red, green, blue;blue7,78
+class l3d_colormapper_indexed : public l3d_colormapper {l3d_colormapper_indexed10,106
+  int palette_size;palette_size12,172
+  l3d_rgb *palette;palette17,284
+  int palette_num_used;palette_num_used18,304
+  int palette_max_red,palette_max_red19,328
+      palette_max_green,palette_max_green20,351
+      palette_max_blue;palette_max_blue21,376
+
+./unsorted/cmapper/cmapper.cc,62
+l3d_colormapper::l3d_colormapper(void) {l3d_colormapper3,22
+
+./unsorted/cmapper/cmapper.h,214
+#define _CMAPPER_H_CMAPPER_H2,19
+class l3d_colormapper {l3d_colormapper4,39
+  int extern_max_red,extern_max_red7,96
+      extern_max_green,extern_max_green8,118
+      extern_max_blue;extern_max_blue9,142
+
+./unsorted/cmapper/cmaprgb.cc,376
+l3d_colormapper_rgb::l3d_colormapper_rgb(unsigned long red_mask, unsignedl3d_colormapper_rgb5,61
+void l3d_colormapper_rgb::compute_color_resolution() {compute_color_resolution15,309
+unsigned long l3d_colormapper_rgb::extern_to_native(int red,extern_to_native48,1134
+void l3d_colormapper::native_to_rgb_float(unsigned long native, float &red,native_to_rgb_float63,1548
+
+./unsorted/cmapper/cmaprgb.h,641
+#define _CMAPRGB_H_CMAPRGB_H2,19
+class l3d_colormapper_rgb : public l3d_colormapper {l3d_colormapper_rgb6,61
+  unsigned long red_mask, green_mask, blue_mask;red_mask8,125
+  unsigned long red_mask, green_mask, blue_mask;green_mask8,125
+  unsigned long red_mask, green_mask, blue_mask;blue_mask8,125
+  int red_shift, green_shift, blue_shift,red_shift9,174
+  int red_shift, green_shift, blue_shift,green_shift9,174
+  int red_shift, green_shift, blue_shift,blue_shift9,174
+      red_max, green_max, blue_max;red_max10,216
+      red_max, green_max, blue_max;green_max10,216
+      red_max, green_max, blue_max;blue_max10,216
+
+./unsorted/cmapper/maptest.cc,19
+main() {main5,78
+
+./unsorted/x_rast/pseudo/x.cc,366
+#define DO_SHMDO_SHM1,0
+#define FARPTRFARPTR16,231
+#define FARmalloc FARmalloc17,246
+#define FARfree FARfree18,271
+#define ABS_CASTABS_CAST19,292
+#undef DGROUP64KDGROUP64K20,309
+#define INT32INT3221,326
+#define SCREEN_XSIZE SCREEN_XSIZE22,340
+#define SCREEN_YSIZE SCREEN_YSIZE23,365
+#define BITS_PER_BYTE BITS_PER_BYTE24,390
+main() {main27,416
+
+./unsorted/x_rast/true_putpixel/x.cc,365
+#undef DO_SHMDO_SHM2,1
+#define FARPTRFARPTR17,231
+#define FARmalloc FARmalloc18,246
+#define FARfree FARfree19,271
+#define ABS_CASTABS_CAST20,292
+#undef DGROUP64KDGROUP64K21,309
+#define INT32INT3222,326
+#define SCREEN_XSIZE SCREEN_XSIZE23,340
+#define SCREEN_YSIZE SCREEN_YSIZE24,365
+#define BITS_PER_BYTE BITS_PER_BYTE25,390
+main() {main28,416
+
+./unsorted/x_rast/true_shm/x.cc,366
+#define DO_SHMDO_SHM1,0
+#define FARPTRFARPTR16,231
+#define FARmalloc FARmalloc17,246
+#define FARfree FARfree18,271
+#define ABS_CASTABS_CAST19,292
+#undef DGROUP64KDGROUP64K20,309
+#define INT32INT3221,326
+#define SCREEN_XSIZE SCREEN_XSIZE22,340
+#define SCREEN_YSIZE SCREEN_YSIZE23,365
+#define BITS_PER_BYTE BITS_PER_BYTE24,390
+main() {main27,416
+
+./unsorted/x_rast/true_ximage/x.cc,144
+#define SCREEN_XSIZE SCREEN_XSIZE6,69
+#define SCREEN_YSIZE SCREEN_YSIZE7,94
+#define BITS_PER_BYTE BITS_PER_BYTE8,119
+main() {main10,144
+
+./porltex/main.cc,21
+main() {main26,657
+
+./dots/dots.cc,2970
+#define MAXDOTS MAXDOTS14,336
+#define PI PI16,359
+enum progtypes { RUNWAY, STARS, SNOW };progtypes18,384
+enum progtypes { RUNWAY, STARS, SNOW };RUNWAY18,384
+enum progtypes { RUNWAY, STARS, SNOW };STARS18,384
+enum progtypes { RUNWAY, STARS, SNOW };SNOW18,384
+progtypes progtype;progtype20,427
+void choose_factories(void) {choose_factories24,486
+l3d_real fovx, fovy;fovx32,654
+l3d_real fovx, fovy;fovy32,654
+int xsize, ysize;xsize33,676
+int xsize, ysize;ysize33,676
+class mydot {mydot41,997
+  l3d_coordinate position;position44,1038
+  l3d_vector displacement;displacement45,1066
+  l3d_vector velocity;velocity46,1094
+  mydot(void) { position.original.set(int_to_l3d_real(0),mydot47,1118
+  virtual void project_dot(void) {project_dot54,1367
+class my_pipeline : public l3d_pipeline {my_pipeline77,1993
+  l3d_rasterizer_2d_imp *ri;ri80,2065
+  l3d_rasterizer_2d *r;r81,2095
+  unsigned long color;color83,2122
+  mydot *dots[MAXDOTS];dots86,2169
+  int numdots;numdots87,2194
+  long i, j;i90,2231
+  long i, j;j90,2231
+  long wc_win_width, wc_win_height, wc_win_dist, fov;wc_win_width91,2245
+  long wc_win_width, wc_win_height, wc_win_dist, fov;wc_win_height91,2245
+  long wc_win_width, wc_win_height, wc_win_dist, fov;wc_win_dist91,2245
+  long wc_win_width, wc_win_height, wc_win_dist, fov;fov91,2245
+  long wc_win_left, wc_win_top;wc_win_left92,2300
+  long wc_win_left, wc_win_top;wc_win_top92,2300
+  l3d_screen *s;s97,2401
+my_pipeline::my_pipeline(void) {my_pipeline108,2664
+my_pipeline::~my_pipeline(void) {~my_pipeline127,3292
+void my_pipeline::key_event(int ch) {key_event139,3466
+void my_pipeline::update_event() {update_event148,3584
+void my_pipeline::draw_event(void) {draw_event165,3953
+class dot_runway_light : public mydot {dot_runway_light198,4730
+void dot_runway_light::place_dot(void) {place_dot204,4859
+void dot_runway_light::move_dot(void) {move_dot214,5120
+class my_pipeline_runway : public my_pipeline {my_pipeline_runway221,5310
+  my_pipeline_runway(void) {my_pipeline_runway223,5368
+int my_pipeline_runway::out_of_wc_bounds(l3d_point const &p) {out_of_wc_bounds251,6139
+class dot_snowflake : public mydot {dot_snowflake261,6322
+void dot_snowflake::place_dot(void) {place_dot267,6448
+void dot_snowflake::move_dot(void) {move_dot279,6838
+class my_pipeline_snow : public my_pipeline {my_pipeline_snow290,7178
+  my_pipeline_snow(void) {my_pipeline_snow292,7234
+int my_pipeline_snow::out_of_wc_bounds(l3d_point const &p) {out_of_wc_bounds305,7484
+class dot_star : public mydot {dot_star315,7670
+void dot_star::place_dot(void) {place_dot321,7791
+void dot_star::move_dot(void) {move_dot333,8177
+class my_pipeline_stars : public my_pipeline {my_pipeline_stars340,8359
+  my_pipeline_stars(void) {my_pipeline_stars342,8416
+int my_pipeline_stars::out_of_wc_bounds(l3d_point const &p) {out_of_wc_bounds356,8664
+int main(int argc, char **argv) {main361,8785
+
+./runway/runway.cc,2013
+#define MAXDOTS MAXDOTS10,221
+#define NEARDOTS_INTERVAL NEARDOTS_INTERVAL11,241
+#define MEDDOTS_INTERVAL MEDDOTS_INTERVAL12,269
+#define FARDOTS_INTERVAL FARDOTS_INTERVAL13,296
+void choose_factories(void) {choose_factories17,358
+class my_pipeline : public l3d_pipeline {my_pipeline25,518
+  l3d_rasterizer_2d_imp *ri;ri27,572
+  l3d_rasterizer_2d *r;r28,601
+  unsigned long color;color30,626
+   int neardots_x[MAXDOTS], neardots_y, neardot_x_spacing, neardots_ctr,neardots_x32,650
+   int neardots_x[MAXDOTS], neardots_y, neardot_x_spacing, neardots_ctr,neardots_y32,650
+   int neardots_x[MAXDOTS], neardots_y, neardot_x_spacing, neardots_ctr,neardot_x_spacing32,650
+   int neardots_x[MAXDOTS], neardots_y, neardot_x_spacing, neardots_ctr,neardots_ctr32,650
+       meddots_x[MAXDOTS], meddots_y, meddot_x_spacing, meddots_ctr,meddots_x33,723
+       meddots_x[MAXDOTS], meddots_y, meddot_x_spacing, meddots_ctr,meddots_y33,723
+       meddots_x[MAXDOTS], meddots_y, meddot_x_spacing, meddots_ctr,meddot_x_spacing33,723
+       meddots_x[MAXDOTS], meddots_y, meddot_x_spacing, meddots_ctr,meddots_ctr33,723
+       fardots_x[MAXDOTS], fardots_y, fardot_x_spacing, fardots_ctr,fardots_x34,792
+       fardots_x[MAXDOTS], fardots_y, fardot_x_spacing, fardots_ctr,fardots_y34,792
+       fardots_x[MAXDOTS], fardots_y, fardot_x_spacing, fardots_ctr,fardot_x_spacing34,792
+       fardots_x[MAXDOTS], fardots_y, fardot_x_spacing, fardots_ctr,fardots_ctr34,792
+       num_neardots, num_meddots, num_fardots;num_neardots35,861
+       num_neardots, num_meddots, num_fardots;num_meddots35,861
+       num_neardots, num_meddots, num_fardots;num_fardots35,861
+  l3d_screen *s;s39,919
+my_pipeline::my_pipeline(void) {my_pipeline50,1171
+my_pipeline::~my_pipeline(void) {~my_pipeline97,2956
+void my_pipeline::key_event(int ch) {key_event103,3030
+void my_pipeline::update_event() {update_event111,3127
+void my_pipeline::draw_event(void) {draw_event141,4042
+main() {main159,4460
+
+./porlotex/main.cc,21
+main() {main26,658
+
+./objcopy/main.cc,167
+class my_world:public l3d_world {my_world25,555
+main() {main34,767
+void my_world::update_all(void) {update_all57,1279
+my_world::my_world(void) my_world61,1347
+
+./objcopy/shapes.cc,125
+pyramid::pyramid(void) :pyramid7,110
+pyramid::~pyramid(void) {~pyramid62,2809
+int pyramid::update(void) {update66,2917
+
+./objcopy/shapes.h,174
+class pyramid:public l3d_object_clippable {pyramid3,41
+   l3d_real x;x5,95
+   l3d_real dx;dx6,111
+   l3d_real maxx, minx;maxx7,128
+   l3d_real maxx, minx;minx7,128
+
+./octree/main.cc,21
+main() {main26,653
+
+./fixtest/fixtest.cc,44
+int main(int argc, char **argv) {main4,55
+
+./matmul/matmul.cc,45
+int main(int argc, char *argv[]) {main6,65
+
+./rotspikes/rotspikes.cc,2162
+#define MAXSPIKES MAXSPIKES14,336
+#define PI PI15,359
+unsigned long red_color;red_color17,384
+unsigned long green_color;green_color18,410
+unsigned long blue_color;blue_color19,438
+void choose_factories(void) {choose_factories23,503
+l3d_real fovx, fovy;fovx31,671
+l3d_real fovx, fovy;fovy31,671
+int xsize, ysize;xsize32,693
+int xsize, ysize;ysize32,693
+class spike {spike34,714
+  l3d_two_part_list<l3d_coordinate> *vlist;vlist37,740
+  l3d_polygon_2d_flatshaded *faces[3];faces38,785
+  l3d_vector displacement;displacement39,825
+  int rx, ry, rz, drx, dry, drz;rx42,876
+  int rx, ry, rz, drx, dry, drz;ry42,876
+  int rx, ry, rz, drx, dry, drz;rz42,876
+  int rx, ry, rz, drx, dry, drz;drx42,876
+  int rx, ry, rz, drx, dry, drz;dry42,876
+  int rx, ry, rz, drx, dry, drz;drz42,876
+  l3d_vector velocity;velocity44,929
+  spike(void) {spike46,955
+  ~spike(void) {~spike87,2794
+  void place_spike(void) {place_spike94,2904
+  void move_spike(void) {move_spike124,3821
+  void project_spike() {project_spike154,4684
+class my_pipeline : public l3d_pipeline {my_pipeline178,5198
+  l3d_rasterizer_2d_imp *ri;ri180,5253
+  l3d_rasterizer_2d *r;r181,5283
+  spike spikes[MAXSPIKES];spikes184,5312
+  long i, j;i185,5340
+  long i, j;j185,5340
+  long wc_win_width, wc_win_height, wc_win_dist, fov;wc_win_width186,5354
+  long wc_win_width, wc_win_height, wc_win_dist, fov;wc_win_height186,5354
+  long wc_win_width, wc_win_height, wc_win_dist, fov;wc_win_dist186,5354
+  long wc_win_width, wc_win_height, wc_win_dist, fov;fov186,5354
+  long wc_win_left, wc_win_top;wc_win_left187,5409
+  long wc_win_left, wc_win_top;wc_win_top187,5409
+  int numspikes;numspikes188,5442
+  l3d_screen *s;s193,5526
+my_pipeline::my_pipeline(void) {my_pipeline204,5789
+my_pipeline::~my_pipeline(void) {~my_pipeline233,6817
+void my_pipeline::key_event(int ch) {key_event239,6897
+void my_pipeline::update_event() {update_event247,6996
+void my_pipeline::draw_event(void) {draw_event272,7743
+int my_pipeline::out_of_wc_bounds(l3d_point const &p) {out_of_wc_bounds286,8078
+int main(int argc, char **argv) {main290,8176
+
+./spikes/spikes.cc,1901
+#define MAXSPIKES MAXSPIKES14,336
+#define PI PI15,359
+unsigned long red_color;red_color17,384
+unsigned long green_color;green_color18,410
+unsigned long blue_color;blue_color19,438
+void choose_factories(void) {choose_factories23,503
+l3d_real fovx, fovy;fovx31,671
+l3d_real fovx, fovy;fovy31,671
+int xsize, ysize;xsize32,693
+int xsize, ysize;ysize32,693
+class spike {spike34,714
+  l3d_two_part_list<l3d_coordinate> *vlist;vlist37,740
+  l3d_polygon_2d_flatshaded *faces[3];faces38,785
+  l3d_vector displacement;displacement39,825
+  l3d_vector velocity;velocity40,853
+  spike(void) {spike42,879
+  ~spike(void) {~spike83,2718
+  void place_spike(void) {place_spike90,2828
+  void move_spike(void) {move_spike107,3345
+  void project_spike() {project_spike117,3597
+class my_pipeline : public l3d_pipeline {my_pipeline141,4111
+  l3d_rasterizer_2d_imp *ri;ri143,4166
+  l3d_rasterizer_2d *r;r144,4196
+  spike spikes[MAXSPIKES];spikes147,4225
+  long i, j;i148,4253
+  long i, j;j148,4253
+  long wc_win_width, wc_win_height, wc_win_dist, fov;wc_win_width149,4267
+  long wc_win_width, wc_win_height, wc_win_dist, fov;wc_win_height149,4267
+  long wc_win_width, wc_win_height, wc_win_dist, fov;wc_win_dist149,4267
+  long wc_win_width, wc_win_height, wc_win_dist, fov;fov149,4267
+  long wc_win_left, wc_win_top;wc_win_left150,4322
+  long wc_win_left, wc_win_top;wc_win_top150,4322
+  int numspikes;numspikes151,4355
+  l3d_screen *s;s156,4439
+my_pipeline::my_pipeline(void) {my_pipeline167,4702
+my_pipeline::~my_pipeline(void) {~my_pipeline196,5730
+void my_pipeline::key_event(int ch) {key_event202,5810
+void my_pipeline::update_event() {update_event210,5909
+void my_pipeline::draw_event(void) {draw_event233,6665
+int my_pipeline::out_of_wc_bounds(l3d_point const &p) {out_of_wc_bounds247,7000
+int main(int argc, char **argv) {main251,7098
+
+./vecmath/vecmath.cc,44
+int main(int argc, char **argv) {main5,89
+
+./camspikes/camspikes.cc,2078
+#define MAXSPIKES MAXSPIKES15,369
+#define PI PI16,392
+unsigned long red_color;red_color18,417
+unsigned long green_color;green_color19,443
+unsigned long blue_color;blue_color20,471
+void choose_factories(void) {choose_factories24,536
+l3d_real fovx, fovy;fovx32,704
+l3d_real fovx, fovy;fovy32,704
+int xsize, ysize;xsize33,726
+int xsize, ysize;ysize33,726
+class spike {spike35,747
+  l3d_two_part_list<l3d_coordinate> *vlist;vlist38,773
+  l3d_polygon_2d_flatshaded *faces[3];faces39,818
+  l3d_vector displacement;displacement40,858
+  l3d_vector velocity;velocity42,888
+  spike(void) {spike44,914
+  ~spike(void) {~spike85,2753
+  void place_spike(void) {place_spike92,2863
+  void move_spike(void) {move_spike117,3574
+  void reset(void) {reset121,3655
+  void apply_xform(const l3d_matrix & m) {apply_xform128,3778
+  void project_spike() {project_spike137,4007
+class my_pipeline : public l3d_pipeline {my_pipeline161,4521
+  l3d_rasterizer_2d_imp *ri;ri163,4576
+  l3d_rasterizer_2d *r;r164,4606
+  spike spikes[MAXSPIKES];spikes167,4635
+  long i, j;i168,4663
+  long i, j;j168,4663
+  long wc_win_width, wc_win_height, wc_win_dist, fov;wc_win_width169,4677
+  long wc_win_width, wc_win_height, wc_win_dist, fov;wc_win_height169,4677
+  long wc_win_width, wc_win_height, wc_win_dist, fov;wc_win_dist169,4677
+  long wc_win_width, wc_win_height, wc_win_dist, fov;fov169,4677
+  long wc_win_left, wc_win_top;wc_win_left170,4732
+  long wc_win_left, wc_win_top;wc_win_top170,4732
+  int numspikes;numspikes171,4765
+  l3d_camera *camera;camera175,4840
+  l3d_screen *s;s178,4874
+  int animation;animation179,4892
+my_pipeline::my_pipeline(void) {my_pipeline190,5155
+my_pipeline::~my_pipeline(void) {~my_pipeline226,6310
+void my_pipeline::key_event(int ch) {key_event233,6408
+void my_pipeline::update_event() {update_event320,8936
+void my_pipeline::draw_event(void) {draw_event363,10155
+int my_pipeline::out_of_wc_bounds(l3d_point const &p) {out_of_wc_bounds393,10877
+int main(int argc, char **argv) {main397,10975
+
+./backface/main.cc,124
+class my_world:public l3d_world_backface {my_world27,640
+my_world::my_world(void) my_world34,833
+main() {main112,3483
+
+./backface/shapes.cc,124
+pyramid::pyramid(void) :pyramid7,87
+pyramid::~pyramid(void) {~pyramid80,3195
+int pyramid::update(void) {update84,3303
+
+./backface/shapes.h,74
+class pyramid:public l3d_object {pyramid4,46
+   int xtheta;xtheta5,81
+
+./lightmap/main.cc,652
+class my_pipeline : public l3d_pipeline_world {my_pipeline26,574
+  my_pipeline(l3d_world *w) :my_pipeline28,630
+class my_world : my_world33,738
+  virtual ~my_world(void) {~my_world41,860
+  l3d_texture_loader *texture_loader;texture_loader47,1051
+  l3d_surface_cache *scache;scache48,1089
+  void reset_surface_cache(void) {reset_surface_cache52,1195
+void my_pipeline::key_event(int c) {key_event58,1260
+main() {main73,1504
+void my_world::update_all(void) {update_all96,1972
+my_world::my_world(void) my_world100,2036
+int my_world::compute_light_levelcompute_light_level140,3238
+void my_world::place_lamp(void)place_lamp199,5660
+
+./lightmap/shapes.cc,126
+pyramid::pyramid(l3d_texture_loader *l, l3d_surface_cache *scache) :pyramid6,62
+pyramid::~pyramid(void) {~pyramid111,5882
+
+./lightmap/shapes.h,48
+class pyramid:public l3d_object {pyramid7,166
+
+./texzbuf/main.cc,21
+main() {main10,167
+
+./clipz/clipz.cc,2354
+#define MAXSPIKES MAXSPIKES16,409
+#define PI PI17,431
+unsigned long red_color;red_color19,456
+unsigned long green_color;green_color20,482
+unsigned long blue_color;blue_color21,510
+void choose_factories(void) {choose_factories25,575
+l3d_real fovx, fovy;fovx33,743
+l3d_real fovx, fovy;fovy33,743
+int xsize, ysize;xsize34,765
+int xsize, ysize;ysize34,765
+class spike {spike37,806
+  l3d_two_part_list<l3d_coordinate> *vlist;vlist41,850
+  l3d_polygon_3d_flatshaded *faces[3];faces42,895
+  l3d_polygon_3d_node *nonculled_polygon_nodes;nonculled_polygon_nodes45,955
+  l3d_list<l3d_polygon_3d_node> polygon_node_pool;polygon_node_pool46,1004
+  l3d_vector displacement;displacement49,1074
+  l3d_vector velocity;velocity50,1102
+  int transform_stage;transform_stage52,1128
+  spike(void) {spike54,1154
+  ~spike(void) {~spike97,3029
+  void init_nonculled_list(void) {init_nonculled_list104,3139
+  void place_spike(void) {place_spike139,4226
+  void move_spike(void) {move_spike161,4840
+  void reset(void) {reset165,4921
+  void apply_xform(const l3d_matrix & m) {apply_xform192,5534
+  void project_spike(void) {project_spike206,5823
+class my_pipeline : public l3d_pipeline {my_pipeline243,7300
+  l3d_rasterizer_2d_imp *ri;ri245,7355
+  l3d_rasterizer_2d *r;r246,7385
+  spike spikes[MAXSPIKES];spikes249,7414
+  long i, j;i250,7442
+  long i, j;j250,7442
+  long wc_win_width, wc_win_height, wc_win_dist, fov;wc_win_width251,7456
+  long wc_win_width, wc_win_height, wc_win_dist, fov;wc_win_height251,7456
+  long wc_win_width, wc_win_height, wc_win_dist, fov;wc_win_dist251,7456
+  long wc_win_width, wc_win_height, wc_win_dist, fov;fov251,7456
+  long wc_win_left, wc_win_top;wc_win_left252,7511
+  long wc_win_left, wc_win_top;wc_win_top252,7511
+  int numspikes;numspikes253,7544
+  l3d_camera *camera;camera257,7619
+  l3d_screen *s;s260,7653
+  int animation;animation261,7671
+my_pipeline::my_pipeline(void) {my_pipeline272,7934
+my_pipeline::~my_pipeline(void) {~my_pipeline308,9089
+void my_pipeline::key_event(int ch) {key_event315,9187
+void my_pipeline::update_event() {update_event402,11715
+void my_pipeline::draw_event(void) {draw_event468,13580
+int my_pipeline::out_of_wc_bounds(l3d_point const &p) {out_of_wc_bounds491,14156
+int main(int argc, char **argv) {main495,14254
+
+./vidscape/main.cc,255
+class my_world:public l3d_world {my_world25,619
+   l3d_texture_loader *texloader;texloader27,667
+   l3d_surface_cache *scache;scache28,702
+my_world::my_world(void) my_world36,910
+my_world::~my_world(void) {~my_world93,2798
+main() {main98,2871
+
+./collide/main.cc,21
+main() {main26,655
+
+./morph3d/main.cc,114
+class my_world:public l3d_world {my_world26,601
+my_world::my_world(void) my_world33,785
+main() {main80,2253
+
+./morph3d/shapes.cc,126
+pyramid::pyramid(void) :pyramid6,67
+pyramid::~pyramid(void) {~pyramid106,4047
+int pyramid::update(void) {update113,4226
+
+./morph3d/shapes.h,321
+class pyramid:public l3d_object {pyramid6,103
+  static const int num_keyframes = 2;num_keyframes7,138
+  int keyframe_no;keyframe_no8,177
+  l3d_two_part_list<l3d_coordinate> *keyframes[2];keyframes9,197
+  l3d_vertex_interpolator interp;interp10,249
+  bool currently_interpolating;currently_interpolating11,284
+
+./bsp/main.cc,277
+class my_world:public l3d_world_bsptree {my_world486,19701
+  l3d_texture_loader *texloader;texloader488,19756
+  l3d_surface_cache *scache;scache489,19790
+my_world::my_world(void) my_world495,19882
+my_world::~my_world(void) {~my_world573,22310
+main() {main578,22383
+
+./ika/main.cc,115
+class my_world:public l3d_world {my_world28,696
+my_world::my_world(void) my_world35,880
+main() {main164,6041
+
+./ika/shapes.cc,160
+pyramid::pyramid(l3d_two_part_list<l3d_coordinate> *keyframe0,pyramid6,67
+pyramid::~pyramid(void) {~pyramid18,345
+int pyramid::update(void) {update22,453
+
+./ika/shapes.h,322
+class pyramid:public l3d_object {pyramid7,142
+  static const int num_keyframes = 2;num_keyframes8,177
+  int keyframe_no;keyframe_no9,216
+  l3d_two_part_list<l3d_coordinate> *keyframes[2];keyframes10,236
+  l3d_vertex_interpolator interp;interp11,288
+  bool currently_interpolating;currently_interpolating12,323
+
+./vids3d/main.cc,115
+class my_world:public l3d_world {my_world28,696
+my_world::my_world(void) my_world35,880
+main() {main166,6073
+
+./vids3d/shapes.cc,160
+pyramid::pyramid(l3d_two_part_list<l3d_coordinate> *keyframe0,pyramid6,67
+pyramid::~pyramid(void) {~pyramid18,345
+int pyramid::update(void) {update22,453
+
+./vids3d/shapes.h,322
+class pyramid:public l3d_object {pyramid7,142
+  static const int num_keyframes = 2;num_keyframes8,177
+  int keyframe_no;keyframe_no9,216
+  l3d_two_part_list<l3d_coordinate> *keyframes[2];keyframes10,236
+  l3d_vertex_interpolator interp;interp11,288
+  bool currently_interpolating;currently_interpolating12,323
+
+./frustum/main.cc,265
+class my_world:public l3d_world_frustum {my_world25,620
+   l3d_texture_loader *texloader;texloader27,676
+   l3d_surface_cache *scache;scache28,711
+my_world::my_world(void) my_world34,804
+my_world::~my_world(void) {~my_world103,3035
+main() {main108,3108
+
+./leafybsp/main.cc,263
+class my_world:public l3d_world_bsptree {my_world28,748
+  l3d_texture_loader *texloader;texloader30,803
+  l3d_surface_cache *scache;scache31,837
+my_world::my_world(void) my_world37,929
+my_world::~my_world(void) {~my_world120,3532
+main() {main125,3605

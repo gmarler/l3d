@@ -1,0 +1,2412 @@
+[cl-struct-tree-header "GeM 3.00" " -x"()  ()][cl-struct-tree [cl-struct-class "l3d_texture_converter" "./geom/texture/texconv.h" "class l3d_texture_converter {" 1007() ]
+()()
+()
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_object" "./geom/object/object3d.h" "class l3d_object
+{" 1416"./geom/object/object3d.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_object_clippable" "./geom/object/oclip.h" "class l3d_object_clippable :" 1057"./geom/object/oclip.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_object_clippable_boundable" "./geom/object/obound.h" "class l3d_object_clippable_boundable:" 1098"./geom/object/obound.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_object_clippable_boundable_collidable" "./geom/object/ocoll.h" "class l3d_object_clippable_boundable_collidable:" 1044"./geom/object/ocoll.cc" ]
+()()
+([cl-struct-member "l3d_object_clippable_boundable_collidable" () "le_boundable_collidable(int num_fixed_vertices);" 1261 0 () "    :" 1013 308]
+[cl-struct-member "reset" () "    void reset(void" 1303 0 () "bject_clippable_boundable_collidable::reset(void" 1279 0]
+)
+()
+()
+()
+()
+()() t 
+][cl-struct-tree [cl-struct-class "l3d_sector" "./geom/object/sector.h" "class l3d_sector :" 1086"./geom/object/sector.h" ]
+()([cl-struct-member "objects" () "list<l3d_object_clippable_boundable *> *objects;" 1603 0 () () 0 0]
+)
+([cl-struct-member "l3d_sector" () "    l3d_sector(int num_fixed_vertices) :" 1161 16 () "    l3d_sector(int num_fixed_vertices) :" 1161 308]
+[cl-struct-member "operator =" () "    l3d_sector& operator= (const" 2150 0 "./geom/object/sector.cc" "l3d_sector & l3d_sector::operator= (const" 999 620]
+[cl-struct-member "render" () "    virtual void render(l3d_polygon_2d" 1985 32 "./geom/object/sector.cc" "void l3d_sector::render(l3d_polygon_2d" 3546 4]
+[cl-struct-member "update" () "    int update(void" 1623 0 "./geom/object/sector.cc" "int l3d_sector::update(void" 17814 0]
+[cl-struct-member "~l3d_sector" () "    virtual ~l3d_sector(void" 1543 32 "./geom/object/sector.cc" "l3d_sector::~l3d_sector(void" 3204 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "bounding_sphere" () "    l3d_bounding_sphere bounding_sphere;" 1254 0 () () 0 0]
+)
+([cl-struct-member "l3d_object_clippable_boundable" () "ect_clippable_boundable(int num_fixed_vertices);" 1191 0 () "    :" 1059 308]
+[cl-struct-member "reset" () "    void reset(void" 1339 0 () "void l3d_object_clippable_boundable::reset(void" 2143 0]
+[cl-struct-member "transform" () "    void transform(const" 1280 0 () " l3d_object_clippable_boundable::transform(const" 1224 620]
+)
+()
+()
+()
+()
+()()()
+])()
+([cl-struct-member "clip_to_plane" () "    int clip_to_plane(l3d_plane" 1349 0 () "nt l3d_object_clippable::clip_to_plane(l3d_plane" 1095 25201]
+[cl-struct-member "l3d_object_clippable" () "  l3d_object_clippable(int num_fixed_vertices) :" 1163 16 "./geom/object/oclip.h" "  l3d_object_clippable(int num_fixed_vertices) :" 1163 308]
+[cl-struct-member "make_current_geometry_permanent" () "    void make_current_geometry_permanent(void" 1409 0 () "_clippable::make_current_geometry_permanent(void" 1968 0]
+[cl-struct-member "~l3d_object_clippable" () "    virtual ~l3d_object_clippable(void" 1263 32 () "l3d_object_clippable::~l3d_object_clippable()" 1041 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "modeling_xform" () "    l3d_matrix modeling_xform;" 1808 0 () () 0 0]
+[cl-struct-member "modeling_xforms" () "    l3d_matrix modeling_xforms[MAX_XFORMS];" 1896 0 () () 0 0]
+[cl-struct-member "name" () "    char name[80];" 1518 0 () () 0 0]
+[cl-struct-member "nonculled_polygon_nodes" () "   l3d_polygon_3d_node *nonculled_polygon_nodes;" 2145 0 () () 0 0]
+[cl-struct-member "num_xforms" () "    int num_xforms;" 1950 0 () () 0 0]
+[cl-struct-member "parent" () "    l3d_object *parent;" 1623 0 () () 0 0]
+[cl-struct-member "plugin_data" () "    void *plugin_data;" 5755 0 () () 0 0]
+[cl-struct-member "plugin_loader" () "    l3d_plugin_loader *plugin_loader;" 5465 0 () () 0 0]
+[cl-struct-member "plugin_name" () "    char plugin_name[1024];" 5427 0 () () 0 0]
+[cl-struct-member "polygon_node_pool" () "l3d_list<l3d_polygon_3d_node> polygon_node_pool;" 2095 0 () () 0 0]
+[cl-struct-member "polygons" () "    l3d_list<l3d_polygon_3d *> polygons;" 2042 0 () () 0 0]
+[cl-struct-member "transform_stage" () "    int transform_stage;" 2280 0 () () 0 0]
+[cl-struct-member "vertices" () "    l3d_two_part_list<l3d_coordinate> *vertices;" 2000 0 () () 0 0]
+)
+([cl-struct-member "after_camera_transform" () "    void after_camera_transform(void" 2397 16 "./geom/object/object3d.h" "    void after_camera_transform(void" 2397 0]
+[cl-struct-member "apply_perspective_projection" () "    (const" 5267 16 "./geom/object/object3d.h" "d l3d_object::apply_perspective_projection(const" 5916 2796]
+[cl-struct-member "camera_transform" () "    void camera_transform(l3d_matrix" 4988 16 "./geom/object/object3d.h" "    void camera_transform(l3d_matrix" 4988 620]
+[cl-struct-member "init_nonculled_list" () "    void init_nonculled_list(void" 2252 0 () "void l3d_object::init_nonculled_list(void" 7685 0]
+[cl-struct-member "l3d_object" () "    l3d_object(int num_fixed_vertices);" 1478 0 () "l3d_object::l3d_object(int num_fixed_vertices) {" 1183 308]
+[cl-struct-member "operator =" () "    l3d_object& operator= (const" 1582 0 () "l3d_object & l3d_object::operator= (const" 4635 620]
+[cl-struct-member "reset" () "    virtual void reset(void" 2309 32 () "void l3d_object::reset(void" 10050 0]
+[cl-struct-member "transform" () "    virtual void transform(const" 2344 32 () "void l3d_object::transform(const" 9673 620]
+[cl-struct-member "update" () "    virtual int update(void" 1710 32 () "int l3d_object::update(void" 9567 0]
+[cl-struct-member "~l3d_object" () "    virtual ~l3d_object(void" 1547 32 () "l3d_object::~l3d_object()" 8703 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_dispatcher_factory" "./tool_os/dispatch.h" "class l3d_dispatcher_factory {" 1227() ]
+([cl-struct-tree [cl-struct-class "l3d_dispatcher_factory_mesa" "./tool_os/dis_mesa.h" "class l3d_dispatcher_factory_mesa :" 1377"./tool_os/dis_mesa.h" ]
+()()
+([cl-struct-member "create" () "    l3d_dispatcher *create(void" 1451 48 () "    l3d_dispatcher *create(void" 1451 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_dispatcher_factory_mswin" "./tool_os/dis_mswn.h" "class l3d_dispatcher_factory_mswin :" 447"./tool_os/dis_mswn.h" ]
+()()
+([cl-struct-member "create" () "  l3d_dispatcher *create(void" 518 48 () "  l3d_dispatcher *create(void" 518 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_dispatcher_factory_x11" "./tool_os/dis_x11.h" "class l3d_dispatcher_factory_x11 :" 1197"./tool_os/dis_x11.h" ]
+()()
+([cl-struct-member "create" () "    l3d_dispatcher *create(void" 1271 48 () "    l3d_dispatcher *create(void" 1271 0]
+)
+()
+()
+()
+()
+()()()
+])()
+([cl-struct-member "create" () "    virtual l3d_dispatcher *create(void" 1277 160 () () 0 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_factory_manager_v_0_1" "./system/factorys.h" "class l3d_factory_manager_v_0_1 {" 1107"./system/fwin.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_factory_manager_v_0_2" "./system/fact0_2.h" "class l3d_factory_manager_v_0_2 :" 1102"./system/fwin0_2.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_factory_manager_v_0_3" "./system/fwin0_3.h" "class l3d_factory_manager_v_0_3 :" 96"./system/fact0_3.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_factory_manager_v_0_4" "./system/fwin0_4.h" "class l3d_factory_manager_v_0_4 :" 1064"./system/fact0_4.cc" ]
+()([cl-struct-member "sound_client_factory" () " l3d_sound_client_factory* sound_client_factory;" 1306 0 () () 0 0]
+)
+([cl-struct-member "choose_factories" () "    int choose_factories(void" 1222 0 "./system/fwin0_4.cc" "l3d_factory_manager_v_0_4::choose_factories(void" 1637 0]
+[cl-struct-member "l3d_factory_manager_v_0_4" () "    l3d_factory_manager_v_0_4(void);" 1144 0 "./system/fwin0_4.cc" "manager_v_0_4::l3d_factory_manager_v_0_4(void) :" 1116 0]
+[cl-struct-member "~l3d_factory_manager_v_0_4" () "    virtual ~l3d_factory_manager_v_0_4(void" 1190 32 "./system/fwin0_4.cc" "y_manager_v_0_4::~l3d_factory_manager_v_0_4(void" 1215 0]
+)
+()
+()
+()
+()
+()()()
+])()
+([cl-struct-member "choose_factories" () "  int choose_factories(void" 247 0 "./system/fwin0_3.cc" "l3d_factory_manager_v_0_3::choose_factories(void" 637 0]
+[cl-struct-member "l3d_factory_manager_v_0_3" () "  l3d_factory_manager_v_0_3(void);" 173 0 "./system/fwin0_3.cc" "manager_v_0_3::l3d_factory_manager_v_0_3(void) :" 481 0]
+[cl-struct-member "~l3d_factory_manager_v_0_3" () "  virtual ~l3d_factory_manager_v_0_3(void" 217 32 "./system/fwin0_3.cc" "y_manager_v_0_3::~l3d_factory_manager_v_0_3(void" 578 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "plugin_loader_factory" () "3d_plugin_loader_factory *plugin_loader_factory;" 1339 0 () () 0 0]
+[cl-struct-member "ras_3d_imp_factory" () "d_rasterizer_3d_imp_factory *ras_3d_imp_factory;" 1285 0 () () 0 0]
+)
+([cl-struct-member "choose_factories" () "    int choose_factories(void" 1369 0 "./system/fact0_2.cc" "l3d_factory_manager_v_0_2::choose_factories(void" 1818 0]
+[cl-struct-member "l3d_factory_manager_v_0_2" () "    l3d_factory_manager_v_0_2(void);" 1182 0 "./system/fact0_2.cc" "manager_v_0_2::l3d_factory_manager_v_0_2(void) :" 1350 0]
+[cl-struct-member "~l3d_factory_manager_v_0_2" () "    virtual ~l3d_factory_manager_v_0_2(void" 1228 32 "./system/fact0_2.cc" "y_manager_v_0_2::~l3d_factory_manager_v_0_2(void" 1510 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "dispatcher_factory" () "    l3d_dispatcher_factory *dispatcher_factory;" 1376 0 () () 0 0]
+[cl-struct-member "ras_2d_imp_factory" () "d_rasterizer_2d_imp_factory *ras_2d_imp_factory;" 1328 0 () () 0 0]
+[cl-struct-member "screen_factory" () "    l3d_screen_factory *screen_factory;" 1273 0 () () 0 0]
+[cl-struct-member "should_delete_factories" () "    int should_delete_factories;" 1233 0 () () 0 0]
+)
+([cl-struct-member "choose_factories" () "    int choose_factories(void" 1407 0 "./system/factorys.cc" "l3d_factory_manager_v_0_1::choose_factories(void" 1870 0]
+[cl-struct-member "l3d_factory_manager_v_0_1" () "    l3d_factory_manager_v_0_1(void);" 1152 0 "./system/factorys.cc" "manager_v_0_1::l3d_factory_manager_v_0_1(void) {" 1307 0]
+[cl-struct-member "~l3d_factory_manager_v_0_1" () "    virtual ~l3d_factory_manager_v_0_1(void" 1198 32 "./system/factorys.cc" "y_manager_v_0_1::~l3d_factory_manager_v_0_1(void" 1484 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_polygon_ivertex" "./geom/polygon/polygon.h" "class l3d_polygon_ivertex {" 1219"./geom/polygon/polygon.h" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_ivertex_textured" "./geom/polygon/p3_tex.h" "class l3d_polygon_ivertex_textured :" 1113"./geom/polygon/p_tex.h" ]
+()([cl-struct-member "tex_coord" () "    l3d_point tex_coord;" 1177 0 () () 0 0]
+)
+([cl-struct-member "clip_to_plane" () "    int clip_to_plane(l3d_plane" 2485 0 () () 0 25201]
+[cl-struct-member "operator =" () "   virtual l3d_polygon_ivertex& operator= (const" 1318 48 "./geom/polygon/p3_tex.h" "   virtual l3d_polygon_ivertex& operator= (const" 1318 620]
+[cl-struct-member "~l3d_polygon_ivertex_textured" () "    virtual ~l3d_polygon_ivertex_textured(void" 1224 48 "./geom/polygon/p3_tex.h" "    virtual ~l3d_polygon_ivertex_textured(void" 1224 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "ivertex" () "    int ivertex;" 1246 0 () () 0 0]
+)
+([cl-struct-member "operator =" () "   virtual l3d_polygon_ivertex& operator= (const" 1297 48 () "   virtual l3d_polygon_ivertex& operator= (const" 1297 620]
+[cl-struct-member "~l3d_polygon_ivertex" () "    virtual ~l3d_polygon_ivertex(void" 1470 48 () "    virtual ~l3d_polygon_ivertex(void" 1470 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "Ttexture" () () 0"./geom/texture/texture.cc" ]
+()()
+([cl-struct-member "Ttexture" () () 0 0 () "Ttexture::Ttexture(int width, int height) {" 5891 860]
+[cl-struct-member "Ttexture" () () 0 0 () "Ttexture::Ttexture(void) {" 5862 0]
+[cl-struct-member "find_nearest_pal_entry" () () 0 0 () "int Ttexture::find_nearest_pal_entry(Tpalette" 6072 456]
+[cl-struct-member "find_or_make_pal_idx" () () 0 0 () "int Ttexture::find_or_make_pal_idx(int" 1023 1932]
+[cl-struct-member "map_to_palette" () () 0 0 () "void Ttexture::map_to_palette(Tpalette" 6661 16065]
+[cl-struct-member "process_tok" () () 0 0 () "int Ttexture::process_tok(char" 1834 620]
+[cl-struct-member "read_from_ppm" () () 0 0 () "void Ttexture::read_from_ppm(char" 5143 620]
+[cl-struct-member "~Ttexture" () () 0 0 () "Ttexture::~Ttexture(void" 5940 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_matrix" "./math/matrix.h" "class l3d_matrix {" 1493"./math/matrix.h" ]
+()([cl-struct-member "a" () "    l3d_real a[4][4];" 3415 0 () () 0 0]
+)
+([cl-struct-member "l3d_matrix" () "    l3d_matrix(const l3d_matrix &right);" 2088 16 () "3d_matrix::l3d_matrix(const l3d_matrix &right) {" 6396 620]
+[cl-struct-member "l3d_matrix" () "               int a30,int a31,int a32,int a33);" 1893 16 () "              int a30,int a31,int a32,int a33)
+{" 5436 15466732]
+[cl-struct-member "l3d_matrix" () "eal a30,l3d_real a31,l3d_real a32,l3d_real a33);" 1625 16 () "al a30,l3d_real a31,l3d_real a32,l3d_real a33)
+{" 4653 12570]
+[cl-struct-member "l3d_matrix" () "    l3d_matrix(void);" 1560 16 () "inline l3d_matrix::l3d_matrix() {" 3945 0]
+[cl-struct-member "operator =" () "    l3d_matrix &operator = (const" 2735 16 () "inline l3d_matrix &l3d_matrix::operator = (const" 7061 620]
+[cl-struct-member "print" () "    void print(void" 3218 16 () "    void print(void" 3218 0]
+[cl-struct-member "set" () "    const l3d_matrix &set(int" 2476 16 () "inline const l3d_matrix &l3d_matrix::set(int" 8518 15466732]
+[cl-struct-member "set" () "    const l3d_matrix &set(l3d_real" 2164 16 () "nline const l3d_matrix &l3d_matrix::set(l3d_real" 7782 12570]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_event_source" "./tool_os/ev_src.h" "class l3d_event_source {" 997() ]
+([cl-struct-tree [cl-struct-class "l3d_screen" "./tool_2d/screen.h" "class l3d_screen :" 1101"./tool_2d/screen.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_screen_mesa" "./tool_2d/sc_mesa.h" "class l3d_screen_mesa :" 1131"./tool_2d/sc_mesa.cc" ]
+()()
+([cl-struct-member "blit_screen" () "    void blit_screen(void" 1258 48 () "inline void l3d_screen_mesa::blit_screen(void" 3971 0]
+[cl-struct-member "l3d_screen_mesa" () "    l3d_screen_mesa(int xsize, int ysize);" 1185 0 () "en_mesa::l3d_screen_mesa(int xsize, int ysize) :" 1013 860]
+[cl-struct-member "open_screen" () "    void open_screen(void" 1230 32 () "void l3d_screen_mesa::open_screen(void" 4050 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_screen_mswin" "./tool_2d/sc_mswin.h" "class l3d_screen_mswin :" 115"./tool_2d/sc_mswin.cc" ]
+()([cl-struct-member "buffer" () "  unsigned char *buffer;" 175 1 () () 0 0]
+[cl-struct-member "hBitmap" () "  HBITMAP hBitmap;" 418 1 () () 0 0]
+[cl-struct-member "hBitmapInfo" () "  HANDLE hBitmapInfo;" 281 1 () () 0 0]
+[cl-struct-member "hDisplaywnd" () "    HWND hDisplaywnd;" 484 0 () () 0 0]
+[cl-struct-member "hpal" () "    HPALETTE hpal;" 558 0 () () 0 0]
+[cl-struct-member "pBitmapInfo" () "  LPBITMAPINFO FARPTR pBitmapInfo;" 365 1 () () 0 0]
+[cl-struct-member "winsize_y" () "    int winsize_x, winsize_y;" 642 0 () () 0 0]
+)
+([cl-struct-member "blit_screen" () "    void blit_screen(void" 854 32 () "inline void l3d_screen_mswin::blit_screen(void" 3701 0]
+[cl-struct-member "close_screen" () "    void close_screen(void" 448 33 () "void l3d_screen_mswin::close_screen(void" 7483 0]
+[cl-struct-member "l3d_screen_mswin" () "    l3d_screen_mswin(int xsize, int ysize);" 708 0 () "_mswin::l3d_screen_mswin(int xsize, int ysize) :" 130 860]
+[cl-struct-member "open_screen" () "    void open_screen(void" 825 32 () "void l3d_screen_mswin::open_screen(void" 6510 0]
+[cl-struct-member "refresh_palette" () "    void refresh_palette(void" 796 32 () "void l3d_screen_mswin::refresh_palette(void" 7568 0]
+[cl-struct-member "~l3d_screen_mswin" () "    virtual ~l3d_screen_mswin(void" 763 32 () "l3d_screen_mswin::~l3d_screen_mswin(void" 3375 0]
+)
+([cl-struct-member "TIMER_ENGINE_ID" () "  static const int TIMER_ENGINE_ID= 1;" 258 1 () () 0 0]
+)
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_screen_wogl" "./tool_2d/sc_wogl.h" "class l3d_screen_wogl :" 1082"./tool_2d/sc_wogl.cc" ]
+()()
+([cl-struct-member "blit_screen" () "    void blit_screen(void" 1209 48 () "inline void l3d_screen_wogl::blit_screen(void" 2236 0]
+[cl-struct-member "l3d_screen_wogl" () "    l3d_screen_wogl(int xsize, int ysize);" 1136 0 () "en_wogl::l3d_screen_wogl(int xsize, int ysize) :" 1013 860]
+[cl-struct-member "open_screen" () "    void open_screen(void" 1181 32 () "void l3d_screen_wogl::open_screen(void" 2315 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_screen_x11" "./tool_2d/sc_x11.h" "class l3d_screen_x11 :" 1065"./tool_2d/sc_x11.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_screen_x11_shm" "./tool_2d/sc_x11sh.h" "class l3d_screen_x11_shm :" 1099"./tool_2d/sc_x11sh.cc" ]
+()([cl-struct-member "shminfo" () "    XShmSegmentInfo shminfo;" 1165 1 () () 0 0]
+)
+([cl-struct-member "blit_screen" () "    void blit_screen(void" 1386 32 () "void l3d_screen_x11_shm::blit_screen(void" 2081 0]
+[cl-struct-member "create_buffer" () "    void create_buffer(void" 1358 32 () "void l3d_screen_x11_shm::create_buffer(void" 2213 0]
+[cl-struct-member "create_ximage" () "    XImage *create_ximage(void" 1328 32 () "XImage *l3d_screen_x11_shm::create_ximage(void" 1132 0]
+[cl-struct-member "l3d_screen_x11_shm" () "    :" 1203 16 "./tool_2d/sc_x11sh.h" "    :" 1203 860]
+[cl-struct-member "~l3d_screen_x11_shm" () "    virtual ~l3d_screen_x11_shm(void" 1295 32 () "l3d_screen_x11_shm::~l3d_screen_x11_shm(void" 1001 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "buffer" () "    unsigned char *buffer;" 1252 1 () () 0 0]
+[cl-struct-member "cmap" () "    Colormap cmap;" 1189 1 () () 0 0]
+[cl-struct-member "col_cells" () "    unsigned long* col_cells;" 1447 1 () () 0 0]
+[cl-struct-member "dpy" () "    Display *dpy;" 1692 0 () () 0 0]
+[cl-struct-member "gc" () "    GC gc;" 1309 1 () () 0 0]
+[cl-struct-member "scanline_pad" () "    int depth, bytespp, scanline_pad;" 1389 1 () () 0 0]
+[cl-struct-member "vis" () "    Visual *vis;" 1115 1 () () 0 0]
+[cl-struct-member "w" () "    Window w;" 1757 0 () () 0 0]
+[cl-struct-member "ximg" () "    XImage *ximg;" 1540 0 () () 0 0]
+)
+([cl-struct-member "blit_screen" () "    void blit_screen(void" 1949 32 () "inline void l3d_screen_x11::blit_screen(void" 5758 0]
+[cl-struct-member "close_screen" () "    void close_screen(void" 1510 33 () "void l3d_screen_x11::close_screen(void" 5960 0]
+[cl-struct-member "create_buffer" () "    virtual void create_buffer(void" 1671 32 () "void l3d_screen_x11::create_buffer(void" 7773 0]
+[cl-struct-member "create_ximage" () "    virtual XImage *create_ximage(void" 1633 32 () "XImage *l3d_screen_x11::create_ximage(void" 7185 0]
+[cl-struct-member "l3d_screen_x11" () "    l3d_screen_x11(int xsize, int ysize);" 1809 0 () "reen_x11::l3d_screen_x11(int xsize, int ysize) :" 1009 860]
+[cl-struct-member "open_screen" () "    void open_screen(void" 1921 32 () "void l3d_screen_x11::open_screen(void" 5915 0]
+[cl-struct-member "refresh_palette" () "    void refresh_palette(void" 1893 32 () "void l3d_screen_x11::refresh_palette(void" 6042 0]
+[cl-struct-member "~l3d_screen_x11" () "    virtual ~l3d_screen_x11(void" 1861 32 () "l3d_screen_x11::~l3d_screen_x11(void" 5530 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_screen_zbuf_mesa" "./tool_2d/sc_zmesa.h" "class l3d_screen_zbuf_mesa :" 1027"./tool_2d/sc_zmesa.cc" ]
+()()
+([cl-struct-member "blit_screen" () "    void blit_screen(void" 1159 32 () "line void l3d_screen_zbuf_mesa::blit_screen(void" 4099 0]
+[cl-struct-member "l3d_screen_zbuf_mesa" () "    l3d_screen_zbuf_mesa(int xsize, int ysize);" 1086 0 () "sa::l3d_screen_zbuf_mesa(int xsize, int ysize) :" 1004 860]
+[cl-struct-member "open_screen" () "    void open_screen(void" 1131 32 () "void l3d_screen_zbuf_mesa::open_screen(void" 4183 0]
+[cl-struct-member "~l3d_screen_zbuf_mesa" () "    virtual ~l3d_screen_zbuf_mesa(void" 1200 32 () "l3d_screen_zbuf_mesa::~l3d_screen_zbuf_mesa(void" 4042 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_screen_zbuf_wogl" "./tool_2d/sc_wzogl.h" "class l3d_screen_zbuf_wogl :" 1027"./tool_2d/sc_wzogl.cc" ]
+()()
+([cl-struct-member "blit_screen" () "    void blit_screen(void" 1159 48 () "line void l3d_screen_zbuf_wogl::blit_screen(void" 2239 0]
+[cl-struct-member "l3d_screen_zbuf_wogl" () "    l3d_screen_zbuf_wogl(int xsize, int ysize);" 1086 0 () "gl::l3d_screen_zbuf_wogl(int xsize, int ysize) :" 1004 860]
+[cl-struct-member "open_screen" () "    void open_screen(void" 1131 32 () "void l3d_screen_zbuf_wogl::open_screen(void" 2323 0]
+[cl-struct-member "~l3d_screen_zbuf_wogl" () "    virtual ~l3d_screen_zbuf_wogl(void" 1200 32 () "l3d_screen_zbuf_wogl::~l3d_screen_zbuf_wogl(void" 2182 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "bufsize" () "    int bufsize;" 1286 1 () () 0 0]
+[cl-struct-member "sinfo" () "    l3d_screen_info *sinfo;" 1445 0 () () 0 0]
+[cl-struct-member "view_win" () "    l3d_polygon_2d *view_win;" 1417 0 () () 0 0]
+[cl-struct-member "vwin_vlist" () "  l3d_two_part_list<l3d_coordinate> *vwin_vlist;" 1269 1 () () 0 0]
+[cl-struct-member "ysize" () "    int xsize, ysize;" 1387 0 () () 0 0]
+)
+([cl-struct-member "blit_screen" () "    virtual void blit_screen(void" 1562 160 () () 0 0]
+[cl-struct-member "close_screen" () "    virtual void close_screen(void" 1213 49 "./tool_2d/screen.h" "    virtual void close_screen(void" 1213 0]
+[cl-struct-member "l3d_screen" () "    l3d_screen(int xsize, int ysize);" 1315 0 () "l3d_screen::l3d_screen(int xsize, int ysize) {" 1001 860]
+[cl-struct-member "open_screen" () "    virtual void open_screen(void" 1524 160 () () 0 0]
+[cl-struct-member "refresh_palette" () "    virtual void refresh_palette(void" 1484 48 "./tool_2d/screen.h" "    virtual void refresh_palette(void" 1484 0]
+[cl-struct-member "wait_vtrace" () "  virtual void wait_vtrace(void" 1172 49 "./tool_2d/screen.h" "  virtual void wait_vtrace(void" 1172 0]
+[cl-struct-member "~l3d_screen" () "    virtual ~l3d_screen(void" 1363 32 () "l3d_screen::~l3d_screen(void" 2579 0]
+)
+()
+()
+()
+()
+()()()
+])()
+()
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_point" "./geom/point/point.h" "class l3d_point  {" 1156"./geom/point/point.h" ]
+()([cl-struct-member "a" () "    l3d_real a[4];" 1871 0 () () 0 0]
+)
+([cl-struct-member "l3d_point" () "    l3d_point(const l3d_point &right);" 1359 16 () "e l3d_point::l3d_point(const l3d_point &right) {" 2979 620]
+[cl-struct-member "l3d_point" () "    l3d_point(int a0, int a1, int a2, int a3);" 1310 16 () "int::l3d_point(int a0, int a1, int a2, int a3) {" 2762 3628]
+[cl-struct-member "l3d_point" () "real a0, l3d_real a1, l3d_real a2, l3d_real a3);" 1248 16 () "eal a0, l3d_real a1, l3d_real a2, l3d_real a3) {" 2566 12570]
+[cl-struct-member "l3d_point" () "    l3d_point(void);" 1223 16 () "inline l3d_point::l3d_point(void) {" 2420 0]
+[cl-struct-member "operator =" () "    const l3d_point &operator = (const" 1593 16 () "ne const l3d_point &l3d_point::operator = (const" 3172 620]
+[cl-struct-member "print" () "    void print(void" 1643 16 () "    void print(void" 1643 0]
+[cl-struct-member "set" () "    const l3d_point  &set(int" 1507 16 () "inline const l3d_point &l3d_point::set(int" 3614 3628]
+[cl-struct-member "set" () "    const l3d_point &set(l3d_real" 1433 16 () "inline const l3d_point &l3d_point::set(l3d_real" 3400 12570]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_two_part_list" "./datastr/list.h" "template<class Item> class l3d_two_part_list {" 5941"./datastr/list.h" ]
+()([cl-struct-member "factory" () "    l3d_list_item_factory<Item> *factory;" 5996 1 () () 0 0]
+[cl-struct-member "list" () "    l3d_list<Item> *list;" 6032 0 () () 0 0]
+[cl-struct-member "max_varying_items" () "    int max_varying_items;" 6111 0 () () 0 0]
+[cl-struct-member "num_fixed_items" () "    int num_fixed_items;" 6057 0 () () 0 0]
+[cl-struct-member "num_varying_items" () "    int num_varying_items;" 6084 0 () () 0 0]
+)
+([cl-struct-member "l3d_two_part_list" () "ed_size, l3d_list_item_factory<Item> *factory) {" 6923 16 () "ed_size, l3d_list_item_factory<Item> *factory) {" 6923 1979]
+[cl-struct-member "l3d_two_part_list" () "    l3d_two_part_list(int fixed_size) {" 6477 16 () "    l3d_two_part_list(int fixed_size) {" 6477 308]
+[cl-struct-member "next_varying_index" () "    int next_varying_index(void" 7480 16 () "    int next_varying_index(void" 7480 0]
+[cl-struct-member "operator =" () "    l3d_two_part_list<Item> & operator= (const" 6207 16 () "    l3d_two_part_list<Item> & operator= (const" 6207 620]
+[cl-struct-member "operator [ ]" () "    Item & operator[] (int" 7758 80 () "    Item & operator[] (int" 7758 845]
+[cl-struct-member "~l3d_two_part_list" () "    ~l3d_two_part_list(void" 7418 16 () "    ~l3d_two_part_list(void" 7418 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_world" "./geom/world/world.h" "class l3d_world {" 1185"./geom/world/world.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_world_backface" "./geom/world/w_back.h" "class l3d_world_backface :" 1155"./geom/world/w_back.h" ]
+()()
+([cl-struct-member "draw_all" () "    /* virtual */ void draw_all(void" 1340 32 "./geom/world/w_back.cc" "void l3d_world_backface::draw_all(void" 1322 0]
+[cl-struct-member "l3d_world_backface" () "    l3d_world_backface(int xsize, int ysize) :" 1212 16 () "    l3d_world_backface(int xsize, int ysize) :" 1212 860]
+[cl-struct-member "~l3d_world_backface" () "    virtual ~l3d_world_backface(void" 1300 32 "./geom/world/w_back.cc" "l3d_world_backface::~l3d_world_backface()" 1278 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_world_bsptree" "./geom/world/w_bsp.h" "class l3d_world_bsptree :" 1223"./geom/world/w_bsp.cc" ]
+()([cl-struct-member "the_tree" () "    l3d_bsptree *the_tree;" 1620 0 () () 0 0]
+[cl-struct-member "visited_nodes" () "    int visited_nodes;" 1278 1 () () 0 0]
+)
+([cl-struct-member "draw_all" () "    /* virtual */ void draw_all(void" 1562 32 () "void l3d_world_bsptree::draw_all(void" 6958 0]
+[cl-struct-member "l3d_world_bsptree" () "    l3d_world_bsptree(int xsize, int ysize) :" 1315 16 "./geom/world/w_bsp.h" "    l3d_world_bsptree(int xsize, int ysize) :" 1315 860]
+[cl-struct-member "render_bsp_tree" () "    void render_bsp_tree(l3d_halfspace" 1443 0 () "(l3d_halfspace" 1473 25815611]
+[cl-struct-member "~l3d_world_bsptree" () "    virtual ~l3d_world_bsptree(void" 1402 32 () "l3d_world_bsptree::~l3d_world_bsptree()" 1381 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_world_frustum" "./geom/world/w_vfrust.h" "class l3d_world_frustum :" 1158"./geom/world/w_vfrust.cc" ]
+()()
+([cl-struct-member "draw_all" () "    /* virtual */ void draw_all(void" 1341 32 () "void l3d_world_frustum::draw_all(void" 1350 0]
+[cl-struct-member "l3d_world_frustum" () "    l3d_world_frustum(int xsize, int ysize) :" 1214 16 "./geom/world/w_vfrust.h" "    l3d_world_frustum(int xsize, int ysize) :" 1214 860]
+[cl-struct-member "~l3d_world_frustum" () "    virtual ~l3d_world_frustum(void" 1301 32 () "l3d_world_frustum::~l3d_world_frustum()" 1307 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_world_portal" "./geom/world/w_portal.h" "class l3d_world_portal:" 1053"./geom/world/w_portal.h" ]
+([cl-struct-tree [cl-struct-class "l3d_world_portal_textured" "./geom/world/w_portex.h" "class l3d_world_portal_textured :" 1067"./geom/world/w_portex.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_world_portal_textured_lightmapped" "./geom/world/w_porltex.h" "class l3d_world_portal_textured_lightmapped :" 1113"./geom/world/w_porltex.h" ]
+()([cl-struct-member "scache" () "    l3d_surface_cache *scache;" 1233 1 () () 0 0]
+)
+([cl-struct-member "compute_light_level" () "    int compute_light_level(l3d_real" 1271 1 "./geom/world/w_porltex.cc" "(l3d_real" 1319 12570]
+[cl-struct-member "l3d_world_portal_textured_lightmapped" () "rtal_textured_lightmapped(int xsize, int ysize);" 1344 0 "./geom/world/w_porltex.cc" "    :" 3906 860]
+[cl-struct-member "load_from_file" () "    void load_from_file(const" 1451 32 "./geom/world/w_porltex.cc" "ortal_textured_lightmapped::load_from_file(const" 4198 1784]
+[cl-struct-member "place_lamp" () "    void place_lamp(l3d_sector" 1508 0 "./geom/world/w_porltex.cc" "(l3d_sector" 17555 822968961]
+[cl-struct-member "reset_surface_cache" () "    void reset_surface_cache(void" 1587 16 () "    void reset_surface_cache(void" 1587 0]
+[cl-struct-member "~l3d_world_portal_textured_lightmapped" () "tual ~l3d_world_portal_textured_lightmapped(void" 1419 32 "./geom/world/w_porltex.cc" "~l3d_world_portal_textured_lightmapped(void" 4110 0]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "tex_data" () "    l3d_list<l3d_texture_data> tex_data;" 1187 1 () () 0 0]
+[cl-struct-member "texture_loader" () "    l3d_texture_loader *texture_loader;" 1146 1 () () 0 0]
+)
+([cl-struct-member "l3d_world_portal_textured" () "l3d_world_portal_textured(int xsize, int ysize);" 1232 0 () "    :" 1101 860]
+[cl-struct-member "load_from_file" () "    void load_from_file(const" 1327 32 () " l3d_world_portal_textured::load_from_file(const" 1578 1784]
+[cl-struct-member "~l3d_world_portal_textured" () "    virtual ~l3d_world_portal_textured(void" 1295 32 () "portal_textured::~l3d_world_portal_textured(void" 10288 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "current_sector" () "    l3d_sector *current_sector;" 1164 0 () () 0 0]
+)
+([cl-struct-member "draw_all" () "    void draw_all(void" 1481 32 "./geom/world/w_portal.cc" "void l3d_world_portal::draw_all(void" 5371 0]
+[cl-struct-member "l3d_world_portal" () "    l3d_world_portal(int xsize, int ysize);" 1308 0 "./geom/world/w_portal.cc" "    :" 5085 860]
+[cl-struct-member "load_from_file" () "    virtual void load_from_file(const" 1405 32 "./geom/world/w_portal.cc" "void l3d_world_portal::load_from_file(const" 6069 1784]
+[cl-struct-member "sector_by_name" () "    l3d_sector *sector_by_name(const" 1119 0 "./geom/world/w_portal.cc" "d_sector *l3d_world_portal::sector_by_name(const" 5696 1784]
+[cl-struct-member "update_all" () "    void update_all(void" 1445 32 "./geom/world/w_portal.cc" "void l3d_world_portal::update_all(void" 1444 0]
+[cl-struct-member "~l3d_world_portal" () "    virtual ~l3d_world_portal(void" 1362 48 () "    virtual ~l3d_world_portal(void" 1362 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_world_portal_textured_lightmapped_obj" "./geom/world/w_porlotex.h" "lass l3d_world_portal_textured_lightmapped_obj :" 1177"./geom/world/w_porlotex.h" ]
+([cl-struct-tree [cl-struct-class "l3d_world_octree" "./geom/world/w_oct.h" "class l3d_world_octree :" 1042"./geom/world/w_oct.cc" ]
+()()
+([cl-struct-member "draw_all" () "    void draw_all(void" 1260 32 () "void l3d_world_octree::draw_all(void" 1276 0]
+[cl-struct-member "l3d_world_octree" () "    l3d_world_octree(int xsize, int ysize);" 1134 0 () "    :" 2458 860]
+[cl-struct-member "load_from_file" () "    void load_from_file(const" 1212 32 () "void l3d_world_octree::load_from_file(const" 2634 1784]
+[cl-struct-member "~l3d_world_octree" () "    ~l3d_world_octree(void" 1180 0 () "~l3d_world_octree(void" 2585 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_world_portal_textured_lightmapped_obj_colldet" "./geom/world/w_pcoll.h" "_world_portal_textured_lightmapped_obj_colldet :" 1097"./geom/world/w_pcoll.cc" ]
+()([cl-struct-member "sound_client" () "    l3d_sound_client *sound_client;" 1422 0 () () 0 0]
+)
+([cl-struct-member "l3d_world_portal_textured_lightmapped_obj_colldet" () "d_lightmapped_obj_colldet(int xsize, int ysize);" 1222 0 () "    :" 9667 860]
+[cl-struct-member "load_from_file" () "    void load_from_file(const" 1333 32 () "load_from_file(const" 25191 1784]
+[cl-struct-member "update_all" () "    void update_all(void" 1384 32 () "extured_lightmapped_obj_colldet::update_all(void" 1506 0]
+[cl-struct-member "~l3d_world_portal_textured_lightmapped_obj_colldet" () "rld_portal_textured_lightmapped_obj_colldet(void" 1301 0 () "rld_portal_textured_lightmapped_obj_colldet(void" 10489 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "current_sector" () "    l3d_sector *current_sector;" 1515 0 () () 0 0]
+[cl-struct-member "scache" () "    l3d_surface_cache *scache;" 1362 1 () () 0 0]
+[cl-struct-member "tex_data" () "    l3d_list<l3d_texture_data> tex_data;" 1331 1 () () 0 0]
+[cl-struct-member "texture_loader" () "    l3d_texture_loader *texture_loader;" 1290 1 () () 0 0]
+)
+([cl-struct-member "draw_all" () "    void draw_all(void" 1906 32 "./geom/world/w_porlotex.cc" "d_portal_textured_lightmapped_obj::draw_all(void" 5015 0]
+[cl-struct-member "l3d_world_portal_textured_lightmapped_obj" () "_textured_lightmapped_obj(int xsize, int ysize);" 1566 0 "./geom/world/w_porlotex.cc" "    :" 9329 860]
+[cl-struct-member "load_from_file" () "    virtual void load_from_file(const" 1677 32 "./geom/world/w_porlotex.cc" "l_textured_lightmapped_obj::load_from_file(const" 10802 1784]
+[cl-struct-member "place_lamp" () "    void place_lamp(l3d_sector" 1733 0 "./geom/world/w_porlotex.cc" "(l3d_sector" 25484 822968961]
+[cl-struct-member "reset_surface_cache" () "    void reset_surface_cache(void" 1812 16 () "    void reset_surface_cache(void" 1812 0]
+[cl-struct-member "sector_by_name" () "    l3d_sector *sector_by_name(const" 1470 0 "./geom/world/w_porlotex.cc" "sector_by_name(const" 10403 1784]
+[cl-struct-member "update_all" () "    void update_all(void" 1870 32 "./geom/world/w_porlotex.cc" "portal_textured_lightmapped_obj::update_all(void" 1350 0]
+[cl-struct-member "~l3d_world_portal_textured_lightmapped_obj" () " ~l3d_world_portal_textured_lightmapped_obj(void" 1637 0 "./geom/world/w_porlotex.cc" "~l3d_world_portal_textured_lightmapped_obj(void" 10278 0]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "camera" () "    l3d_camera *camera;" 1439 0 () () 0 0]
+[cl-struct-member "last_tickcount" () "int framecount, first_tickcount, last_tickcount;" 1955 0 () () 0 0]
+[cl-struct-member "objects" () "    l3d_list<l3d_object *> objects;" 1554 0 () () 0 0]
+[cl-struct-member "rasterizer" () "    l3d_rasterizer_3d *rasterizer;" 1323 0 () () 0 0]
+[cl-struct-member "rasterizer_2d_imp" () "    l3d_rasterizer_2d_imp *rasterizer_2d_imp;" 1369 0 () () 0 0]
+[cl-struct-member "rasterizer_3d_imp" () "    l3d_rasterizer_3d_imp *rasterizer_3d_imp;" 1415 0 () () 0 0]
+[cl-struct-member "screen" () "    l3d_screen *screen;" 1288 0 () () 0 0]
+[cl-struct-member "should_display_status" () "    int should_display_status;" 1879 0 () () 0 0]
+)
+([cl-struct-member "compare_facet_zdepth" () () 0 0 () "int l3d_world::compare_facet_zdepth(const" 2377 14184]
+[cl-struct-member "draw_all" () "    virtual void draw_all(void" 1698 32 () "void l3d_world::draw_all(void" 2619 0]
+[cl-struct-member "l3d_world" () "    l3d_world(int xsize, int ysize);" 1214 0 () "l3d_world::l3d_world(int xsize, int ysize) {" 1261 860]
+[cl-struct-member "update_all" () "    virtual void update_all(void" 1621 32 () "void l3d_world::update_all(void" 5615 0]
+[cl-struct-member "~l3d_world" () "    virtual ~l3d_world(void" 1261 32 () "l3d_world::~l3d_world()" 2112 0]
+)
+()
+([cl-struct-member "compare_facet_zdepth" () "    static int compare_facet_zdepth(const" 1772 0 () () 0 14184]
+)
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_plane" "./geom/plane/plane.h" "class l3d_plane
+{" 1288"./geom/plane/plane.cc" ]
+()([cl-struct-member "d" () "    l3d_real a,b,c,d;" 1320 0 () () 0 0]
+[cl-struct-member "intersection" () "    l3d_point intersection;" 2319 0 () () 0 0]
+[cl-struct-member "intersection_t" () "    l3d_real intersection_t;" 2291 0 () () 0 0]
+)
+([cl-struct-member "align_with_point_normal" () "    void align_with_point_normal(const" 1359 0 () "void l3d_plane::align_with_point_normal(const" 1002 3036]
+[cl-struct-member "align_with_points" () "    void align_with_points(const" 1612 0 () "void l3d_plane::align_with_points(const" 1387 11548]
+[cl-struct-member "intersect_with_segment" () "    int intersect_with_segment(const" 2356 0 () "int l3d_plane::intersect_with_segment(const" 1625 3036]
+[cl-struct-member "side_of_point" () "    l3d_real side_of_point(const" 2113 80 "./geom/plane/plane.h" "    l3d_real side_of_point(const" 2113 1533]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_polygon_3d_node" "./geom/polygon/poly3.h" "struct l3d_polygon_3d_node {" 2754() ]
+()([cl-struct-member "next" () "  l3d_polygon_3d_node *prev,*next;" 2816 2 () () 0 0]
+[cl-struct-member "polygon" () "  l3d_polygon_3d *polygon;" 2781 2 () () 0 0]
+)
+()
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_imp_factory" "./raster/rast3.h" "class l3d_rasterizer_3d_imp_factory {" 3685() ]
+([cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_mesa_imp_factory" "./raster/ras3_mes.h" "class l3d_rasterizer_3d_mesa_imp_factory :" 6062"./raster/ras3_mes.cc" ]
+()()
+([cl-struct-member "create" () "    l3d_rasterizer_3d_imp *create(int" 6151 32 () "(int" 4227 1608839]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_sw_imp_factory" "./raster/ras3_sw.h" "class l3d_rasterizer_3d_sw_imp_factory :" 1909"./raster/ras3_sw.cc" ]
+()()
+([cl-struct-member "create" () "    l3d_rasterizer_3d_imp *create(int" 2002 32 () "(int" 4344 1608839]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_zbuf_mesa_imp_factory" "./raster/ras3z_mes.h" "class l3d_rasterizer_3d_zbuf_mesa_imp_factory :" 1312"./raster/ras3z_mes.cc" ]
+()()
+([cl-struct-member "create" () "    l3d_rasterizer_3d_imp *create(int" 1401 32 () "(int" 1166 1608839]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_zbuf_sw_imp_factory" "./raster/ras3z_sw.h" "class l3d_rasterizer_3d_zbuf_sw_imp_factory :" 1748"./raster/ras3z_sw.cc" ]
+()()
+([cl-struct-member "create" () "    l3d_rasterizer_3d_imp *create(int" 1841 32 () "(int" 1179 1608839]
+)
+()
+()
+()
+()
+()()()
+])()
+([cl-struct-member "create" () "    virtual l3d_rasterizer_3d_imp *create(int" 3741 160 () () 0 1608839]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "Tscreen" "./tool_2d/sc_dos.h" "class Tscreen {" 2957"./tool_2d/sc_dos.h" ]
+()([cl-struct-member "cmap" () "    Colormap cmap;" 3529 2 () () 0 0]
+[cl-struct-member "col_cells" () "    unsigned long col_cells[256];" 3802 2 () () 0 0]
+[cl-struct-member "dpy" () "    Display *dpy;" 4526 0 () () 0 0]
+[cl-struct-member "fpRasterizer" () "    Trasterizer *fpRasterizer;" 2999 2 () () 0 0]
+[cl-struct-member "gc" () "    GC gc;" 3654 2 () () 0 0]
+[cl-struct-member "hBitmapInfo" () "HANDLE hBitmapInfo;" 3212 2 () () 0 0]
+[cl-struct-member "hDisplaywnd" () "    HWND hDisplaywnd;" 4287 0 () () 0 0]
+[cl-struct-member "hpal" () "    HPALETTE hpal;" 4360 0 () () 0 0]
+[cl-struct-member "pBitmapInfo" () "    LPBITMAPINFO FARPTR pBitmapInfo;" 3297 2 () () 0 0]
+[cl-struct-member "scanline_pad" () "    int depth, bytespp, scanline_pad;" 3737 2 () () 0 0]
+[cl-struct-member "screen" () "unsigned char *screen;" 3380 2 () () 0 0]
+[cl-struct-member "view_win" () "    T3dfacet view_win;" 4965 0 () () 0 0]
+[cl-struct-member "view_win_obj" () "    T3dobject view_win_obj;" 4231 1 () () 0 0]
+[cl-struct-member "vis" () "    Visual *vis;" 3452 2 () () 0 0]
+[cl-struct-member "w" () "    Window w;" 4594 0 () () 0 0]
+[cl-struct-member "winsize_y" () "    int winsize_x, winsize_y;" 4443 0 () () 0 0]
+[cl-struct-member "ximg" () "    XImage *ximg;" 3586 2 () () 0 0]
+[cl-struct-member "ysize" () "    int xsize, ysize;" 4889 0 () () 0 0]
+)
+([cl-struct-member "Tscreen" () "    Tscreen(void);" 4779 0 () () 0 0]
+[cl-struct-member "blit_screen" () "    void blit_screen(char" 5288 16 () "inline void Tscreen::blit_screen(char" 10159 620]
+[cl-struct-member "blit_screen" () "    void blit_screen(void" 5210 16 () "inline void Tscreen::blit_screen(void" 7423 0]
+[cl-struct-member "clear_screenbuf" () "    void clear_screenbuf(void" 5140 16 () "inline void Tscreen::clear_screenbuf(void" 7119 0]
+[cl-struct-member "close_screen" () "    void close_screen(void" 4179 1 () () 0 0]
+[cl-struct-member "drawline" () "    void drawline(int" 5421 16 () "inline void Tscreen::drawline(int" 6747 7532]
+[cl-struct-member "fillpoly" () "    void fillpoly(const" 5601 16 () "inline void Tscreen::fillpoly(const" 12661 608]
+[cl-struct-member "get_palette" () "    void get_palette(int" 4082 1 () () 0 25238]
+[cl-struct-member "get_rasterizer" () "    Trasterizer *get_rasterizer()" 4999 16 () "inline Trasterizer *Tscreen::get_rasterizer()" 6116 0]
+[cl-struct-member "init_palette" () "    void init_palette(Tpalette" 4726 0 () () 0 16065]
+[cl-struct-member "init_palette" () "    void init_palette(void" 4666 0 () () 0 0]
+[cl-struct-member "linepoly" () "    void linepoly(const" 5743 16 () "inline void Tscreen::linepoly(const" 12985 608]
+[cl-struct-member "open_screen" () "    void open_screen(void" 5066 0 () () 0 0]
+[cl-struct-member "pointcloud" () "    void pointcloud(const" 5525 16 () "inline void Tscreen::pointcloud(const" 12010 608]
+[cl-struct-member "putpixel" () "    void putpixel(int" 5362 16 () "inline void Tscreen::putpixel(int" 6400 1932]
+[cl-struct-member "set_palette" () "    void set_palette(int" 4000 1 () () 0 3628]
+[cl-struct-member "texpoly" () "    void texpoly (const" 5672 16 () "inline void Tscreen::texpoly(const" 12340 608]
+[cl-struct-member "wait_vtrace" () "    void wait_vtrace(void" 3893 1 () () 0 0]
+[cl-struct-member "~Tscreen" () "    virtual ~Tscreen(void" 4841 32 () () 0 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_list_item_factory" "./datastr/list.h" "mplate<class Item> class l3d_list_item_factory {" 1091"./datastr/list.h" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_ivertex_items_factory" "./geom/polygon/polygon.h" "class l3d_polygon_ivertex_items_factory :" 1877"./geom/polygon/polygon.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_ivertex_textured_items_factory" "./geom/polygon/p3_tex.h" "ass l3d_polygon_ivertex_textured_items_factory :" 2555"./geom/polygon/p3_tex.cc" ]
+()()
+([cl-struct-member "clone" () "   l3d_polygon_ivertex_items_factory *clone(void" 2763 34 () "lygon_ivertex_textured_items_factory::clone(void" 1048 0]
+[cl-struct-member "create" () "    l3d_polygon_ivertex *create(void" 2641 18 "./geom/polygon/p3_tex.h" "    l3d_polygon_ivertex *create(void" 2641 0]
+)
+()
+()
+()
+()
+()()()
+])()
+([cl-struct-member "clone" () "al l3d_polygon_ivertex_items_factory *clone(void" 2003 32 () "l3d_polygon_ivertex_items_factory::clone(void" 1074 0]
+)
+()
+()
+()
+()
+()()()
+])()
+([cl-struct-member "create" () "  virtual Item *create(void" 1129 48 () "  virtual Item *create(void" 1129 0]
+[cl-struct-member "~l3d_list_item_factory" () "    virtual ~l3d_list_item_factory()" 1387 48 () "    virtual ~l3d_list_item_factory()" 1387 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_vector" "./math/vector.h" "class l3d_vector {" 1288"./math/vector.h" ]
+()([cl-struct-member "a" () "    l3d_real a[4];" 2440 0 () () 0 0]
+)
+([cl-struct-member "l3d_vector" () "    l3d_vector(int a0, int a1, int a2, int a3);" 1445 16 () "or::l3d_vector(int a0, int a1, int a2, int a3) {" 3393 3628]
+[cl-struct-member "l3d_vector" () "real a0, l3d_real a1, l3d_real a2, l3d_real a3);" 1382 16 () "eal a0, l3d_real a1, l3d_real a2, l3d_real a3) {" 3194 12570]
+[cl-struct-member "l3d_vector" () "    l3d_vector(void);" 1356 16 () "inline l3d_vector::l3d_vector(void) {" 3045 0]
+[cl-struct-member "print" () "    void print(void" 2225 16 () "    void print(void" 2225 0]
+[cl-struct-member "set" () "    const l3d_vector &set(int" 1648 16 () "inline const l3d_vector &l3d_vector::set(int" 4356 3628]
+[cl-struct-member "set" () "    const l3d_vector &set(l3d_real" 1574 16 () "nline const l3d_vector &l3d_vector::set(l3d_real" 4139 12570]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_plugin_environment" "./dynamics/plugins/plugenv.h" "class l3d_plugin_environment {" 1271"./dynamics/plugins/plugenv.h" ]
+()([cl-struct-member "data" () "    void *data;" 1391 0 () () 0 0]
+[cl-struct-member "scache" () "    l3d_surface_cache *scache;" 1375 0 () () 0 0]
+[cl-struct-member "sinfo" () "    l3d_screen_info *sinfo;" 1344 0 () () 0 0]
+[cl-struct-member "texloader" () "    l3d_texture_loader *texloader;" 1316 0 () () 0 0]
+)
+([cl-struct-member "clone" () "    virtual l3d_plugin_environment *clone(void" 1714 48 () "    virtual l3d_plugin_environment *clone(void" 1714 0]
+[cl-struct-member "l3d_plugin_environment" () "    {" 1461 16 () "    {" 1461 484]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_plugin_loader" "./dynamics/plugins/plugload.h" "class l3d_plugin_loader {" 1005"./dynamics/plugins/plugload.h" ]
+([cl-struct-tree [cl-struct-class "l3d_plugin_loader_linux" "./dynamics/plugins/pl_linux.h" "class l3d_plugin_loader_linux :" 1034"./dynamics/plugins/pl_linux.cc" ]
+()([cl-struct-member "filename" () "    char filename[256];" 1126 0 () () 0 0]
+[cl-struct-member "handle" () "    void *handle;" 1092 1 () () 0 0]
+)
+([cl-struct-member "clone" () "    l3d_plugin_loader *clone(void" 1338 32 () "gin_loader * l3d_plugin_loader_linux::clone(void" 1943 0]
+[cl-struct-member "close" () "    void close(void" 1302 32 () "void l3d_plugin_loader_linux::close(void" 1677 0]
+[cl-struct-member "find_symbol" () "    void *find_symbol(char" 1272 32 () "void *l3d_plugin_loader_linux::find_symbol(char" 1572 620]
+[cl-struct-member "l3d_plugin_loader_linux" () "    l3d_plugin_loader_linux(void);" 1159 0 () "in_loader_linux::l3d_plugin_loader_linux(void) {" 1219 0]
+[cl-struct-member "load" () "    void load(const" 1228 32 () "void l3d_plugin_loader_linux::load(const" 1302 1784]
+[cl-struct-member "~l3d_plugin_loader_linux" () "    virtual ~l3d_plugin_loader_linux(void" 1203 48 "./dynamics/plugins/pl_linux.h" "    virtual ~l3d_plugin_loader_linux(void" 1203 0]
+)
+()
+()
+()
+()
+()()()
+])()
+([cl-struct-member "clone" () "    virtual l3d_plugin_loader *clone(void" 1183 160 () () 0 0]
+[cl-struct-member "close" () "    virtual void close(void" 1137 160 () () 0 0]
+[cl-struct-member "find_symbol" () "    virtual void *find_symbol(char" 1097 160 () () 0 620]
+[cl-struct-member "load" () "    virtual void load(const" 1043 160 () () 0 1784]
+[cl-struct-member "~l3d_plugin_loader" () "    virtual ~l3d_plugin_loader(void" 1223 48 () "    virtual ~l3d_plugin_loader(void" 1223 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_texture_loader" "./geom/texture/texload.h" "class l3d_texture_loader {" 1059"./geom/texture/texload.h" ]
+([cl-struct-tree [cl-struct-class "l3d_texture_loader_ppm" "./geom/texture/tl_ppm.h" "class l3d_texture_loader_ppm :" 1028"./geom/texture/tl_ppm.h" ]
+()([cl-struct-member "cur_b" () "    int cur_r, cur_g, cur_b;" 1175 1 () () 0 0]
+[cl-struct-member "cur_pdata" () "    unsigned char *cur_pdata;" 1131 1 () () 0 0]
+[cl-struct-member "state" () "    int state;" 1146 1 () () 0 0]
+)
+([cl-struct-member "l3d_texture_loader_ppm" () "   l3d_texture_loader_ppm(l3d_screen_info *si) :" 1229 16 () "   l3d_texture_loader_ppm(l3d_screen_info *si) :" 1229 1606135]
+[cl-struct-member "load" () "    void load(const" 1287 32 "./geom/texture/tl_ppm.cc" "void l3d_texture_loader_ppm::load(const" 4170 1784]
+[cl-struct-member "process_tok" () "    int process_tok(char" 1094 1 "./geom/texture/tl_ppm.cc" "int l3d_texture_loader_ppm::process_tok(char" 1096 620]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "data" () "    unsigned char *data;" 1448 0 () () 0 0]
+[cl-struct-member "height" () "    int width, height;" 1471 0 () () 0 0]
+[cl-struct-member "si" () "    l3d_screen_info *si;" 1097 1 () () 0 0]
+)
+([cl-struct-member "l3d_texture_loader" () "    l3d_texture_loader(l3d_screen_info *si) {" 1146 16 () "    l3d_texture_loader(l3d_screen_info *si) {" 1146 1606135]
+[cl-struct-member "load" () "    virtual void load(const" 1405 160 () () 0 1784]
+[cl-struct-member "~l3d_texture_loader" () "    virtual ~l3d_texture_loader(void" 1236 48 () "    virtual ~l3d_texture_loader(void" 1236 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_rgb" "./tool_2d/si_idx.h" "struct l3d_rgb {" 1009() ]
+()([cl-struct-member "blue" () "  int red, green, blue;" 1033 2 () () 0 0]
+)
+()
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_pipeline" "./pipeline/pipeline.h" "class l3d_pipeline {" 997"./pipeline/pipeline.h" ]
+([cl-struct-tree [cl-struct-class "l3d_pipeline_world" "./pipeline/pi_wor.h" "class l3d_pipeline_world :" 1055"./pipeline/pi_wor.h" ]
+([cl-struct-tree [cl-struct-class "l3d_pipeline_world_lightmapped" "./pipeline/pi_lwor.h" "class l3d_pipeline_world_lightmapped :" 1067"./pipeline/pi_lwor.cc" ]
+()()
+([cl-struct-member "key_event" () "    void key_event(int" 1209 32 () "id l3d_pipeline_world_lightmapped::key_event(int" 1108 308]
+[cl-struct-member "l3d_pipeline_world_lightmapped" () "  l3d_pipeline_world_lightmapped(l3d_world *w) :" 1150 16 "./pipeline/pi_lwor.h" "  l3d_pipeline_world_lightmapped(l3d_world *w) :" 1150 25160]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "world" () "    l3d_world *world;" 1112 1 () () 0 0]
+)
+([cl-struct-member "draw_event" () "    void draw_event(void" 1335 32 "./pipeline/pi_wor.cc" "void l3d_pipeline_world::draw_event(void" 3783 0]
+[cl-struct-member "key_event" () "    void key_event(int" 1238 32 "./pipeline/pi_wor.cc" "void l3d_pipeline_world::key_event(int" 1056 308]
+[cl-struct-member "l3d_pipeline_world" () "  l3d_pipeline_world(l3d_world *w) {" 1154 16 () "  l3d_pipeline_world(l3d_world *w) {" 1154 25160]
+[cl-struct-member "update_event" () "    void update_event(void" 1289 32 "./pipeline/pi_wor.cc" "void l3d_pipeline_world::update_event()" 3714 0]
+[cl-struct-member "~l3d_pipeline_world" () "    virtual ~l3d_pipeline_world(void" 1210 48 () "    virtual ~l3d_pipeline_world(void" 1210 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "done" () "    int done;" 1021 0 () () 0 0]
+)
+([cl-struct-member "draw_event" () "    virtual void draw_event(void" 1091 48 () "    virtual void draw_event(void" 1091 0]
+[cl-struct-member "key_event" () "    virtual void key_event(int" 1167 48 () "    virtual void key_event(int" 1167 308]
+[cl-struct-member "l3d_pipeline" () "    l3d_pipeline(void) {" 1043 16 () "    l3d_pipeline(void) {" 1043 0]
+[cl-struct-member "update_event" () "    virtual void update_event(void" 1131 48 () "    virtual void update_event(void" 1131 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_halfspace" "./geom/bsp/halfspace.h" "class l3d_halfspace {" 1098() ]
+()([cl-struct-member "bounding_sphere" () "    l3d_bounding_sphere bounding_sphere;" 1170 0 () () 0 0]
+[cl-struct-member "children" () "    l3d_list<l3d_halfspace *> children;" 1281 0 () () 0 0]
+[cl-struct-member "object" () "    l3d_object_clippable_boundable *object;" 1214 0 () () 0 0]
+[cl-struct-member "plane" () "    l3d_plane plane;" 1129 0 () () 0 0]
+)
+()
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_plugin_pyramid_textured_lightmapped" "./dynamics/plugins/pyrtex/pyrtex.cc" "class l3d_plugin_pyramid_textured_lightmapped {" 1178"./dynamics/plugins/pyrtex/pyrtex.cc" ]
+()([cl-struct-member "env" () "    l3d_plugin_environment *env;" 1221 0 () () 0 0]
+[cl-struct-member "xtheta" () "    int xtheta;" 1238 0 () () 0 0]
+)
+([cl-struct-member "l3d_plugin_pyramid_textured_lightmapped" () "extured_lightmapped(l3d_plugin_environment *e) {" 1351 16 () "extured_lightmapped(l3d_plugin_environment *e) {" 1351 206268160]
+[cl-struct-member "~l3d_plugin_pyramid_textured_lightmapped" () "   ~l3d_plugin_pyramid_textured_lightmapped(void" 1474 16 () "   ~l3d_plugin_pyramid_textured_lightmapped(void" 1474 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_texture_space" "./geom/texture/texture.h" "class l3d_texture_space {" 1313() ]
+([cl-struct-tree [cl-struct-class "l3d_texture" "./geom/texture/texture.h" "class l3d_texture :" 1375"./geom/texture/texture.h" ]
+()([cl-struct-member "owns_tex_data" () "    bool owns_tex_data;" 1436 0 () () 0 0]
+[cl-struct-member "tex_data" () "    l3d_texture_data *tex_data;" 1468 0 () () 0 0]
+)
+([cl-struct-member "l3d_texture" () "    l3d_texture(void) {" 1489 16 () "    l3d_texture(void) {" 1489 0]
+[cl-struct-member "~l3d_texture" () "    ~l3d_texture(void" 1539 16 () "    ~l3d_texture(void" 1539 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "V" () "    l3d_coordinate O, U, V;" 1351 0 () () 0 0]
+)
+()
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_screen_info" "./tool_2d/scrinfo.h" "class l3d_screen_info {" 2465"./tool_2d/scrinfo.h" ]
+([cl-struct-tree [cl-struct-class "l3d_screen_info_indexed" "./tool_2d/si_idx.h" "class l3d_screen_info_indexed :" 1069"./tool_2d/si_idx.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_screen_info_indexed_mesa" "./tool_2d/si_imes.h" "class l3d_screen_info_indexed_mesa :" 1079"./tool_2d/si_imes.h" ]
+()()
+([cl-struct-member "l3d_screen_info_indexed_mesa" () "     int max_red, int max_green, int max_blue) :" 1159 16 () "     int max_red, int max_green, int max_blue) :" 1159 3628]
+[cl-struct-member "set_color" () "    void set_color(unsigned" 1355 16 () "    void set_color(unsigned" 1355 935]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "fog_table" () "    int *fog_table;" 1136 2 () () 0 0]
+[cl-struct-member "light_table" () "    int *light_table;" 1116 2 () () 0 0]
+[cl-struct-member "palette" () "    l3d_rgb *palette;" 1325 0 () () 0 0]
+[cl-struct-member "palette_max_blue" () "te_max_red, palette_max_green, palette_max_blue;" 1469 0 () () 0 0]
+[cl-struct-member "palette_num_used" () "    int palette_num_used;" 1407 0 () () 0 0]
+[cl-struct-member "palette_size" () "    int palette_size;" 1303 0 () () 0 0]
+)
+([cl-struct-member "compute_fog_table" () "    void compute_fog_table(void" 1600 32 () " l3d_screen_info_indexed::compute_fog_table(void" 5167 0]
+[cl-struct-member "compute_light_table" () "    void compute_light_table(void" 1566 32 () "3d_screen_info_indexed::compute_light_table(void" 3258 0]
+[cl-struct-member "ext_to_native" () "    unsigned long ext_to_native(int" 1505 32 () " long l3d_screen_info_indexed::ext_to_native(int" 2238 1932]
+[cl-struct-member "fog_native" () "    void fog_native(unsigned" 1692 32 () "oid l3d_screen_info_indexed::fog_native(unsigned" 7030 4004]
+[cl-struct-member "get_palette_size" () "    int get_palette_size(void" 1355 16 "./tool_2d/si_idx.h" "    int get_palette_size(void" 1355 0]
+[cl-struct-member "l3d_screen_info_indexed" () "size, int max_red, int max_green, int max_blue);" 1179 0 () "    int max_red, int max_green, int max_blue)
+{" 1047 3628]
+[cl-struct-member "light_native" () "    void light_native(unsigned" 1633 32 () "d l3d_screen_info_indexed::light_native(unsigned" 6820 4004]
+[cl-struct-member "~l3d_screen_info_indexed" () "    virtual ~l3d_screen_info_indexed(void" 1278 32 () "_screen_info_indexed::~l3d_screen_info_indexed()" 2107 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_screen_info_rgb" "./tool_2d/si_rgb.h" "class l3d_screen_info_rgb :" 1020"./tool_2d/si_rgb.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_screen_info_rgb_mesa" "./tool_2d/si_rmes.h" "class l3d_screen_info_rgb_mesa :" 1072"./tool_2d/si_rmes.h" ]
+()()
+([cl-struct-member "compute_fog_table" () "    void compute_fog_table(void" 2055 48 () "    void compute_fog_table(void" 2055 0]
+[cl-struct-member "compute_light_table" () "    void compute_light_table(void" 2018 48 () "    void compute_light_table(void" 2018 0]
+[cl-struct-member "fog_native" () "    void fog_native(unsigned" 2155 48 () "    void fog_native(unsigned" 2155 4004]
+[cl-struct-member "l3d_screen_info_rgb_mesa" () " unsigned long blue_mask, char bytes_per_pixel):" 1149 16 () " unsigned long blue_mask, char bytes_per_pixel):" 1149 28597]
+[cl-struct-member "light_native" () "    void light_native(unsigned" 2092 48 () "    void light_native(unsigned" 2092 4004]
+[cl-struct-member "set_color" () "    void set_color(unsigned" 1750 16 () "    void set_color(unsigned" 1750 935]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "blue_fog_table" () "ed_fog_table, *green_fog_table, *blue_fog_table;" 1176 2 () () 0 0]
+[cl-struct-member "blue_mask" () "  unsigned long red_mask, green_mask, blue_mask;" 1489 0 () () 0 0]
+[cl-struct-member "blue_max" () "    red_max, green_max, blue_max;" 1567 0 () () 0 0]
+[cl-struct-member "bytes_per_rgb" () "    char bytes_per_rgb;" 1438 0 () () 0 0]
+)
+([cl-struct-member "compute_color_resolution" () "    void compute_color_resolution()" 1603 0 () "d_screen_info_rgb::compute_color_resolution(void" 2292 0]
+[cl-struct-member "compute_fog_table" () "    void compute_fog_table(void" 1736 32 () "void l3d_screen_info_rgb::compute_fog_table(void" 4416 0]
+[cl-struct-member "compute_light_table" () "    void compute_light_table(void" 1702 32 () "id l3d_screen_info_rgb::compute_light_table(void" 3708 0]
+[cl-struct-member "ext_to_native" () "    unsigned long ext_to_native(int" 1641 32 () "gned long l3d_screen_info_rgb::ext_to_native(int" 3292 1932]
+[cl-struct-member "fog_native" () "    void fog_native(unsigned" 1828 32 () "void l3d_screen_info_rgb::fog_native(unsigned" 6574 4004]
+[cl-struct-member "l3d_screen_info_rgb" () "mask, char bytes_per_pixel, char bytes_per_rgb);" 1219 0 () "    char bytes_per_rgb)
+{" 1035 56905]
+[cl-struct-member "light_native" () "    void light_native(unsigned" 1769 32 () "void l3d_screen_info_rgb::light_native(unsigned" 5303 4004]
+[cl-struct-member "~l3d_screen_info_rgb" () "l l3d_screen_info_rgb::~l3d_screen_info_rgb(void" 1411 32 () "l3d_screen_info_rgb::~l3d_screen_info_rgb(void" 2056 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "bytes_per_pixel" () "    char bytes_per_pixel;" 2551 0 () () 0 0]
+[cl-struct-member "ext_max_blue" () "   int ext_max_red, ext_max_green, ext_max_blue;" 2525 0 () () 0 0]
+[cl-struct-member "p_screenbuf" () "    unsigned char *p_screenbuf;" 3369 0 () () 0 0]
+)
+([cl-struct-member "compute_fog_table" () "    virtual void compute_fog_table(void" 2936 160 () () 0 0]
+[cl-struct-member "compute_light_table" () "    virtual void compute_light_table(void" 2892 160 () () 0 0]
+[cl-struct-member "ext_to_native" () "    virtual unsigned long ext_to_native(int" 2595 160 () () 0 1932]
+[cl-struct-member "fog_native" () "    virtual void fog_native(unsigned" 3048 160 () () 0 4004]
+[cl-struct-member "light_native" () "    virtual void light_native(unsigned" 2979 160 () () 0 4004]
+[cl-struct-member "set_color" () "    virtual void set_color(unsigned" 3117 48 () "    virtual void set_color(unsigned" 3117 935]
+[cl-struct-member "~l3d_screen_info" () "    virtual ~l3d_screen_info(void" 2658 48 () "    virtual ~l3d_screen_info(void" 2658 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3_polygon" () () 0() ]
+([cl-struct-tree [cl-struct-class "l3_polygon_gouraud" "./geom/polygon/p_gour.h" "class l3_polygon_gouraud :" 1024() ]
+([cl-struct-tree [cl-struct-class "l3_polygon_gouraud_textured" "./geom/polygon/p_gtex.h" "class l3_polygon_gouraud_textured :" 1051() ]
+()()
+()
+()
+()
+()
+()
+()() t 
+])()
+()
+()
+()
+()
+()
+()()()
+])()
+()
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_collidable" "./dynamics/collide.h" "class l3d_collidable {" 1059"./dynamics/collide.h" ]
+([cl-struct-tree [cl-struct-class "l3d_collidable_sphere" "./dynamics/colsph.h" "class l3d_collidable_sphere :" 993"./dynamics/colsph.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_camera_collidable" "./view/camcol.h" "class l3d_camera_collidable :" 1055"./view/camcol.h" ]
+()()
+([cl-struct-member "l3d_camera_collidable" () "    l3d_camera_collidable(void) :" 1589 16 () "    l3d_camera_collidable(void) :" 1589 0]
+[cl-struct-member "update" () "    virtual int update(void" 1786 48 () "    virtual int update(void" 1786 0]
+[cl-struct-member "~l3d_camera_collidable" () "    virtual ~l3d_camera_collidable(void" 1753 48 () "    virtual ~l3d_camera_collidable(void" 1753 0]
+)
+()
+()
+()
+()
+()() t 
+][cl-struct-tree [cl-struct-class "l3d_object_clippable_boundable_collidable" "./geom/object/ocoll.h" "class l3d_object_clippable_boundable_collidable:" 1044"./geom/object/ocoll.cc" ]
+()()
+([cl-struct-member "l3d_object_clippable_boundable_collidable" () "le_boundable_collidable(int num_fixed_vertices);" 1261 0 () "    :" 1013 308]
+[cl-struct-member "reset" () "    void reset(void" 1303 0 () "bject_clippable_boundable_collidable::reset(void" 1279 0]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "collision_sphere_radius" () "    l3d_real collision_sphere_radius;" 1079 0 () () 0 0]
+)
+([cl-struct-member "detect_collision_with" () "    int detect_collision_with(l3d_collidable" 1124 32 () "ble_sphere::detect_collision_with(l3d_collidable" 1088 811273]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_polygon_3d_collidable" "./geom/polygon/p3_coll.h" "class l3d_polygon_3d_collidable :" 1126"./geom/polygon/p3_coll.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_3d_portal_collidable" "./geom/polygon/p_cport.h" "class l3d_polygon_3d_portal_collidable :" 1062"./geom/polygon/p_cport.cc" ]
+()()
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1467 32 () "2d* l3d_polygon_3d_portal_collidable::clone(void" 1019 0]
+[cl-struct-member "l3d_polygon_3d_portal_collidable" () "  l3d_polygon_3d_portal_collidable(int num_pts):" 1206 16 "./geom/polygon/p_cport.h" "  l3d_polygon_3d_portal_collidable(int num_pts):" 1206 308]
+[cl-struct-member "l3d_polygon_3d_portal_collidable" () "able(const l3d_polygon_3d_portal_collidable &r);" 1398 0 () "    :" 1153 620]
+)
+()
+()
+()
+()
+()() t 
+][cl-struct-tree [cl-struct-class "l3d_polygon_3d_textured_lightmapped_collidable" "./geom/polygon/p3_cltex.h" "l3d_polygon_3d_textured_lightmapped_collidable :" 1077"./geom/polygon/p3_cltex.cc" ]
+()()
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1509 32 () "n_3d_textured_lightmapped_collidable::clone(void" 1554 0]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped_collidable" () "_polygon_3d_textured_lightmapped_collidable &r);" 1426 0 () "    :" 1731 620]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped_collidable" () "    (int num_pts, l3d_surface_cache *scache);" 1254 0 () "(int num_pts, l3d_surface_cache *scache):" 1125 6471333]
+[cl-struct-member "~l3d_polygon_3d_textured_lightmapped_collidable" () "    (void" 1361 32 () "_polygon_3d_textured_lightmapped_collidable(void" 1473 0]
+)
+()
+()
+()
+()
+()() t 
+])()
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1886 32 () "olygon_2d* l3d_polygon_3d_collidable::clone(void" 5318 0]
+[cl-struct-member "contains_point" () "    int contains_point(const" 1768 0 () " l3d_polygon_3d_collidable::contains_point(const" 1010 620]
+[cl-struct-member "l3d_polygon_3d_collidable" () "    l3d_polygon_3d_collidable(int num_pts) :" 1513 16 "./geom/polygon/p3_coll.h" "    l3d_polygon_3d_collidable(int num_pts) :" 1513 308]
+[cl-struct-member "l3d_polygon_3d_collidable" () "  l3d_polygon_3d_collidable(void) :" 1254 16 "./geom/polygon/p3_coll.h" "  l3d_polygon_3d_collidable(void) :" 1254 0]
+[cl-struct-member "l3d_polygon_3d_collidable" () "_collidable(const l3d_polygon_3d_collidable &r);" 1824 0 () "    :" 5431 620]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "bounce" () "    l3d_vector bounce;" 1163 0 () () 0 0]
+[cl-struct-member "new_position" () "    l3d_point old_position, new_position;" 1111 0 () () 0 0]
+[cl-struct-member "prevent_collision" () "    int prevent_collision;" 1190 0 () () 0 0]
+)
+([cl-struct-member "detect_collision_with" () "virtual int detect_collision_with(l3d_collidable" 1244 48 () "virtual int detect_collision_with(l3d_collidable" 1244 811273]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_plugin_pyramid" "./dynamics/plugins/pyramid/pyramid.cc" "class l3d_plugin_pyramid {" 1157"./dynamics/plugins/pyramid/pyramid.cc" ]
+()([cl-struct-member "env" () "    l3d_plugin_environment *env;" 1200 0 () () 0 0]
+[cl-struct-member "xtheta" () "    int xtheta;" 1217 0 () () 0 0]
+)
+([cl-struct-member "l3d_plugin_pyramid" () ":l3d_plugin_pyramid(l3d_plugin_environment *e) {" 1284 16 () ":l3d_plugin_pyramid(l3d_plugin_environment *e) {" 1284 206268160]
+[cl-struct-member "~l3d_plugin_pyramid" () "    l3d_plugin_pyramid::~l3d_plugin_pyramid(void" 1360 16 () "    l3d_plugin_pyramid::~l3d_plugin_pyramid(void" 1360 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_plugin_loader_factory" "./dynamics/plugins/plugload.h" "class l3d_plugin_loader_factory {" 1266() ]
+([cl-struct-tree [cl-struct-class "l3d_plugin_loader_linux_factory" "./dynamics/plugins/pl_linux.h" "class l3d_plugin_loader_linux_factory :" 1384"./dynamics/plugins/pl_linux.cc" ]
+()()
+([cl-struct-member "create" () "    l3d_plugin_loader *create(void" 1464 32 () "er *l3d_plugin_loader_linux_factory::create(void" 1121 0]
+)
+()
+()
+()
+()
+()()()
+])()
+([cl-struct-member "create" () "    virtual l3d_plugin_loader *create(void" 1319 160 () () 0 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_plugin_videoscape_mesh_seeker" "./dynamics/plugins/seeker/seeker.h" "class l3d_plugin_videoscape_mesh_seeker
+{" 1298"./dynamics/plugins/seeker/seeker.cc" ]
+()([cl-struct-member "max_ticks" () "    int tick_count, max_ticks;" 1605 0 () () 0 0]
+[cl-struct-member "movement_state" () "    movement_states movement_state;" 1641 0 () () 0 0]
+[cl-struct-member "moving_velocity" () "    l3d_real moving_velocity;" 1697 0 () () 0 0]
+[cl-struct-member "plugin_env" () "    l3d_plugin_environment *plugin_env;" 1348 0 () () 0 0]
+[cl-struct-member "tex_data" () "    l3d_texture_data *tex_data;" 1380 0 () () 0 0]
+[cl-struct-member "texture_fname" () "024], texcoord_fname[1024], texture_fname[1024];" 1573 0 () () 0 0]
+[cl-struct-member "turning_velocity" () "    int turning_velocity;" 1667 0 () () 0 0]
+)
+([cl-struct-member "l3d_plugin_videoscape_mesh_seeker" () "oscape_mesh_seeker(l3d_plugin_environment *env);" 1442 0 () "(l3d_plugin_environment *env)
+{" 1307 206268160]
+[cl-struct-member "~l3d_plugin_videoscape_mesh_seeker" () " virtual ~l3d_plugin_videoscape_mesh_seeker(void" 1501 32 () "_seeker::~l3d_plugin_videoscape_mesh_seeker(void" 1432 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_plugin_videoscape_mesh" "./dynamics/plugins/vidmesh/vidmesh.h" "class l3d_plugin_videoscape_mesh {" 1047"./dynamics/plugins/vidmesh/vidmesh.cc" ]
+()([cl-struct-member "plugin_env" () "    l3d_plugin_environment *plugin_env;" 1097 0 () () 0 0]
+[cl-struct-member "tex_data" () "    l3d_texture_data *tex_data;" 1129 0 () () 0 0]
+[cl-struct-member "texture_fname" () "024], texcoord_fname[1024], texture_fname[1024];" 1308 0 () () 0 0]
+)
+([cl-struct-member "l3d_plugin_videoscape_mesh" () "in_videoscape_mesh(l3d_plugin_environment *env);" 1184 0 () "(l3d_plugin_environment *env)
+{" 1293 206268160]
+[cl-struct-member "~l3d_plugin_videoscape_mesh" () "    virtual ~l3d_plugin_videoscape_mesh(void" 1236 32 () "ideoscape_mesh::~l3d_plugin_videoscape_mesh(void" 1404 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_sound_client" "./sound/soundclient.h" "class l3d_sound_client {" 977"./sound/soundclient.h" ]
+([cl-struct-tree [cl-struct-class "l3d_sound_client_rplay" "./sound/scli_rplay.h" "class l3d_sound_client_rplay :" 1201"./sound/scli_rplay.cc" ]
+()([cl-struct-member "connected" () "    int connected;" 1420 1 () () 0 0]
+[cl-struct-member "sound_socket" () "    int sound_socket;" 1401 1 () () 0 0]
+)
+([cl-struct-member "connect" () "    void connect(const" 1303 32 () "void l3d_sound_client_rplay::connect(const" 1287 1784]
+[cl-struct-member "send_command" () "    void send_command(const" 1354 32 () "void l3d_sound_client_rplay::send_command(const" 2194 1784]
+[cl-struct-member "~l3d_sound_client_rplay" () "    virtual ~l3d_sound_client_rplay(void" 1278 32 () "sound_client_rplay::~l3d_sound_client_rplay(void" 2604 0]
+)
+()
+()
+()
+()
+()()()
+])()
+([cl-struct-member "connect" () "    virtual void connect(const" 1070 160 () () 0 1784]
+[cl-struct-member "send_command" () "    virtual void send_command(const" 1023 160 () () 0 1784]
+[cl-struct-member "~l3d_sound_client" () "    virtual ~l3d_sound_client(void" 1122 48 () "    virtual ~l3d_sound_client(void" 1122 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_dispatcher" "./tool_os/dispatch.h" "class l3d_dispatcher {" 1083() ]
+([cl-struct-tree [cl-struct-class "l3d_dispatcher_mesa" "./tool_os/dis_mesa.h" "class l3d_dispatcher_mesa :" 1046"./tool_os/dis_mesa.cc" ]
+()([cl-struct-member "last_dispatcher" () () 0 0 () "ispatcher *l3d_dispatcher_mesa::last_dispatcher;" 1010 0]
+)
+([cl-struct-member "glut_display_func" () () 0 0 () "void l3d_dispatcher_mesa::glut_display_func(void" 1159 0]
+[cl-struct-member "glut_idle_func" () () 0 0 () "void l3d_dispatcher_mesa::glut_idle_func(void" 1298 0]
+[cl-struct-member "glut_keyboard_func" () () 0 0 () "l3d_dispatcher_mesa::glut_keyboard_func(unsigned" 1424 3480]
+[cl-struct-member "l3d_dispatcher_mesa" () "    l3d_dispatcher_mesa(void);" 1313 0 () "l3d_dispatcher_mesa::l3d_dispatcher_mesa(void) {" 1057 0]
+[cl-struct-member "start" () "    void start(void" 1335 32 () "void l3d_dispatcher_mesa::start(void" 1776 0]
+)
+([cl-struct-member "last_dispatcher" () "    static l3d_dispatcher *last_dispatcher;" 1125 2 () () 0 0]
+)
+([cl-struct-member "glut_display_func" () "    static void glut_display_func(void" 1164 2 () () 0 0]
+[cl-struct-member "glut_idle_func" () "    static void glut_idle_func(void" 1202 2 () () 0 0]
+[cl-struct-member "glut_keyboard_func" () "    static void glut_keyboard_func(unsigned" 1248 2 () () 0 3480]
+)
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_dispatcher_mswin" "./tool_os/dis_mswn.h" "class l3d_dispatcher_mswin :" 125"./tool_os/dis_mswn.cc" ]
+()([cl-struct-member "last_event_source" () () 0 0 () "source *l3d_dispatcher_mswin::last_event_source;" 229 0]
+[cl-struct-member "last_pipeline" () () 0 0 () "d_pipeline *l3d_dispatcher_mswin::last_pipeline;" 170 0]
+)
+([cl-struct-member "set_pipeline" () "  void set_pipeline(l3d_pipeline" 401 0 () " l3d_dispatcher_mswin::set_pipeline(l3d_pipeline" 520 201529]
+[cl-struct-member "start" () "  void start(void" 366 32 () "void l3d_dispatcher_mswin::start(void" 626 0]
+[cl-struct-member "winproc" () () 0 0 () "SULT CALLBACK l3d_dispatcher_mswin::winproc(HWND" 3154 3855]
+)
+([cl-struct-member "last_event_source" () "  static l3d_event_source *last_event_source;" 338 1 () () 0 0]
+[cl-struct-member "last_pipeline" () "  static l3d_pipeline *last_pipeline;" 292 1 () () 0 0]
+)
+([cl-struct-member "winproc" () "   LRESULT CALLBACK winproc(HWND" 203 1 () () 0 3855]
+)
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_dispatcher_x11" "./tool_os/dis_x11.h" "class l3d_dispatcher_x11 :" 1102"./tool_os/dis_x11.cc" ]
+()()
+([cl-struct-member "start" () "    void start(void" 1156 32 () "void l3d_dispatcher_x11::start(void" 991 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "event_source" () "    l3d_event_source *event_source;" 1157 0 () () 0 0]
+[cl-struct-member "pipeline" () "    l3d_pipeline *pipeline;" 1121 0 () () 0 0]
+)
+([cl-struct-member "start" () "    virtual void start(void" 1186 160 () () 0 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_texture_data" "./geom/texture/texture.h" "class l3d_texture_data {" 1071"./geom/texture/texture.h" ]
+()([cl-struct-member "data" () "    unsigned char *data;" 1282 0 () () 0 0]
+[cl-struct-member "height" () "    int width, height;" 1231 0 () () 0 0]
+[cl-struct-member "id" () "    int id;" 1093 0 () () 0 0]
+)
+([cl-struct-member "l3d_texture_data" () "    l3d_texture_data(void) {" 1119 16 () "    l3d_texture_data(void) {" 1119 0]
+[cl-struct-member "~l3d_texture_data" () "    virtual ~l3d_texture_data(void" 1178 48 () "    virtual ~l3d_texture_data(void" 1178 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_surface_cache" "./geom/surface/scache.h" "class l3d_surface_cache {" 1625"./geom/surface/scache.h" ]
+()([cl-struct-member "sinfo" () "    l3d_screen_info *sinfo;" 1666 1 () () 0 0]
+[cl-struct-member "surfaces" () "    l3d_list<l3d_surface> *surfaces;" 1703 1 () () 0 0]
+)
+([cl-struct-member "combine_lightmap_and_texmap" () "    l3d_texture *combine_lightmap_and_texmap(int" 1976 0 "./geom/surface/scache.cc" "combine_lightmap_and_texmap(int" 1531 3856]
+[cl-struct-member "find_texdata" () " l3d_texture_data *find_texdata(l3d_texture_data" 2219 0 "./geom/surface/scache.cc" "find_texdata(l3d_texture_data" 5171 3222825]
+[cl-struct-member "l3d_surface_cache" () "    l3d_surface_cache(l3d_screen_info *sinfo) {" 1752 16 () "    l3d_surface_cache(l3d_screen_info *sinfo) {" 1752 1606135]
+[cl-struct-member "reset" () "    void reset(void" 2085 16 () "    void reset(void" 2085 0]
+[cl-struct-member "~l3d_surface_cache" () "    virtual ~l3d_surface_cache(void" 1881 48 () "    virtual ~l3d_surface_cache(void" 1881 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_vertex_interpolator" "./geom/vertex/verint.h" "class l3d_vertex_interpolator {" 1054"./geom/vertex/verint.h" ]
+()([cl-struct-member "deltas" () "    l3d_list<l3d_vector> *deltas;" 1192 0 () () 0 0]
+[cl-struct-member "dimension" () "    int dimension;" 1111 0 () () 0 0]
+[cl-struct-member "list" () "    l3d_two_part_list<l3d_coordinate> *list;" 1157 0 () () 0 0]
+[cl-struct-member "pos" () "    int pos;" 1092 0 () () 0 0]
+[cl-struct-member "steps" () "    int steps;" 1079 0 () () 0 0]
+)
+([cl-struct-member "l3d_vertex_interpolator" () "    l3d_vertex_interpolator(void) {" 1226 16 () "    l3d_vertex_interpolator(void) {" 1226 0]
+[cl-struct-member "start" () "    void start(const" 1446 16 () "    void start(const" 1446 11308]
+[cl-struct-member "step" () "    bool step(void" 2038 16 () "    bool step(void" 2038 0]
+[cl-struct-member "~l3d_vertex_interpolator" () "    ~l3d_vertex_interpolator(void" 1375 16 () "    ~l3d_vertex_interpolator(void" 1375 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_plugin_videoscape_flatshaded_mesh" "./dynamics/plugins/vidflat/vidflat.h" "class l3d_plugin_videoscape_flatshaded_mesh {" 1033"./dynamics/plugins/vidflat/vidflat.cc" ]
+()([cl-struct-member "mesh_fname" () "    char mesh_fname[1024];" 1241 0 () () 0 0]
+[cl-struct-member "plugin_env" () "    l3d_plugin_environment *plugin_env;" 1083 0 () () 0 0]
+)
+([cl-struct-member "l3d_plugin_videoscape_flatshaded_mesh" () "pe_flatshaded_mesh(l3d_plugin_environment *env);" 1149 0 () "(l3d_plugin_environment *env)
+{" 1347 206268160]
+[cl-struct-member "~l3d_plugin_videoscape_flatshaded_mesh" () "tual ~l3d_plugin_videoscape_flatshaded_mesh(void" 1212 32 () "esh::~l3d_plugin_videoscape_flatshaded_mesh(void" 1461 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_rasterizer_2d" "./raster/rasteriz.h" "class l3d_rasterizer_2d {" 2078"./raster/rasteriz.h" ]
+([cl-struct-tree [cl-struct-class "l3d_rasterizer_3d" "./raster/rast3.h" "class l3d_rasterizer_3d :" 1898"./raster/rast3.h" ]
+()([cl-struct-member "imp3d" () "    l3d_rasterizer_3d_imp *imp3d;" 1972 1 () () 0 0]
+)
+([cl-struct-member "clear_buffer" () "    /* virtual */ void clear_buffer(void" 3079 48 () "    /* virtual */ void clear_buffer(void" 3079 0]
+[cl-struct-member "draw_line" () "    /* virtual */ void draw_line( int" 2935 48 () "    /* virtual */ void draw_line( int" 2935 15127]
+[cl-struct-member "draw_point" () "    void draw_point( int" 2513 48 () "    void draw_point( int" 2513 3799]
+[cl-struct-member "draw_polygon_flatshaded" () "* virtual */ void draw_polygon_flatshaded( const" 3172 48 () "* virtual */ void draw_polygon_flatshaded( const" 3172 608]
+[cl-struct-member "draw_polygon_textured" () "    virtual void draw_polygon_textured(const" 3308 48 () "    virtual void draw_polygon_textured(const" 3308 608]
+[cl-struct-member "draw_polygon_textured_lightmapped" () "    (const" 3448 48 () "    (const" 3448 608]
+[cl-struct-member "draw_text" () "    void draw_text(int" 3573 16 () "    void draw_text(int" 3573 7192]
+[cl-struct-member "l3d_rasterizer_3d" () "                    l3d_rasterizer_3d_imp *i3) :" 2027 16 () "                    l3d_rasterizer_3d_imp *i3) :" 2027 102897898]
+[cl-struct-member "~l3d_rasterizer_3d" () "    virtual ~l3d_rasterizer_3d(void" 2175 48 () "    virtual ~l3d_rasterizer_3d(void" 2175 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "imp2d" () "    l3d_rasterizer_2d_imp *imp2d;" 2125 1 () () 0 0]
+)
+([cl-struct-member "clear_buffer" () "    virtual void clear_buffer(void" 2314 48 () "    virtual void clear_buffer(void" 2314 0]
+[cl-struct-member "draw_line" () "    virtual void draw_line( int" 2535 48 () "    virtual void draw_line( int" 2535 15127]
+[cl-struct-member "draw_point" () "    virtual void draw_point( int" 2378 48 () "    virtual void draw_point( int" 2378 3799]
+[cl-struct-member "draw_polygon_flatshaded" () "    virtual void draw_polygon_flatshaded( const" 2788 48 () "    virtual void draw_polygon_flatshaded( const" 2788 608]
+[cl-struct-member "l3d_rasterizer_2d" () "   l3d_rasterizer_2d(l3d_rasterizer_2d_imp *i) {" 2180 16 () "   l3d_rasterizer_2d(l3d_rasterizer_2d_imp *i) {" 2180 102897762]
+[cl-struct-member "~l3d_rasterizer_2d" () "    virtual ~l3d_rasterizer_2d(void" 2245 48 () "    virtual ~l3d_rasterizer_2d(void" 2245 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_list" "./datastr/list.h" "template<class Item> class l3d_list
+{" 1777"./datastr/list.h" ]
+()([cl-struct-member "factory" () "    l3d_list_item_factory<Item> *factory;" 1885 0 () () 0 0]
+[cl-struct-member "is_my_factory" () "    bool is_my_factory;" 1814 1 () () 0 0]
+[cl-struct-member "items" () "    Item **items;" 1942 0 () () 0 0]
+[cl-struct-member "max_items" () "    int max_items;" 1843 0 () () 0 0]
+[cl-struct-member "num_items" () "    int num_items;" 1961 0 () () 0 0]
+)
+([cl-struct-member "l3d_list" () "al_size, l3d_list_item_factory<Item> *factory) {" 2643 16 () "al_size, l3d_list_item_factory<Item> *factory) {" 2643 1979]
+[cl-struct-member "l3d_list" () "    l3d_list(void) {" 2304 16 () "    l3d_list(void) {" 2304 0]
+[cl-struct-member "l3d_list" () "    l3d_list(int initial_size) {" 1979 16 () "    l3d_list(int initial_size) {" 1979 308]
+[cl-struct-member "next_index" () "    int next_index(void" 3252 16 () "    int next_index(void" 3252 0]
+[cl-struct-member "operator =" () "    l3d_list<Item> & operator = ( const" 4391 16 () "    l3d_list<Item> & operator = ( const" 4391 620]
+[cl-struct-member "operator [ ]" () "    Item & operator [] (int" 3985 80 () "    Item & operator [] (int" 3985 845]
+[cl-struct-member "~l3d_list" () "    ~l3d_list(void" 3017 16 () "    ~l3d_list(void" 3017 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_bounding_sphere" "./geom/boundvol/boundsph.h" "class l3d_bounding_sphere {" 1148"./geom/boundvol/boundsph.cc" ]
+()([cl-struct-member "center" () "    l3d_coordinate center;" 1315 0 () () 0 0]
+[cl-struct-member "radius" () "    l3d_real radius;" 1288 0 () () 0 0]
+[cl-struct-member "transform_stage" () "    int transform_stage;" 1183 0 () () 0 0]
+)
+([cl-struct-member "compute_around_object" () "    void compute_around_object(const" 1415 0 () "l3d_bounding_sphere::compute_around_object(const" 1769 608]
+[cl-struct-member "distance_to_plane" () "    l3d_real distance_to_plane(const" 1352 64 () "eal l3d_bounding_sphere::distance_to_plane(const" 1288 1533]
+[cl-struct-member "reset" () "    virtual void reset(void" 1211 32 () "void l3d_bounding_sphere::reset(void" 1056 0]
+[cl-struct-member "transform" () "    virtual void transform(const" 1246 32 () "void l3d_bounding_sphere::transform(const" 1145 620]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_moveable" "./dynamics/moveable.h" "class l3d_moveable {" 1090"./dynamics/moveable.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_camera" "./view/camera.h" "class l3d_camera :" 1477"./view/camera.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_camera_collidable" "./view/camcol.h" "class l3d_camera_collidable :" 1055"./view/camcol.h" ]
+()()
+([cl-struct-member "l3d_camera_collidable" () "    l3d_camera_collidable(void) :" 1589 16 () "    l3d_camera_collidable(void) :" 1589 0]
+[cl-struct-member "update" () "    virtual int update(void" 1786 48 () "    virtual int update(void" 1786 0]
+[cl-struct-member "~l3d_camera_collidable" () "    virtual ~l3d_camera_collidable(void" 1753 48 () "    virtual ~l3d_camera_collidable(void" 1753 0]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "far_z" () "    l3d_real far_z;" 1640 0 () () 0 0]
+[cl-struct-member "fovy" () "    l3d_real fovx, fovy;" 1599 0 () () 0 0]
+[cl-struct-member "near_z" () "    l3d_real near_z;" 1620 0 () () 0 0]
+)
+([cl-struct-member "l3d_camera" () "    l3d_camera(void);" 1537 0 () "l3d_camera::l3d_camera(void) :" 1019 0]
+[cl-struct-member "~l3d_camera" () "    virtual ~l3d_camera(void" 1568 48 "./view/camera.h" "    virtual ~l3d_camera(void" 1568 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "VFW_thrust" () "    VFW_thrust;" 2919 0 () () 0 0]
+[cl-struct-member "VRI" () "    l3d_vector VFW, VUP, VRI;" 2027 0 () () 0 0]
+[cl-struct-member "VRI_tip" () "    l3d_point VRP, VFW_tip, VUP_tip, VRI_tip;" 1997 0 () () 0 0]
+[cl-struct-member "inverse_viewing_xform" () "    l3d_matrix inverse_viewing_xform;" 2257 0 () () 0 0]
+[cl-struct-member "viewing_xform" () "    l3d_matrix viewing_xform;" 2219 0 () () 0 0]
+)
+([cl-struct-member "calculate_viewing_xform" () "    void calculate_viewing_xform(void" 2379 0 () "void l3d_moveable::calculate_viewing_xform(void" 11471 0]
+[cl-struct-member "l3d_moveable" () "    l3d_moveable(void);" 1141 0 () "l3d_moveable::l3d_moveable(void) {" 1025 0]
+[cl-struct-member "rotateVFW" () "    void rotateVFW(void" 2943 0 () "void l3d_moveable::rotateVFW()" 8264 0]
+[cl-struct-member "rotateVRI" () "    void rotateVRI(void" 3098 0 () "void l3d_moveable::rotateVRI()" 7385 0]
+[cl-struct-member "rotateVUP" () "    void rotateVUP(void" 3021 0 () "void l3d_moveable::rotateVUP()" 6489 0]
+[cl-struct-member "transform" () "    virtual void transform(const" 3445 32 () "void l3d_moveable::transform(const" 13984 620]
+[cl-struct-member "translateVFW" () "    void translateVFW(void" 3179 0 () "void l3d_moveable::translateVFW()" 2694 0]
+[cl-struct-member "translateVRI" () "    void translateVRI(void" 3329 0 () "void l3d_moveable::translateVRI()" 3967 0]
+[cl-struct-member "translateVUP" () "    void translateVUP(void" 3254 0 () "void l3d_moveable::translateVUP()" 5236 0]
+[cl-struct-member "update" () "    virtual int update(void" 2436 32 () "int l3d_moveable::update(void" 9132 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_coordinate" "./geom/vertex/coord.h" "class l3d_coordinate {" 1075"./geom/vertex/coord.h" ]
+()([cl-struct-member "original" () "    l3d_point original;" 1158 0 () () 0 0]
+[cl-struct-member "transform_stage" () "    char transform_stage;" 1211 0 () () 0 0]
+[cl-struct-member "transformed" () "    l3d_point transformed;" 1185 0 () () 0 0]
+[cl-struct-member "transformed_intermediates" () "ed_intermediates[max_transformed_intermediates];" 1284 0 () () 0 0]
+)
+([cl-struct-member "l3d_coordinate" () "  l3d_coordinate(void) {" 1107 16 () "  l3d_coordinate(void) {" 1107 0]
+[cl-struct-member "reset" () "    void reset(void" 1305 16 () "    void reset(void" 1305 0]
+[cl-struct-member "transform" () "    void transform(const" 1380 16 () "    void transform(const" 1380 1516]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3_polygon_textured" () () 0() ]
+([cl-struct-tree [cl-struct-class "l3_polygon_gouraud_textured" "./geom/polygon/p_gtex.h" "class l3_polygon_gouraud_textured :" 1051() ]
+()()
+()
+()
+()
+()
+()
+()() t 
+])()
+()
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_texture_computer" "./geom/texture/texture.h" "class l3d_texture_computer {" 1613"./geom/texture/texture.h" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_3d_textured" "./geom/polygon/p3_tex.h" "class l3d_polygon_3d_textured :" 2801"./geom/polygon/p_tex.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_3d_textured_lightmapped" "./geom/polygon/p3_ltex.h" "class l3d_polygon_3d_textured_lightmapped :" 1073"./geom/polygon/p3_ltex.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_3d_textured_lightmapped_collidable" "./geom/polygon/p3_cltex.h" "l3d_polygon_3d_textured_lightmapped_collidable :" 1077"./geom/polygon/p3_cltex.cc" ]
+()()
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1509 32 () "n_3d_textured_lightmapped_collidable::clone(void" 1554 0]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped_collidable" () "_polygon_3d_textured_lightmapped_collidable &r);" 1426 0 () "    :" 1731 620]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped_collidable" () "    (int num_pts, l3d_surface_cache *scache);" 1254 0 () "(int num_pts, l3d_surface_cache *scache):" 1125 6471333]
+[cl-struct-member "~l3d_polygon_3d_textured_lightmapped_collidable" () "    (void" 1361 32 () "_polygon_3d_textured_lightmapped_collidable(void" 1473 0]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "lightmap" () "    l3d_texture *lightmap;" 2503 0 () () 0 0]
+[cl-struct-member "scache" () "    l3d_surface_cache *scache;" 1244 1 () () 0 0]
+[cl-struct-member "surface" () "    mutable l3d_texture *surface;" 1288 0 () () 0 0]
+[cl-struct-member "surface_orientation" () "    l3d_texture_space surface_orientation;" 1750 0 () () 0 0]
+[cl-struct-member "surface_ysize" () "    int surface_xsize, surface_ysize;" 1788 0 () () 0 0]
+)
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 2928 32 () " l3d_polygon_3d_textured_lightmapped::clone(void" 20246 0]
+[cl-struct-member "compute_surface_orientation_and_size" () "  void compute_surface_orientation_and_size(void" 2555 0 () "(void" 5658 0]
+[cl-struct-member "draw" () "    void draw(l3d_rasterizer_3d" 2741 48 "./geom/polygon/p3_ltex.h" "    void draw(l3d_rasterizer_3d" 2741 6431210]
+[cl-struct-member "get_scache" () "    l3d_surface_cache *get_scache(void" 1680 80 "./geom/polygon/p3_ltex.h" "    l3d_surface_cache *get_scache(void" 1680 293]
+[cl-struct-member "init_transformed" () "    void init_transformed(void" 2654 32 () "n_3d_textured_lightmapped::init_transformed(void" 19547 0]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped" () " (const l3d_polygon_3d_textured_lightmapped &r);" 2856 0 () "    :" 20389 620]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped" () "tmapped(int num_pts, l3d_surface_cache *scache);" 1874 0 () "(int num_pts, l3d_surface_cache *scache):" 1101 6471333]
+[cl-struct-member "transform" () "    void transform(const" 2681 32 () "polygon_3d_textured_lightmapped::transform(const" 19871 1516]
+[cl-struct-member "~l3d_polygon_3d_textured_lightmapped" () "    ~l3d_polygon_3d_textured_lightmapped(void" 1958 16 "./geom/polygon/p3_ltex.h" "    ~l3d_polygon_3d_textured_lightmapped(void" 1958 0]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "texture" () "    mutable l3d_texture *texture;" 3108 0 () () 0 0]
+)
+([cl-struct-member "after_camera_transform" () "  /* virtual */ void after_camera_transform(void" 3821 32 "./geom/polygon/p3_tex.cc" "polygon_3d_textured::after_camera_transform(void" 18075 0]
+[cl-struct-member "assign_tex_coords_from_tex_space" () "sign_tex_coords_from_tex_space(l3d_texture_space" 3168 0 "./geom/polygon/p3_tex.cc" "(l3d_texture_space" 29888 620]
+[cl-struct-member "clip_near_z" () "    /* virtual */ int clip_near_z(l3d_real" 3989 32 "./geom/polygon/p3_tex.cc" "nt l3d_polygon_3d_textured::clip_near_z(l3d_real" 21826 12570]
+[cl-struct-member "clip_segment_to_edge_2d" () "    (l3d_polygon_ivertex" 3570 0 "./geom/polygon/p3_tex.cc" "(l3d_polygon_ivertex" 4967 9820]
+[cl-struct-member "clip_segment_to_near_z" () "    (l3d_polygon_ivertex" 3894 32 "./geom/polygon/p3_tex.cc" "(l3d_polygon_ivertex" 18819 1012]
+[cl-struct-member "clip_to_edge_2d" () "    (const" 3723 0 "./geom/polygon/p3_tex.cc" "(const" 13141 3040]
+[cl-struct-member "clip_to_plane" () "    /* virtual */ int clip_to_plane(l3d_plane" 4043 32 "./geom/polygon/p3_tex.cc" "l3d_polygon_3d_textured::clip_to_plane(l3d_plane" 31259 25201]
+[cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 3495 32 "./geom/polygon/p3_tex.cc" "_polygon_2d* l3d_polygon_3d_textured::clone(void" 2507 0]
+[cl-struct-member "create_ivertices" () "irtual l3d_polygon_ivertex *create_ivertices(int" 1507 32 () " * l3d_polygon_3d_textured::create_ivertices(int" 1024 308]
+[cl-struct-member "draw" () "    void draw(l3d_rasterizer_3d" 3305 48 "./geom/polygon/p3_tex.h" "    void draw(l3d_rasterizer_3d" 3305 6431210]
+[cl-struct-member "init_transformed" () "    void init_transformed(void" 3219 32 "./geom/polygon/p3_tex.cc" "d l3d_polygon_3d_textured::init_transformed(void" 1163 0]
+[cl-struct-member "l3d_polygon_3d_textured" () "    l3d_polygon_3d_textured(void) :" 2972 16 "./geom/polygon/p3_tex.h" "    l3d_polygon_3d_textured(void) :" 2972 0]
+[cl-struct-member "l3d_polygon_3d_textured" () "n_3d_textured(const l3d_polygon_3d_textured &r);" 3391 0 "./geom/polygon/p3_tex.cc" "    :" 2614 620]
+[cl-struct-member "l3d_polygon_3d_textured" () "    l3d_polygon_3d_textured(int num_pts);" 3063 0 "./geom/polygon/p3_tex.cc" "textured::l3d_polygon_3d_textured(int num_pts) :" 2099 308]
+[cl-struct-member "sizeof_ivertex" () "    virtual size_t sizeof_ivertex(void" 1554 32 () "e_t l3d_polygon_3d_textured::sizeof_ivertex(void" 1138 0]
+[cl-struct-member "transform" () "    void transform(const" 3246 32 "./geom/polygon/p3_tex.cc" "void l3d_polygon_3d_textured::transform(const" 1506 1516]
+[cl-struct-member "~l3d_polygon_3d_textured" () "    virtual ~l3d_polygon_3d_textured(void" 3462 32 "./geom/polygon/p3_tex.cc" "lygon_3d_textured::~l3d_polygon_3d_textured(void" 2409 0]
+)
+()
+()
+()
+()
+()() t 
+][cl-struct-tree [cl-struct-class "l3d_polygon_3d_textured_lightmapped" "./geom/polygon/p3_ltex.h" "class l3d_polygon_3d_textured_lightmapped :" 1073"./geom/polygon/p3_ltex.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_3d_textured_lightmapped_collidable" "./geom/polygon/p3_cltex.h" "l3d_polygon_3d_textured_lightmapped_collidable :" 1077"./geom/polygon/p3_cltex.cc" ]
+()()
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1509 32 () "n_3d_textured_lightmapped_collidable::clone(void" 1554 0]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped_collidable" () "_polygon_3d_textured_lightmapped_collidable &r);" 1426 0 () "    :" 1731 620]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped_collidable" () "    (int num_pts, l3d_surface_cache *scache);" 1254 0 () "(int num_pts, l3d_surface_cache *scache):" 1125 6471333]
+[cl-struct-member "~l3d_polygon_3d_textured_lightmapped_collidable" () "    (void" 1361 32 () "_polygon_3d_textured_lightmapped_collidable(void" 1473 0]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "lightmap" () "    l3d_texture *lightmap;" 2503 0 () () 0 0]
+[cl-struct-member "scache" () "    l3d_surface_cache *scache;" 1244 1 () () 0 0]
+[cl-struct-member "surface" () "    mutable l3d_texture *surface;" 1288 0 () () 0 0]
+[cl-struct-member "surface_orientation" () "    l3d_texture_space surface_orientation;" 1750 0 () () 0 0]
+[cl-struct-member "surface_ysize" () "    int surface_xsize, surface_ysize;" 1788 0 () () 0 0]
+)
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 2928 32 () " l3d_polygon_3d_textured_lightmapped::clone(void" 20246 0]
+[cl-struct-member "compute_surface_orientation_and_size" () "  void compute_surface_orientation_and_size(void" 2555 0 () "(void" 5658 0]
+[cl-struct-member "draw" () "    void draw(l3d_rasterizer_3d" 2741 48 "./geom/polygon/p3_ltex.h" "    void draw(l3d_rasterizer_3d" 2741 6431210]
+[cl-struct-member "get_scache" () "    l3d_surface_cache *get_scache(void" 1680 80 "./geom/polygon/p3_ltex.h" "    l3d_surface_cache *get_scache(void" 1680 293]
+[cl-struct-member "init_transformed" () "    void init_transformed(void" 2654 32 () "n_3d_textured_lightmapped::init_transformed(void" 19547 0]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped" () " (const l3d_polygon_3d_textured_lightmapped &r);" 2856 0 () "    :" 20389 620]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped" () "tmapped(int num_pts, l3d_surface_cache *scache);" 1874 0 () "(int num_pts, l3d_surface_cache *scache):" 1101 6471333]
+[cl-struct-member "transform" () "    void transform(const" 2681 32 () "polygon_3d_textured_lightmapped::transform(const" 19871 1516]
+[cl-struct-member "~l3d_polygon_3d_textured_lightmapped" () "    ~l3d_polygon_3d_textured_lightmapped(void" 1958 16 "./geom/polygon/p3_ltex.h" "    ~l3d_polygon_3d_textured_lightmapped(void" 1958 0]
+)
+()
+()
+()
+()
+()() t 
+][cl-struct-tree [cl-struct-class "l3d_rasterizer_2d_sw_lighter_imp" "./raster/ras_swl.h" "class l3d_rasterizer_2d_sw_lighter_imp :" 1122"./raster/ras_swl.h" ]
+()()
+([cl-struct-member "compute_light_level" () "    virtual int compute_light_level(int" 1266 33 "./raster/ras_swl.cc" "rizer_2d_sw_lighter_imp::compute_light_level(int" 1088 860]
+[cl-struct-member "draw_polygon_flatshaded" () "    void draw_polygon_flatshaded(const" 1495 32 "./raster/ras_swl.cc" "(const" 4013 608]
+[cl-struct-member "l3d_rasterizer_2d_sw_lighter_imp" () "ghter_imp(int xs, int ys, l3d_screen_info *si) :" 1341 16 () "ghter_imp(int xs, int ys, l3d_screen_info *si) :" 1341 1608839]
+)
+()
+()
+()
+()
+()() t 
+][cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_imp" "./raster/rast3.h" "class l3d_rasterizer_3d_imp :" 1339"./raster/rast3.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_mesa_imp" "./raster/ras3_mes.h" "class l3d_rasterizer_3d_mesa_imp :" 4428"./raster/ras3_mes.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_zbuf_mesa_imp" "./raster/ras3z_mes.h" "class l3d_rasterizer_3d_zbuf_mesa_imp :" 1041"./raster/ras3z_mes.cc" ]
+()()
+([cl-struct-member "clear_buffer" () "    void clear_buffer(void" 1246 32 () "d_rasterizer_3d_zbuf_mesa_imp::clear_buffer(void" 1995 0]
+[cl-struct-member "l3d_rasterizer_3d_zbuf_mesa_imp" () "f_mesa_imp(int xs, int ys, l3d_screen_info *si);" 1133 0 () "f_mesa_imp(int xs, int ys, l3d_screen_info *si):" 1330 1608839]
+[cl-struct-member "~l3d_rasterizer_3d_zbuf_mesa_imp" () "   virtual ~l3d_rasterizer_3d_zbuf_mesa_imp(void" 1217 32 () "~l3d_rasterizer_3d_zbuf_mesa_imp(void" 1933 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "fontOffset" () "    GLuint fontOffset;" 4557 2 () () 0 0]
+[cl-struct-member "text_color" () "    unsigned long text_color;" 4887 1 () () 0 0]
+[cl-struct-member "zi" () "    ui, vi, zi;" 4856 1 () () 0 0]
+)
+([cl-struct-member "clear_buffer" () "    void clear_buffer(void" 6012 32 () "id l3d_rasterizer_3d_mesa_imp::clear_buffer(void" 5318 0]
+[cl-struct-member "draw_line" () "    void draw_line(int" 5548 32 () "void l3d_rasterizer_3d_mesa_imp::draw_line(int" 5599 15127]
+[cl-struct-member "draw_point" () "    void draw_point(int" 5495 32 () "void l3d_rasterizer_3d_mesa_imp::draw_point(int" 5419 3799]
+[cl-struct-member "draw_polygon_flatshaded" () "    void draw_polygon_flatshaded(const" 5635 32 () "(const" 5862 608]
+[cl-struct-member "draw_polygon_textured" () "    void draw_polygon_textured(const" 5740 32 () "(const" 8568 608]
+[cl-struct-member "draw_polygon_textured_lightmapped" () "    (const" 5828 32 () "(const" 13085 608]
+[cl-struct-member "draw_text" () "    void draw_text(int" 5898 32 () "void l3d_rasterizer_3d_mesa_imp::draw_text(int" 12498 7192]
+[cl-struct-member "l3d_rasterizer_3d_mesa_imp" () "d_mesa_imp(int xs, int ys, l3d_screen_info *si);" 4933 0 () "d_mesa_imp(int xs, int ys, l3d_screen_info *si):" 4376 1608839]
+[cl-struct-member "make_raster_font" () "    void make_raster_font(void" 4599 2 () "3d_rasterizer_3d_mesa_imp::make_raster_font(void" 11601 0]
+[cl-struct-member "ogl_texturing_between_glbegin_end" () "    (const" 4732 1 () "(const" 8787 608]
+[cl-struct-member "set_text_color" () "    void set_text_color(int" 5957 32 () "d l3d_rasterizer_3d_mesa_imp::set_text_color(int" 12925 1932]
+[cl-struct-member "texture_setup" () "    void texture_setup(const" 4644 1 () "(const" 6395 608]
+)
+()
+()
+()
+()
+()() t 
+][cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_sw_imp" "./raster/ras3_sw.h" "class l3d_rasterizer_3d_sw_imp :" 1174"./raster/ras3_sw.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_zbuf_sw_imp" "./raster/ras3z_sw.h" "class l3d_rasterizer_3d_zbuf_sw_imp :" 1163"./raster/ras3z_sw.cc" ]
+()([cl-struct-member "zbuf" () "    l3d_fixed *zbuf;" 1243 2 () () 0 0]
+[cl-struct-member "zbuf_size" () "    long int zbuf_size;" 1267 2 () () 0 0]
+)
+([cl-struct-member "clear_buffer" () "    void clear_buffer(void" 1696 32 () "l3d_rasterizer_3d_zbuf_sw_imp::clear_buffer(void" 1806 0]
+[cl-struct-member "draw_polygon_textured" () "  /* virtual */ void draw_polygon_textured(const" 1451 32 () "(const" 3755 608]
+[cl-struct-member "l3d_rasterizer_3d_zbuf_sw_imp" () "buf_sw_imp(int xs, int ys, l3d_screen_info *si);" 1315 0 () "    :" 1337 1608839]
+[cl-struct-member "~l3d_rasterizer_3d_zbuf_sw_imp" () "    virtual ~l3d_rasterizer_3d_zbuf_sw_imp(void" 1397 32 () "zbuf_sw_imp::~l3d_rasterizer_3d_zbuf_sw_imp(void" 1728 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "text_color" () "    unsigned char *text_color;" 1363 1 () () 0 0]
+)
+([cl-struct-member "clear_buffer" () "    /* virtual */ void clear_buffer(void" 1861 32 () "void l3d_rasterizer_3d_sw_imp::clear_buffer(void" 5343 0]
+[cl-struct-member "compute_surface_orientation_and_size" () "  void compute_surface_orientation_and_size(void" 1330 1 () () 0 0]
+[cl-struct-member "draw_polygon_textured" () "  /* virtual */ void draw_polygon_textured(const" 1537 32 () "(const" 7184 608]
+[cl-struct-member "draw_polygon_textured_lightmapped" () "    (const" 1639 32 () "(const" 35041 608]
+[cl-struct-member "draw_text" () "    /* virtual */ void draw_text(int" 1722 32 () "void l3d_rasterizer_3d_sw_imp::draw_text(int" 37361 7192]
+[cl-struct-member "l3d_rasterizer_3d_sw_imp" () "_3d_sw_imp(int xs, int ys, l3d_screen_info *si);" 1406 0 () "    :" 4487 1608839]
+[cl-struct-member "set_text_color" () "    /* virtual */ void set_text_color(int" 1793 32 () "oid l3d_rasterizer_3d_sw_imp::set_text_color(int" 36833 1932]
+[cl-struct-member "~l3d_rasterizer_3d_sw_imp" () "    virtual ~l3d_rasterizer_3d_sw_imp(void" 1483 32 () "erizer_3d_sw_imp::~l3d_rasterizer_3d_sw_imp(void" 5264 0]
+)
+()
+()
+()
+()
+()() t 
+])()
+([cl-struct-member "clear_buffer" () "    /* virtual */ void clear_buffer(void" 1543 48 "./raster/rast3.h" "    /* virtual */ void clear_buffer(void" 1543 0]
+[cl-struct-member "draw_polygon_textured" () "    virtual void draw_polygon_textured(const" 1594 32 () "(const" 1135 608]
+[cl-struct-member "draw_polygon_textured_lightmapped" () "    (const" 1690 32 () "(const" 1241 608]
+[cl-struct-member "draw_text" () "    virtual void draw_text(int" 1767 48 "./raster/rast3.h" "    virtual void draw_text(int" 1767 7192]
+[cl-struct-member "l3d_rasterizer_3d_imp" () "zer_3d_imp(int xs, int ys, l3d_screen_info *si);" 1467 0 () "(int xs, int ys, l3d_screen_info *si) :" 1003 1608839]
+[cl-struct-member "set_text_color" () "    virtual void set_text_color(int" 1837 48 "./raster/rast3.h" "    virtual void set_text_color(int" 1837 1932]
+)
+()
+()
+()
+()
+()() t 
+][cl-struct-tree [cl-struct-class "l3d_world_portal_textured_lightmapped" "./geom/world/w_porltex.h" "class l3d_world_portal_textured_lightmapped :" 1113"./geom/world/w_porltex.h" ]
+()([cl-struct-member "scache" () "    l3d_surface_cache *scache;" 1233 1 () () 0 0]
+)
+([cl-struct-member "compute_light_level" () "    int compute_light_level(l3d_real" 1271 1 "./geom/world/w_porltex.cc" "(l3d_real" 1319 12570]
+[cl-struct-member "l3d_world_portal_textured_lightmapped" () "rtal_textured_lightmapped(int xsize, int ysize);" 1344 0 "./geom/world/w_porltex.cc" "    :" 3906 860]
+[cl-struct-member "load_from_file" () "    void load_from_file(const" 1451 32 "./geom/world/w_porltex.cc" "ortal_textured_lightmapped::load_from_file(const" 4198 1784]
+[cl-struct-member "place_lamp" () "    void place_lamp(l3d_sector" 1508 0 "./geom/world/w_porltex.cc" "(l3d_sector" 17555 822968961]
+[cl-struct-member "reset_surface_cache" () "    void reset_surface_cache(void" 1587 16 () "    void reset_surface_cache(void" 1587 0]
+[cl-struct-member "~l3d_world_portal_textured_lightmapped" () "tual ~l3d_world_portal_textured_lightmapped(void" 1419 32 "./geom/world/w_porltex.cc" "~l3d_world_portal_textured_lightmapped(void" 4110 0]
+)
+()
+()
+()
+()
+()() t 
+][cl-struct-tree [cl-struct-class "l3d_world_portal_textured_lightmapped_obj" "./geom/world/w_porlotex.h" "lass l3d_world_portal_textured_lightmapped_obj :" 1177"./geom/world/w_porlotex.h" ]
+([cl-struct-tree [cl-struct-class "l3d_world_octree" "./geom/world/w_oct.h" "class l3d_world_octree :" 1042"./geom/world/w_oct.cc" ]
+()()
+([cl-struct-member "draw_all" () "    void draw_all(void" 1260 32 () "void l3d_world_octree::draw_all(void" 1276 0]
+[cl-struct-member "l3d_world_octree" () "    l3d_world_octree(int xsize, int ysize);" 1134 0 () "    :" 2458 860]
+[cl-struct-member "load_from_file" () "    void load_from_file(const" 1212 32 () "void l3d_world_octree::load_from_file(const" 2634 1784]
+[cl-struct-member "~l3d_world_octree" () "    ~l3d_world_octree(void" 1180 0 () "~l3d_world_octree(void" 2585 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_world_portal_textured_lightmapped_obj_colldet" "./geom/world/w_pcoll.h" "_world_portal_textured_lightmapped_obj_colldet :" 1097"./geom/world/w_pcoll.cc" ]
+()([cl-struct-member "sound_client" () "    l3d_sound_client *sound_client;" 1422 0 () () 0 0]
+)
+([cl-struct-member "l3d_world_portal_textured_lightmapped_obj_colldet" () "d_lightmapped_obj_colldet(int xsize, int ysize);" 1222 0 () "    :" 9667 860]
+[cl-struct-member "load_from_file" () "    void load_from_file(const" 1333 32 () "load_from_file(const" 25191 1784]
+[cl-struct-member "update_all" () "    void update_all(void" 1384 32 () "extured_lightmapped_obj_colldet::update_all(void" 1506 0]
+[cl-struct-member "~l3d_world_portal_textured_lightmapped_obj_colldet" () "rld_portal_textured_lightmapped_obj_colldet(void" 1301 0 () "rld_portal_textured_lightmapped_obj_colldet(void" 10489 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "current_sector" () "    l3d_sector *current_sector;" 1515 0 () () 0 0]
+[cl-struct-member "scache" () "    l3d_surface_cache *scache;" 1362 1 () () 0 0]
+[cl-struct-member "tex_data" () "    l3d_list<l3d_texture_data> tex_data;" 1331 1 () () 0 0]
+[cl-struct-member "texture_loader" () "    l3d_texture_loader *texture_loader;" 1290 1 () () 0 0]
+)
+([cl-struct-member "draw_all" () "    void draw_all(void" 1906 32 "./geom/world/w_porlotex.cc" "d_portal_textured_lightmapped_obj::draw_all(void" 5015 0]
+[cl-struct-member "l3d_world_portal_textured_lightmapped_obj" () "_textured_lightmapped_obj(int xsize, int ysize);" 1566 0 "./geom/world/w_porlotex.cc" "    :" 9329 860]
+[cl-struct-member "load_from_file" () "    virtual void load_from_file(const" 1677 32 "./geom/world/w_porlotex.cc" "l_textured_lightmapped_obj::load_from_file(const" 10802 1784]
+[cl-struct-member "place_lamp" () "    void place_lamp(l3d_sector" 1733 0 "./geom/world/w_porlotex.cc" "(l3d_sector" 25484 822968961]
+[cl-struct-member "reset_surface_cache" () "    void reset_surface_cache(void" 1812 16 () "    void reset_surface_cache(void" 1812 0]
+[cl-struct-member "sector_by_name" () "    l3d_sector *sector_by_name(const" 1470 0 "./geom/world/w_porlotex.cc" "sector_by_name(const" 10403 1784]
+[cl-struct-member "update_all" () "    void update_all(void" 1870 32 "./geom/world/w_porlotex.cc" "portal_textured_lightmapped_obj::update_all(void" 1350 0]
+[cl-struct-member "~l3d_world_portal_textured_lightmapped_obj" () " ~l3d_world_portal_textured_lightmapped_obj(void" 1637 0 "./geom/world/w_porlotex.cc" "~l3d_world_portal_textured_lightmapped_obj(void" 10278 0]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "O" () "    l3d_point O;" 1974 0 () () 0 0]
+[cl-struct-member "V" () "    l3d_point O; l3d_vector U, V;" 1991 0 () () 0 0]
+[cl-struct-member "_world_to_tex_matrix" () "    l3d_matrix _world_to_tex_matrix;" 1877 2 () () 0 0]
+[cl-struct-member "fovy" () "    l3d_real *fovx,*fovy;" 2017 0 () () 0 0]
+[cl-struct-member "screen_ysize" () "    int *screen_xsize, *screen_ysize;" 2265 0 () () 0 0]
+[cl-struct-member "v" () "    l3d_real u, v;" 2285 0 () () 0 0]
+)
+([cl-struct-member "world_to_tex_matrix" () "    const l3d_matrix& world_to_tex_matrix(const" 2334 16 () "    const l3d_matrix& world_to_tex_matrix(const" 2334 620]
+)
+()
+([cl-struct-member "float_to_l3d_real" () "t l3d_real EPSILON_VECTOR = float_to_l3d_real(0." 1951 0 () () 0 0]
+)
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_polygon_2d" "./geom/polygon/polygon.h" "class l3d_polygon_2d {" 2053"./geom/polygon/polygon.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_2d_flatshaded" "./geom/polygon/p_flat.h" "class l3d_polygon_2d_flatshaded :" 1031"./geom/polygon/p_flat.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_3d_flatshaded" "./geom/polygon/p3_flat.h" "class l3d_polygon_3d_flatshaded :" 1077"./geom/polygon/p3_flat.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_3d_flatshaded_clippable" "./geom/polygon/p3_cflat.h" "class l3d_polygon_3d_flatshaded_clippable :" 1066"./geom/polygon/p3_cflat.cc" ]
+()()
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1545 32 () " l3d_polygon_3d_flatshaded_clippable::clone(void" 1023 0]
+[cl-struct-member "l3d_polygon_3d_flatshaded_clippable" () "polygon_3d_flatshaded_clippable(int num_faces) :" 1216 16 "./geom/polygon/p3_cflat.h" "polygon_3d_flatshaded_clippable(int num_faces) :" 1216 308]
+[cl-struct-member "l3d_polygon_3d_flatshaded_clippable" () " (const l3d_polygon_3d_flatshaded_clippable &r);" 1473 0 () "    :" 1166 620]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "color" () "    unsigned long color;" 1356 0 () () 0 0]
+[cl-struct-member "light_intensity" () "    int light_intensity;" 1429 0 () () 0 0]
+)
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1609 32 () "olygon_2d* l3d_polygon_3d_flatshaded::clone(void" 1144 0]
+[cl-struct-member "draw" () "    void draw(l3d_rasterizer_3d" 1505 32 () "3d_polygon_3d_flatshaded::draw(l3d_rasterizer_3d" 1044 6431210]
+[cl-struct-member "l3d_polygon_3d_flatshaded" () "    l3d_polygon_3d_flatshaded(int num_faces) :" 1208 16 "./geom/polygon/p3_flat.h" "    l3d_polygon_3d_flatshaded(int num_faces) :" 1208 308]
+[cl-struct-member "l3d_polygon_3d_flatshaded" () "_flatshaded(const l3d_polygon_3d_flatshaded &r);" 1547 0 () "    :" 1257 620]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "final_color" () "    unsigned long final_color;" 1110 0 () () 0 0]
+)
+([cl-struct-member "clone" () "    virtual l3d_polygon_2d *clone(void" 1508 32 () "olygon_2d* l3d_polygon_2d_flatshaded::clone(void" 1042 0]
+[cl-struct-member "draw" () "    void draw(l3d_rasterizer_2d" 1349 48 "./geom/polygon/p_flat.h" "    void draw(l3d_rasterizer_2d" 1349 6431208]
+[cl-struct-member "l3d_polygon_2d_flatshaded" () "    l3d_polygon_2d_flatshaded(int num_pts) :" 1240 16 "./geom/polygon/p_flat.h" "    l3d_polygon_2d_flatshaded(int num_pts) :" 1240 308]
+[cl-struct-member "l3d_polygon_2d_flatshaded" () "    l3d_polygon_2d_flatshaded(void) {" 1146 16 "./geom/polygon/p_flat.h" "    l3d_polygon_2d_flatshaded(void) {" 1146 0]
+[cl-struct-member "l3d_polygon_2d_flatshaded" () "_flatshaded(const l3d_polygon_2d_flatshaded &r);" 1438 0 () "    :" 1155 620]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_polygon_3d" "./geom/polygon/poly3.h" "class l3d_polygon_3d :" 1044"./geom/polygon/poly3.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_3d_clippable" "./geom/polygon/p3_clip.h" "class l3d_polygon_3d_clippable :" 1123"./geom/polygon/p3_clip.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_3d_collidable" "./geom/polygon/p3_coll.h" "class l3d_polygon_3d_collidable :" 1126"./geom/polygon/p3_coll.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_3d_portal_collidable" "./geom/polygon/p_cport.h" "class l3d_polygon_3d_portal_collidable :" 1062"./geom/polygon/p_cport.cc" ]
+()()
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1467 32 () "2d* l3d_polygon_3d_portal_collidable::clone(void" 1019 0]
+[cl-struct-member "l3d_polygon_3d_portal_collidable" () "  l3d_polygon_3d_portal_collidable(int num_pts):" 1206 16 "./geom/polygon/p_cport.h" "  l3d_polygon_3d_portal_collidable(int num_pts):" 1206 308]
+[cl-struct-member "l3d_polygon_3d_portal_collidable" () "able(const l3d_polygon_3d_portal_collidable &r);" 1398 0 () "    :" 1153 620]
+)
+()
+()
+()
+()
+()() t 
+][cl-struct-tree [cl-struct-class "l3d_polygon_3d_textured_lightmapped_collidable" "./geom/polygon/p3_cltex.h" "l3d_polygon_3d_textured_lightmapped_collidable :" 1077"./geom/polygon/p3_cltex.cc" ]
+()()
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1509 32 () "n_3d_textured_lightmapped_collidable::clone(void" 1554 0]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped_collidable" () "_polygon_3d_textured_lightmapped_collidable &r);" 1426 0 () "    :" 1731 620]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped_collidable" () "    (int num_pts, l3d_surface_cache *scache);" 1254 0 () "(int num_pts, l3d_surface_cache *scache):" 1125 6471333]
+[cl-struct-member "~l3d_polygon_3d_textured_lightmapped_collidable" () "    (void" 1361 32 () "_polygon_3d_textured_lightmapped_collidable(void" 1473 0]
+)
+()
+()
+()
+()
+()() t 
+])()
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1886 32 () "olygon_2d* l3d_polygon_3d_collidable::clone(void" 5318 0]
+[cl-struct-member "contains_point" () "    int contains_point(const" 1768 0 () " l3d_polygon_3d_collidable::contains_point(const" 1010 620]
+[cl-struct-member "l3d_polygon_3d_collidable" () "    l3d_polygon_3d_collidable(int num_pts) :" 1513 16 "./geom/polygon/p3_coll.h" "    l3d_polygon_3d_collidable(int num_pts) :" 1513 308]
+[cl-struct-member "l3d_polygon_3d_collidable" () "  l3d_polygon_3d_collidable(void) :" 1254 16 "./geom/polygon/p3_coll.h" "  l3d_polygon_3d_collidable(void) :" 1254 0]
+[cl-struct-member "l3d_polygon_3d_collidable" () "_collidable(const l3d_polygon_3d_collidable &r);" 1824 0 () "    :" 5431 620]
+)
+()
+()
+()
+()
+()() t 
+][cl-struct-tree [cl-struct-class "l3d_polygon_3d_flatshaded_clippable" "./geom/polygon/p3_cflat.h" "class l3d_polygon_3d_flatshaded_clippable :" 1066"./geom/polygon/p3_cflat.cc" ]
+()()
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1545 32 () " l3d_polygon_3d_flatshaded_clippable::clone(void" 1023 0]
+[cl-struct-member "l3d_polygon_3d_flatshaded_clippable" () "polygon_3d_flatshaded_clippable(int num_faces) :" 1216 16 "./geom/polygon/p3_cflat.h" "polygon_3d_flatshaded_clippable(int num_faces) :" 1216 308]
+[cl-struct-member "l3d_polygon_3d_flatshaded_clippable" () " (const l3d_polygon_3d_flatshaded_clippable &r);" 1473 0 () "    :" 1166 620]
+)
+()
+()
+()
+()
+()() t 
+][cl-struct-tree [cl-struct-class "l3d_polygon_3d_portal" "./geom/polygon/p_portal.h" "class l3d_polygon_3d_portal :" 1046"./geom/polygon/p_portal.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_3d_portal_collidable" "./geom/polygon/p_cport.h" "class l3d_polygon_3d_portal_collidable :" 1062"./geom/polygon/p_cport.cc" ]
+()()
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1467 32 () "2d* l3d_polygon_3d_portal_collidable::clone(void" 1019 0]
+[cl-struct-member "l3d_polygon_3d_portal_collidable" () "  l3d_polygon_3d_portal_collidable(int num_pts):" 1206 16 "./geom/polygon/p_cport.h" "  l3d_polygon_3d_portal_collidable(int num_pts):" 1206 308]
+[cl-struct-member "l3d_polygon_3d_portal_collidable" () "able(const l3d_polygon_3d_portal_collidable &r);" 1398 0 () "    :" 1153 620]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "connected_sector" () "    l3d_sector *connected_sector;" 1279 0 () () 0 0]
+[cl-struct-member "connected_sector_name" () "    char connected_sector_name[80];" 1315 0 () () 0 0]
+)
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1406 32 () "3d_polygon_2d* l3d_polygon_3d_portal::clone(void" 1009 0]
+[cl-struct-member "l3d_polygon_3d_portal" () "    l3d_polygon_3d_portal(int num_pts):" 1134 16 "./geom/polygon/p_portal.h" "    l3d_polygon_3d_portal(int num_pts):" 1134 308]
+[cl-struct-member "l3d_polygon_3d_portal" () "lygon_3d_portal(const l3d_polygon_3d_portal &r);" 1348 0 () "    :" 1109 620]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_polygon_3d_textured" "./geom/polygon/p3_tex.h" "class l3d_polygon_3d_textured :" 2801"./geom/polygon/p_tex.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_3d_textured_lightmapped" "./geom/polygon/p3_ltex.h" "class l3d_polygon_3d_textured_lightmapped :" 1073"./geom/polygon/p3_ltex.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_3d_textured_lightmapped_collidable" "./geom/polygon/p3_cltex.h" "l3d_polygon_3d_textured_lightmapped_collidable :" 1077"./geom/polygon/p3_cltex.cc" ]
+()()
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1509 32 () "n_3d_textured_lightmapped_collidable::clone(void" 1554 0]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped_collidable" () "_polygon_3d_textured_lightmapped_collidable &r);" 1426 0 () "    :" 1731 620]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped_collidable" () "    (int num_pts, l3d_surface_cache *scache);" 1254 0 () "(int num_pts, l3d_surface_cache *scache):" 1125 6471333]
+[cl-struct-member "~l3d_polygon_3d_textured_lightmapped_collidable" () "    (void" 1361 32 () "_polygon_3d_textured_lightmapped_collidable(void" 1473 0]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "lightmap" () "    l3d_texture *lightmap;" 2503 0 () () 0 0]
+[cl-struct-member "scache" () "    l3d_surface_cache *scache;" 1244 1 () () 0 0]
+[cl-struct-member "surface" () "    mutable l3d_texture *surface;" 1288 0 () () 0 0]
+[cl-struct-member "surface_orientation" () "    l3d_texture_space surface_orientation;" 1750 0 () () 0 0]
+[cl-struct-member "surface_ysize" () "    int surface_xsize, surface_ysize;" 1788 0 () () 0 0]
+)
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 2928 32 () " l3d_polygon_3d_textured_lightmapped::clone(void" 20246 0]
+[cl-struct-member "compute_surface_orientation_and_size" () "  void compute_surface_orientation_and_size(void" 2555 0 () "(void" 5658 0]
+[cl-struct-member "draw" () "    void draw(l3d_rasterizer_3d" 2741 48 "./geom/polygon/p3_ltex.h" "    void draw(l3d_rasterizer_3d" 2741 6431210]
+[cl-struct-member "get_scache" () "    l3d_surface_cache *get_scache(void" 1680 80 "./geom/polygon/p3_ltex.h" "    l3d_surface_cache *get_scache(void" 1680 293]
+[cl-struct-member "init_transformed" () "    void init_transformed(void" 2654 32 () "n_3d_textured_lightmapped::init_transformed(void" 19547 0]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped" () " (const l3d_polygon_3d_textured_lightmapped &r);" 2856 0 () "    :" 20389 620]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped" () "tmapped(int num_pts, l3d_surface_cache *scache);" 1874 0 () "(int num_pts, l3d_surface_cache *scache):" 1101 6471333]
+[cl-struct-member "transform" () "    void transform(const" 2681 32 () "polygon_3d_textured_lightmapped::transform(const" 19871 1516]
+[cl-struct-member "~l3d_polygon_3d_textured_lightmapped" () "    ~l3d_polygon_3d_textured_lightmapped(void" 1958 16 "./geom/polygon/p3_ltex.h" "    ~l3d_polygon_3d_textured_lightmapped(void" 1958 0]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "texture" () "    mutable l3d_texture *texture;" 3108 0 () () 0 0]
+)
+([cl-struct-member "after_camera_transform" () "  /* virtual */ void after_camera_transform(void" 3821 32 "./geom/polygon/p3_tex.cc" "polygon_3d_textured::after_camera_transform(void" 18075 0]
+[cl-struct-member "assign_tex_coords_from_tex_space" () "sign_tex_coords_from_tex_space(l3d_texture_space" 3168 0 "./geom/polygon/p3_tex.cc" "(l3d_texture_space" 29888 620]
+[cl-struct-member "clip_near_z" () "    /* virtual */ int clip_near_z(l3d_real" 3989 32 "./geom/polygon/p3_tex.cc" "nt l3d_polygon_3d_textured::clip_near_z(l3d_real" 21826 12570]
+[cl-struct-member "clip_segment_to_edge_2d" () "    (l3d_polygon_ivertex" 3570 0 "./geom/polygon/p3_tex.cc" "(l3d_polygon_ivertex" 4967 9820]
+[cl-struct-member "clip_segment_to_near_z" () "    (l3d_polygon_ivertex" 3894 32 "./geom/polygon/p3_tex.cc" "(l3d_polygon_ivertex" 18819 1012]
+[cl-struct-member "clip_to_edge_2d" () "    (const" 3723 0 "./geom/polygon/p3_tex.cc" "(const" 13141 3040]
+[cl-struct-member "clip_to_plane" () "    /* virtual */ int clip_to_plane(l3d_plane" 4043 32 "./geom/polygon/p3_tex.cc" "l3d_polygon_3d_textured::clip_to_plane(l3d_plane" 31259 25201]
+[cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 3495 32 "./geom/polygon/p3_tex.cc" "_polygon_2d* l3d_polygon_3d_textured::clone(void" 2507 0]
+[cl-struct-member "create_ivertices" () "irtual l3d_polygon_ivertex *create_ivertices(int" 1507 32 () " * l3d_polygon_3d_textured::create_ivertices(int" 1024 308]
+[cl-struct-member "draw" () "    void draw(l3d_rasterizer_3d" 3305 48 "./geom/polygon/p3_tex.h" "    void draw(l3d_rasterizer_3d" 3305 6431210]
+[cl-struct-member "init_transformed" () "    void init_transformed(void" 3219 32 "./geom/polygon/p3_tex.cc" "d l3d_polygon_3d_textured::init_transformed(void" 1163 0]
+[cl-struct-member "l3d_polygon_3d_textured" () "    l3d_polygon_3d_textured(void) :" 2972 16 "./geom/polygon/p3_tex.h" "    l3d_polygon_3d_textured(void) :" 2972 0]
+[cl-struct-member "l3d_polygon_3d_textured" () "n_3d_textured(const l3d_polygon_3d_textured &r);" 3391 0 "./geom/polygon/p3_tex.cc" "    :" 2614 620]
+[cl-struct-member "l3d_polygon_3d_textured" () "    l3d_polygon_3d_textured(int num_pts);" 3063 0 "./geom/polygon/p3_tex.cc" "textured::l3d_polygon_3d_textured(int num_pts) :" 2099 308]
+[cl-struct-member "sizeof_ivertex" () "    virtual size_t sizeof_ivertex(void" 1554 32 () "e_t l3d_polygon_3d_textured::sizeof_ivertex(void" 1138 0]
+[cl-struct-member "transform" () "    void transform(const" 3246 32 "./geom/polygon/p3_tex.cc" "void l3d_polygon_3d_textured::transform(const" 1506 1516]
+[cl-struct-member "~l3d_polygon_3d_textured" () "    virtual ~l3d_polygon_3d_textured(void" 3462 32 "./geom/polygon/p3_tex.cc" "lygon_3d_textured::~l3d_polygon_3d_textured(void" 2409 0]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "plane" () "    l3d_plane plane;" 1708 0 () () 0 0]
+)
+([cl-struct-member "clip_to_plane" () "    virtual int clip_to_plane(l3d_plane" 1748 32 () "3d_polygon_3d_clippable::clip_to_plane(l3d_plane" 1012 25201]
+[cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1996 32 () "polygon_2d* l3d_polygon_3d_clippable::clone(void" 15233 0]
+[cl-struct-member "init_transformed" () "    void init_transformed(void" 1845 32 () " l3d_polygon_3d_clippable::init_transformed(void" 10816 0]
+[cl-struct-member "l3d_polygon_3d_clippable" () "    l3d_polygon_3d_clippable(int num_pts) :" 1451 16 "./geom/polygon/p3_clip.h" "    l3d_polygon_3d_clippable(int num_pts) :" 1451 308]
+[cl-struct-member "l3d_polygon_3d_clippable" () "  l3d_polygon_3d_clippable(void) :" 1203 16 "./geom/polygon/p3_clip.h" "  l3d_polygon_3d_clippable(void) :" 1203 0]
+[cl-struct-member "l3d_polygon_3d_clippable" () "3d_clippable(const l3d_polygon_3d_clippable &r);" 1935 0 () "    :" 15343 620]
+[cl-struct-member "transform" () "    void transform(const" 1872 32 () "void l3d_polygon_3d_clippable::transform(const" 11048 1516]
+[cl-struct-member "~l3d_polygon_3d_clippable" () "    virtual ~l3d_polygon_3d_clippable(void" 1681 48 "./geom/polygon/p3_clip.h" "    virtual ~l3d_polygon_3d_clippable(void" 1681 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_polygon_3d_flatshaded" "./geom/polygon/p3_flat.h" "class l3d_polygon_3d_flatshaded :" 1077"./geom/polygon/p3_flat.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_3d_flatshaded_clippable" "./geom/polygon/p3_cflat.h" "class l3d_polygon_3d_flatshaded_clippable :" 1066"./geom/polygon/p3_cflat.cc" ]
+()()
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1545 32 () " l3d_polygon_3d_flatshaded_clippable::clone(void" 1023 0]
+[cl-struct-member "l3d_polygon_3d_flatshaded_clippable" () "polygon_3d_flatshaded_clippable(int num_faces) :" 1216 16 "./geom/polygon/p3_cflat.h" "polygon_3d_flatshaded_clippable(int num_faces) :" 1216 308]
+[cl-struct-member "l3d_polygon_3d_flatshaded_clippable" () " (const l3d_polygon_3d_flatshaded_clippable &r);" 1473 0 () "    :" 1166 620]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "color" () "    unsigned long color;" 1356 0 () () 0 0]
+[cl-struct-member "light_intensity" () "    int light_intensity;" 1429 0 () () 0 0]
+)
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1609 32 () "olygon_2d* l3d_polygon_3d_flatshaded::clone(void" 1144 0]
+[cl-struct-member "draw" () "    void draw(l3d_rasterizer_3d" 1505 32 () "3d_polygon_3d_flatshaded::draw(l3d_rasterizer_3d" 1044 6431210]
+[cl-struct-member "l3d_polygon_3d_flatshaded" () "    l3d_polygon_3d_flatshaded(int num_faces) :" 1208 16 "./geom/polygon/p3_flat.h" "    l3d_polygon_3d_flatshaded(int num_faces) :" 1208 308]
+[cl-struct-member "l3d_polygon_3d_flatshaded" () "_flatshaded(const l3d_polygon_3d_flatshaded &r);" 1547 0 () "    :" 1257 620]
+)
+()
+()
+()
+()
+()() t 
+][cl-struct-tree [cl-struct-class "l3d_polygon_3d_textured" "./geom/polygon/p3_tex.h" "class l3d_polygon_3d_textured :" 2801"./geom/polygon/p_tex.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_3d_textured_lightmapped" "./geom/polygon/p3_ltex.h" "class l3d_polygon_3d_textured_lightmapped :" 1073"./geom/polygon/p3_ltex.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_polygon_3d_textured_lightmapped_collidable" "./geom/polygon/p3_cltex.h" "l3d_polygon_3d_textured_lightmapped_collidable :" 1077"./geom/polygon/p3_cltex.cc" ]
+()()
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 1509 32 () "n_3d_textured_lightmapped_collidable::clone(void" 1554 0]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped_collidable" () "_polygon_3d_textured_lightmapped_collidable &r);" 1426 0 () "    :" 1731 620]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped_collidable" () "    (int num_pts, l3d_surface_cache *scache);" 1254 0 () "(int num_pts, l3d_surface_cache *scache):" 1125 6471333]
+[cl-struct-member "~l3d_polygon_3d_textured_lightmapped_collidable" () "    (void" 1361 32 () "_polygon_3d_textured_lightmapped_collidable(void" 1473 0]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "lightmap" () "    l3d_texture *lightmap;" 2503 0 () () 0 0]
+[cl-struct-member "scache" () "    l3d_surface_cache *scache;" 1244 1 () () 0 0]
+[cl-struct-member "surface" () "    mutable l3d_texture *surface;" 1288 0 () () 0 0]
+[cl-struct-member "surface_orientation" () "    l3d_texture_space surface_orientation;" 1750 0 () () 0 0]
+[cl-struct-member "surface_ysize" () "    int surface_xsize, surface_ysize;" 1788 0 () () 0 0]
+)
+([cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 2928 32 () " l3d_polygon_3d_textured_lightmapped::clone(void" 20246 0]
+[cl-struct-member "compute_surface_orientation_and_size" () "  void compute_surface_orientation_and_size(void" 2555 0 () "(void" 5658 0]
+[cl-struct-member "draw" () "    void draw(l3d_rasterizer_3d" 2741 48 "./geom/polygon/p3_ltex.h" "    void draw(l3d_rasterizer_3d" 2741 6431210]
+[cl-struct-member "get_scache" () "    l3d_surface_cache *get_scache(void" 1680 80 "./geom/polygon/p3_ltex.h" "    l3d_surface_cache *get_scache(void" 1680 293]
+[cl-struct-member "init_transformed" () "    void init_transformed(void" 2654 32 () "n_3d_textured_lightmapped::init_transformed(void" 19547 0]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped" () " (const l3d_polygon_3d_textured_lightmapped &r);" 2856 0 () "    :" 20389 620]
+[cl-struct-member "l3d_polygon_3d_textured_lightmapped" () "tmapped(int num_pts, l3d_surface_cache *scache);" 1874 0 () "(int num_pts, l3d_surface_cache *scache):" 1101 6471333]
+[cl-struct-member "transform" () "    void transform(const" 2681 32 () "polygon_3d_textured_lightmapped::transform(const" 19871 1516]
+[cl-struct-member "~l3d_polygon_3d_textured_lightmapped" () "    ~l3d_polygon_3d_textured_lightmapped(void" 1958 16 "./geom/polygon/p3_ltex.h" "    ~l3d_polygon_3d_textured_lightmapped(void" 1958 0]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "texture" () "    mutable l3d_texture *texture;" 3108 0 () () 0 0]
+)
+([cl-struct-member "after_camera_transform" () "  /* virtual */ void after_camera_transform(void" 3821 32 "./geom/polygon/p3_tex.cc" "polygon_3d_textured::after_camera_transform(void" 18075 0]
+[cl-struct-member "assign_tex_coords_from_tex_space" () "sign_tex_coords_from_tex_space(l3d_texture_space" 3168 0 "./geom/polygon/p3_tex.cc" "(l3d_texture_space" 29888 620]
+[cl-struct-member "clip_near_z" () "    /* virtual */ int clip_near_z(l3d_real" 3989 32 "./geom/polygon/p3_tex.cc" "nt l3d_polygon_3d_textured::clip_near_z(l3d_real" 21826 12570]
+[cl-struct-member "clip_segment_to_edge_2d" () "    (l3d_polygon_ivertex" 3570 0 "./geom/polygon/p3_tex.cc" "(l3d_polygon_ivertex" 4967 9820]
+[cl-struct-member "clip_segment_to_near_z" () "    (l3d_polygon_ivertex" 3894 32 "./geom/polygon/p3_tex.cc" "(l3d_polygon_ivertex" 18819 1012]
+[cl-struct-member "clip_to_edge_2d" () "    (const" 3723 0 "./geom/polygon/p3_tex.cc" "(const" 13141 3040]
+[cl-struct-member "clip_to_plane" () "    /* virtual */ int clip_to_plane(l3d_plane" 4043 32 "./geom/polygon/p3_tex.cc" "l3d_polygon_3d_textured::clip_to_plane(l3d_plane" 31259 25201]
+[cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 3495 32 "./geom/polygon/p3_tex.cc" "_polygon_2d* l3d_polygon_3d_textured::clone(void" 2507 0]
+[cl-struct-member "create_ivertices" () "irtual l3d_polygon_ivertex *create_ivertices(int" 1507 32 () " * l3d_polygon_3d_textured::create_ivertices(int" 1024 308]
+[cl-struct-member "draw" () "    void draw(l3d_rasterizer_3d" 3305 48 "./geom/polygon/p3_tex.h" "    void draw(l3d_rasterizer_3d" 3305 6431210]
+[cl-struct-member "init_transformed" () "    void init_transformed(void" 3219 32 "./geom/polygon/p3_tex.cc" "d l3d_polygon_3d_textured::init_transformed(void" 1163 0]
+[cl-struct-member "l3d_polygon_3d_textured" () "    l3d_polygon_3d_textured(void) :" 2972 16 "./geom/polygon/p3_tex.h" "    l3d_polygon_3d_textured(void) :" 2972 0]
+[cl-struct-member "l3d_polygon_3d_textured" () "n_3d_textured(const l3d_polygon_3d_textured &r);" 3391 0 "./geom/polygon/p3_tex.cc" "    :" 2614 620]
+[cl-struct-member "l3d_polygon_3d_textured" () "    l3d_polygon_3d_textured(int num_pts);" 3063 0 "./geom/polygon/p3_tex.cc" "textured::l3d_polygon_3d_textured(int num_pts) :" 2099 308]
+[cl-struct-member "sizeof_ivertex" () "    virtual size_t sizeof_ivertex(void" 1554 32 () "e_t l3d_polygon_3d_textured::sizeof_ivertex(void" 1138 0]
+[cl-struct-member "transform" () "    void transform(const" 3246 32 "./geom/polygon/p3_tex.cc" "void l3d_polygon_3d_textured::transform(const" 1506 1516]
+[cl-struct-member "~l3d_polygon_3d_textured" () "    virtual ~l3d_polygon_3d_textured(void" 3462 32 "./geom/polygon/p3_tex.cc" "lygon_3d_textured::~l3d_polygon_3d_textured(void" 2409 0]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "center" () "    l3d_coordinate center;" 1631 0 () () 0 0]
+[cl-struct-member "sfcnormal" () "    l3d_coordinate sfcnormal;" 1573 0 () () 0 0]
+[cl-struct-member "zvisible" () "    l3d_real zvisible;" 1741 0 () () 0 0]
+)
+([cl-struct-member "after_camera_transform" () "    virtual void after_camera_transform(void" 2093 32 () "void l3d_polygon_3d::after_camera_transform(void" 14450 0]
+[cl-struct-member "camera_transform" () "    void camera_transform(const" 2127 16 "./geom/polygon/poly3.h" "    void camera_transform(const" 2127 1516]
+[cl-struct-member "clip_near_z" () "    virtual int clip_near_z(l3d_real" 2374 32 () "int l3d_polygon_3d::clip_near_z(l3d_real" 6997 12570]
+[cl-struct-member "clip_segment_to_near_z" () "    (l3d_polygon_ivertex" 2285 32 () "(l3d_polygon_ivertex" 4981 1012]
+[cl-struct-member "clone" () "    l3d_polygon_2d *clone(void" 2505 32 () "l3d_polygon_2d* l3d_polygon_3d::clone(void" 13558 0]
+[cl-struct-member "compute_center" () "    void compute_center()" 1717 0 () "void l3d_polygon_3d::compute_center()" 4120 0]
+[cl-struct-member "compute_sfcnormal" () "    void compute_sfcnormal()" 1690 0 () "void l3d_polygon_3d::compute_sfcnormal()" 1663 0]
+[cl-struct-member "draw" () "    virtual void draw(l3d_rasterizer_3d" 2422 48 "./geom/polygon/poly3.h" "    virtual void draw(l3d_rasterizer_3d" 2422 6431210]
+[cl-struct-member "init_transformed" () "    virtual void init_transformed(void" 1861 32 () "void l3d_polygon_3d::init_transformed(void" 1053 0]
+[cl-struct-member "l3d_polygon_3d" () "    l3d_polygon_3d(int num_pts) :" 1352 16 "./geom/polygon/poly3.h" "    l3d_polygon_3d(int num_pts) :" 1352 308]
+[cl-struct-member "l3d_polygon_3d" () "  l3d_polygon_3d(void) :" 1114 16 "./geom/polygon/poly3.h" "  l3d_polygon_3d(void) :" 1114 0]
+[cl-struct-member "l3d_polygon_3d" () "    l3d_polygon_3d(const l3d_polygon_3d &r);" 2454 0 () "on_3d::l3d_polygon_3d(const l3d_polygon_3d &r) {" 13637 620]
+[cl-struct-member "set_transform_stage" () "    virtual void set_transform_stage(int" 2040 32 () "void l3d_polygon_3d::set_transform_stage(int" 13179 308]
+[cl-struct-member "transform" () "    virtual void transform(const" 1972 32 () "void l3d_polygon_3d::transform(const" 12582 1516]
+[cl-struct-member "~l3d_polygon_3d" () "    virtual ~l3d_polygon_3d(void" 1537 48 "./geom/polygon/poly3.h" "    virtual ~l3d_polygon_3d(void" 1537 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "iv_items_factory" () "polygon_ivertex_items_factory *iv_items_factory;" 2134 0 () () 0 0]
+[cl-struct-member "temp_clip_ivertices" () "    *temp_clip_ivertices;" 3259 0 () () 0 0]
+[cl-struct-member "vlist" () "    l3d_two_part_list<l3d_coordinate> **vlist;" 3065 0 () () 0 0]
+)
+([cl-struct-member "clip_segment_to_edge_2d" () "    (l3d_polygon_ivertex" 3524 32 () "(l3d_polygon_ivertex" 3544 9820]
+[cl-struct-member "clip_to_edge_2d" () "    (const" 3671 32 () "(const" 7310 3040]
+[cl-struct-member "clip_to_polygon_2d" () "    int clip_to_polygon_2d(const" 3751 0 () "int l3d_polygon_2d::clip_to_polygon_2d(const" 12436 608]
+[cl-struct-member "clone" () "    virtual l3d_polygon_2d *clone(void" 4098 32 () "l3d_polygon_2d* l3d_polygon_2d::clone(void" 14209 0]
+[cl-struct-member "draw" () "  virtual void draw(l3d_rasterizer_2d" 4052 48 "./geom/polygon/polygon.h" "  virtual void draw(l3d_rasterizer_2d" 4052 6431208]
+[cl-struct-member "init" () "    void init(int" 2589 0 () "void l3d_polygon_2d::init(int" 1370 308]
+[cl-struct-member "init_clip_ivertices" () "    void init_clip_ivertices(void" 3294 0 () "ne void l3d_polygon_2d::init_clip_ivertices(void" 2239 0]
+[cl-struct-member "l3d_polygon_2d" () "    l3d_polygon_2d(void) {" 2158 16 "./geom/polygon/polygon.h" "    l3d_polygon_2d(void) {" 2158 0]
+[cl-struct-member "l3d_polygon_2d" () "    l3d_polygon_2d(const l3d_polygon_2d &r);" 2550 0 () "on_2d::l3d_polygon_2d(const l3d_polygon_2d &r) {" 13556 620]
+[cl-struct-member "l3d_polygon_2d" () "    l3d_polygon_2d(int num_pts);" 2403 0 () "l3d_polygon_2d::l3d_polygon_2d(int num_pts) {" 1191 308]
+[cl-struct-member "next_clipidx_left" () "    int next_clipidx_left(int" 3936 80 "./geom/polygon/polygon.h" "inline int l3d_polygon_2d::next_clipidx_left(int" 4153 1949]
+[cl-struct-member "next_clipidx_right" () "    int next_clipidx_right(int" 3990 80 "./geom/polygon/polygon.h" "nline int l3d_polygon_2d::next_clipidx_right(int" 4288 1949]
+[cl-struct-member "side_of_point" () "    int side_of_point(const" 3804 16 "./geom/polygon/polygon.h" "inline int l3d_polygon_2d::side_of_point(const" 4419 11744]
+[cl-struct-member "swap_temp_and_main_clip_lists" () "    void swap_temp_and_main_clip_lists(void" 3455 0 () "d_polygon_2d::swap_temp_and_main_clip_lists(void" 3194 0]
+[cl-struct-member "~l3d_polygon_2d" () "    virtual ~l3d_polygon_2d(void" 2632 32 () "l3d_polygon_2d::~l3d_polygon_2d(void" 1755 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_sound_client_factory" "./sound/soundclient.h" "class l3d_sound_client_factory {" 1164() ]
+([cl-struct-tree [cl-struct-class "l3d_sound_client_rplay_factory" "./sound/scli_rplay.h" "class l3d_sound_client_rplay_factory :" 1086"./sound/scli_rplay.cc" ]
+()()
+([cl-struct-member "create" () "    l3d_sound_client *create(void" 1164 32 () "ent* l3d_sound_client_rplay_factory::create(void" 1201 0]
+)
+()
+()
+()
+()
+()()()
+])()
+([cl-struct-member "create" () "    virtual l3d_sound_client *create(void" 1216 160 () () 0 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_rasterizer_2d_imp" "./raster/rasteriz.h" "class l3d_rasterizer_2d_imp {" 1380"./raster/rasteriz.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_rasterizer_2d_mesa_imp" "./raster/ras_mesa.h" "class l3d_rasterizer_2d_mesa_imp :" 1055"./raster/ras_mesa.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_mesa_imp" "./raster/ras3_mes.h" "class l3d_rasterizer_3d_mesa_imp :" 4428"./raster/ras3_mes.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_zbuf_mesa_imp" "./raster/ras3z_mes.h" "class l3d_rasterizer_3d_zbuf_mesa_imp :" 1041"./raster/ras3z_mes.cc" ]
+()()
+([cl-struct-member "clear_buffer" () "    void clear_buffer(void" 1246 32 () "d_rasterizer_3d_zbuf_mesa_imp::clear_buffer(void" 1995 0]
+[cl-struct-member "l3d_rasterizer_3d_zbuf_mesa_imp" () "f_mesa_imp(int xs, int ys, l3d_screen_info *si);" 1133 0 () "f_mesa_imp(int xs, int ys, l3d_screen_info *si):" 1330 1608839]
+[cl-struct-member "~l3d_rasterizer_3d_zbuf_mesa_imp" () "   virtual ~l3d_rasterizer_3d_zbuf_mesa_imp(void" 1217 32 () "~l3d_rasterizer_3d_zbuf_mesa_imp(void" 1933 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "fontOffset" () "    GLuint fontOffset;" 4557 2 () () 0 0]
+[cl-struct-member "text_color" () "    unsigned long text_color;" 4887 1 () () 0 0]
+[cl-struct-member "zi" () "    ui, vi, zi;" 4856 1 () () 0 0]
+)
+([cl-struct-member "clear_buffer" () "    void clear_buffer(void" 6012 32 () "id l3d_rasterizer_3d_mesa_imp::clear_buffer(void" 5318 0]
+[cl-struct-member "draw_line" () "    void draw_line(int" 5548 32 () "void l3d_rasterizer_3d_mesa_imp::draw_line(int" 5599 15127]
+[cl-struct-member "draw_point" () "    void draw_point(int" 5495 32 () "void l3d_rasterizer_3d_mesa_imp::draw_point(int" 5419 3799]
+[cl-struct-member "draw_polygon_flatshaded" () "    void draw_polygon_flatshaded(const" 5635 32 () "(const" 5862 608]
+[cl-struct-member "draw_polygon_textured" () "    void draw_polygon_textured(const" 5740 32 () "(const" 8568 608]
+[cl-struct-member "draw_polygon_textured_lightmapped" () "    (const" 5828 32 () "(const" 13085 608]
+[cl-struct-member "draw_text" () "    void draw_text(int" 5898 32 () "void l3d_rasterizer_3d_mesa_imp::draw_text(int" 12498 7192]
+[cl-struct-member "l3d_rasterizer_3d_mesa_imp" () "d_mesa_imp(int xs, int ys, l3d_screen_info *si);" 4933 0 () "d_mesa_imp(int xs, int ys, l3d_screen_info *si):" 4376 1608839]
+[cl-struct-member "make_raster_font" () "    void make_raster_font(void" 4599 2 () "3d_rasterizer_3d_mesa_imp::make_raster_font(void" 11601 0]
+[cl-struct-member "ogl_texturing_between_glbegin_end" () "    (const" 4732 1 () "(const" 8787 608]
+[cl-struct-member "set_text_color" () "    void set_text_color(int" 5957 32 () "d l3d_rasterizer_3d_mesa_imp::set_text_color(int" 12925 1932]
+[cl-struct-member "texture_setup" () "    void texture_setup(const" 4644 1 () "(const" 6395 608]
+)
+()
+()
+()
+()
+()() t 
+])()
+([cl-struct-member "clear_buffer" () "    void clear_buffer(void" 1207 32 () "id l3d_rasterizer_2d_mesa_imp::clear_buffer(void" 1321 0]
+[cl-struct-member "draw_line" () "    void draw_line(int" 1286 32 () "void l3d_rasterizer_2d_mesa_imp::draw_line(int" 1565 15127]
+[cl-struct-member "draw_point" () "    void draw_point(int" 1233 32 () "void l3d_rasterizer_2d_mesa_imp::draw_point(int" 1407 3799]
+[cl-struct-member "draw_polygon_flatshaded" () "    void draw_polygon_flatshaded(const" 1373 32 () "(const" 1784 608]
+[cl-struct-member "l3d_rasterizer_2d_mesa_imp" () "d_mesa_imp(int xs, int ys, l3d_screen_info *si);" 1145 0 () "    :" 1195 1608839]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_rasterizer_2d_sw_imp" "./raster/ras_sw.h" "class l3d_rasterizer_2d_sw_imp :" 1077"./raster/ras_sw.h" ]
+([cl-struct-tree [cl-struct-class "l3d_rasterizer_2d_sw_lighter_imp" "./raster/ras_swl.h" "class l3d_rasterizer_2d_sw_lighter_imp :" 1122"./raster/ras_swl.h" ]
+()()
+([cl-struct-member "compute_light_level" () "    virtual int compute_light_level(int" 1266 33 "./raster/ras_swl.cc" "rizer_2d_sw_lighter_imp::compute_light_level(int" 1088 860]
+[cl-struct-member "draw_polygon_flatshaded" () "    void draw_polygon_flatshaded(const" 1495 32 "./raster/ras_swl.cc" "(const" 4013 608]
+[cl-struct-member "l3d_rasterizer_2d_sw_lighter_imp" () "ghter_imp(int xs, int ys, l3d_screen_info *si) :" 1341 16 () "ghter_imp(int xs, int ys, l3d_screen_info *si) :" 1341 1608839]
+)
+()
+()
+()
+()
+()() t 
+][cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_sw_imp" "./raster/ras3_sw.h" "class l3d_rasterizer_3d_sw_imp :" 1174"./raster/ras3_sw.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_zbuf_sw_imp" "./raster/ras3z_sw.h" "class l3d_rasterizer_3d_zbuf_sw_imp :" 1163"./raster/ras3z_sw.cc" ]
+()([cl-struct-member "zbuf" () "    l3d_fixed *zbuf;" 1243 2 () () 0 0]
+[cl-struct-member "zbuf_size" () "    long int zbuf_size;" 1267 2 () () 0 0]
+)
+([cl-struct-member "clear_buffer" () "    void clear_buffer(void" 1696 32 () "l3d_rasterizer_3d_zbuf_sw_imp::clear_buffer(void" 1806 0]
+[cl-struct-member "draw_polygon_textured" () "  /* virtual */ void draw_polygon_textured(const" 1451 32 () "(const" 3755 608]
+[cl-struct-member "l3d_rasterizer_3d_zbuf_sw_imp" () "buf_sw_imp(int xs, int ys, l3d_screen_info *si);" 1315 0 () "    :" 1337 1608839]
+[cl-struct-member "~l3d_rasterizer_3d_zbuf_sw_imp" () "    virtual ~l3d_rasterizer_3d_zbuf_sw_imp(void" 1397 32 () "zbuf_sw_imp::~l3d_rasterizer_3d_zbuf_sw_imp(void" 1728 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "text_color" () "    unsigned char *text_color;" 1363 1 () () 0 0]
+)
+([cl-struct-member "clear_buffer" () "    /* virtual */ void clear_buffer(void" 1861 32 () "void l3d_rasterizer_3d_sw_imp::clear_buffer(void" 5343 0]
+[cl-struct-member "compute_surface_orientation_and_size" () "  void compute_surface_orientation_and_size(void" 1330 1 () () 0 0]
+[cl-struct-member "draw_polygon_textured" () "  /* virtual */ void draw_polygon_textured(const" 1537 32 () "(const" 7184 608]
+[cl-struct-member "draw_polygon_textured_lightmapped" () "    (const" 1639 32 () "(const" 35041 608]
+[cl-struct-member "draw_text" () "    /* virtual */ void draw_text(int" 1722 32 () "void l3d_rasterizer_3d_sw_imp::draw_text(int" 37361 7192]
+[cl-struct-member "l3d_rasterizer_3d_sw_imp" () "_3d_sw_imp(int xs, int ys, l3d_screen_info *si);" 1406 0 () "    :" 4487 1608839]
+[cl-struct-member "set_text_color" () "    /* virtual */ void set_text_color(int" 1793 32 () "oid l3d_rasterizer_3d_sw_imp::set_text_color(int" 36833 1932]
+[cl-struct-member "~l3d_rasterizer_3d_sw_imp" () "    virtual ~l3d_rasterizer_3d_sw_imp(void" 1483 32 () "erizer_3d_sw_imp::~l3d_rasterizer_3d_sw_imp(void" 5264 0]
+)
+()
+()
+()
+()
+()() t 
+])()
+([cl-struct-member "address_of_point" () "    unsigned char *address_of_point(int" 1175 17 () " *l3d_rasterizer_2d_sw_imp::address_of_point(int" 1854 860]
+[cl-struct-member "clear_buffer" () "    void clear_buffer(void" 1362 32 "./raster/ras_sw.cc" "void l3d_rasterizer_2d_sw_imp::clear_buffer(void" 1363 0]
+[cl-struct-member "draw_line" () "    void draw_line(int" 1441 32 "./raster/ras_sw.cc" "void l3d_rasterizer_2d_sw_imp::draw_line(int" 1512 15127]
+[cl-struct-member "draw_point" () "    void draw_point(int" 1388 48 () "(int" 2493 3799]
+[cl-struct-member "draw_point_at_paddress" () "    void draw_point_at_paddress(unsigned" 1227 17 () "(unsigned" 2048 14671]
+[cl-struct-member "draw_polygon_flatshaded" () "    void draw_polygon_flatshaded(const" 1528 32 "./raster/ras_sw.cc" "(const" 2832 608]
+[cl-struct-member "l3d_rasterizer_2d_sw_imp" () "_2d_sw_imp(int xs, int ys, l3d_screen_info *si);" 1301 0 "./raster/ras_sw.cc" "    :" 1238 1608839]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_imp" "./raster/rast3.h" "class l3d_rasterizer_3d_imp :" 1339"./raster/rast3.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_mesa_imp" "./raster/ras3_mes.h" "class l3d_rasterizer_3d_mesa_imp :" 4428"./raster/ras3_mes.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_zbuf_mesa_imp" "./raster/ras3z_mes.h" "class l3d_rasterizer_3d_zbuf_mesa_imp :" 1041"./raster/ras3z_mes.cc" ]
+()()
+([cl-struct-member "clear_buffer" () "    void clear_buffer(void" 1246 32 () "d_rasterizer_3d_zbuf_mesa_imp::clear_buffer(void" 1995 0]
+[cl-struct-member "l3d_rasterizer_3d_zbuf_mesa_imp" () "f_mesa_imp(int xs, int ys, l3d_screen_info *si);" 1133 0 () "f_mesa_imp(int xs, int ys, l3d_screen_info *si):" 1330 1608839]
+[cl-struct-member "~l3d_rasterizer_3d_zbuf_mesa_imp" () "   virtual ~l3d_rasterizer_3d_zbuf_mesa_imp(void" 1217 32 () "~l3d_rasterizer_3d_zbuf_mesa_imp(void" 1933 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "fontOffset" () "    GLuint fontOffset;" 4557 2 () () 0 0]
+[cl-struct-member "text_color" () "    unsigned long text_color;" 4887 1 () () 0 0]
+[cl-struct-member "zi" () "    ui, vi, zi;" 4856 1 () () 0 0]
+)
+([cl-struct-member "clear_buffer" () "    void clear_buffer(void" 6012 32 () "id l3d_rasterizer_3d_mesa_imp::clear_buffer(void" 5318 0]
+[cl-struct-member "draw_line" () "    void draw_line(int" 5548 32 () "void l3d_rasterizer_3d_mesa_imp::draw_line(int" 5599 15127]
+[cl-struct-member "draw_point" () "    void draw_point(int" 5495 32 () "void l3d_rasterizer_3d_mesa_imp::draw_point(int" 5419 3799]
+[cl-struct-member "draw_polygon_flatshaded" () "    void draw_polygon_flatshaded(const" 5635 32 () "(const" 5862 608]
+[cl-struct-member "draw_polygon_textured" () "    void draw_polygon_textured(const" 5740 32 () "(const" 8568 608]
+[cl-struct-member "draw_polygon_textured_lightmapped" () "    (const" 5828 32 () "(const" 13085 608]
+[cl-struct-member "draw_text" () "    void draw_text(int" 5898 32 () "void l3d_rasterizer_3d_mesa_imp::draw_text(int" 12498 7192]
+[cl-struct-member "l3d_rasterizer_3d_mesa_imp" () "d_mesa_imp(int xs, int ys, l3d_screen_info *si);" 4933 0 () "d_mesa_imp(int xs, int ys, l3d_screen_info *si):" 4376 1608839]
+[cl-struct-member "make_raster_font" () "    void make_raster_font(void" 4599 2 () "3d_rasterizer_3d_mesa_imp::make_raster_font(void" 11601 0]
+[cl-struct-member "ogl_texturing_between_glbegin_end" () "    (const" 4732 1 () "(const" 8787 608]
+[cl-struct-member "set_text_color" () "    void set_text_color(int" 5957 32 () "d l3d_rasterizer_3d_mesa_imp::set_text_color(int" 12925 1932]
+[cl-struct-member "texture_setup" () "    void texture_setup(const" 4644 1 () "(const" 6395 608]
+)
+()
+()
+()
+()
+()() t 
+][cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_sw_imp" "./raster/ras3_sw.h" "class l3d_rasterizer_3d_sw_imp :" 1174"./raster/ras3_sw.cc" ]
+([cl-struct-tree [cl-struct-class "l3d_rasterizer_3d_zbuf_sw_imp" "./raster/ras3z_sw.h" "class l3d_rasterizer_3d_zbuf_sw_imp :" 1163"./raster/ras3z_sw.cc" ]
+()([cl-struct-member "zbuf" () "    l3d_fixed *zbuf;" 1243 2 () () 0 0]
+[cl-struct-member "zbuf_size" () "    long int zbuf_size;" 1267 2 () () 0 0]
+)
+([cl-struct-member "clear_buffer" () "    void clear_buffer(void" 1696 32 () "l3d_rasterizer_3d_zbuf_sw_imp::clear_buffer(void" 1806 0]
+[cl-struct-member "draw_polygon_textured" () "  /* virtual */ void draw_polygon_textured(const" 1451 32 () "(const" 3755 608]
+[cl-struct-member "l3d_rasterizer_3d_zbuf_sw_imp" () "buf_sw_imp(int xs, int ys, l3d_screen_info *si);" 1315 0 () "    :" 1337 1608839]
+[cl-struct-member "~l3d_rasterizer_3d_zbuf_sw_imp" () "    virtual ~l3d_rasterizer_3d_zbuf_sw_imp(void" 1397 32 () "zbuf_sw_imp::~l3d_rasterizer_3d_zbuf_sw_imp(void" 1728 0]
+)
+()
+()
+()
+()
+()()()
+])([cl-struct-member "text_color" () "    unsigned char *text_color;" 1363 1 () () 0 0]
+)
+([cl-struct-member "clear_buffer" () "    /* virtual */ void clear_buffer(void" 1861 32 () "void l3d_rasterizer_3d_sw_imp::clear_buffer(void" 5343 0]
+[cl-struct-member "compute_surface_orientation_and_size" () "  void compute_surface_orientation_and_size(void" 1330 1 () () 0 0]
+[cl-struct-member "draw_polygon_textured" () "  /* virtual */ void draw_polygon_textured(const" 1537 32 () "(const" 7184 608]
+[cl-struct-member "draw_polygon_textured_lightmapped" () "    (const" 1639 32 () "(const" 35041 608]
+[cl-struct-member "draw_text" () "    /* virtual */ void draw_text(int" 1722 32 () "void l3d_rasterizer_3d_sw_imp::draw_text(int" 37361 7192]
+[cl-struct-member "l3d_rasterizer_3d_sw_imp" () "_3d_sw_imp(int xs, int ys, l3d_screen_info *si);" 1406 0 () "    :" 4487 1608839]
+[cl-struct-member "set_text_color" () "    /* virtual */ void set_text_color(int" 1793 32 () "oid l3d_rasterizer_3d_sw_imp::set_text_color(int" 36833 1932]
+[cl-struct-member "~l3d_rasterizer_3d_sw_imp" () "    virtual ~l3d_rasterizer_3d_sw_imp(void" 1483 32 () "erizer_3d_sw_imp::~l3d_rasterizer_3d_sw_imp(void" 5264 0]
+)
+()
+()
+()
+()
+()() t 
+])()
+([cl-struct-member "clear_buffer" () "    /* virtual */ void clear_buffer(void" 1543 48 "./raster/rast3.h" "    /* virtual */ void clear_buffer(void" 1543 0]
+[cl-struct-member "draw_polygon_textured" () "    virtual void draw_polygon_textured(const" 1594 32 () "(const" 1135 608]
+[cl-struct-member "draw_polygon_textured_lightmapped" () "    (const" 1690 32 () "(const" 1241 608]
+[cl-struct-member "draw_text" () "    virtual void draw_text(int" 1767 48 "./raster/rast3.h" "    virtual void draw_text(int" 1767 7192]
+[cl-struct-member "l3d_rasterizer_3d_imp" () "zer_3d_imp(int xs, int ys, l3d_screen_info *si);" 1467 0 () "(int xs, int ys, l3d_screen_info *si) :" 1003 1608839]
+[cl-struct-member "set_text_color" () "    virtual void set_text_color(int" 1837 48 "./raster/rast3.h" "    virtual void set_text_color(int" 1837 1932]
+)
+()
+()
+()
+()
+()() t 
+])([cl-struct-member "sinfo" () "    l3d_screen_info *sinfo;" 1443 1 () () 0 0]
+[cl-struct-member "ysize" () "    int xsize, ysize;" 1415 1 () () 0 0]
+)
+([cl-struct-member "clear_buffer" () "    virtual void clear_buffer(void" 1598 32 () "void l3d_rasterizer_2d_imp::clear_buffer(void" 1122 0]
+[cl-struct-member "draw_line" () "    virtual void draw_line( int" 1756 32 () "void l3d_rasterizer_2d_imp::draw_line( int" 1330 15127]
+[cl-struct-member "draw_point" () "    virtual void draw_point( int" 1633 32 () "void l3d_rasterizer_2d_imp::draw_point( int" 1171 3799]
+[cl-struct-member "draw_polygon_flatshaded" () "    virtual void draw_polygon_flatshaded( const" 1969 32 () "( const" 1602 608]
+[cl-struct-member "l3d_rasterizer_2d_imp" () "zer_2d_imp(int xs, int ys, l3d_screen_info *si);" 1483 0 () "(int xs, int ys, l3d_screen_info *si)
+{" 1006 1608839]
+[cl-struct-member "~l3d_rasterizer_2d_imp" () "    virtual ~l3d_rasterizer_2d_imp(void" 1557 48 "./raster/rasteriz.h" "    virtual ~l3d_rasterizer_2d_imp(void" 1557 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_screen_factory" "./tool_2d/screen.h" "class l3d_screen_factory {" 1597() ]
+([cl-struct-tree [cl-struct-class "l3d_screen_factory_mesa" "./tool_2d/sc_mesa.h" "class l3d_screen_factory_mesa :" 1296"./tool_2d/sc_mesa.h" ]
+()()
+([cl-struct-member "create" () "    l3d_screen *create(int" 1361 48 () "    l3d_screen *create(int" 1361 860]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_screen_factory_mswin" "./tool_2d/sc_mswin.h" "class l3d_screen_factory_mswin :" 896"./tool_2d/sc_mswin.h" ]
+()()
+([cl-struct-member "create" () "  l3d_screen *create(int" 960 48 () "  l3d_screen *create(int" 960 860]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_screen_factory_wogl" "./tool_2d/sc_wogl.h" "class l3d_screen_factory_wogl :" 1247"./tool_2d/sc_wogl.h" ]
+()()
+([cl-struct-member "create" () "    l3d_screen *create(int" 1312 48 () "    l3d_screen *create(int" 1312 860]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_screen_factory_x11" "./tool_2d/sc_x11.h" "class l3d_screen_factory_x11 :" 1986"./tool_2d/sc_x11.h" ]
+()()
+([cl-struct-member "create" () "    l3d_screen *create(int" 2051 48 () "    l3d_screen *create(int" 2051 860]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_screen_factory_x11_shm" "./tool_2d/sc_x11sh.h" "class l3d_screen_factory_x11_shm :" 1427"./tool_2d/sc_x11sh.h" ]
+()()
+([cl-struct-member "create" () "    l3d_screen *create(int" 1492 48 () "    l3d_screen *create(int" 1492 860]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_screen_factory_zbuf_mesa" "./tool_2d/sc_zmesa.h" "class l3d_screen_factory_zbuf_mesa :" 1243"./tool_2d/sc_zmesa.h" ]
+()()
+([cl-struct-member "create" () "    l3d_screen *create(int" 1308 48 () "    l3d_screen *create(int" 1308 860]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_screen_factory_zbuf_wogl" "./tool_2d/sc_wzogl.h" "class l3d_screen_factory_zbuf_wogl :" 1243"./tool_2d/sc_wzogl.h" ]
+()()
+([cl-struct-member "create" () "    l3d_screen *create(int" 1308 48 () "    l3d_screen *create(int" 1308 860]
+)
+()
+()
+()
+()
+()()()
+])()
+([cl-struct-member "create" () "    virtual l3d_screen *create(int" 1642 160 () () 0 860]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_bsptree" "./geom/bsp/bsptree.h" "class l3d_bsptree {" 1074"./geom/bsp/bsptree.cc" ]
+()([cl-struct-member "root" () "    l3d_halfspace *root;" 1249 0 () () 0 0]
+)
+([cl-struct-member "_permanently_merge_objects" () "    void _permanently_merge_objects(l3d_object" 1134 1 () "(l3d_object" 8231 51082]
+[cl-struct-member "_recursive_delete_tree" () "    void _recursive_delete_tree(l3d_halfspace" 1205 1 () "3d_bsptree::_recursive_delete_tree(l3d_halfspace" 1169 408707]
+[cl-struct-member "compute_for_object" () "    void compute_for_object(l3d_halfspace" 1346 0 () "id l3d_bsptree::compute_for_object(l3d_halfspace" 2042 1955138433]
+[cl-struct-member "l3d_bsptree" () "    l3d_bsptree(void);" 1270 0 () "l3d_bsptree::l3d_bsptree(void) {" 1093 0]
+[cl-struct-member "make_videoscape_meshes" () "    void make_videoscape_meshes(l3d_halfspace" 1596 0 () "3d_bsptree::make_videoscape_meshes(l3d_halfspace" 17494 408707]
+[cl-struct-member "print_stats" () "    void print_stats(l3d_halfspace" 1639 0 () "void l3d_bsptree::print_stats(l3d_halfspace" 1504 408707]
+[cl-struct-member "push_polys_to_children" () "    (l3d_halfspace" 1479 0 () "(l3d_halfspace" 12869 1955138433]
+[cl-struct-member "~l3d_bsptree" () "    virtual ~l3d_bsptree(void" 1302 32 () "l3d_bsptree::~l3d_bsptree(void" 1422 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "*Globals*" () () 0"./geom/vertex/coord.h" ]
+()([cl-struct-member "cos_lu" () () 0 0 "./math/sincos.h" "extern l3d_real cos_lu[360];" 1232 0]
+[cl-struct-member "factory_manager_v_0_1" () () 0 64 "./system/factorys.h" "l3d_factory_manager_v_0_1 factory_manager_v_0_1;" 1469 0]
+[cl-struct-member "factory_manager_v_0_2" () () 0 0 "./system/fact0_2.h" "l3d_factory_manager_v_0_2 factory_manager_v_0_2;" 1460 0]
+[cl-struct-member "factory_manager_v_0_3" () () 0 0 "./system/fwin0_3.h" "l3d_factory_manager_v_0_3 factory_manager_v_0_3;" 338 0]
+[cl-struct-member "factory_manager_v_0_4" () () 0 0 "./system/fwin0_4.h" "l3d_factory_manager_v_0_4 factory_manager_v_0_4;" 1366 0]
+[cl-struct-member "fm_localdata" () () 0 0 "./math/math_fix.h" "extern long fm_localdata;" 3559 0]
+[cl-struct-member "fm_sign" () () 0 0 "./math/math_fix.h" "extern float fm_sign;" 3581 0]
+[cl-struct-member "fm_whole" () () 0 0 "./math/math_fix.h" "extern int fm_whole;" 3533 0]
+[cl-struct-member "font_bitmaps" () () 0 0 "./raster/ras3_sw.cc" "unsigned char font_bitmaps[256][13];" 4273 0]
+[cl-struct-member "l3d_max_matrix_temp" () () 0 0 "./math/matrix.cc" "const int l3d_max_matrix_temp = 15;" 990 0]
+[cl-struct-member "l3d_max_point_temp" () () 0 0 "./geom/point/point.cc" "const int l3d_max_point_temp = 15;" 2156 0]
+[cl-struct-member "l3d_max_vector_temp" () () 0 0 "./math/vector.cc" "const int l3d_max_vector_temp = 15;" 2165 0]
+[cl-struct-member "max_transformed_intermediates" () () 0 0 () "const int max_transformed_intermediates = 2;" 1052 0]
+[cl-struct-member "movement_states" () () 0 0 "./dynamics/plugins/seeker/seeker.h" "movement_states;" 1130 0]
+[cl-struct-member "n" () () 0 0 "./geom/world/w_porltex.cc" "n = sector->nonculled_polygon_nodes;" 32824 0]
+[cl-struct-member "sin_lu" () () 0 0 "./math/sincos.h" "extern l3d_real sin_lu[360];" 1261 0]
+)
+([cl-struct-member "GetProcAddress" "./dynamics/plugins/pl_mswin.h" "*Zr* GetProcAddress(&" 1163 0 () () 0 756]
+[cl-struct-member "LoadLibrary" "./dynamics/plugins/pl_mswin.h" "*Zr* LoadLibrary(char" 1080 0 () () 0 620]
+[cl-struct-member "apply_perspective_projection" "./geom/world/w_porltex.cc" "sector->apply_perspective_projection
+(*" 30843 0 () () 0 2724]
+[cl-struct-member "cross" "./math/vector.h" "inline const l3d_vector& cross(const" 5037 16 "./math/vector.h" "inline const l3d_vector& cross(const" 5037 3036]
+[cl-struct-member "dot" "./math/vector.h" "inline const l3d_real dot(const" 5743 16 "./math/vector.h" "inline const l3d_real dot(const" 5743 3036]
+[cl-struct-member "l3d_get_matrix_temp" "./math/matrix.cc" "l3d_matrix &l3d_get_matrix_temp(void" 1027 0 "./math/matrix.cc" "l3d_matrix &l3d_get_matrix_temp(void" 1027 0]
+[cl-struct-member "l3d_get_point_temp" "./geom/point/point.cc" "l3d_point &l3d_get_point_temp(void" 2191 0 "./geom/point/point.cc" "l3d_point &l3d_get_point_temp(void" 2191 0]
+[cl-struct-member "l3d_get_vector_temp" "./math/vector.cc" "l3d_vector &l3d_get_vector_temp(void" 2202 0 "./math/vector.cc" "l3d_vector &l3d_get_vector_temp(void" 2202 0]
+[cl-struct-member "l3d_mat_rotu" "./math/matrix.h" "inline  l3d_matrix &l3d_mat_rotu(const" 18428 16 "./math/matrix.h" "inline  l3d_matrix &l3d_mat_rotu(const" 18428 1516]
+[cl-struct-member "l3d_mat_rotx" "./math/matrix.h" "inline  l3d_matrix &l3d_mat_rotx(int" 16419 16 "./math/matrix.h" "inline  l3d_matrix &l3d_mat_rotx(int" 16419 308]
+[cl-struct-member "l3d_mat_roty" "./math/matrix.h" "inline l3d_matrix &l3d_mat_roty(int" 17089 16 "./math/matrix.h" "inline l3d_matrix &l3d_mat_roty(int" 17089 308]
+[cl-struct-member "l3d_mat_rotz" "./math/matrix.h" "inline  l3d_matrix &l3d_mat_rotz(int" 17752 16 "./math/matrix.h" "inline  l3d_matrix &l3d_mat_rotz(int" 17752 308]
+[cl-struct-member "l3d_mat_scale" "./math/matrix.h" "inline  l3d_matrix &l3d_mat_scale(l3d_real" 15717 16 "./math/matrix.h" "inline  l3d_matrix &l3d_mat_scale(l3d_real" 15717 12570]
+[cl-struct-member "l3d_mat_translate" "./math/matrix.h" "inline  l3d_matrix &l3d_mat_translate(l3d_real" 15040 16 "./math/matrix.h" "inline  l3d_matrix &l3d_mat_translate(l3d_real" 15040 12570]
+[cl-struct-member "main" "./math/gen_grig.cc" "main()" 1207 0 "./math/gen_grig.cc" "main()" 1207 0]
+[cl-struct-member "normalized" "./math/vector.h" "inline const l3d_vector& normalized(const" 6203 16 "./math/vector.h" "inline const l3d_vector& normalized(const" 6203 620]
+[cl-struct-member "operator *" "./geom/point/point.h" "inline const l3d_point &operator * (const" 3862 16 "./math/matrix.h" "inline l3d_matrix& operator * (const" 13465 1533]
+[cl-struct-member "operator +" "./math/vector.h" "inline const l3d_vector& operator + (const" 7573 16 "./math/vector.h" "inline const l3d_point& operator + (const" 8597 3036]
+[cl-struct-member "operator -" "./math/vector.h" "inline const l3d_vector& operator - (const" 7914 16 "./math/vector.h" "inline const l3d_point& operator - (const" 9331 3036]
+[cl-struct-member "operator |" "./math/matrix.h" "inline l3d_matrix& operator |(const" 9216 16 "./math/matrix.h" "inline l3d_point &operator |(const" 19847 3036]
+)
+([cl-struct-member "digits" () () 0 0 "./raster/ras3_sw.cc" "F,0xC3,0x3,0x3,0x7F,0xC3,0xC3,0xC3,0xC3,0x7E}
+};" 2054 0]
+[cl-struct-member "hdcMem" () () 0 0 "./tool_2d/sc_mswin.cc" "static HDC hdcMem;" 61 0]
+[cl-struct-member "letters" () () 0 0 "./raster/ras3_sw.cc" "60, 0x30, 0x7e, 0x0c, 0x06, 0x03, 0x03, 0xff}
+};" 4235 0]
+[cl-struct-member "period" () () 0 0 "./raster/ras3_sw.cc" "0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};" 1224 0]
+[cl-struct-member "space" () () 0 0 "./raster/ras3_sw.cc" "0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};" 1344 0]
+[cl-struct-member "states_array" () () 0 0 "./dynamics/plugins/seeker/seeker.h" "    ALONG_VFW,ALONG_VRI,ALONG_VUP};" 1255 0]
+)
+()
+()
+([cl-struct-member "_movement_states" () () 0 0 "./dynamics/plugins/seeker/seeker.h" "typedef enum _movement_states
+{" 1045 0]
+[cl-struct-member "l3d_fixed" () () 0 0 "./math/math_fix.h" "typedef long l3d_fixed;" 2279 0]
+[cl-struct-member "l3d_real" () () 0 0 "./system/sys_dep.h" "typedef float l3d_real;" 4353 0]
+)
+()()()
+][cl-struct-tree [cl-struct-class "l3d_rasterizer_2d_imp_factory" "./raster/rasteriz.h" "class l3d_rasterizer_2d_imp_factory {" 2954() ]
+([cl-struct-tree [cl-struct-class "l3d_rasterizer_2d_mesa_imp_factory" "./raster/ras_mesa.h" "class l3d_rasterizer_2d_mesa_imp_factory :" 1456"./raster/ras_mesa.cc" ]
+()()
+([cl-struct-member "create" () "    l3d_rasterizer_2d_imp *create(int" 1545 32 () "(int" 1046 1608839]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_rasterizer_2d_sw_imp_factory" "./raster/ras_sw.h" "class l3d_rasterizer_2d_sw_imp_factory :" 1610"./raster/ras_sw.cc" ]
+()()
+([cl-struct-member "create" () "    l3d_rasterizer_2d_imp *create(int" 1703 32 () "(int" 1095 1608839]
+)
+()
+()
+()
+()
+()()()
+])()
+([cl-struct-member "create" () "    virtual l3d_rasterizer_2d_imp *create(int" 3010 160 () () 0 1608839]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_surface" "./geom/surface/scache.h" "class l3d_surface {" 1153"./geom/surface/scache.cc" ]
+()([cl-struct-member "age" () "    int age;" 1562 0 () () 0 0]
+[cl-struct-member "polygon" () "st l3d_polygon_3d_textured_lightmapped *polygon;" 1522 0 () () 0 0]
+[cl-struct-member "surface" () "    l3d_texture *surface;" 1548 0 () () 0 0]
+)
+([cl-struct-member "l3d_surface" () "    l3d_surface(void);" 1464 0 () "l3d_surface::l3d_surface(void) {" 1022 0]
+[cl-struct-member "~l3d_surface" () "    virtual ~l3d_surface(void" 1593 32 () "l3d_surface::~l3d_surface(void" 1159 0]
+)
+()
+()
+()
+()
+()()()
+][cl-struct-tree [cl-struct-class "l3d_viewing_frustum" "./geom/frustum/vfrust.h" "class l3d_viewing_frustum {" 1093"./geom/frustum/vfrust.cc" ]
+()([cl-struct-member "bottom" () "    l3d_plane bottom;" 1144 0 () () 0 0]
+[cl-struct-member "far" () "    l3d_plane far;" 1224 0 () () 0 0]
+[cl-struct-member "left" () "    l3d_plane left;" 1164 0 () () 0 0]
+[cl-struct-member "near" () "    l3d_plane near;" 1205 0 () () 0 0]
+[cl-struct-member "right" () "    l3d_plane right;" 1185 0 () () 0 0]
+[cl-struct-member "top" () "    l3d_plane top;" 1122 0 () () 0 0]
+)
+([cl-struct-member "create_from_points" () "    void create_from_points(const" 1258 0 () "(const" 1009 2992668]
+[cl-struct-member "intersects_sphere" () "    int intersects_sphere(const" 1643 0 () "int l3d_viewing_frustum::intersects_sphere(const" 2161 620]
+)
+()
+()
+()
+()
+()()()
+]

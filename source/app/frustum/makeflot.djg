@@ -1,0 +1,4 @@
+all:
+	cd ..\..\..\binaries\djgppdos\float\app\frustum
+	$(MAKE)
+

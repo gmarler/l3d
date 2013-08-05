@@ -1,0 +1,31 @@
+2007-02-05
+* Change X depth determination to use default depth of screen instead of
+maximum depth of screen, for sample program hello_oo_event
+
+* Change linker for audio application to use g++
+
+* Added LICENSE file
+------------------------------------------------------------------------------
+2007-01-28
+
+X-related:
+
+* Change X depth determination to use default depth of screen instead of
+maximum depth of screen.
+
+Compiler-related:
+
+* Compile everything explicitly with g++-2.95
+
+* Include string.h, stdlib.h headers where needed
+
+* Move inline function definitons into header files instead of C++ source files
+
+* Remove profiling flags from compile flags
+
+* Do not compile blendat utility, apparently due to changes in GTKMM library
+it no longer compiles. This will be fixed at a later date. However, modern
+Blender versions can use Python scripting for this kind of utility.
+
+* Commented out unused variable EPSILON_VECTOR in texture.h
+

@@ -1,0 +1,56 @@
+// generated 2000/8/4 17:28:52 CEST by nlingfx@geri.
+// using glademm V0.5.9
+//
+// newer (non customized) versions of this file go to win_main.cc_glade
+
+// This file is for your program, I won't touch it again!
+
+#include "win_main.hh"
+
+void Win_main::on_save1_activate()
+{   
+}
+
+void Win_main::on_exit1_activate()
+{   
+}
+
+void Win_main::on_file1_activate()
+{   
+}
+
+void Win_main::on_properties1_activate()
+{   
+}
+
+void Win_main::on_preferences1_activate()
+{   
+}
+
+void Win_main::on_edit1_activate()
+{   
+}
+
+void Win_main::on_btn_refresh_clicked()
+{   
+}
+
+void Win_main::on_btn_save_clicked()
+{   
+}
+
+void Win_main::on_btn_newemptyprop_clicked()
+{   
+}
+
+void Win_main::on_btn_newfaceprop_clicked()
+{   
+}
+
+void Win_main::on_text_props_changed()
+{   
+}
+
+gint Win_main::on_win_main_focus_in_event(GdkEventFocus *ev)
+{   return 0;
+}

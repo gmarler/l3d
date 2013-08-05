@@ -1,0 +1,3 @@
+all:
+	cd ../../../binaries/cygwin/fixed/app/frustum; \
+	$(MAKE)

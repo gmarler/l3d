@@ -1,0 +1,3 @@
+all:
+	$(MAKE) -f makeflot.lnx
+	$(MAKE) -f makefix.lnx
